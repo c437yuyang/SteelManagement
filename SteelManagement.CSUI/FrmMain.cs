@@ -1,13 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 using DevComponents.DotNetBar;
-using ScanCtrlTest;
-using TravelAgency.Common;
-using TravelAgency.CSUI.Financial.FrmMain;
-using TravelAgency.CSUI.Financial.FrmSub;
-using TravelAgency.CSUI.FrmSub;
-using TravelAgency.CSUI.Statistics.FrmMain;
-using TravelAgency.CSUI.Visa.FrmMain;
 
 namespace TravelAgency.CSUI.FrmMain
 {
@@ -23,26 +16,26 @@ namespace TravelAgency.CSUI.FrmMain
         #region ribbon control上点击按钮
         private void btnVisaTypeIn_Click(object sender, EventArgs e)
         {
-            FrmVisaTypeIn frm = new FrmVisaTypeIn();
-            OpenTab(frm, frm.Name);
+            //FrmVisaTypeIn frm = new FrmVisaTypeIn();
+            //OpenTab(frm, frm.Name);
         }
 
         private void buttonItem1_Click(object sender, EventArgs e)
         {
-            FrmVisaSubmitManage frm = new FrmVisaSubmitManage();
-            OpenTab(frm, frm.Name);
+            //FrmVisaSubmitManage frm = new FrmVisaSubmitManage();
+            //OpenTab(frm, frm.Name);
         }
 
         private void btnVisaQuery_Click(object sender, EventArgs e)
         {
-            FrmVisaManage frm = new FrmVisaManage();
-            OpenTab(frm, frm.Name);
+            //FrmVisaManage frm = new FrmVisaManage();
+            //OpenTab(frm, frm.Name);
         }
 
         private void btnVisaInfoManage_Click(object sender, EventArgs e)
         {
-            FrmVisaInfoManage frm = new FrmVisaInfoManage();
-            OpenTab(frm, frm.Name);
+            //FrmVisaInfoManage frm = new FrmVisaInfoManage();
+            //OpenTab(frm, frm.Name);
         }
         #endregion
 
