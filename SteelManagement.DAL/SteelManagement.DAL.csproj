@@ -42,5 +42,15 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SteelManagement.DBUtility\SteelManagement.DBUtility.csproj">
+      <Project>{be5e5d7e-4bb2-4e87-987a-9adcc0dcd8d4}</Project>
+      <Name>SteelManagement.DBUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SteelManagement.Model\SteelManagement.Model.csproj">
+      <Project>{c0fa5521-d0c6-418e-9d82-1c6bf30b8518}</Project>
+      <Name>SteelManagement.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

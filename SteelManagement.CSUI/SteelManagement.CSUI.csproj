@@ -116,5 +116,19 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SteelManagement.BLL\SteelManagement.BLL.csproj">
+      <Project>{c657f457-0689-4696-a2a4-4f2ccb8e1229}</Project>
+      <Name>SteelManagement.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SteelManagement.Common\SteelManagement.Common.csproj">
+      <Project>{4ed5ca8e-a4ae-45d8-b2b5-0ed14891bf9b}</Project>
+      <Name>SteelManagement.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SteelManagement.Model\SteelManagement.Model.csproj">
+      <Project>{c0fa5521-d0c6-418e-9d82-1c6bf30b8518}</Project>
+      <Name>SteelManagement.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

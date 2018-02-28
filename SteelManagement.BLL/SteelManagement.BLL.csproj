@@ -42,5 +42,15 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SteelManagement.DAL\SteelManagement.DAL.csproj">
+      <Project>{b5f79175-4989-48d2-b28c-ee01dd131a99}</Project>
+      <Name>SteelManagement.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SteelManagement.Model\SteelManagement.Model.csproj">
+      <Project>{c0fa5521-d0c6-418e-9d82-1c6bf30b8518}</Project>
+      <Name>SteelManagement.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
