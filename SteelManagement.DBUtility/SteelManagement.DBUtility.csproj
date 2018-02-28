@@ -30,8 +30,51 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="COM.Excel">
+      <HintPath>..\packages\DBUtilityLibs\COM.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Excel">
+      <HintPath>..\packages\DBUtilityLibs\Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="IBatisNet.Common">
+      <HintPath>..\packages\DBUtilityLibs\IBatisNet.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="IBatisNet.DataMapper">
+      <HintPath>..\packages\DBUtilityLibs\IBatisNet.DataMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="LTP.Accounts">
+      <HintPath>..\packages\DBUtilityLibs\LTP.Accounts.dll</HintPath>
+    </Reference>
+    <Reference Include="LtpPageControl">
+      <HintPath>..\packages\DBUtilityLibs\LtpPageControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
+      <HintPath>..\packages\DBUtilityLibs\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data">
+      <HintPath>..\packages\DBUtilityLibs\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.UI.WebControls">
+      <HintPath>..\packages\DBUtilityLibs\Microsoft.Web.UI.WebControls.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\packages\DBUtilityLibs\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenSmtp">
+      <HintPath>..\packages\DBUtilityLibs\OpenSmtp.dll</HintPath>
+    </Reference>
+    <Reference Include="OWC10Chart">
+      <HintPath>..\packages\DBUtilityLibs\OWC10Chart.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\packages\DBUtilityLibs\System.Data.SQLite.DLL</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,7 +83,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseSqlMapDao.cs" />
+    <Compile Include="CommandInfo.cs" />
+    <Compile Include="DbHelperMySQL.cs" />
+    <Compile Include="DbHelperOleDb.cs" />
+    <Compile Include="DbHelperOra.cs" />
+    <Compile Include="DbHelperSQL.cs" />
+    <Compile Include="DbHelperSQL2.cs" />
+    <Compile Include="DbHelperSQLite.cs" />
+    <Compile Include="DbHelperSQLP.cs" />
+    <Compile Include="DESEncrypt.cs" />
+    <Compile Include="OracleHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PubConstant.cs" />
+    <Compile Include="SQLHelper.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
