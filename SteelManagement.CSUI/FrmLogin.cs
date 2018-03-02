@@ -7,6 +7,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
 using DevComponents.DotNetBar;
+using SteelManagement.Common;
 using TravelAgency.Common;
 using TravelAgency.Model;
 using AuthUser = TravelAgency.BLL.AuthUser;

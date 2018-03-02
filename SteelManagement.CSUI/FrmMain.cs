@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using DevComponents.DotNetBar;
+using SteelManagement.Common;
 
 namespace TravelAgency.CSUI.FrmMain
 {
@@ -14,29 +15,12 @@ namespace TravelAgency.CSUI.FrmMain
 
 
         #region ribbon control上点击按钮
-        private void btnVisaTypeIn_Click(object sender, EventArgs e)
-        {
-            //FrmVisaTypeIn frm = new FrmVisaTypeIn();
-            //OpenTab(frm, frm.Name);
-        }
+        //private void btnVisaTypeIn_Click(object sender, EventArgs e)
+        //{
+        //    //FrmVisaTypeIn frm = new FrmVisaTypeIn();
+        //    //OpenTab(frm, frm.Name);
+        //}
 
-        private void buttonItem1_Click(object sender, EventArgs e)
-        {
-            //FrmVisaSubmitManage frm = new FrmVisaSubmitManage();
-            //OpenTab(frm, frm.Name);
-        }
-
-        private void btnVisaQuery_Click(object sender, EventArgs e)
-        {
-            //FrmVisaManage frm = new FrmVisaManage();
-            //OpenTab(frm, frm.Name);
-        }
-
-        private void btnVisaInfoManage_Click(object sender, EventArgs e)
-        {
-            //FrmVisaInfoManage frm = new FrmVisaInfoManage();
-            //OpenTab(frm, frm.Name);
-        }
         #endregion
 
         public void OpenTab(Form frm, string Name)
@@ -127,7 +111,7 @@ namespace TravelAgency.CSUI.FrmMain
         private void FrmMain_Load(object sender, EventArgs e)
         {
             this.Text = "东瀛假日:签证自动扫描识别系统V" + XmlHandler.GetPropramVersion();
-            this.Text = this.Text + "     当前登录用户:" + Common.GlobalUtils.LoginUser.UserName;
+            this.Text = this.Text + "     当前登录用户:" + SteelManagement.Common.GlobalUtils.LoginUser.UserName;
             MinimumSize = Size;
             FrmsManager.OpenedForms.Add(this);
             GlobalStat.UpdateStatistics();
@@ -143,64 +127,5 @@ namespace TravelAgency.CSUI.FrmMain
             Application.Exit();
         }
 
-        private void btnScanFrm_Click(object sender, EventArgs e)
-        {
-            FrmTackePicture frm = new FrmTackePicture();
-            OpenTab(frm, frm.Name);
-        }
-
-        private void btnGPManage_Click(object sender, EventArgs e)
-        {
-            FrmGaoPaiManage frm = new FrmGaoPaiManage();
-            OpenTab(frm, frm.Name);
-        }
-
-
-        private void btntActionRecordsCount_Click(object sender, EventArgs e)
-        {
-            FrmActionRecordsManage frm = new FrmActionRecordsManage();
-            OpenTab(frm, frm.Name);
-        }
-
-        private void btnPersonalCount_Click(object sender, EventArgs e)
-        {
-            FrmPersonalWorkCount frm = new FrmPersonalWorkCount();
-            OpenTab(frm, frm.Name);
-        }
-
-        private void buttonItem1_Click_1(object sender, EventArgs e)
-        {
-            FrmVisaRequestPayoutManage frm = new FrmVisaRequestPayoutManage();
-            OpenTab(frm, frm.Name);
-        }
-
-        private void btnClientManage_Click(object sender, EventArgs e)
-        {
-            FrmClientChargeManage frm = new FrmClientChargeManage();
-            OpenTab(frm, frm.Name);
-        }
-
-        private void btnConsulateManage_Click(object sender, EventArgs e)
-        {
-            FrmConsulateChargeManage frm = new FrmConsulateChargeManage();
-            OpenTab(frm, frm.Name);
-        }
-
-        public void SetLbVisaInfoCount(string str)
-        {
-            lbVisaInfoCount.Text = str;
-        }
-
-        private void btnCommisionMoneyManage_Click(object sender, EventArgs e)
-        {
-            FrmCommisionMoneyManage frm = new FrmCommisionMoneyManage();
-            OpenTab(frm, frm.Name);
-        }
-
-        private void btnAppAllManage_Click(object sender, EventArgs e)
-        {
-            FrmAppManage frm = new FrmAppManage();
-            OpenTab(frm, frm.Name);
-        }
     }
 }

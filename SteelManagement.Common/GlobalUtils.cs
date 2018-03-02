@@ -6,6 +6,7 @@ using System.IO;
 using System.Windows.Forms;
 using DevComponents.DotNetBar;
 using SteelManagement.Common.FTP;
+//using SteelManagement.BLL;
 using Application = System.Windows.Forms.Application;
 
 namespace SteelManagement.Common
@@ -19,7 +20,7 @@ namespace SteelManagement.Common
     }
     public static class GlobalUtils
     {
-        //public static Model.AuthUser LoginUser;
+        public static Model.AuthUser LoginUser;
         //public static readonly DocDocxGenerator DocDocxGenerator;
         public static RigthLevel LoginUserLevel;
         static GlobalUtils()

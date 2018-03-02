@@ -34,7 +34,7 @@
             this.ribbonPanel3 = new DevComponents.DotNetBar.RibbonPanel();
             this.lbVisaInfoCount = new System.Windows.Forms.Label();
             this.ribbonBar2 = new DevComponents.DotNetBar.RibbonBar();
-            this.btnVisaTypeIn = new DevComponents.DotNetBar.ButtonItem();
+            this.btnSteelInfoManage = new DevComponents.DotNetBar.ButtonItem();
             this.btnVisaInfoManage = new DevComponents.DotNetBar.ButtonItem();
             this.btnVisaQuery = new DevComponents.DotNetBar.ButtonItem();
             this.btnVisaSubmit = new DevComponents.DotNetBar.ButtonItem();
@@ -166,7 +166,7 @@
             this.ribbonBar2.Dock = System.Windows.Forms.DockStyle.Left;
             this.ribbonBar2.DragDropSupport = true;
             this.ribbonBar2.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.btnVisaTypeIn,
+            this.btnSteelInfoManage,
             this.btnVisaInfoManage,
             this.btnVisaQuery,
             this.btnVisaSubmit,
@@ -188,15 +188,15 @@
             this.ribbonBar2.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonBar2.TitleVisible = false;
             // 
-            // btnVisaTypeIn
+            // btnSteelInfoManage
             // 
-            this.btnVisaTypeIn.Icon = ((System.Drawing.Icon)(resources.GetObject("btnVisaTypeIn.Icon")));
-            this.btnVisaTypeIn.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
-            this.btnVisaTypeIn.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnVisaTypeIn.Name = "btnVisaTypeIn";
-            this.btnVisaTypeIn.SubItemsExpandWidth = 14;
-            this.btnVisaTypeIn.Text = "签证录入";
-            this.btnVisaTypeIn.Click += new System.EventHandler(this.btnVisaTypeIn_Click);
+            this.btnSteelInfoManage.Icon = ((System.Drawing.Icon)(resources.GetObject("btnSteelInfoManage.Icon")));
+            this.btnSteelInfoManage.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
+            this.btnSteelInfoManage.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnSteelInfoManage.Name = "btnSteelInfoManage";
+            this.btnSteelInfoManage.SubItemsExpandWidth = 14;
+            this.btnSteelInfoManage.Text = "签证录入";
+            this.btnSteelInfoManage.Click += new System.EventHandler(this.btnVisaTypeIn_Click);
             // 
             // btnVisaInfoManage
             // 
@@ -619,7 +619,7 @@
         private System.Windows.Forms.ToolStripMenuItem btnMCloseOther;
         private DevComponents.DotNetBar.StyleManager styleManager1;
         private DevComponents.DotNetBar.ButtonItem btnVisaInfoManage;
-        private DevComponents.DotNetBar.ButtonItem btnVisaTypeIn;
+        private DevComponents.DotNetBar.ButtonItem btnSteelInfoManage;
         private DevComponents.DotNetBar.ButtonItem btnScanFrm;
         private DevComponents.DotNetBar.ButtonItem btnGPManage;
         private DevComponents.DotNetBar.ButtonItem btnFrmGaoPaiManage;

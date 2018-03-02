@@ -40,7 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionRecords.cs" />
+    <Compile Include="AuthDept.cs" />
+    <Compile Include="AuthUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PruchaseInfo.cs" />
+    <Compile Include="SaleInfo.cs" />
+    <Compile Include="SteelInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SteelManagement.DBUtility\SteelManagement.DBUtility.csproj">
