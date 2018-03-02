@@ -8,18 +8,18 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
 using DevComponents.DotNetBar;
 using SteelManagement.Common;
-using TravelAgency.Common;
+using SteelManagement;
 using TravelAgency.Model;
-using AuthUser = TravelAgency.BLL.AuthUser;
-using ProgramVersion = TravelAgency.BLL.ProgramVersion;
+using AuthUser = SteelManagement.BLL.AuthUser;
 
 namespace TravelAgency.CSUI.FrmMain
 {
     public partial class FrmLogin : Form
     {
-        private BLL.AuthUser _bllUser = new AuthUser();
-        BLL.ProgramVersion _bll = new ProgramVersion();
-        Model.ProgramVersion _model = new Model.ProgramVersion();
+        private SteelManagement.BLL.AuthUser _bllUser = new AuthUser();
+        SteelManagement.BLL.ProgramVersion _bll = new SteelManagement.BLL.ProgramVersion();
+
+        SteelManagement.Model.ProgramVersion _model = new SteelManagement.Model.ProgramVersion();
         private List<User> _users = new List<User>();
         private string _userDataFile = "UserData.bin";
 
@@ -76,16 +76,16 @@ namespace TravelAgency.CSUI.FrmMain
                 MessageBoxEx.Show("未找到指定用户!");
                 return;
             }
-            Common.GlobalUtils.LoginUser = list[0];
-            if (list[0].WorkId == "10000" || list[0].WorkId == "10301" || list[0].WorkId == "10302")
-            {
-                GlobalUtils.LoginUserLevel = RigthLevel.Manager;
-            }
-            else
-            {
-                GlobalUtils.LoginUserLevel = RigthLevel.Normal;
+            SteelManagement.Common.GlobalUtils.LoginUser = list[0];
+            //if (list[0].WorkId == "10000" || list[0].WorkId == "10301" || list[0].WorkId == "10302")
+            //{
+            //    GlobalUtils.LoginUserLevel = RigthLevel.Manager;
+            //}
+            //else
+            //{
+            //    GlobalUtils.LoginUserLevel = RigthLevel.Normal;
 
-            }
+            //}
             FrmMain frm = new FrmMain();
             frm.Show();
             this.Visible = false;

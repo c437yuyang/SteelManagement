@@ -148,8 +148,9 @@
             this.lbVisaInfoCount.Name = "lbVisaInfoCount";
             this.lbVisaInfoCount.Size = new System.Drawing.Size(490, 58);
             this.lbVisaInfoCount.TabIndex = 2;
-            this.lbVisaInfoCount.Text = "dasdasdsadasdas";
+            this.lbVisaInfoCount.Text = "test string";
             this.lbVisaInfoCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbVisaInfoCount.Visible = false;
             // 
             // ribbonBar2
             // 
@@ -196,7 +197,6 @@
             this.btnSteelInfoManage.Name = "btnSteelInfoManage";
             this.btnSteelInfoManage.SubItemsExpandWidth = 14;
             this.btnSteelInfoManage.Text = "签证录入";
-            this.btnSteelInfoManage.Click += new System.EventHandler(this.btnVisaTypeIn_Click);
             // 
             // btnVisaInfoManage
             // 
@@ -206,7 +206,6 @@
             this.btnVisaInfoManage.Name = "btnVisaInfoManage";
             this.btnVisaInfoManage.SubItemsExpandWidth = 14;
             this.btnVisaInfoManage.Text = "签证管理";
-            this.btnVisaInfoManage.Click += new System.EventHandler(this.btnVisaInfoManage_Click);
             // 
             // btnVisaQuery
             // 
@@ -216,7 +215,6 @@
             this.btnVisaQuery.Name = "btnVisaQuery";
             this.btnVisaQuery.SubItemsExpandWidth = 14;
             this.btnVisaQuery.Text = "团号管理";
-            this.btnVisaQuery.Click += new System.EventHandler(this.btnVisaQuery_Click);
             // 
             // btnVisaSubmit
             // 
@@ -226,7 +224,6 @@
             this.btnVisaSubmit.Name = "btnVisaSubmit";
             this.btnVisaSubmit.SubItemsExpandWidth = 14;
             this.btnVisaSubmit.Text = "送签管理";
-            this.btnVisaSubmit.Click += new System.EventHandler(this.buttonItem1_Click);
             // 
             // btnScanFrm
             // 
@@ -236,7 +233,6 @@
             this.btnScanFrm.Name = "btnScanFrm";
             this.btnScanFrm.SubItemsExpandWidth = 14;
             this.btnScanFrm.Text = "高拍仪做资料";
-            this.btnScanFrm.Click += new System.EventHandler(this.btnScanFrm_Click);
             // 
             // btnGPManage
             // 
@@ -246,7 +242,6 @@
             this.btnGPManage.Name = "btnGPManage";
             this.btnGPManage.SubItemsExpandWidth = 14;
             this.btnGPManage.Text = "高拍图像管理";
-            this.btnGPManage.Click += new System.EventHandler(this.btnGPManage_Click);
             // 
             // ribbonPanel1
             // 
@@ -312,7 +307,6 @@
             this.btntActionRecordsCount.Name = "btntActionRecordsCount";
             this.btntActionRecordsCount.SubItemsExpandWidth = 14;
             this.btntActionRecordsCount.Text = "操作记录明细";
-            this.btntActionRecordsCount.Click += new System.EventHandler(this.btntActionRecordsCount_Click);
             // 
             // btnPersonalCount
             // 
@@ -322,7 +316,6 @@
             this.btnPersonalCount.Name = "btnPersonalCount";
             this.btnPersonalCount.SubItemsExpandWidth = 14;
             this.btnPersonalCount.Text = "个人工作量统计";
-            this.btnPersonalCount.Click += new System.EventHandler(this.btnPersonalCount_Click);
             // 
             // btnCommisionMoneyManage
             // 
@@ -332,7 +325,6 @@
             this.btnCommisionMoneyManage.Name = "btnCommisionMoneyManage";
             this.btnCommisionMoneyManage.SubItemsExpandWidth = 14;
             this.btnCommisionMoneyManage.Text = "工作提成管理";
-            this.btnCommisionMoneyManage.Click += new System.EventHandler(this.btnCommisionMoneyManage_Click);
             // 
             // ribbonPanel2
             // 
@@ -398,7 +390,6 @@
             this.btnClientManage.Name = "btnClientManage";
             this.btnClientManage.SubItemsExpandWidth = 14;
             this.btnClientManage.Text = "客户收费管理";
-            this.btnClientManage.Click += new System.EventHandler(this.btnClientManage_Click);
             // 
             // btnConsulateManage
             // 
@@ -408,7 +399,6 @@
             this.btnConsulateManage.Name = "btnConsulateManage";
             this.btnConsulateManage.SubItemsExpandWidth = 14;
             this.btnConsulateManage.Text = "领馆收费管理";
-            this.btnConsulateManage.Click += new System.EventHandler(this.btnConsulateManage_Click);
             // 
             // ribbonBar3
             // 
@@ -449,7 +439,6 @@
             this.btnVisaRequestPayoutManage.Name = "btnVisaRequestPayoutManage";
             this.btnVisaRequestPayoutManage.SubItemsExpandWidth = 14;
             this.btnVisaRequestPayoutManage.Text = "签证请款管理";
-            this.btnVisaRequestPayoutManage.Click += new System.EventHandler(this.buttonItem1_Click_1);
             // 
             // btnAppAllManage
             // 
@@ -459,7 +448,6 @@
             this.btnAppAllManage.Name = "btnAppAllManage";
             this.btnAppAllManage.SubItemsExpandWidth = 14;
             this.btnAppAllManage.Text = "待审批请款";
-            this.btnAppAllManage.Click += new System.EventHandler(this.btnAppAllManage_Click);
             // 
             // ribbonPanel5
             // 

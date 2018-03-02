@@ -21,13 +21,18 @@ namespace TravelAgency.CSUI.FrmMain
         //    //OpenTab(frm, frm.Name);
         //}
 
+        private void BtnSteelInfoManage_Click(object sender, EventArgs e)
+        {
+
+        }
+
         #endregion
 
         public void OpenTab(Form frm, string Name)
         {
             if (IsOpenTab(Name))
                 return;
-            
+
             DevComponents.DotNetBar.TabItem tp = new DevComponents.DotNetBar.TabItem();
             DevComponents.DotNetBar.TabControlPanel tcp = new DevComponents.DotNetBar.TabControlPanel();
             tp.MouseDown += new MouseEventHandler(tp_MouseDown);
@@ -110,17 +115,21 @@ namespace TravelAgency.CSUI.FrmMain
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            this.Text = "东瀛假日:签证自动扫描识别系统V" + XmlHandler.GetPropramVersion();
+            this.Text = "钢材信息管理系统V" + XmlHandler.GetPropramVersion();
             this.Text = this.Text + "     当前登录用户:" + SteelManagement.Common.GlobalUtils.LoginUser.UserName;
             MinimumSize = Size;
             FrmsManager.OpenedForms.Add(this);
-            GlobalStat.UpdateStatistics();
-           string workId =  GlobalUtils.LoginUser.WorkId;
-            if (workId != "10000" && workId != "10301" && workId != "10302")
-            {
-                btnCommisionMoneyManage.Enabled = false;
-            }
+
+            InitCtrlEvents();
+
         }
+
+        private void InitCtrlEvents()
+        {
+            this.btnSteelInfoManage.Click += BtnSteelInfoManage_Click;
+        }
+
+
 
         private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
         {

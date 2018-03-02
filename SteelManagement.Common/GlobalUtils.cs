@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using DevComponents.DotNetBar;
 using SteelManagement.Common.FTP;
 //using SteelManagement.BLL;
+using SteelManagement.Model;
 using Application = System.Windows.Forms.Application;
 
 namespace SteelManagement.Common
