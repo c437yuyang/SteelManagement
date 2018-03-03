@@ -12,7 +12,7 @@ namespace SteelManagement.CSUI.FrmMain
 {
     public partial class FrmPurchaseInfoManage : Form
     {
-        private readonly SteelManagement.BLL.SteelInfo _bllSteelInfo = new SteelManagement.BLL.SteelInfo();
+        private readonly SteelManagement.BLL.PurchaseInfo _bllPurchaseInfo = new SteelManagement.BLL.PurchaseInfo();
 
         private int _curPage = 1;
         private int _pageCount = 0;
@@ -27,7 +27,7 @@ namespace SteelManagement.CSUI.FrmMain
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            _recordCount = _bllSteelInfo.GetRecordCount(_where);
+            _recordCount = _bllPurchaseInfo.GetRecordCount(_where);
             _pageCount = (int)Math.Ceiling(_recordCount / (double)_pageSize);
 
             //初始化一些控件
@@ -149,7 +149,7 @@ namespace SteelManagement.CSUI.FrmMain
             int curSelectedRow = -1;
             if (dataGridView1.SelectedRows.Count > 0)
                 curSelectedRow = dataGridView1.SelectedRows[0].Index;
-            dataGridView1.DataSource = _bllSteelInfo.GetListByPageOrderById(_where, _curPage, _pageSize);
+            dataGridView1.DataSource = _bllPurchaseInfo.GetListByPageOrderById(_where, _curPage, _pageSize);
             if (curSelectedRow != -1 && dataGridView1.Rows.Count > curSelectedRow)
                 dataGridView1.CurrentCell = dataGridView1.Rows[curSelectedRow].Cells[0];
             dataGridView1.Update();
@@ -157,7 +157,7 @@ namespace SteelManagement.CSUI.FrmMain
 
         private void UpdateState()
         {
-            _recordCount = _bllSteelInfo.GetRecordCount(_where);
+            _recordCount = _bllPurchaseInfo.GetRecordCount(_where);
             _pageCount = (int)Math.Ceiling((double)_recordCount / (double)_pageSize);
             if (_curPage == 1)
                 btnPagePre.Enabled = false;
@@ -285,13 +285,13 @@ namespace SteelManagement.CSUI.FrmMain
                 row.HeaderCell.Value = (i + 1).ToString();
 
                 //在这里控制单元格的显示
-                var price = DgvDataSourceToList()[i].Price;
-                if (price != null)
-                    dataGridView1["Price", i].Value = Math.Round(price.Value, 1);
+                //var price = DgvDataSourceToList()[i].Price;
+                //if (price != null)
+                //    dataGridView1["Price", i].Value = Math.Round(price.Value, 1);
 
-                var fluctuation = DgvDataSourceToList()[i].Fluctuation;
-                if (fluctuation != null)
-                    dataGridView1["Fluctuation", i].Value = Math.Round(fluctuation.Value, 1);
+                //var fluctuation = DgvDataSourceToList()[i].Fluctuation;
+                //if (fluctuation != null)
+                //    dataGridView1["Fluctuation", i].Value = Math.Round(fluctuation.Value, 1);
 
             }
         }
@@ -406,7 +406,7 @@ namespace SteelManagement.CSUI.FrmMain
             //var list = Common.Excel.ExcelParser.GetSteelListFromExcel(filename);
             //if (list == null || list.Count == 0)
             //    return;
-            //int res = _bllSteelInfo.AddList(list);
+            //int res = _bllPurchaseInfo.AddList(list);
             //GlobalUtils.MessageBoxWithRecordNum("导入", res, list.Count);
 
             //LoadDataToDgvAsyn();
@@ -414,25 +414,25 @@ namespace SteelManagement.CSUI.FrmMain
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            //FrmAddSteelInfo frm = new FrmAddSteelInfo(LoadDataToDataGridView, _curPage);
+            //FrmAddPurchaseInfo frm = new FrmAddPurchaseInfo(LoadDataToDataGridView, _curPage);
             //if (DialogResult.Cancel == frm.ShowDialog())
             //    return;
         }
         #endregion
 
-        private List<Model.SteelInfo> DgvDataSourceToList()
+        private List<Model.PurchaseInfo> DgvDataSourceToList()
         {
-            return dataGridView1.DataSource as List<Model.SteelInfo>;
+            return dataGridView1.DataSource as List<Model.PurchaseInfo>;
         }
 
         /// <summary>
         /// 返回当前选择的行的visaModel的List
         /// </summary>
         /// <returns></returns>
-        private List<Model.SteelInfo> GetSelectedModelList()
+        private List<Model.PurchaseInfo> GetSelectedModelList()
         {
-            var visaList = dataGridView1.DataSource as List<Model.SteelInfo>;
-            List<Model.SteelInfo> res = new List<SteelInfo>();
+            var visaList = dataGridView1.DataSource as List<Model.PurchaseInfo>;
+            List<Model.PurchaseInfo> res = new List<PurchaseInfo>();
             for (int i = dataGridView1.SelectedRows.Count - 1; i >= 0; i--)
                 res.Add(DgvDataSourceToList()[dataGridView1.SelectedRows[i].Index]);
             return res.Count > 0 ? res : null;
@@ -450,7 +450,7 @@ namespace SteelManagement.CSUI.FrmMain
                 == DialogResult.Cancel)
                 return;
             var modelList = GetSelectedModelList();
-            int res = _bllSteelInfo.DeleteList(modelList);
+            int res = _bllPurchaseInfo.DeleteList(modelList);
 
             GlobalUtils.MessageBoxWithRecordNum("删除", res, count);
             LoadDataToDataGridView(_curPage);
@@ -466,7 +466,7 @@ namespace SteelManagement.CSUI.FrmMain
                 MessageBoxEx.Show("请选中一条进行修改!");
                 return;
             }
-            FrmAddSteelInfo frm = new FrmAddSteelInfo(LoadDataToDataGridView, _curPage, true, list[0]);
+            FrmAddPurchaseInfo frm = new FrmAddPurchaseInfo(LoadDataToDataGridView, _curPage, true, list[0]);
             frm.ShowDialog();
         }
 

@@ -35,7 +35,7 @@
             this.lbVisaInfoCount = new System.Windows.Forms.Label();
             this.ribbonBar2 = new DevComponents.DotNetBar.RibbonBar();
             this.btnSteelInfoManage = new DevComponents.DotNetBar.ButtonItem();
-            this.btnVisaInfoManage = new DevComponents.DotNetBar.ButtonItem();
+            this.btnPurchaseInfoManage = new DevComponents.DotNetBar.ButtonItem();
             this.btnVisaQuery = new DevComponents.DotNetBar.ButtonItem();
             this.btnVisaSubmit = new DevComponents.DotNetBar.ButtonItem();
             this.btnScanFrm = new DevComponents.DotNetBar.ButtonItem();
@@ -168,7 +168,7 @@
             this.ribbonBar2.DragDropSupport = true;
             this.ribbonBar2.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.btnSteelInfoManage,
-            this.btnVisaInfoManage,
+            this.btnPurchaseInfoManage,
             this.btnVisaQuery,
             this.btnVisaSubmit,
             this.btnScanFrm,
@@ -198,14 +198,14 @@
             this.btnSteelInfoManage.SubItemsExpandWidth = 14;
             this.btnSteelInfoManage.Text = "签证录入";
             // 
-            // btnVisaInfoManage
+            // btnPurchaseInfoManage
             // 
-            this.btnVisaInfoManage.Icon = ((System.Drawing.Icon)(resources.GetObject("btnVisaInfoManage.Icon")));
-            this.btnVisaInfoManage.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
-            this.btnVisaInfoManage.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnVisaInfoManage.Name = "btnVisaInfoManage";
-            this.btnVisaInfoManage.SubItemsExpandWidth = 14;
-            this.btnVisaInfoManage.Text = "签证管理";
+            this.btnPurchaseInfoManage.Icon = ((System.Drawing.Icon)(resources.GetObject("btnPurchaseInfoManage.Icon")));
+            this.btnPurchaseInfoManage.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
+            this.btnPurchaseInfoManage.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnPurchaseInfoManage.Name = "btnPurchaseInfoManage";
+            this.btnPurchaseInfoManage.SubItemsExpandWidth = 14;
+            this.btnPurchaseInfoManage.Text = "签证管理";
             // 
             // btnVisaQuery
             // 
@@ -606,7 +606,7 @@
         private System.Windows.Forms.ToolStripMenuItem btnMCloseAll;
         private System.Windows.Forms.ToolStripMenuItem btnMCloseOther;
         private DevComponents.DotNetBar.StyleManager styleManager1;
-        private DevComponents.DotNetBar.ButtonItem btnVisaInfoManage;
+        private DevComponents.DotNetBar.ButtonItem btnPurchaseInfoManage;
         private DevComponents.DotNetBar.ButtonItem btnSteelInfoManage;
         private DevComponents.DotNetBar.ButtonItem btnScanFrm;
         private DevComponents.DotNetBar.ButtonItem btnGPManage;

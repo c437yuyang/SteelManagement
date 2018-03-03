@@ -20,7 +20,11 @@ namespace SteelManagement.CSUI.FrmMain
         //    //FrmVisaTypeIn frm = new FrmVisaTypeIn();
         //    //OpenTab(frm, frm.Name);
         //}
-
+        private void BtnPurchaseInfoManage_Click(object sender, EventArgs e)
+        {
+            FrmPurchaseInfoManage frm = new FrmPurchaseInfoManage();
+            OpenTab(frm, frm.Name);
+        }
         private void BtnSteelInfoManage_Click(object sender, EventArgs e)
         {
             FrmSteelInfoManage frm = new FrmSteelInfoManage();
@@ -128,6 +132,7 @@ namespace SteelManagement.CSUI.FrmMain
         private void InitCtrlEvents()
         {
             this.btnSteelInfoManage.Click += BtnSteelInfoManage_Click;
+            this.btnPurchaseInfoManage.Click += BtnPurchaseInfoManage_Click;
         }
 
 

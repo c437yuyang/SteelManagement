@@ -25,7 +25,7 @@ namespace SteelManagement.CSUI.FrmSub
             _model = model;
         }
 
-        public FrmAddPurchaseInfo(Action<int> updateDel, int curPage,SteelManagement.Model.SteelInfo model)
+        public FrmAddPurchaseInfo(Action<int> updateDel, int curPage, SteelManagement.Model.SteelInfo model)
         {
             this.StartPosition = FormStartPosition.CenterParent;
             InitializeComponent();
@@ -126,64 +126,82 @@ namespace SteelManagement.CSUI.FrmSub
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            //if (_is4Modify)
-            //{
-            //    try
-            //    {
-            //        _model.Name = txtName.Text;
-            //        _model.Size = txtSize.Text;
-            //        _model.Texture = txtTexture.Text;
-            //        _model.ProducePlace = txtBrand.Text;
-            //        _model.Price = decimal.Parse(txtQuote.Text);
-            //        _model.Fluctuation = decimal.Parse(txtFluctuation1.Text);
-            //        _model.Remark = txtTransportCost.Text;
-            //        _model.State = txtTotalMoney.Text;
-            //        if (!_bllPurchaseInfo.Update(_model))
-            //        {
-            //            MessageBoxEx.Show("更新失败，请稍后重试!");
-            //            return;
-            //        }
-            //        MessageBoxEx.Show("更新成功!");
-            //        _updateDel(_curPage);
-            //        this.DialogResult = DialogResult.OK;
-            //        this.Close();
-            //    }
-            //    catch (Exception)
-            //    {
-            //        MessageBoxEx.Show("请检查输入是否有误，价格为0请填入0!");
-            //        //throw;
-            //    }
-            //}
-            //else
-            //{
-            //    SteelManagement.Model.PurchaseInfo model = new SteelManagement.Model.PurchaseInfo();
-            //    try
-            //    {
-            //        model.Name = txtName.Text;
-            //        model.Size = txtSize.Text;
-            //        model.Texture = txtTexture.Text;
-            //        model.ProducePlace = txtBrand.Text;
-            //        model.Price = decimal.Parse(txtQuote.Text);
-            //        model.Fluctuation = decimal.Parse(txtFluctuation1.Text);
-            //        model.Remark = txtTransportCost.Text;
-            //        model.State = txtTotalMoney.Text;
-            //        model.EntryTime = DateTime.Now;
-            //        if (_bllPurchaseInfo.Add(model) <= 0)
-            //        {
-            //            MessageBoxEx.Show("添加失败，请稍后重试!");
-            //            return;
-            //        }
-            //        MessageBoxEx.Show("添加成功");
-            //        _updateDel(_curPage);
-            //        this.DialogResult = DialogResult.OK;
-            //        this.Close();
-            //    }
-            //    catch (Exception)
-            //    {
-            //        MessageBoxEx.Show("请检查输入是否有误，价格为0请填入0!");
-            //        //throw;
-            //    }
-            //}
+            if (_is4Modify)
+            {
+                try
+                {
+                    _model.Project = txtProject.Text;
+                    _model.Dateline = DateTime.Parse(txtDateline.Text);
+                    _model.Supplier = txtSupplier.Text;
+                    _model.Brand = txtBrand.Text;
+                    _model.TransportWay = txtTransportWay.Text;
+                    _model.Size = txtSize.Text;
+                    _model.Texture = txtTexture.Text;
+                    _model.Amount = decimal.Parse(txtAmount.Text);
+                    _model.Quote = decimal.Parse(txtQuote.Text);
+                    _model.Fluctuation1 = decimal.Parse(txtFluctuation1.Text);
+                    _model.TransportCost = decimal.Parse(txtTransportCost.Text);
+                    _model.Price = decimal.Parse(txtPrice.Text);
+                    _model.TotalMoney = decimal.Parse(txtTotalMoney.Text);
+                    _model.FuYuDate = DateTime.Parse(txtFuYuDate.Text);
+                    _model.Money1 = decimal.Parse(txtMoney1.Text);
+                    _model.InvoiceDate = DateTime.Parse(txtInvoiceDate.Text);
+                    _model.Money2 = decimal.Parse(txtMoney2.Text);
+                    if (!_bllPurchaseInfo.Update(_model))
+                    {
+                        MessageBoxEx.Show("更新失败，请稍后重试!");
+                        return;
+                    }
+                    MessageBoxEx.Show("更新成功!");
+                    _updateDel(_curPage);
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                catch (Exception)
+                {
+                    MessageBoxEx.Show("请检查输入是否有误，价格为0请填入0!");
+                    //throw;
+                }
+            }
+            else
+            {
+                SteelManagement.Model.PurchaseInfo model = new SteelManagement.Model.PurchaseInfo();
+                try
+                {
+                    model.Project = txtProject.Text;
+                    model.Dateline = DateTime.Parse(txtDateline.Text);
+                    model.Supplier = txtSupplier.Text;
+                    model.Brand = txtBrand.Text;
+                    model.TransportWay = txtTransportWay.Text;
+                    model.Size = txtSize.Text;
+                    model.Texture = txtTexture.Text;
+                    model.Amount = decimal.Parse(txtAmount.Text);
+                    model.Quote = decimal.Parse(txtQuote.Text);
+                    model.Fluctuation1 = decimal.Parse(txtFluctuation1.Text);
+                    model.TransportCost = decimal.Parse(txtTransportCost.Text);
+                    model.Price = decimal.Parse(txtPrice.Text);
+                    model.TotalMoney = decimal.Parse(txtTotalMoney.Text);
+                    model.FuYuDate = DateTime.Parse(txtFuYuDate.Text);
+                    model.Money1 = decimal.Parse(txtMoney1.Text);
+                    model.InvoiceDate = DateTime.Parse(txtInvoiceDate.Text);
+                    model.Money2 = decimal.Parse(txtMoney2.Text);
+                    model.EntryTime = DateTime.Now;
+                    if (_bllPurchaseInfo.Add(model) <= 0)
+                    {
+                        MessageBoxEx.Show("添加失败，请稍后重试!");
+                        return;
+                    }
+                    MessageBoxEx.Show("添加成功");
+                    _updateDel(_curPage);
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                catch (Exception)
+                {
+                    MessageBoxEx.Show("请检查输入是否有误，价格为0请填入0!");
+                    //throw;
+                }
+            }
 
         }
 
