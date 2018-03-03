@@ -31,6 +31,9 @@ namespace SteelManagement.CSUI.FrmSub
 
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
 
+            InitComboBoxs();
+
+
             if (_is4Modify)
             {
                 //把选中的加载到这里面
@@ -44,6 +47,61 @@ namespace SteelManagement.CSUI.FrmSub
                 txtState.Text = _model.State;
                 this.Text = "修改提成配置";
             }
+        }
+
+        private void InitComboBoxs()
+        {
+            string tablename = "SteelInfo";
+            var list = BLL.CommonBll.GetFieldList(tablename, "Name");
+            foreach (var item in list)
+            {
+                txtName.Items.Add(item);
+            }
+
+            list = BLL.CommonBll.GetFieldList(tablename, "Size");
+            foreach (var item in list)
+            {
+                txtSize.Items.Add(item);
+            }
+
+            list = BLL.CommonBll.GetFieldList(tablename, "Texture");
+            foreach (var item in list)
+            {
+                txtTexture.Items.Add(item);
+            }
+
+            list = BLL.CommonBll.GetFieldList(tablename, "ProducePlace");
+            foreach (var item in list)
+            {
+                txtProducePlace.Items.Add(item);
+            }
+
+            list = BLL.CommonBll.GetFieldList(tablename, "Price");
+            foreach (var item in list)
+            {
+                txtPrice.Items.Add(item);
+            }
+
+            list = BLL.CommonBll.GetFieldList(tablename, "Fluctuation");
+            foreach (var item in list)
+            {
+                txtFluctuation.Items.Add(item);
+            }
+
+            list = BLL.CommonBll.GetFieldList(tablename, "Remark");
+            foreach (var item in list)
+            {
+                txtRemark.Items.Add(item);
+            }
+
+            list = BLL.CommonBll.GetFieldList(tablename, "State");
+            foreach (var item in list)
+            {
+                txtState.Items.Add(item);
+            }
+
+
+
         }
 
         private void btnOK_Click(object sender, EventArgs e)
