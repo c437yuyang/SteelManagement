@@ -43,21 +43,32 @@ namespace SteelManagement.CSUI.FrmSub
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
 
             InitComboBoxs();
-            InitCtrlsBySteelInfoModel();
+            if (_steelInfomodel != null)
+                InitCtrlsBySteelInfoModel();
 
-            //if (_is4Modify)
-            //{
-            //    //把选中的加载到这里面
-            //    txtName.Text = _model.Name;
-            //    txtSize.Text = _model.Size;
-            //    txtTexture.Text = _model.Texture;
-            //    txtBrand.Text = _model.ProducePlace;
-            //    txtQuote.Text = _model.Price.ToString();
-            //    txtFluctuation1.Text = _model.Fluctuation.ToString();
-            //    txtTransportCost.Text = _model.Remark;
-            //    txtTotalMoney.Text = _model.State;
-            //    this.Text = "修改提成配置";
-            //}
+            if (_is4Modify)
+            {
+                //把选中的加载到这里面
+
+                txtProject.Text = _model.Project;
+                txtDateline.Text = _model.Dateline.ToString();
+                txtSupplier.Text = _model.Supplier;
+                txtBrand.Text = _model.Brand;
+                txtTransportWay.Text = _model.TransportWay;
+                txtSize.Text = _model.Size;
+                txtTexture.Text = _model.Texture;
+                txtAmount.Text = _model.Amount.ToString();
+                txtQuote.Text = _model.Quote.ToString();
+                txtFluctuation1.Text = _model.Fluctuation1.ToString();
+                txtTransportCost.Text = _model.TransportWay;
+                txtPrice.Text = _model.Price.ToString();
+                txtTotalMoney.Text = _model.TotalMoney.ToString();
+                txtFuYuDate.Text = _model.FuYuDate.ToString();
+                txtMoney1.Text = _model.Money1.ToString();
+                txtInvoiceDate.Text = _model.InvoiceDate.ToString();
+                txtMoney2.Text = _model.Money2.ToString();
+                this.Text = "修改采购信息";
+            }
         }
 
         private void InitCtrlsBySteelInfoModel()

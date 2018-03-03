@@ -45,7 +45,7 @@ namespace SteelManagement.CSUI.FrmSub
                 txtFluctuation.Text = _model.Fluctuation.ToString();
                 txtRemark.Text = _model.Remark;
                 txtState.Text = _model.State;
-                this.Text = "修改提成配置";
+                this.Text = "修改钢材";
             }
         }
 

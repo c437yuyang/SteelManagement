@@ -285,14 +285,37 @@ namespace SteelManagement.CSUI.FrmMain
                 row.HeaderCell.Value = (i + 1).ToString();
 
                 //在这里控制单元格的显示
-                //var price = DgvDataSourceToList()[i].Price;
-                //if (price != null)
-                //    dataGridView1["Price", i].Value = Math.Round(price.Value, 1);
+                var amount = DgvDataSourceToList()[i].Amount;
+                if (amount != null)
+                    dataGridView1["Amount", i].Value = Math.Round(amount.Value, 3);
 
-                //var fluctuation = DgvDataSourceToList()[i].Fluctuation;
-                //if (fluctuation != null)
-                //    dataGridView1["Fluctuation", i].Value = Math.Round(fluctuation.Value, 1);
+                var quote = DgvDataSourceToList()[i].Quote;
+                if (quote != null)
+                    dataGridView1["Quote", i].Value = Math.Round(quote.Value, 1);
 
+                var fluctuation1 = DgvDataSourceToList()[i].Fluctuation1;
+                if (fluctuation1 != null)
+                    dataGridView1["Fluctuation1", i].Value = Math.Round(fluctuation1.Value, 1);
+
+                var transportcost = DgvDataSourceToList()[i].TransportCost;
+                if (transportcost != null)
+                    dataGridView1["TransportCost", i].Value = Math.Round(transportcost.Value, 2);
+
+                var price = DgvDataSourceToList()[i].Price;
+                if (price != null)
+                    dataGridView1["Price", i].Value = Math.Round(price.Value, 1);
+
+                var totalMoney = DgvDataSourceToList()[i].TotalMoney;
+                if (totalMoney != null)
+                    dataGridView1["TotalMoney", i].Value = Math.Round(totalMoney.Value, 2);
+
+                var money1 = DgvDataSourceToList()[i].Money1;
+                if (money1 != null)
+                    dataGridView1["Money1", i].Value = Math.Round(money1.Value, 2);
+
+                var money2 = DgvDataSourceToList()[i].Money2;
+                if (money2 != null)
+                    dataGridView1["Money2", i].Value = Math.Round(money2.Value, 2);
             }
         }
 
