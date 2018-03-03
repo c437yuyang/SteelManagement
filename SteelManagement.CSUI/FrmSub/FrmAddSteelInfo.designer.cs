@@ -1,6 +1,6 @@
-﻿namespace TravelAgency.CSUI.Statistics.FrmSub
+﻿namespace SteelManagement.CSUI.FrmSub
 {
-    partial class FrmAddCommisionMoney
+    partial class FrmAddSteelInfo
     {
         /// <summary>
         /// Required designer variable.
@@ -31,12 +31,12 @@
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.btnCancel = new DevComponents.DotNetBar.ButtonX();
             this.btnOK = new DevComponents.DotNetBar.ButtonX();
-            this.txtType08 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtType07 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtType06 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtType05 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtType02 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtType00 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtRemark = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtFluctuation = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtPrice = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtProducePlace = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtTexture = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtSize = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
@@ -44,7 +44,9 @@
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.cbCountry = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.txtState = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX8 = new DevComponents.DotNetBar.LabelX();
+            this.txtName = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.panelEx1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,14 +54,17 @@
             // 
             this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx1.Controls.Add(this.txtName);
+            this.panelEx1.Controls.Add(this.txtState);
+            this.panelEx1.Controls.Add(this.labelX8);
             this.panelEx1.Controls.Add(this.btnCancel);
             this.panelEx1.Controls.Add(this.btnOK);
-            this.panelEx1.Controls.Add(this.txtType08);
-            this.panelEx1.Controls.Add(this.txtType07);
-            this.panelEx1.Controls.Add(this.txtType06);
-            this.panelEx1.Controls.Add(this.txtType05);
-            this.panelEx1.Controls.Add(this.txtType02);
-            this.panelEx1.Controls.Add(this.txtType00);
+            this.panelEx1.Controls.Add(this.txtRemark);
+            this.panelEx1.Controls.Add(this.txtFluctuation);
+            this.panelEx1.Controls.Add(this.txtPrice);
+            this.panelEx1.Controls.Add(this.txtProducePlace);
+            this.panelEx1.Controls.Add(this.txtTexture);
+            this.panelEx1.Controls.Add(this.txtSize);
             this.panelEx1.Controls.Add(this.labelX7);
             this.panelEx1.Controls.Add(this.labelX6);
             this.panelEx1.Controls.Add(this.labelX5);
@@ -67,12 +72,11 @@
             this.panelEx1.Controls.Add(this.labelX3);
             this.panelEx1.Controls.Add(this.labelX2);
             this.panelEx1.Controls.Add(this.labelX1);
-            this.panelEx1.Controls.Add(this.cbCountry);
             this.panelEx1.DisabledBackColor = System.Drawing.Color.Empty;
             this.panelEx1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEx1.Location = new System.Drawing.Point(0, 0);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(236, 303);
+            this.panelEx1.Size = new System.Drawing.Size(236, 283);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -86,7 +90,7 @@
             // 
             this.btnCancel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnCancel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnCancel.Location = new System.Drawing.Point(142, 268);
+            this.btnCancel.Location = new System.Drawing.Point(142, 249);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -98,7 +102,7 @@
             // 
             this.btnOK.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnOK.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnOK.Location = new System.Drawing.Point(23, 268);
+            this.btnOK.Location = new System.Drawing.Point(23, 249);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -106,83 +110,83 @@
             this.btnOK.Text = "确认";
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
-            // txtType08
+            // txtRemark
             // 
             // 
             // 
             // 
-            this.txtType08.Border.Class = "TextBoxBorder";
-            this.txtType08.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtType08.Location = new System.Drawing.Point(110, 228);
-            this.txtType08.Name = "txtType08";
-            this.txtType08.PreventEnterBeep = true;
-            this.txtType08.Size = new System.Drawing.Size(107, 21);
-            this.txtType08.TabIndex = 22;
+            this.txtRemark.Border.Class = "TextBoxBorder";
+            this.txtRemark.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtRemark.Location = new System.Drawing.Point(110, 183);
+            this.txtRemark.Name = "txtRemark";
+            this.txtRemark.PreventEnterBeep = true;
+            this.txtRemark.Size = new System.Drawing.Size(107, 21);
+            this.txtRemark.TabIndex = 22;
             // 
-            // txtType07
-            // 
-            // 
-            // 
-            // 
-            this.txtType07.Border.Class = "TextBoxBorder";
-            this.txtType07.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtType07.Location = new System.Drawing.Point(110, 174);
-            this.txtType07.Name = "txtType07";
-            this.txtType07.PreventEnterBeep = true;
-            this.txtType07.Size = new System.Drawing.Size(107, 21);
-            this.txtType07.TabIndex = 23;
-            // 
-            // txtType06
+            // txtFluctuation
             // 
             // 
             // 
             // 
-            this.txtType06.Border.Class = "TextBoxBorder";
-            this.txtType06.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtType06.Location = new System.Drawing.Point(110, 145);
-            this.txtType06.Name = "txtType06";
-            this.txtType06.PreventEnterBeep = true;
-            this.txtType06.Size = new System.Drawing.Size(107, 21);
-            this.txtType06.TabIndex = 24;
+            this.txtFluctuation.Border.Class = "TextBoxBorder";
+            this.txtFluctuation.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtFluctuation.Location = new System.Drawing.Point(110, 152);
+            this.txtFluctuation.Name = "txtFluctuation";
+            this.txtFluctuation.PreventEnterBeep = true;
+            this.txtFluctuation.Size = new System.Drawing.Size(107, 21);
+            this.txtFluctuation.TabIndex = 23;
             // 
-            // txtType05
-            // 
-            // 
-            // 
-            // 
-            this.txtType05.Border.Class = "TextBoxBorder";
-            this.txtType05.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtType05.Location = new System.Drawing.Point(110, 116);
-            this.txtType05.Name = "txtType05";
-            this.txtType05.PreventEnterBeep = true;
-            this.txtType05.Size = new System.Drawing.Size(107, 21);
-            this.txtType05.TabIndex = 25;
-            // 
-            // txtType02
+            // txtPrice
             // 
             // 
             // 
             // 
-            this.txtType02.Border.Class = "TextBoxBorder";
-            this.txtType02.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtType02.Location = new System.Drawing.Point(110, 66);
-            this.txtType02.Name = "txtType02";
-            this.txtType02.PreventEnterBeep = true;
-            this.txtType02.Size = new System.Drawing.Size(107, 21);
-            this.txtType02.TabIndex = 26;
+            this.txtPrice.Border.Class = "TextBoxBorder";
+            this.txtPrice.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtPrice.Location = new System.Drawing.Point(110, 123);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.PreventEnterBeep = true;
+            this.txtPrice.Size = new System.Drawing.Size(107, 21);
+            this.txtPrice.TabIndex = 24;
             // 
-            // txtType00
-            // 
-            // 
+            // txtProducePlace
             // 
             // 
-            this.txtType00.Border.Class = "TextBoxBorder";
-            this.txtType00.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtType00.Location = new System.Drawing.Point(110, 39);
-            this.txtType00.Name = "txtType00";
-            this.txtType00.PreventEnterBeep = true;
-            this.txtType00.Size = new System.Drawing.Size(107, 21);
-            this.txtType00.TabIndex = 27;
+            // 
+            // 
+            this.txtProducePlace.Border.Class = "TextBoxBorder";
+            this.txtProducePlace.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtProducePlace.Location = new System.Drawing.Point(110, 94);
+            this.txtProducePlace.Name = "txtProducePlace";
+            this.txtProducePlace.PreventEnterBeep = true;
+            this.txtProducePlace.Size = new System.Drawing.Size(107, 21);
+            this.txtProducePlace.TabIndex = 25;
+            // 
+            // txtTexture
+            // 
+            // 
+            // 
+            // 
+            this.txtTexture.Border.Class = "TextBoxBorder";
+            this.txtTexture.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtTexture.Location = new System.Drawing.Point(110, 66);
+            this.txtTexture.Name = "txtTexture";
+            this.txtTexture.PreventEnterBeep = true;
+            this.txtTexture.Size = new System.Drawing.Size(107, 21);
+            this.txtTexture.TabIndex = 26;
+            // 
+            // txtSize
+            // 
+            // 
+            // 
+            // 
+            this.txtSize.Border.Class = "TextBoxBorder";
+            this.txtSize.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtSize.Location = new System.Drawing.Point(110, 39);
+            this.txtSize.Name = "txtSize";
+            this.txtSize.PreventEnterBeep = true;
+            this.txtSize.Size = new System.Drawing.Size(107, 21);
+            this.txtSize.TabIndex = 27;
             // 
             // labelX7
             // 
@@ -190,11 +194,11 @@
             // 
             // 
             this.labelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX7.Location = new System.Drawing.Point(23, 203);
+            this.labelX7.Location = new System.Drawing.Point(23, 185);
             this.labelX7.Name = "labelX7";
-            this.labelX7.Size = new System.Drawing.Size(87, 65);
+            this.labelX7.Size = new System.Drawing.Size(87, 19);
             this.labelX7.TabIndex = 18;
-            this.labelX7.Text = "分发护照加出签安排，团签除外：";
+            this.labelX7.Text = "备注:";
             this.labelX7.WordWrap = true;
             // 
             // labelX6
@@ -203,11 +207,11 @@
             // 
             // 
             this.labelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX6.Location = new System.Drawing.Point(23, 174);
+            this.labelX6.Location = new System.Drawing.Point(23, 152);
             this.labelX6.Name = "labelX6";
             this.labelX6.Size = new System.Drawing.Size(75, 23);
             this.labelX6.TabIndex = 19;
-            this.labelX6.Text = "陪签:";
+            this.labelX6.Text = "涨跌:";
             // 
             // labelX5
             // 
@@ -215,11 +219,11 @@
             // 
             // 
             this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX5.Location = new System.Drawing.Point(23, 145);
+            this.labelX5.Location = new System.Drawing.Point(23, 123);
             this.labelX5.Name = "labelX5";
-            this.labelX5.Size = new System.Drawing.Size(75, 23);
+            this.labelX5.Size = new System.Drawing.Size(81, 23);
             this.labelX5.TabIndex = 20;
-            this.labelX5.Text = "取签:";
+            this.labelX5.Text = "价格(元/吨):";
             // 
             // labelX4
             // 
@@ -227,11 +231,11 @@
             // 
             // 
             this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX4.Location = new System.Drawing.Point(23, 116);
+            this.labelX4.Location = new System.Drawing.Point(23, 94);
             this.labelX4.Name = "labelX4";
             this.labelX4.Size = new System.Drawing.Size(75, 23);
             this.labelX4.TabIndex = 21;
-            this.labelX4.Text = "送签:";
+            this.labelX4.Text = "钢厂/产地:";
             // 
             // labelX3
             // 
@@ -243,7 +247,7 @@
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(87, 23);
             this.labelX3.TabIndex = 15;
-            this.labelX3.Text = "资料审查员:";
+            this.labelX3.Text = "材质:";
             // 
             // labelX2
             // 
@@ -255,7 +259,7 @@
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(63, 23);
             this.labelX2.TabIndex = 16;
-            this.labelX2.Text = "扫描录入:";
+            this.labelX2.Text = "规格:";
             // 
             // labelX1
             // 
@@ -267,44 +271,69 @@
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(46, 23);
             this.labelX1.TabIndex = 17;
-            this.labelX1.Text = "国家:";
+            this.labelX1.Text = "品名:";
             // 
-            // cbCountry
+            // txtState
             // 
-            this.cbCountry.DisplayMember = "Text";
-            this.cbCountry.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbCountry.ForeColor = System.Drawing.Color.Black;
-            this.cbCountry.FormattingEnabled = true;
-            this.cbCountry.ItemHeight = 15;
-            this.cbCountry.Location = new System.Drawing.Point(110, 12);
-            this.cbCountry.Name = "cbCountry";
-            this.cbCountry.Size = new System.Drawing.Size(107, 21);
-            this.cbCountry.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cbCountry.TabIndex = 14;
+            // 
+            // 
+            // 
+            this.txtState.Border.Class = "TextBoxBorder";
+            this.txtState.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtState.Location = new System.Drawing.Point(110, 210);
+            this.txtState.Name = "txtState";
+            this.txtState.PreventEnterBeep = true;
+            this.txtState.Size = new System.Drawing.Size(107, 21);
+            this.txtState.TabIndex = 32;
+            // 
+            // labelX8
+            // 
+            // 
+            // 
+            // 
+            this.labelX8.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX8.Location = new System.Drawing.Point(23, 212);
+            this.labelX8.Name = "labelX8";
+            this.labelX8.Size = new System.Drawing.Size(87, 19);
+            this.labelX8.TabIndex = 31;
+            this.labelX8.Text = "状态:";
+            this.labelX8.WordWrap = true;
+            // 
+            // txtName
+            // 
+            // 
+            // 
+            // 
+            this.txtName.Border.Class = "TextBoxBorder";
+            this.txtName.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtName.Location = new System.Drawing.Point(110, 10);
+            this.txtName.Name = "txtName";
+            this.txtName.PreventEnterBeep = true;
+            this.txtName.Size = new System.Drawing.Size(107, 21);
+            this.txtName.TabIndex = 33;
             // 
             // FrmAddCommisionMoney
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(236, 303);
+            this.ClientSize = new System.Drawing.Size(236, 283);
             this.Controls.Add(this.panelEx1);
             this.Name = "FrmAddCommisionMoney";
             this.Text = "新增钢材信息";
-            this.Load += new System.EventHandler(this.FrmAddCommisionMoney_Load);
+            this.Load += new System.EventHandler(this.FrmAddSteelInfo_Load);
             this.panelEx1.ResumeLayout(false);
             this.ResumeLayout(false);
-
         }
 
         #endregion
 
         private DevComponents.DotNetBar.PanelEx panelEx1;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtType08;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtType07;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtType06;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtType05;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtType02;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtType00;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtRemark;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtFluctuation;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtPrice;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtProducePlace;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtTexture;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtSize;
         private DevComponents.DotNetBar.LabelX labelX7;
         private DevComponents.DotNetBar.LabelX labelX6;
         private DevComponents.DotNetBar.LabelX labelX5;
@@ -312,8 +341,10 @@
         private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.LabelX labelX1;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx cbCountry;
         private DevComponents.DotNetBar.ButtonX btnCancel;
         private DevComponents.DotNetBar.ButtonX btnOK;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtName;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtState;
+        private DevComponents.DotNetBar.LabelX labelX8;
     }
 }

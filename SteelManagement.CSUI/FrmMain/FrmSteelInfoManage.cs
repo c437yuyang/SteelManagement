@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using DevComponents.DotNetBar;
 using SteelManagement.Common;
+using SteelManagement.CSUI.FrmSub;
 using SteelManagement.CSUI.Properties;
 using SteelManagement.Model;
 
@@ -418,19 +419,14 @@ namespace SteelManagement.CSUI.FrmMain
         #endregion
 
 
+        #region 按钮事件
         private void btnCreateReport_Click(object sender, EventArgs e)
         {
             //ExcelGenerator.GetStatisticPersonalTable(dataGridView1.DataSource as List<Model.PersonalStat>);
         }
 
-
-
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void btnAddFromExcel_Click(object sender, EventArgs e)
         {
-            //FrmAddClientCharge frm = new FrmAddClientCharge(LoadDataToDataGridView,_curPage);
-            //if(DialogResult.Cancel==frm.ShowDialog())
-            //    return;
-
             string filename = GlobalUtils.ShowOpenFileDlg("Excel文件|*.xls;*.xlsx");
             if (string.IsNullOrEmpty(filename))
                 return;
@@ -442,8 +438,15 @@ namespace SteelManagement.CSUI.FrmMain
             GlobalUtils.MessageBoxWithRecordNum("导入", res, list.Count);
 
             LoadDataToDgvAsyn();
-
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            FrmAddSteelInfo frm = new FrmAddSteelInfo(LoadDataToDataGridView, _curPage);
+            if (DialogResult.Cancel == frm.ShowDialog())
+                return;
+        }
+        #endregion
 
         private List<Model.SteelInfo> DgvDataSourceToList()
         {
@@ -491,11 +494,9 @@ namespace SteelManagement.CSUI.FrmMain
                 MessageBoxEx.Show("请选中一条进行修改!");
                 return;
             }
-            //FrmAddClientCharge frm = new FrmAddClientCharge(LoadDataToDataGridView, _curPage, true, list[0]);
-            //frm.ShowDialog();
+            FrmAddSteelInfo frm = new FrmAddSteelInfo(LoadDataToDataGridView, _curPage, true, list[0]);
+            frm.ShowDialog();
         }
-
-
 
 
     }

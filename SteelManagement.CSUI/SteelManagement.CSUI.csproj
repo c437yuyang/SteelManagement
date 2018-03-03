@@ -91,11 +91,11 @@
     <Compile Include="FrmMain\FrmSteelInfoManage.designer.cs">
       <DependentUpon>FrmSteelInfoManage.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmSub\FrmAddCommisionMoney.cs">
+    <Compile Include="FrmSub\FrmAddSteelInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmSub\FrmAddCommisionMoney.designer.cs">
-      <DependentUpon>FrmAddCommisionMoney.cs</DependentUpon>
+    <Compile Include="FrmSub\FrmAddSteelInfo.designer.cs">
+      <DependentUpon>FrmAddSteelInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -108,8 +108,8 @@
     <EmbeddedResource Include="FrmMain\FrmSteelInfoManage.resx">
       <DependentUpon>FrmSteelInfoManage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmSub\FrmAddCommisionMoney.resx">
-      <DependentUpon>FrmAddCommisionMoney.cs</DependentUpon>
+    <EmbeddedResource Include="FrmSub\FrmAddSteelInfo.resx">
+      <DependentUpon>FrmAddSteelInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
