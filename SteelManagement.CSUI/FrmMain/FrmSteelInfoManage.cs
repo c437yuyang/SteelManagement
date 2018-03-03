@@ -19,6 +19,10 @@ namespace SteelManagement.CSUI.FrmMain
         private int _recordCount = 0;
         private string _where = string.Empty;
 
+        public FrmSteelInfoManage()
+        {
+            InitializeComponent();
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -44,6 +48,7 @@ namespace SteelManagement.CSUI.FrmMain
             dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders; //这里也一定不能AllCell自适应!
             dataGridView1.DefaultCellStyle.Font = new Font("微软雅黑", 9.0f, FontStyle.Bold);
             dataGridView1.DoubleClick += DataGridView1_DoubleClick;
+            dataGridView1.ReadOnly = true;
 
             bgWorkerLoadData.WorkerReportsProgress = true;
 
@@ -143,7 +148,7 @@ namespace SteelManagement.CSUI.FrmMain
             int curSelectedRow = -1;
             if (dataGridView1.SelectedRows.Count > 0)
                 curSelectedRow = dataGridView1.SelectedRows[0].Index;
-            dataGridView1.DataSource = _bllSteelInfo.GetListByPageOrderByEntryTime(_where, _curPage, _pageSize);
+            dataGridView1.DataSource = _bllSteelInfo.GetListByPageOrderById(_where, _curPage, _pageSize);
             if (curSelectedRow != -1 && dataGridView1.Rows.Count > curSelectedRow)
                 dataGridView1.CurrentCell = dataGridView1.Rows[curSelectedRow].Cells[0];
             dataGridView1.Update();
@@ -305,6 +310,16 @@ namespace SteelManagement.CSUI.FrmMain
             {
                 DataGridViewRow row = dataGridView1.Rows[i];
                 row.HeaderCell.Value = (i + 1).ToString();
+
+                //在这里控制单元格的显示
+                var price = DgvDataSourceToList()[i].Price;
+                if (price != null)
+                    dataGridView1["Price", i].Value = Math.Round(price.Value, 1);
+
+                var fluctuation = DgvDataSourceToList()[i].Fluctuation;
+                if (fluctuation != null)
+                    dataGridView1["Fluctuation", i].Value = Math.Round(fluctuation.Value, 1);
+
             }
         }
 
@@ -459,15 +474,10 @@ namespace SteelManagement.CSUI.FrmMain
             if (MessageBoxEx.Show("确认删除" + count + "条记录?", "提醒", MessageBoxButtons.OKCancel)
                 == DialogResult.Cancel)
                 return;
-            int n = 0;
             var modelList = GetSelectedModelList();
-            for (int i = 0; i != modelList.Count; ++i)
-            {
-                if (!_bllSteelInfo.Delete(modelList[i].Id))
-                    MessageBoxEx.Show("删除失败!");
-                ++n;
-            }
-            GlobalUtils.MessageBoxWithRecordNum("删除", n, count);
+            int res = _bllSteelInfo.DeleteList(modelList);
+
+            GlobalUtils.MessageBoxWithRecordNum("删除", res, count);
             LoadDataToDataGridView(_curPage);
             UpdateState();
         }

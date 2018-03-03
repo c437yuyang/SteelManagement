@@ -73,18 +73,16 @@
             this.韩国担保函ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.韩国加急申请书ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bgWorkerLoadData = new System.ComponentModel.BackgroundWorker();
-            this.cms4AddToExport = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.添加到送签统计ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EntryTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvCol_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Size = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvCol_Size = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Texture = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProducePlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fluctuation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.State = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelMain.SuspendLayout();
             this.panelDgv.SuspendLayout();
@@ -92,7 +90,6 @@
             this.panelSerachBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bar1)).BeginInit();
             this.cmsDgvRb.SuspendLayout();
-            this.cms4AddToExport.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -111,30 +108,29 @@
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
             this.EntryTime,
             this.dgvCol_Name,
-            this.Size,
+            this.dgvCol_Size,
             this.Texture,
             this.ProducePlace,
             this.Price,
             this.Fluctuation,
             this.Remark,
-            this.State});
+            this.State,
+            this.Id});
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
+            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -560,78 +556,66 @@
             this.bgWorkerLoadData.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.bgWorkerLoadData_ProgressChanged);
             this.bgWorkerLoadData.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgWorkerLoadData_RunWorkerCompleted);
             // 
-            // cms4AddToExport
-            // 
-            this.cms4AddToExport.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.添加到送签统计ToolStripMenuItem});
-            this.cms4AddToExport.Name = "cms4AddToExport";
-            this.cms4AddToExport.Size = new System.Drawing.Size(69, 26);
-            // 
-            // 添加到送签统计ToolStripMenuItem
-            // 
-            this.添加到送签统计ToolStripMenuItem.Name = "添加到送签统计ToolStripMenuItem";
-            this.添加到送签统计ToolStripMenuItem.Size = new System.Drawing.Size(68, 22);
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            // 
             // EntryTime
             // 
+            this.EntryTime.DataPropertyName = "EntryTime";
             this.EntryTime.HeaderText = "录入时间";
             this.EntryTime.Name = "EntryTime";
-            this.EntryTime.ReadOnly = true;
             // 
             // dgvCol_Name
             // 
+            this.dgvCol_Name.DataPropertyName = "Name";
             this.dgvCol_Name.HeaderText = "品名";
             this.dgvCol_Name.Name = "dgvCol_Name";
-            this.dgvCol_Name.ReadOnly = true;
             // 
-            // Size
+            // dgvCol_Size
             // 
-            this.Size.HeaderText = "规格(mm)";
-            this.Size.Name = "Size";
-            this.Size.ReadOnly = true;
+            this.dgvCol_Size.DataPropertyName = "Size";
+            this.dgvCol_Size.HeaderText = "规格(mm)";
+            this.dgvCol_Size.Name = "dgvCol_Size";
             // 
             // Texture
             // 
+            this.Texture.DataPropertyName = "Texture";
             this.Texture.HeaderText = "材质";
             this.Texture.Name = "Texture";
-            this.Texture.ReadOnly = true;
             // 
             // ProducePlace
             // 
+            this.ProducePlace.DataPropertyName = "ProducePlace";
             this.ProducePlace.HeaderText = "钢厂/产地";
             this.ProducePlace.Name = "ProducePlace";
-            this.ProducePlace.ReadOnly = true;
             // 
             // Price
             // 
+            this.Price.DataPropertyName = "Price";
             this.Price.HeaderText = "价格(元/吨)";
             this.Price.Name = "Price";
-            this.Price.ReadOnly = true;
             // 
             // Fluctuation
             // 
+            this.Fluctuation.DataPropertyName = "Fluctuation";
             this.Fluctuation.HeaderText = "涨跌";
             this.Fluctuation.Name = "Fluctuation";
-            this.Fluctuation.ReadOnly = true;
             // 
             // Remark
             // 
+            this.Remark.DataPropertyName = "Remark";
             this.Remark.HeaderText = "备注";
             this.Remark.Name = "Remark";
-            this.Remark.ReadOnly = true;
             // 
             // State
             // 
+            this.State.DataPropertyName = "State";
             this.State.HeaderText = "状态";
             this.State.Name = "State";
-            this.State.ReadOnly = true;
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
             // 
             // FrmSteelInfoManage
             // 
@@ -649,7 +633,6 @@
             this.panelSerachBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bar1)).EndInit();
             this.cmsDgvRb.ResumeLayout(false);
-            this.cms4AddToExport.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -682,8 +665,6 @@
         private System.Windows.Forms.ToolStripMenuItem 人申请表ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 机票报表ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 外领担保函ToolStripMenuItem;
-        private System.Windows.Forms.ContextMenuStrip cms4AddToExport;
-        private System.Windows.Forms.ToolStripMenuItem 添加到送签统计ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 韩国担保函ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 韩国加急申请书ToolStripMenuItem;
         private DevComponents.DotNetBar.ButtonItem btnGeneratePersonalReport;
@@ -699,16 +680,16 @@
         private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cbDisplayType;
         private DevComponents.DotNetBar.LabelX labelX15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn EntryTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvCol_Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Size;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvCol_Size;
         private System.Windows.Forms.DataGridViewTextBoxColumn Texture;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProducePlace;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fluctuation;
         private System.Windows.Forms.DataGridViewTextBoxColumn Remark;
         private System.Windows.Forms.DataGridViewTextBoxColumn State;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
     }
 }
 

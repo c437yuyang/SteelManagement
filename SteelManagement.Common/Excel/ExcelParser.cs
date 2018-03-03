@@ -30,10 +30,10 @@ namespace SteelManagement.Common.Excel
                 model.Size = row.GetCell(1).StringCellValue;
                 model.Texture = row.GetCell(2).StringCellValue;
                 model.ProducePlace = row.GetCell(3).StringCellValue;
-                model.Price = decimal.Parse(row.GetCell(3).NumericCellValue.ToString());
-                model.Fluctuation = decimal.Parse(row.GetCell(4).NumericCellValue.ToString());
-                model.Remark = row.GetCell(5).StringCellValue;
-                model.State = row.GetCell(6).StringCellValue;
+                model.Price = decimal.Parse(row.GetCell(4).NumericCellValue.ToString());
+                model.Fluctuation = decimal.Parse(row.GetCell(5).NumericCellValue.ToString());
+                model.Remark = row.GetCell(6).StringCellValue;
+                model.State = row.GetCell(7).StringCellValue;
                 res.Add(model);
             }
             return res.Count == 0 ? null : res;
