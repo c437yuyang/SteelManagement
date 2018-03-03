@@ -86,7 +86,7 @@ namespace TravelAgency.CSUI.FrmMain
             //    GlobalUtils.LoginUserLevel = RigthLevel.Normal;
 
             //}
-            FrmMain frm = new FrmMain();
+            SteelManagement.CSUI.FrmMain.FrmMain frm = new SteelManagement.CSUI.FrmMain.FrmMain();
             frm.Show();
             this.Visible = false;
         }

@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using DevComponents.DotNetBar;
 using SteelManagement.Common;
 
-namespace TravelAgency.CSUI.FrmMain
+namespace SteelManagement.CSUI.FrmMain
 {
     public partial class FrmMain : Form
     {
@@ -23,7 +23,8 @@ namespace TravelAgency.CSUI.FrmMain
 
         private void BtnSteelInfoManage_Click(object sender, EventArgs e)
         {
-
+            FrmSteelInfoManage frm = new FrmSteelInfoManage();
+            OpenTab(frm, frm.Name);
         }
 
         #endregion

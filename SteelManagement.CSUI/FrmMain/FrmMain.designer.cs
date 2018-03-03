@@ -1,4 +1,4 @@
-﻿namespace TravelAgency.CSUI.FrmMain
+﻿namespace SteelManagement.CSUI.FrmMain
 {
     partial class FrmMain
     {
