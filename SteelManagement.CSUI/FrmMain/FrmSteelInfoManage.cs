@@ -465,6 +465,7 @@ namespace SteelManagement.CSUI.FrmMain
                 res.Add(DgvDataSourceToList()[dataGridView1.SelectedRows[i].Index]);
             return res.Count > 0 ? res : null;
         }
+        #region 右键菜单响应
         private void 删除ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //if (GlobalUtils.LoginUserLevel != RigthLevel.Manager)
@@ -498,6 +499,18 @@ namespace SteelManagement.CSUI.FrmMain
             frm.ShowDialog();
         }
 
+        private void 采购ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var list = GetSelectedModelList();
 
+            if (list.Count > 1)
+            {
+                MessageBoxEx.Show("请选中一条进行采购!");
+                return;
+            }
+            FrmAddPurchaseInfo frm = new FrmAddPurchaseInfo(LoadDataToDataGridView, _curPage, list[0]);
+            frm.ShowDialog();
+        }
+        #endregion
     }
 }

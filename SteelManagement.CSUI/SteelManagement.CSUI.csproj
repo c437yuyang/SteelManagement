@@ -97,6 +97,12 @@
     <Compile Include="FrmMain\FrmSteelInfoManage.designer.cs">
       <DependentUpon>FrmSteelInfoManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmSub\FrmAddPurchaseInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSub\FrmAddPurchaseInfo.designer.cs">
+      <DependentUpon>FrmAddPurchaseInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmSub\FrmAddSteelInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain\FrmSteelInfoManage.resx">
       <DependentUpon>FrmSteelInfoManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSub\FrmAddPurchaseInfo.resx">
+      <DependentUpon>FrmAddPurchaseInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSub\FrmAddSteelInfo.resx">
       <DependentUpon>FrmAddSteelInfo.cs</DependentUpon>
