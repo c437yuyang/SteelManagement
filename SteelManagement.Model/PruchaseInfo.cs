@@ -2,12 +2,12 @@
 namespace SteelManagement.Model
 {
 	/// <summary>
-	/// PruchaseInfo:实体类(属性说明自动提取数据库字段的描述信息)
+	/// PurchaseInfo:实体类(属性说明自动提取数据库字段的描述信息)
 	/// </summary>
 	[Serializable]
-	public partial class PruchaseInfo
+	public partial class PurchaseInfo
 	{
-		public PruchaseInfo()
+		public PurchaseInfo()
 		{}
 		#region Model
 		private int _id;

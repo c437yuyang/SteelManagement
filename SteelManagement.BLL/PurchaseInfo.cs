@@ -5,12 +5,12 @@ using SteelManagement.Model;
 namespace SteelManagement.BLL
 {
 	/// <summary>
-	/// PruchaseInfo
+	/// PurchaseInfo
 	/// </summary>
-	public partial class PruchaseInfo
+	public partial class PurchaseInfo
 	{
-		private readonly SteelManagement.DAL.PruchaseInfo dal=new SteelManagement.DAL.PruchaseInfo();
-		public PruchaseInfo()
+		private readonly SteelManagement.DAL.PurchaseInfo dal=new SteelManagement.DAL.PurchaseInfo();
+		public PurchaseInfo()
 		{}
 		#region  BasicMethod
 
@@ -33,7 +33,7 @@ namespace SteelManagement.BLL
 		/// <summary>
 		/// 增加一条数据
 		/// </summary>
-		public int  Add(SteelManagement.Model.PruchaseInfo model)
+		public int  Add(SteelManagement.Model.PurchaseInfo model)
 		{
 			return dal.Add(model);
 		}
@@ -41,7 +41,7 @@ namespace SteelManagement.BLL
 		/// <summary>
 		/// 更新一条数据
 		/// </summary>
-		public bool Update(SteelManagement.Model.PruchaseInfo model)
+		public bool Update(SteelManagement.Model.PurchaseInfo model)
 		{
 			return dal.Update(model);
 		}
@@ -65,7 +65,7 @@ namespace SteelManagement.BLL
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
-		public SteelManagement.Model.PruchaseInfo GetModel(int Id)
+		public SteelManagement.Model.PurchaseInfo GetModel(int Id)
 		{
 			
 			return dal.GetModel(Id);
@@ -74,10 +74,10 @@ namespace SteelManagement.BLL
 		///// <summary>
 		///// 得到一个对象实体，从缓存中
 		///// </summary>
-		//public SteelManagement.Model.PruchaseInfo GetModelByCache(int Id)
+		//public SteelManagement.Model.PurchaseInfo GetModelByCache(int Id)
 		//{
 			
-		//	string CacheKey = "PruchaseInfoModel-" + Id;
+		//	string CacheKey = "PurchaseInfoModel-" + Id;
 		//	object objModel = Maticsoft.Common.DataCache.GetCache(CacheKey);
 		//	if (objModel == null)
 		//	{
@@ -92,7 +92,7 @@ namespace SteelManagement.BLL
 		//		}
 		//		catch{}
 		//	}
-		//	return (SteelManagement.Model.PruchaseInfo)objModel;
+		//	return (SteelManagement.Model.PurchaseInfo)objModel;
 		//}
 
 		/// <summary>
@@ -112,7 +112,7 @@ namespace SteelManagement.BLL
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>
-		public List<SteelManagement.Model.PruchaseInfo> GetModelList(string strWhere)
+		public List<SteelManagement.Model.PurchaseInfo> GetModelList(string strWhere)
 		{
 			DataSet ds = dal.GetList(strWhere);
 			return DataTableToList(ds.Tables[0]);
@@ -120,13 +120,13 @@ namespace SteelManagement.BLL
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>
-		public List<SteelManagement.Model.PruchaseInfo> DataTableToList(DataTable dt)
+		public List<SteelManagement.Model.PurchaseInfo> DataTableToList(DataTable dt)
 		{
-			List<SteelManagement.Model.PruchaseInfo> modelList = new List<SteelManagement.Model.PruchaseInfo>();
+			List<SteelManagement.Model.PurchaseInfo> modelList = new List<SteelManagement.Model.PurchaseInfo>();
 			int rowsCount = dt.Rows.Count;
 			if (rowsCount > 0)
 			{
-				SteelManagement.Model.PruchaseInfo model;
+				SteelManagement.Model.PurchaseInfo model;
 				for (int n = 0; n < rowsCount; n++)
 				{
 					model = dal.DataRowToModel(dt.Rows[n]);

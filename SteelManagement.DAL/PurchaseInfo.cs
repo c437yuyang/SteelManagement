@@ -6,11 +6,11 @@ using Maticsoft.DBUtility;//Please add references
 namespace SteelManagement.DAL
 {
 	/// <summary>
-	/// 数据访问类:PruchaseInfo
+	/// 数据访问类:PurchaseInfo
 	/// </summary>
-	public partial class PruchaseInfo
+	public partial class PurchaseInfo
 	{
-		public PruchaseInfo()
+		public PurchaseInfo()
 		{}
 		#region  BasicMethod
 
@@ -19,7 +19,7 @@ namespace SteelManagement.DAL
 		/// </summary>
 		public int GetMaxId()
 		{
-		return DbHelperSQL.GetMaxID("Id", "PruchaseInfo"); 
+		return DbHelperSQL.GetMaxID("Id", "PurchaseInfo"); 
 		}
 
 		/// <summary>
@@ -28,7 +28,7 @@ namespace SteelManagement.DAL
 		public bool Exists(int Id)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select count(1) from PruchaseInfo");
+			strSql.Append("select count(1) from PurchaseInfo");
 			strSql.Append(" where Id=@Id");
 			SqlParameter[] parameters = {
 					new SqlParameter("@Id", SqlDbType.Int,4)
@@ -42,10 +42,10 @@ namespace SteelManagement.DAL
 		/// <summary>
 		/// 增加一条数据
 		/// </summary>
-		public int Add(SteelManagement.Model.PruchaseInfo model)
+		public int Add(SteelManagement.Model.PurchaseInfo model)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("insert into PruchaseInfo(");
+			strSql.Append("insert into PurchaseInfo(");
 			strSql.Append("EntryTime,Project,Dateline,Supplier,Brand,TransportWay,Size,Texture,Amount,Quote,Fluctuation1,TransportCost,Price,TotalMoney,FuYuDate,Money1,InvoiceDate,Money2)");
 			strSql.Append(" values (");
 			strSql.Append("@EntryTime,@Project,@Dateline,@Supplier,@Brand,@TransportWay,@Size,@Texture,@Amount,@Quote,@Fluctuation1,@TransportCost,@Price,@TotalMoney,@FuYuDate,@Money1,@InvoiceDate,@Money2)");
@@ -101,10 +101,10 @@ namespace SteelManagement.DAL
 		/// <summary>
 		/// 更新一条数据
 		/// </summary>
-		public bool Update(SteelManagement.Model.PruchaseInfo model)
+		public bool Update(SteelManagement.Model.PurchaseInfo model)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("update PruchaseInfo set ");
+			strSql.Append("update PurchaseInfo set ");
 			strSql.Append("EntryTime=@EntryTime,");
 			strSql.Append("Project=@Project,");
 			strSql.Append("Dateline=@Dateline,");
@@ -182,7 +182,7 @@ namespace SteelManagement.DAL
 		{
 			
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("delete from PruchaseInfo ");
+			strSql.Append("delete from PurchaseInfo ");
 			strSql.Append(" where Id=@Id");
 			SqlParameter[] parameters = {
 					new SqlParameter("@Id", SqlDbType.Int,4)
@@ -205,7 +205,7 @@ namespace SteelManagement.DAL
 		public bool DeleteList(string Idlist )
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("delete from PruchaseInfo ");
+			strSql.Append("delete from PurchaseInfo ");
 			strSql.Append(" where Id in ("+Idlist + ")  ");
 			int rows=DbHelperSQL.ExecuteSql(strSql.ToString());
 			if (rows > 0)
@@ -222,18 +222,18 @@ namespace SteelManagement.DAL
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
-		public SteelManagement.Model.PruchaseInfo GetModel(int Id)
+		public SteelManagement.Model.PurchaseInfo GetModel(int Id)
 		{
 			
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select  top 1 Id,EntryTime,Project,Dateline,Supplier,Brand,TransportWay,Size,Texture,Amount,Quote,Fluctuation1,TransportCost,Price,TotalMoney,FuYuDate,Money1,InvoiceDate,Money2 from PruchaseInfo ");
+			strSql.Append("select  top 1 Id,EntryTime,Project,Dateline,Supplier,Brand,TransportWay,Size,Texture,Amount,Quote,Fluctuation1,TransportCost,Price,TotalMoney,FuYuDate,Money1,InvoiceDate,Money2 from PurchaseInfo ");
 			strSql.Append(" where Id=@Id");
 			SqlParameter[] parameters = {
 					new SqlParameter("@Id", SqlDbType.Int,4)
 			};
 			parameters[0].Value = Id;
 
-			SteelManagement.Model.PruchaseInfo model=new SteelManagement.Model.PruchaseInfo();
+			SteelManagement.Model.PurchaseInfo model=new SteelManagement.Model.PurchaseInfo();
 			DataSet ds=DbHelperSQL.Query(strSql.ToString(),parameters);
 			if(ds.Tables[0].Rows.Count>0)
 			{
@@ -249,9 +249,9 @@ namespace SteelManagement.DAL
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
-		public SteelManagement.Model.PruchaseInfo DataRowToModel(DataRow row)
+		public SteelManagement.Model.PurchaseInfo DataRowToModel(DataRow row)
 		{
-			SteelManagement.Model.PruchaseInfo model=new SteelManagement.Model.PruchaseInfo();
+			SteelManagement.Model.PurchaseInfo model=new SteelManagement.Model.PurchaseInfo();
 			if (row != null)
 			{
 				if(row["Id"]!=null && row["Id"].ToString()!="")
@@ -341,7 +341,7 @@ namespace SteelManagement.DAL
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("select Id,EntryTime,Project,Dateline,Supplier,Brand,TransportWay,Size,Texture,Amount,Quote,Fluctuation1,TransportCost,Price,TotalMoney,FuYuDate,Money1,InvoiceDate,Money2 ");
-			strSql.Append(" FROM PruchaseInfo ");
+			strSql.Append(" FROM PurchaseInfo ");
 			if(strWhere.Trim()!="")
 			{
 				strSql.Append(" where "+strWhere);
@@ -361,7 +361,7 @@ namespace SteelManagement.DAL
 				strSql.Append(" top "+Top.ToString());
 			}
 			strSql.Append(" Id,EntryTime,Project,Dateline,Supplier,Brand,TransportWay,Size,Texture,Amount,Quote,Fluctuation1,TransportCost,Price,TotalMoney,FuYuDate,Money1,InvoiceDate,Money2 ");
-			strSql.Append(" FROM PruchaseInfo ");
+			strSql.Append(" FROM PurchaseInfo ");
 			if(strWhere.Trim()!="")
 			{
 				strSql.Append(" where "+strWhere);
@@ -376,7 +376,7 @@ namespace SteelManagement.DAL
 		public int GetRecordCount(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select count(1) FROM PruchaseInfo ");
+			strSql.Append("select count(1) FROM PurchaseInfo ");
 			if(strWhere.Trim()!="")
 			{
 				strSql.Append(" where "+strWhere);
@@ -407,7 +407,7 @@ namespace SteelManagement.DAL
 			{
 				strSql.Append("order by T.Id desc");
 			}
-			strSql.Append(")AS Row, T.*  from PruchaseInfo T ");
+			strSql.Append(")AS Row, T.*  from PurchaseInfo T ");
 			if (!string.IsNullOrEmpty(strWhere.Trim()))
 			{
 				strSql.Append(" WHERE " + strWhere);
@@ -432,7 +432,7 @@ namespace SteelManagement.DAL
 					new SqlParameter("@OrderType", SqlDbType.Bit),
 					new SqlParameter("@strWhere", SqlDbType.VarChar,1000),
 					};
-			parameters[0].Value = "PruchaseInfo";
+			parameters[0].Value = "PurchaseInfo";
 			parameters[1].Value = "Id";
 			parameters[2].Value = PageSize;
 			parameters[3].Value = PageIndex;
