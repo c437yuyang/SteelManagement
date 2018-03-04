@@ -31,9 +31,7 @@
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.txtInvoiceDate = new System.Windows.Forms.DateTimePicker();
             this.labelX18 = new DevComponents.DotNetBar.LabelX();
-            this.txtMoney2 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.labelX17 = new DevComponents.DotNetBar.LabelX();
-            this.txtMoney1 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.labelX16 = new DevComponents.DotNetBar.LabelX();
             this.txtFuYuDate = new System.Windows.Forms.DateTimePicker();
             this.labelX15 = new DevComponents.DotNetBar.LabelX();
@@ -46,7 +44,6 @@
             this.txtProject = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.labelX9 = new DevComponents.DotNetBar.LabelX();
             this.txtAmount = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.txtTotalMoney = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.txtTransportCost = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.txtFluctuation1 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.txtTransportWay = new DevComponents.DotNetBar.Controls.ComboBoxEx();
@@ -65,6 +62,9 @@
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.txtTotalMoney = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtMoney1 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtMoney2 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.panelEx1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,11 +72,12 @@
             // 
             this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx1.Controls.Add(this.txtMoney2);
+            this.panelEx1.Controls.Add(this.txtMoney1);
+            this.panelEx1.Controls.Add(this.txtTotalMoney);
             this.panelEx1.Controls.Add(this.txtInvoiceDate);
             this.panelEx1.Controls.Add(this.labelX18);
-            this.panelEx1.Controls.Add(this.txtMoney2);
             this.panelEx1.Controls.Add(this.labelX17);
-            this.panelEx1.Controls.Add(this.txtMoney1);
             this.panelEx1.Controls.Add(this.labelX16);
             this.panelEx1.Controls.Add(this.txtFuYuDate);
             this.panelEx1.Controls.Add(this.labelX15);
@@ -89,7 +90,6 @@
             this.panelEx1.Controls.Add(this.txtProject);
             this.panelEx1.Controls.Add(this.labelX9);
             this.panelEx1.Controls.Add(this.txtAmount);
-            this.panelEx1.Controls.Add(this.txtTotalMoney);
             this.panelEx1.Controls.Add(this.txtTransportCost);
             this.panelEx1.Controls.Add(this.txtFluctuation1);
             this.panelEx1.Controls.Add(this.txtTransportWay);
@@ -143,18 +143,6 @@
             this.labelX18.TabIndex = 92;
             this.labelX18.Text = "开票日期:";
             // 
-            // txtMoney2
-            // 
-            this.txtMoney2.DisplayMember = "Text";
-            this.txtMoney2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.txtMoney2.FormattingEnabled = true;
-            this.txtMoney2.ItemHeight = 15;
-            this.txtMoney2.Location = new System.Drawing.Point(360, 447);
-            this.txtMoney2.Name = "txtMoney2";
-            this.txtMoney2.Size = new System.Drawing.Size(107, 21);
-            this.txtMoney2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.txtMoney2.TabIndex = 91;
-            // 
             // labelX17
             // 
             // 
@@ -167,18 +155,6 @@
             this.labelX17.TabIndex = 90;
             this.labelX17.Text = "金额:";
             this.labelX17.WordWrap = true;
-            // 
-            // txtMoney1
-            // 
-            this.txtMoney1.DisplayMember = "Text";
-            this.txtMoney1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.txtMoney1.FormattingEnabled = true;
-            this.txtMoney1.ItemHeight = 15;
-            this.txtMoney1.Location = new System.Drawing.Point(360, 393);
-            this.txtMoney1.Name = "txtMoney1";
-            this.txtMoney1.Size = new System.Drawing.Size(107, 21);
-            this.txtMoney1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.txtMoney1.TabIndex = 89;
             // 
             // labelX16
             // 
@@ -318,18 +294,6 @@
             this.txtAmount.Size = new System.Drawing.Size(107, 21);
             this.txtAmount.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.txtAmount.TabIndex = 34;
-            // 
-            // txtTotalMoney
-            // 
-            this.txtTotalMoney.DisplayMember = "Text";
-            this.txtTotalMoney.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.txtTotalMoney.FormattingEnabled = true;
-            this.txtTotalMoney.ItemHeight = 15;
-            this.txtTotalMoney.Location = new System.Drawing.Point(360, 339);
-            this.txtTotalMoney.Name = "txtTotalMoney";
-            this.txtTotalMoney.Size = new System.Drawing.Size(107, 21);
-            this.txtTotalMoney.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.txtTotalMoney.TabIndex = 34;
             // 
             // txtTransportCost
             // 
@@ -550,6 +514,42 @@
             this.labelX2.TabIndex = 16;
             this.labelX2.Text = "规格:";
             // 
+            // txtTotalMoney
+            // 
+            // 
+            // 
+            // 
+            this.txtTotalMoney.Border.Class = "TextBoxBorder";
+            this.txtTotalMoney.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtTotalMoney.Location = new System.Drawing.Point(360, 339);
+            this.txtTotalMoney.Name = "txtTotalMoney";
+            this.txtTotalMoney.Size = new System.Drawing.Size(107, 21);
+            this.txtTotalMoney.TabIndex = 94;
+            // 
+            // txtMoney1
+            // 
+            // 
+            // 
+            // 
+            this.txtMoney1.Border.Class = "TextBoxBorder";
+            this.txtMoney1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtMoney1.Location = new System.Drawing.Point(360, 393);
+            this.txtMoney1.Name = "txtMoney1";
+            this.txtMoney1.Size = new System.Drawing.Size(107, 21);
+            this.txtMoney1.TabIndex = 95;
+            // 
+            // txtMoney2
+            // 
+            // 
+            // 
+            // 
+            this.txtMoney2.Border.Class = "TextBoxBorder";
+            this.txtMoney2.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtMoney2.Location = new System.Drawing.Point(360, 447);
+            this.txtMoney2.Name = "txtMoney2";
+            this.txtMoney2.Size = new System.Drawing.Size(107, 21);
+            this.txtMoney2.TabIndex = 95;
+            // 
             // FrmAddPurchaseInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -576,7 +576,6 @@
         private DevComponents.DotNetBar.ButtonX btnCancel;
         private DevComponents.DotNetBar.ButtonX btnOK;
         private DevComponents.DotNetBar.LabelX labelX8;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx txtTotalMoney;
         private DevComponents.DotNetBar.Controls.ComboBoxEx txtTransportCost;
         private DevComponents.DotNetBar.Controls.ComboBoxEx txtFluctuation1;
         private DevComponents.DotNetBar.Controls.ComboBoxEx txtQuote;
@@ -599,9 +598,10 @@
         private DevComponents.DotNetBar.LabelX labelX12;
         private System.Windows.Forms.DateTimePicker txtInvoiceDate;
         private DevComponents.DotNetBar.LabelX labelX18;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx txtMoney2;
         private DevComponents.DotNetBar.LabelX labelX17;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx txtMoney1;
         private DevComponents.DotNetBar.LabelX labelX16;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtTotalMoney;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtMoney2;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtMoney1;
     }
 }
