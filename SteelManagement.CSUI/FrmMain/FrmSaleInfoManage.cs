@@ -495,8 +495,8 @@ namespace SteelManagement.CSUI.FrmMain
                 MessageBoxEx.Show("请选中一条进行修改!");
                 return;
             }
-            //FrmAddSaleInfo frm = new FrmAddSaleInfo(LoadDataToDataGridView, _curPage, true, list[0]);
-            //frm.ShowDialog();
+            FrmAddSaleInfo frm = new FrmAddSaleInfo(LoadDataToDataGridView, _curPage, true, list[0]);
+            frm.ShowDialog();
         }
 
         //private void 采购ToolStripMenuItem_Click(object sender, EventArgs e)
