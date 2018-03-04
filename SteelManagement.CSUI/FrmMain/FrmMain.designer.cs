@@ -36,10 +36,7 @@
             this.ribbonBar2 = new DevComponents.DotNetBar.RibbonBar();
             this.btnSteelInfoManage = new DevComponents.DotNetBar.ButtonItem();
             this.btnPurchaseInfoManage = new DevComponents.DotNetBar.ButtonItem();
-            this.btnVisaQuery = new DevComponents.DotNetBar.ButtonItem();
-            this.btnVisaSubmit = new DevComponents.DotNetBar.ButtonItem();
-            this.btnScanFrm = new DevComponents.DotNetBar.ButtonItem();
-            this.btnGPManage = new DevComponents.DotNetBar.ButtonItem();
+            this.btnSaleInfoManage = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonPanel1 = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonBar1 = new DevComponents.DotNetBar.RibbonBar();
             this.btntActionRecordsCount = new DevComponents.DotNetBar.ButtonItem();
@@ -169,13 +166,10 @@
             this.ribbonBar2.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.btnSteelInfoManage,
             this.btnPurchaseInfoManage,
-            this.btnVisaQuery,
-            this.btnVisaSubmit,
-            this.btnScanFrm,
-            this.btnGPManage});
+            this.btnSaleInfoManage});
             this.ribbonBar2.Location = new System.Drawing.Point(3, 0);
             this.ribbonBar2.Name = "ribbonBar2";
-            this.ribbonBar2.Size = new System.Drawing.Size(434, 58);
+            this.ribbonBar2.Size = new System.Drawing.Size(270, 58);
             this.ribbonBar2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.ribbonBar2.TabIndex = 0;
             this.ribbonBar2.Text = "ribbonBar2";
@@ -196,7 +190,7 @@
             this.btnSteelInfoManage.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
             this.btnSteelInfoManage.Name = "btnSteelInfoManage";
             this.btnSteelInfoManage.SubItemsExpandWidth = 14;
-            this.btnSteelInfoManage.Text = "签证录入";
+            this.btnSteelInfoManage.Text = "钢材信息管理";
             // 
             // btnPurchaseInfoManage
             // 
@@ -205,43 +199,16 @@
             this.btnPurchaseInfoManage.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
             this.btnPurchaseInfoManage.Name = "btnPurchaseInfoManage";
             this.btnPurchaseInfoManage.SubItemsExpandWidth = 14;
-            this.btnPurchaseInfoManage.Text = "签证管理";
+            this.btnPurchaseInfoManage.Text = "采购信息管理";
             // 
-            // btnVisaQuery
+            // btnSaleInfoManage
             // 
-            this.btnVisaQuery.Icon = ((System.Drawing.Icon)(resources.GetObject("btnVisaQuery.Icon")));
-            this.btnVisaQuery.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
-            this.btnVisaQuery.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnVisaQuery.Name = "btnVisaQuery";
-            this.btnVisaQuery.SubItemsExpandWidth = 14;
-            this.btnVisaQuery.Text = "团号管理";
-            // 
-            // btnVisaSubmit
-            // 
-            this.btnVisaSubmit.Icon = ((System.Drawing.Icon)(resources.GetObject("btnVisaSubmit.Icon")));
-            this.btnVisaSubmit.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
-            this.btnVisaSubmit.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnVisaSubmit.Name = "btnVisaSubmit";
-            this.btnVisaSubmit.SubItemsExpandWidth = 14;
-            this.btnVisaSubmit.Text = "送签管理";
-            // 
-            // btnScanFrm
-            // 
-            this.btnScanFrm.Icon = ((System.Drawing.Icon)(resources.GetObject("btnScanFrm.Icon")));
-            this.btnScanFrm.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
-            this.btnScanFrm.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnScanFrm.Name = "btnScanFrm";
-            this.btnScanFrm.SubItemsExpandWidth = 14;
-            this.btnScanFrm.Text = "高拍仪做资料";
-            // 
-            // btnGPManage
-            // 
-            this.btnGPManage.Icon = ((System.Drawing.Icon)(resources.GetObject("btnGPManage.Icon")));
-            this.btnGPManage.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
-            this.btnGPManage.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnGPManage.Name = "btnGPManage";
-            this.btnGPManage.SubItemsExpandWidth = 14;
-            this.btnGPManage.Text = "高拍图像管理";
+            this.btnSaleInfoManage.Icon = ((System.Drawing.Icon)(resources.GetObject("btnSaleInfoManage.Icon")));
+            this.btnSaleInfoManage.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
+            this.btnSaleInfoManage.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnSaleInfoManage.Name = "btnSaleInfoManage";
+            this.btnSaleInfoManage.SubItemsExpandWidth = 14;
+            this.btnSaleInfoManage.Text = "销售信息管理";
             // 
             // ribbonPanel1
             // 
@@ -594,8 +561,7 @@
         private DevComponents.DotNetBar.RibbonControl ribbonControl1;
         private DevComponents.DotNetBar.RibbonPanel ribbonPanel3;
         private DevComponents.DotNetBar.RibbonBar ribbonBar2;
-        private DevComponents.DotNetBar.ButtonItem btnVisaQuery;
-        private DevComponents.DotNetBar.ButtonItem btnVisaSubmit;
+        private DevComponents.DotNetBar.ButtonItem btnSaleInfoManage;
         private DevComponents.DotNetBar.RibbonPanel ribbonPanel5;
         private DevComponents.DotNetBar.RibbonTabItem ribbonTabItem3;
         private DevComponents.DotNetBar.RibbonTabItem ribbonTabItem5;
@@ -608,8 +574,6 @@
         private DevComponents.DotNetBar.StyleManager styleManager1;
         private DevComponents.DotNetBar.ButtonItem btnPurchaseInfoManage;
         private DevComponents.DotNetBar.ButtonItem btnSteelInfoManage;
-        private DevComponents.DotNetBar.ButtonItem btnScanFrm;
-        private DevComponents.DotNetBar.ButtonItem btnGPManage;
         private DevComponents.DotNetBar.ButtonItem btnFrmGaoPaiManage;
         private System.Windows.Forms.Label lbVisaInfoCount;
         private DevComponents.DotNetBar.RibbonPanel ribbonPanel1;

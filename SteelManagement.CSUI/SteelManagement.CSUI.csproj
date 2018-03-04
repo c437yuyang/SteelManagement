@@ -91,11 +91,23 @@
     <Compile Include="FrmMain\FrmPurchaseInfoManage.designer.cs">
       <DependentUpon>FrmPurchaseInfoManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMain\FrmSaleInfoManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain\FrmSaleInfoManage.designer.cs">
+      <DependentUpon>FrmSaleInfoManage.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMain\FrmSteelInfoManage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmMain\FrmSteelInfoManage.designer.cs">
       <DependentUpon>FrmSteelInfoManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSub\FrmAddSaleInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSub\FrmAddSaleInfo.designer.cs">
+      <DependentUpon>FrmAddSaleInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmSub\FrmAddPurchaseInfo.cs">
       <SubType>Form</SubType>
@@ -120,8 +132,14 @@
     <EmbeddedResource Include="FrmMain\FrmPurchaseInfoManage.resx">
       <DependentUpon>FrmPurchaseInfoManage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain\FrmSaleInfoManage.resx">
+      <DependentUpon>FrmSaleInfoManage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMain\FrmSteelInfoManage.resx">
       <DependentUpon>FrmSteelInfoManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSub\FrmAddSaleInfo.resx">
+      <DependentUpon>FrmAddSaleInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSub\FrmAddPurchaseInfo.resx">
       <DependentUpon>FrmAddPurchaseInfo.cs</DependentUpon>

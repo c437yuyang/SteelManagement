@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using DevComponents.DotNetBar;
+using SteelManagement.Common;
 
 namespace SteelManagement.CSUI.FrmSub
 {
@@ -49,7 +50,6 @@ namespace SteelManagement.CSUI.FrmSub
             if (_is4Modify)
             {
                 //把选中的加载到这里面
-
                 txtProject.Text = _model.Project;
                 txtDateline.Text = _model.Dateline.ToString();
                 txtSupplier.Text = _model.Supplier;
@@ -69,6 +69,33 @@ namespace SteelManagement.CSUI.FrmSub
                 txtMoney2.Text = _model.Money2.ToString();
                 this.Text = "修改采购信息";
             }
+
+            AddAutoUpdateEvents();
+        }
+
+        private void AddAutoUpdateEvents()
+        {
+            txtQuote.TextChanged += UpdatePrice;
+            txtFluctuation1.TextChanged += UpdatePrice;
+            txtTransportCost.TextChanged += UpdatePrice;
+
+            txtPrice.TextChanged += UpdateTotalMoney;
+            txtAmount.TextChanged += UpdateTotalMoney;
+        }
+
+        private void UpdateTotalMoney(object sender, EventArgs e)
+        {
+            decimal totalMoney = DecimalHandler.Parse(txtPrice.Text) * DecimalHandler.Parse(txtAmount.Text);
+            txtTotalMoney.Text = DecimalHandler.DecimalToString(totalMoney);
+        }
+
+        private void UpdatePrice(object sender, EventArgs e)
+        {
+            decimal quote = DecimalHandler.Parse(txtQuote.Text);
+            decimal fluctuation = DecimalHandler.Parse(txtFluctuation1.Text);
+            decimal transportCost = DecimalHandler.Parse(txtTransportCost.Text);
+
+            txtPrice.Text = DecimalHandler.DecimalToString(quote + fluctuation + transportCost);
         }
 
         private void InitCtrlsBySteelInfoModel()
@@ -151,36 +178,6 @@ namespace SteelManagement.CSUI.FrmSub
             {
                 txtPrice.Items.Add(item);
             }
-
-
-
-
-            //list = BLL.CommonBll.GetFieldList(tablename, "Price");
-            //foreach (var item in list)
-            //{
-            //    txtQuote.Items.Add(item);
-            //}
-
-            //list = BLL.CommonBll.GetFieldList(tablename, "Fluctuation");
-            //foreach (var item in list)
-            //{
-            //    txtFluctuation1.Items.Add(item);
-            //}
-
-            //list = BLL.CommonBll.GetFieldList(tablename, "Remark");
-            //foreach (var item in list)
-            //{
-            //    txtTransportCost.Items.Add(item);
-            //}
-
-            //list = BLL.CommonBll.GetFieldList(tablename, "State");
-            //foreach (var item in list)
-            //{
-            //    txtTotalMoney.Items.Add(item);
-            //}
-
-
-
         }
 
         private void btnOK_Click(object sender, EventArgs e)

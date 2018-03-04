@@ -1,6 +1,6 @@
 ﻿namespace SteelManagement.CSUI.FrmMain
 {
-    partial class FrmSteelInfoManage
+    partial class FrmSaleInfoManage
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -33,16 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.EntryTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvCol_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvCol_Size = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Texture = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProducePlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fluctuation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.State = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelMain = new DevComponents.DotNetBar.PanelEx();
             this.panelDgv = new DevComponents.DotNetBar.PanelEx();
             this.panelBars = new DevComponents.DotNetBar.PanelEx();
@@ -78,13 +68,30 @@
             this.cmsItemRefreshState = new System.Windows.Forms.ToolStripMenuItem();
             this.删除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.修改ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.采购ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.人申请表ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.机票报表ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.外领担保函ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.韩国担保函ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.韩国加急申请书ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bgWorkerLoadData = new System.ComponentModel.BackgroundWorker();
+            this.EntryTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.JianChiLv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ArrivalTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SettleTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Supplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Brand = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TransportWay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvCol_Size = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Texture = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvCol_Margin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OnlinePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fluctuation1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fluctuation2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SalePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalSale = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MarginRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelMain.SuspendLayout();
             this.panelDgv.SuspendLayout();
@@ -111,14 +118,22 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.EntryTime,
-            this.dgvCol_Name,
+            this.JianChiLv,
+            this.ArrivalTime,
+            this.SettleTime,
+            this.Supplier,
+            this.Brand,
+            this.TransportWay,
             this.dgvCol_Size,
             this.Texture,
-            this.ProducePlace,
-            this.Price,
-            this.Fluctuation,
-            this.Remark,
-            this.State,
+            this.Amount,
+            this.dgvCol_Margin,
+            this.OnlinePrice,
+            this.Fluctuation1,
+            this.Fluctuation2,
+            this.SalePrice,
+            this.TotalSale,
+            this.MarginRate,
             this.Id});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -130,7 +145,7 @@
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
+            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -149,67 +164,6 @@
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             this.dataGridView1.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseUp);
             this.dataGridView1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridView1_RowsAdded);
-            // 
-            // EntryTime
-            // 
-            this.EntryTime.DataPropertyName = "EntryTime";
-            this.EntryTime.HeaderText = "录入时间";
-            this.EntryTime.Name = "EntryTime";
-            // 
-            // dgvCol_Name
-            // 
-            this.dgvCol_Name.DataPropertyName = "Name";
-            this.dgvCol_Name.HeaderText = "品名";
-            this.dgvCol_Name.Name = "dgvCol_Name";
-            // 
-            // dgvCol_Size
-            // 
-            this.dgvCol_Size.DataPropertyName = "Size";
-            this.dgvCol_Size.HeaderText = "规格(mm)";
-            this.dgvCol_Size.Name = "dgvCol_Size";
-            // 
-            // Texture
-            // 
-            this.Texture.DataPropertyName = "Texture";
-            this.Texture.HeaderText = "材质";
-            this.Texture.Name = "Texture";
-            // 
-            // ProducePlace
-            // 
-            this.ProducePlace.DataPropertyName = "ProducePlace";
-            this.ProducePlace.HeaderText = "钢厂/产地";
-            this.ProducePlace.Name = "ProducePlace";
-            // 
-            // Price
-            // 
-            this.Price.DataPropertyName = "Price";
-            this.Price.HeaderText = "价格(元/吨)";
-            this.Price.Name = "Price";
-            // 
-            // Fluctuation
-            // 
-            this.Fluctuation.DataPropertyName = "Fluctuation";
-            this.Fluctuation.HeaderText = "涨跌";
-            this.Fluctuation.Name = "Fluctuation";
-            // 
-            // Remark
-            // 
-            this.Remark.DataPropertyName = "Remark";
-            this.Remark.HeaderText = "备注";
-            this.Remark.Name = "Remark";
-            // 
-            // State
-            // 
-            this.State.DataPropertyName = "State";
-            this.State.HeaderText = "状态";
-            this.State.Name = "State";
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.Visible = false;
             // 
             // panelMain
             // 
@@ -576,10 +530,9 @@
             this.cmsDgvRb.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cmsItemRefreshState,
             this.删除ToolStripMenuItem,
-            this.修改ToolStripMenuItem,
-            this.采购ToolStripMenuItem});
+            this.修改ToolStripMenuItem});
             this.cmsDgvRb.Name = "cmsDgvRb";
-            this.cmsDgvRb.Size = new System.Drawing.Size(161, 92);
+            this.cmsDgvRb.Size = new System.Drawing.Size(161, 70);
             // 
             // cmsItemRefreshState
             // 
@@ -601,13 +554,6 @@
             this.修改ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.修改ToolStripMenuItem.Text = "修改";
             this.修改ToolStripMenuItem.Click += new System.EventHandler(this.修改ToolStripMenuItem_Click);
-            // 
-            // 采购ToolStripMenuItem
-            // 
-            this.采购ToolStripMenuItem.Name = "采购ToolStripMenuItem";
-            this.采购ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.采购ToolStripMenuItem.Text = "采购";
-            this.采购ToolStripMenuItem.Click += new System.EventHandler(this.采购ToolStripMenuItem_Click);
             // 
             // 人申请表ToolStripMenuItem
             // 
@@ -640,14 +586,123 @@
             this.bgWorkerLoadData.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.bgWorkerLoadData_ProgressChanged);
             this.bgWorkerLoadData.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgWorkerLoadData_RunWorkerCompleted);
             // 
-            // FrmSteelInfoManage
+            // EntryTime
+            // 
+            this.EntryTime.DataPropertyName = "EntryTime";
+            this.EntryTime.HeaderText = "录入时间";
+            this.EntryTime.Name = "EntryTime";
+            // 
+            // JianChiLv
+            // 
+            this.JianChiLv.DataPropertyName = "JianChiLv";
+            this.JianChiLv.HeaderText = "检尺率";
+            this.JianChiLv.Name = "JianChiLv";
+            // 
+            // ArrivalTime
+            // 
+            this.ArrivalTime.DataPropertyName = "ArrivalTime";
+            this.ArrivalTime.HeaderText = "到货时间";
+            this.ArrivalTime.Name = "ArrivalTime";
+            // 
+            // SettleTime
+            // 
+            this.SettleTime.DataPropertyName = "SettleTime";
+            this.SettleTime.HeaderText = "结算时间";
+            this.SettleTime.Name = "SettleTime";
+            // 
+            // Supplier
+            // 
+            this.Supplier.DataPropertyName = "Supplier";
+            this.Supplier.HeaderText = "供应商";
+            this.Supplier.Name = "Supplier";
+            // 
+            // Brand
+            // 
+            this.Brand.DataPropertyName = "Brand";
+            this.Brand.HeaderText = "品牌";
+            this.Brand.Name = "Brand";
+            // 
+            // TransportWay
+            // 
+            this.TransportWay.DataPropertyName = "TransportWay";
+            this.TransportWay.HeaderText = "运输方式";
+            this.TransportWay.Name = "TransportWay";
+            // 
+            // dgvCol_Size
+            // 
+            this.dgvCol_Size.DataPropertyName = "Size";
+            this.dgvCol_Size.HeaderText = "规格";
+            this.dgvCol_Size.Name = "dgvCol_Size";
+            // 
+            // Texture
+            // 
+            this.Texture.DataPropertyName = "Texture";
+            this.Texture.HeaderText = "材质";
+            this.Texture.Name = "Texture";
+            // 
+            // Amount
+            // 
+            this.Amount.DataPropertyName = "Amount";
+            this.Amount.HeaderText = "送货重量";
+            this.Amount.Name = "Amount";
+            // 
+            // dgvCol_Margin
+            // 
+            this.dgvCol_Margin.DataPropertyName = "Margin";
+            this.dgvCol_Margin.HeaderText = "价差";
+            this.dgvCol_Margin.Name = "dgvCol_Margin";
+            // 
+            // OnlinePrice
+            // 
+            this.OnlinePrice.DataPropertyName = "OnlinePrice";
+            this.OnlinePrice.HeaderText = "网价";
+            this.OnlinePrice.Name = "OnlinePrice";
+            // 
+            // Fluctuation1
+            // 
+            this.Fluctuation1.DataPropertyName = "Fluctuation1";
+            this.Fluctuation1.HeaderText = "浮动1";
+            this.Fluctuation1.Name = "Fluctuation1";
+            // 
+            // Fluctuation2
+            // 
+            this.Fluctuation2.DataPropertyName = "Fluctuation2";
+            this.Fluctuation2.HeaderText = "浮动2";
+            this.Fluctuation2.Name = "Fluctuation2";
+            // 
+            // SalePrice
+            // 
+            this.SalePrice.DataPropertyName = "SalePrice";
+            this.SalePrice.HeaderText = "销项单价";
+            this.SalePrice.Name = "SalePrice";
+            // 
+            // TotalSale
+            // 
+            this.TotalSale.DataPropertyName = "TotalSale";
+            this.TotalSale.HeaderText = "销总金额 ";
+            this.TotalSale.Name = "TotalSale";
+            // 
+            // MarginRate
+            // 
+            this.MarginRate.DataPropertyName = "MarginRate";
+            this.MarginRate.HeaderText = "利润率";
+            this.MarginRate.Name = "MarginRate";
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
+            // 
+            // FrmSaleInfoManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1271, 623);
             this.Controls.Add(this.panelMain);
-            this.Name = "FrmSteelInfoManage";
-            this.Text = "钢材信息管理";
+            this.Name = "FrmSaleInfoManage";
+            this.Text = "销售信息管理";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panelMain.ResumeLayout(false);
@@ -703,18 +758,25 @@
         private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cbDisplayType;
         private DevComponents.DotNetBar.LabelX labelX15;
+        private DevComponents.DotNetBar.ButtonX btnAddFromExcel;
         private System.Windows.Forms.DataGridViewTextBoxColumn EntryTime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvCol_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn JianChiLv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ArrivalTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SettleTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Supplier;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Brand;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TransportWay;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvCol_Size;
         private System.Windows.Forms.DataGridViewTextBoxColumn Texture;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProducePlace;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fluctuation;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Remark;
-        private System.Windows.Forms.DataGridViewTextBoxColumn State;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvCol_Margin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OnlinePrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fluctuation1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fluctuation2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SalePrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotalSale;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MarginRate;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private DevComponents.DotNetBar.ButtonX btnAddFromExcel;
-        private System.Windows.Forms.ToolStripMenuItem 采购ToolStripMenuItem;
     }
 }
 

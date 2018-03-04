@@ -68,6 +68,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DecimalHandler.cs" />
     <Compile Include="Enums\AirInfos.cs" />
     <Compile Include="AppSettingHandler.cs" />
     <Compile Include="CmdHandler.cs" />
