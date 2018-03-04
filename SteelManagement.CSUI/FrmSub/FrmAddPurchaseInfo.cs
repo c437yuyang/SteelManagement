@@ -193,16 +193,16 @@ namespace SteelManagement.CSUI.FrmSub
                     _model.TransportWay = txtTransportWay.Text;
                     _model.Size = txtSize.Text;
                     _model.Texture = txtTexture.Text;
-                    _model.Amount = decimal.Parse(txtAmount.Text);
-                    _model.Quote = decimal.Parse(txtQuote.Text);
-                    _model.Fluctuation1 = decimal.Parse(txtFluctuation1.Text);
-                    _model.TransportCost = decimal.Parse(txtTransportCost.Text);
-                    _model.Price = decimal.Parse(txtPrice.Text);
-                    _model.TotalMoney = decimal.Parse(txtTotalMoney.Text);
+                    _model.Amount = DecimalHandler.Parse(txtAmount.Text);
+                    _model.Quote = DecimalHandler.Parse(txtQuote.Text);
+                    _model.Fluctuation1 = DecimalHandler.Parse(txtFluctuation1.Text);
+                    _model.TransportCost = DecimalHandler.Parse(txtTransportCost.Text);
+                    _model.Price = DecimalHandler.Parse(txtPrice.Text);
+                    _model.TotalMoney = DecimalHandler.Parse(txtTotalMoney.Text);
                     _model.FuYuDate = DateTime.Parse(txtFuYuDate.Text);
-                    _model.Money1 = decimal.Parse(txtMoney1.Text);
+                    _model.Money1 = DecimalHandler.Parse(txtMoney1.Text);
                     _model.InvoiceDate = DateTime.Parse(txtInvoiceDate.Text);
-                    _model.Money2 = decimal.Parse(txtMoney2.Text);
+                    _model.Money2 = DecimalHandler.Parse(txtMoney2.Text);
                     if (!_bllPurchaseInfo.Update(_model))
                     {
                         MessageBoxEx.Show("更新失败，请稍后重试!");
@@ -231,16 +231,16 @@ namespace SteelManagement.CSUI.FrmSub
                     model.TransportWay = txtTransportWay.Text;
                     model.Size = txtSize.Text;
                     model.Texture = txtTexture.Text;
-                    model.Amount = decimal.Parse(txtAmount.Text);
-                    model.Quote = decimal.Parse(txtQuote.Text);
-                    model.Fluctuation1 = decimal.Parse(txtFluctuation1.Text);
-                    model.TransportCost = decimal.Parse(txtTransportCost.Text);
-                    model.Price = decimal.Parse(txtPrice.Text);
-                    model.TotalMoney = decimal.Parse(txtTotalMoney.Text);
+                    model.Amount = DecimalHandler.Parse(txtAmount.Text);
+                    model.Quote = DecimalHandler.Parse(txtQuote.Text);
+                    model.Fluctuation1 = DecimalHandler.Parse(txtFluctuation1.Text);
+                    model.TransportCost = DecimalHandler.Parse(txtTransportCost.Text);
+                    model.Price = DecimalHandler.Parse(txtPrice.Text);
+                    model.TotalMoney = DecimalHandler.Parse(txtTotalMoney.Text);
                     model.FuYuDate = DateTime.Parse(txtFuYuDate.Text);
-                    model.Money1 = decimal.Parse(txtMoney1.Text);
+                    model.Money1 = DecimalHandler.Parse(txtMoney1.Text);
                     model.InvoiceDate = DateTime.Parse(txtInvoiceDate.Text);
-                    model.Money2 = decimal.Parse(txtMoney2.Text);
+                    model.Money2 = DecimalHandler.Parse(txtMoney2.Text);
                     model.EntryTime = DateTime.Now;
                     if (_bllPurchaseInfo.Add(model) <= 0)
                     {

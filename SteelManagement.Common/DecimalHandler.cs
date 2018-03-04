@@ -58,9 +58,12 @@ namespace SteelManagement.Common
         public static string DecimalToString(Decimal? d)
         {
             string str = (d ?? 0).ToString();
-            str = str.TrimEnd('0'); //移除所有尾部0
-            if (str.EndsWith("."))
-                return str.TrimEnd('.');
+            if (str.Contains("."))
+            {
+                str = str.TrimEnd('0'); //移除所有尾部0
+                if (str.EndsWith("."))
+                    return str.TrimEnd('.');
+            }
             return str;
         }
 

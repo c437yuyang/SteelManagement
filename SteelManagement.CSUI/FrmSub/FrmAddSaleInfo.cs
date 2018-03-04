@@ -175,7 +175,7 @@ namespace SteelManagement.CSUI.FrmSub
             try
             {
                 txtMarginRate.Text = DecimalHandler.DecimalToPercent(
-                    DecimalHandler.Parse(txtTotalSale.Text) / _purchaseInfoModel.TotalMoney ?? 0 - 1
+                    (DecimalHandler.Parse(txtTotalSale.Text) / _purchaseInfoModel.TotalMoney ?? 0) - 1
                 );
             }
             catch (Exception)
