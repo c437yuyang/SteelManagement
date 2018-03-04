@@ -15,6 +15,19 @@ namespace SteelManagement.Common
         /// <returns></returns>
         public static decimal Parse(string str)
         {
+            if (string.IsNullOrEmpty(str))
+                return decimal.Zero;
+            if (str.Contains("%")) //含有百分号的解析
+            {
+                try
+                {
+                    return decimal.Parse(str.Replace("%", "")) / 100;
+                }
+                catch (Exception)
+                {
+                    return decimal.Zero;
+                }
+            }
             try
             {
                 return decimal.Parse(str);
@@ -22,7 +35,6 @@ namespace SteelManagement.Common
             catch (Exception)
             {
                 return decimal.Zero;
-                throw;
             }
         }
 
@@ -33,9 +45,9 @@ namespace SteelManagement.Common
         /// <param name="d"></param>
         /// <param name="digit">小数点位数</param>
         /// <returns></returns>
-        public static string DecimalToString(Decimal d, int digit)
+        public static string DecimalToString(Decimal? d, int digit)
         {
-            return Math.Round(d, digit).ToString();
+            return Math.Round(d ?? 0, digit).ToString();
         }
 
         /// <summary>
@@ -43,13 +55,25 @@ namespace SteelManagement.Common
         /// </summary>
         /// <param name="d"></param>
         /// <returns></returns>
-        public static string DecimalToString(Decimal d)
+        public static string DecimalToString(Decimal? d)
         {
-            string str = d.ToString();
+            string str = (d ?? 0).ToString();
             str = str.TrimEnd('0'); //移除所有尾部0
             if (str.EndsWith("."))
                 return str.TrimEnd('.');
             return str;
+        }
+
+        /// <summary>
+        /// 转换成百分比，23% 不带小数位了
+        /// </summary>
+        /// <param name="d"></param>
+        /// <returns></returns>
+        public static string DecimalToPercent(Decimal? d)
+        {
+            decimal d1 = d ?? 0;
+            d1 *= 100;
+            return DecimalToString(d1, 0) + "%";
         }
 
 

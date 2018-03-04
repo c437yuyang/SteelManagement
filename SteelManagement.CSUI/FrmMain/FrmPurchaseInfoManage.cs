@@ -493,6 +493,17 @@ namespace SteelManagement.CSUI.FrmMain
             frm.ShowDialog();
         }
 
+        private void 售出ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var list = GetSelectedModelList();
 
+            if (list.Count > 1)
+            {
+                MessageBoxEx.Show("请选中一条进行销售!");
+                return;
+            }
+            FrmAddSaleInfo frm = new FrmAddSaleInfo(LoadDataToDataGridView, _curPage, list[0]);
+            frm.ShowDialog();
+        }
     }
 }

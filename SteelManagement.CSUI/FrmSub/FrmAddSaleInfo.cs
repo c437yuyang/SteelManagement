@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using DevComponents.DotNetBar;
+using SteelManagement.Common;
 
 namespace SteelManagement.CSUI.FrmSub
 {
@@ -12,8 +13,6 @@ namespace SteelManagement.CSUI.FrmSub
         private readonly bool _is4Modify = false;
         private readonly SteelManagement.Model.SaleInfo _model = null;
         private readonly SteelManagement.Model.PurchaseInfo _purchaseInfoModel = null;
-
-
 
         public FrmAddSaleInfo(Action<int> updateDel, int curPage, bool is4Modify = false, SteelManagement.Model.SaleInfo model = null)
         {
@@ -34,7 +33,6 @@ namespace SteelManagement.CSUI.FrmSub
             _purchaseInfoModel = model;
         }
 
-
         private void FrmAddSaleInfo_Load(object sender, EventArgs e)
         {
             this.MaximizeBox = false;
@@ -49,109 +47,173 @@ namespace SteelManagement.CSUI.FrmSub
             if (_is4Modify)
             {
                 //把选中的加载到这里面
-
-                //txtProject.Text = _model.Project;
-                //txtArrivalTime.Text = _model.Dateline.ToString();
-                //txtSupplier.Text = _model.Supplier;
-                //txtBrand.Text = _model.Brand;
-                //txtTransportWay.Text = _model.TransportWay;
-                //txtSize.Text = _model.Size;
-                //txtTexture.Text = _model.Texture;
-                //txtAmount.Text = _model.Amount.ToString();
-                //txtOnlinePrice.Text = _model.Quote.ToString();
-                //txtFluctuation1.Text = _model.Fluctuation1.ToString();
-                //txtTransportCost.Text = _model.TransportWay;
-                //txtSalePrice.Text = _model.Price.ToString();
-                //txtTotalSale.Text = _model.TotalMoney.ToString();
-                //txtSettleTime.Text = _model.FuYuDate.ToString();
-                //txtMarginRate.Text = _model.Money1.ToString();
-                //txtInvoiceDate.Text = _model.InvoiceDate.ToString();
-                //txtMoney2.Text = _model.Money2.ToString();
-                this.Text = "修改采购信息";
+                txtJianChiLv.Text = DecimalHandler.DecimalToPercent(_model.JianChiLv);
+                txtArrivalTime.Text = DateTimeFormator.DateTimeToString(_model.ArrivalTime);
+                txtSettleTime.Text = DateTimeFormator.DateTimeToString(_model.SettleTime);
+                txtSupplier.Text = _model.Supplier;
+                txtBrand.Text = _model.Brand;
+                txtTransportWay.Text = _model.TransportWay;
+                txtSize.Text = _model.Size;
+                txtTexture.Text = _model.Texture;
+                txtAmount.Text = DecimalHandler.DecimalToString(_model.Amount);
+                txtMargin.Text = DecimalHandler.DecimalToString(_model.Margin);
+                txtOnlinePrice.Text = DecimalHandler.DecimalToString(_model.OnlinePrice);
+                txtFluctuation1.Text = DecimalHandler.DecimalToString(_model.Fluctuation1);
+                txtFluctuation2.Text = DecimalHandler.DecimalToString(_model.Fluctuation2);
+                txtSalePrice.Text = DecimalHandler.DecimalToString(_model.SalePrice);
+                txtTotalSale.Text = DecimalHandler.DecimalToString(_model.TotalSale);
+                txtMarginRate.Text = DecimalHandler.DecimalToPercent(_model.MarginRate);
+                this.Text = "修改销售信息";
             }
+
+            AddAutoUpdateEvents();
         }
 
+        #region 窗体初始化
         private void InitCtrlsByPurchaseInfoModel()
         {
-            //txtBrand.Text = _purchaseInfoModel.ProducePlace;
-            //txtSize.Text = _purchaseInfoModel.Size;
-            //txtTexture.Text = _purchaseInfoModel.Texture;
-            //txtSalePrice.Text = _purchaseInfoModel.Price.ToString();
-            //txtOnlinePrice.Text = txtSalePrice.Text;
+            txtSupplier.Text = _purchaseInfoModel.Supplier;
+            txtBrand.Text = _purchaseInfoModel.Brand;
+            txtTransportWay.Text = _purchaseInfoModel.TransportWay;
+            txtSize.Text = _purchaseInfoModel.Size;
+            txtTexture.Text = _purchaseInfoModel.Texture;
         }
 
         private void InitComboBoxs()
         {
-            string tablename = "SaleInfo";
-            var list = BLL.CommonBll.GetFieldList(tablename, "Project");
-            foreach (var item in list)
+            //string tablename = "SaleInfo";
+            //var list = BLL.CommonBll.GetFieldList(tablename, "Project");
+            //foreach (var item in list)
+            //{
+            //    //txtProject.Items.Add(item);
+            //}
+
+            //list = BLL.CommonBll.GetFieldList(tablename, "Supplier");
+            //foreach (var item in list)
+            //{
+            //    txtSupplier.Items.Add(item);
+            //}
+
+
+            //list = BLL.CommonBll.GetFieldList(tablename, "Brand");
+            //foreach (var item in list)
+            //{
+            //    txtBrand.Items.Add(item);
+            //}
+
+            //list = BLL.CommonBll.GetFieldList(tablename, "TransportWay");
+            //foreach (var item in list)
+            //{
+            //    txtTransportWay.Items.Add(item);
+            //}
+
+
+            //list = BLL.CommonBll.GetFieldList(tablename, "Size");
+            //foreach (var item in list)
+            //{
+            //    txtSize.Items.Add(item);
+            //}
+
+            //list = BLL.CommonBll.GetFieldList(tablename, "Texture");
+            //foreach (var item in list)
+            //{
+            //    txtTexture.Items.Add(item);
+            //}
+
+            //list = BLL.CommonBll.GetFieldList(tablename, "Amount");
+            //foreach (var item in list)
+            //{
+            //    txtAmount.Items.Add(item);
+            //}
+
+            //list = BLL.CommonBll.GetFieldList(tablename, "Quote");
+            //foreach (var item in list)
+            //{
+            //    txtOnlinePrice.Items.Add(item);
+            //}
+
+
+            //list = BLL.CommonBll.GetFieldList(tablename, "Fluctuation1");
+            //foreach (var item in list)
+            //{
+            //    txtFluctuation1.Items.Add(item);
+            //}
+
+            //list = BLL.CommonBll.GetFieldList(tablename, "TransportCost");
+            //foreach (var item in list)
+            //{
+            //    //txtTransportCost.Items.Add(item);
+            //}
+
+            //list = BLL.CommonBll.GetFieldList(tablename, "Price");
+            //foreach (var item in list)
+            //{
+            //    txtSalePrice.Items.Add(item);
+            //}
+        }
+        #endregion
+
+        #region 自动计算部分
+        private void AddAutoUpdateEvents()
+        {
+            txtAmount.TextChanged += UpdateJianChiLv;
+            txtOnlinePrice.TextChanged += UpdateMargin;
+            txtOnlinePrice.TextChanged += UpdateSalePrice;
+            txtFluctuation1.TextChanged += UpdateSalePrice;
+            txtFluctuation2.TextChanged += UpdateSalePrice;
+
+            txtSalePrice.TextChanged += UpdateTotalSale;
+            txtAmount.TextChanged += UpdateTotalSale;
+
+            txtTotalSale.TextChanged += UpdateMarginRate;
+
+
+        }
+
+        private void UpdateMarginRate(object sender, EventArgs e)
+        {
+            try
             {
-                //txtProject.Items.Add(item);
+                txtMarginRate.Text = DecimalHandler.DecimalToPercent(
+                    DecimalHandler.Parse(txtTotalSale.Text) / _purchaseInfoModel.TotalMoney ?? 0 - 1
+                );
             }
-
-            list = BLL.CommonBll.GetFieldList(tablename, "Supplier");
-            foreach (var item in list)
+            catch (Exception)
             {
-                txtSupplier.Items.Add(item);
-            }
-
-
-            list = BLL.CommonBll.GetFieldList(tablename, "Brand");
-            foreach (var item in list)
-            {
-                txtBrand.Items.Add(item);
-            }
-
-            list = BLL.CommonBll.GetFieldList(tablename, "TransportWay");
-            foreach (var item in list)
-            {
-                txtTransportWay.Items.Add(item);
-            }
-
-
-            list = BLL.CommonBll.GetFieldList(tablename, "Size");
-            foreach (var item in list)
-            {
-                txtSize.Items.Add(item);
-            }
-
-            list = BLL.CommonBll.GetFieldList(tablename, "Texture");
-            foreach (var item in list)
-            {
-                txtTexture.Items.Add(item);
-            }
-
-            list = BLL.CommonBll.GetFieldList(tablename, "Amount");
-            foreach (var item in list)
-            {
-                txtAmount.Items.Add(item);
-            }
-
-            list = BLL.CommonBll.GetFieldList(tablename, "Quote");
-            foreach (var item in list)
-            {
-                txtOnlinePrice.Items.Add(item);
-            }
-
-
-            list = BLL.CommonBll.GetFieldList(tablename, "Fluctuation1");
-            foreach (var item in list)
-            {
-                txtFluctuation1.Items.Add(item);
-            }
-
-            list = BLL.CommonBll.GetFieldList(tablename, "TransportCost");
-            foreach (var item in list)
-            {
-                //txtTransportCost.Items.Add(item);
-            }
-
-            list = BLL.CommonBll.GetFieldList(tablename, "Price");
-            foreach (var item in list)
-            {
-                txtSalePrice.Items.Add(item);
+                txtMarginRate.Text = "供应商总金额有误!";
             }
         }
+
+        private void UpdateTotalSale(object sender, EventArgs e)
+        {
+            txtTotalSale.Text = DecimalHandler.DecimalToString(
+                DecimalHandler.Parse(txtSalePrice.Text) *
+                DecimalHandler.Parse(txtAmount.Text)
+            );
+        }
+
+        private void UpdateSalePrice(object sender, EventArgs e)
+        {
+            txtSalePrice.Text = DecimalHandler.DecimalToString(
+                DecimalHandler.Parse(txtOnlinePrice.Text) +
+                DecimalHandler.Parse(txtFluctuation1.Text) +
+                DecimalHandler.Parse(txtFluctuation2.Text)
+            );
+        }
+
+        private void UpdateMargin(object sender, EventArgs e)
+        {
+            decimal onlinePrice = DecimalHandler.Parse(txtOnlinePrice.Text);
+            txtMargin.Text = DecimalHandler.DecimalToString(onlinePrice - _purchaseInfoModel.Quote ?? 0);
+        }
+
+        private void UpdateJianChiLv(object sender, EventArgs e)
+        {
+            decimal amount = DecimalHandler.Parse(txtAmount.Text);
+            decimal amountPurchase = _purchaseInfoModel.Amount ?? 0;
+            txtJianChiLv.Text = DecimalHandler.DecimalToPercent(amount / amountPurchase);
+        }
+        #endregion
 
         private void btnOK_Click(object sender, EventArgs e)
         {
@@ -159,23 +221,22 @@ namespace SteelManagement.CSUI.FrmSub
             {
                 try
                 {
-                    //_model.Project = txtProject.Text;
-                    //_model.Dateline = DateTime.Parse(txtArrivalTime.Text);
-                    //_model.Supplier = txtSupplier.Text;
-                    //_model.Brand = txtBrand.Text;
-                    //_model.TransportWay = txtTransportWay.Text;
-                    //_model.Size = txtSize.Text;
-                    //_model.Texture = txtTexture.Text;
-                    //_model.Amount = decimal.Parse(txtAmount.Text);
-                    //_model.Quote = decimal.Parse(txtOnlinePrice.Text);
-                    //_model.Fluctuation1 = decimal.Parse(txtFluctuation1.Text);
-                    //_model.TransportCost = decimal.Parse(txtTransportCost.Text);
-                    //_model.Price = decimal.Parse(txtSalePrice.Text);
-                    //_model.TotalMoney = decimal.Parse(txtTotalSale.Text);
-                    //_model.FuYuDate = DateTime.Parse(txtSettleTime.Text);
-                    //_model.Money1 = decimal.Parse(txtMarginRate.Text);
-                    //_model.InvoiceDate = DateTime.Parse(txtInvoiceDate.Text);
-                    //_model.Money2 = decimal.Parse(txtMoney2.Text);
+                    _model.JianChiLv = DecimalHandler.Parse(txtJianChiLv.Text);
+                    _model.ArrivalTime = DateTime.Parse(txtArrivalTime.Text);
+                    _model.SettleTime = DateTime.Parse(txtSettleTime.Text);
+                    _model.Supplier = txtSupplier.Text;
+                    _model.Brand = txtBrand.Text;
+                    _model.TransportWay = txtTransportWay.Text;
+                    _model.Size = txtSize.Text;
+                    _model.Texture = txtTexture.Text;
+                    _model.Amount = DecimalHandler.Parse(txtAmount.Text);
+                    _model.Margin = DecimalHandler.Parse(txtMargin.Text);
+                    _model.OnlinePrice = DecimalHandler.Parse(txtOnlinePrice.Text);
+                    _model.Fluctuation1 = DecimalHandler.Parse(txtFluctuation1.Text);
+                    _model.Fluctuation2 = DecimalHandler.Parse(txtFluctuation2.Text);
+                    _model.SalePrice = DecimalHandler.Parse(txtSalePrice.Text);
+                    _model.TotalSale = DecimalHandler.Parse(txtTotalSale.Text);
+                    _model.MarginRate = DecimalHandler.Parse(txtMarginRate.Text);
                     if (!_bllSaleInfo.Update(_model))
                     {
                         MessageBoxEx.Show("更新失败，请稍后重试!");
@@ -197,24 +258,23 @@ namespace SteelManagement.CSUI.FrmSub
                 SteelManagement.Model.SaleInfo model = new SteelManagement.Model.SaleInfo();
                 try
                 {
-                    //model.Project = txtProject.Text;
-                    //model.Dateline = DateTime.Parse(txtArrivalTime.Text);
-                    //model.Supplier = txtSupplier.Text;
-                    //model.Brand = txtBrand.Text;
-                    //model.TransportWay = txtTransportWay.Text;
-                    //model.Size = txtSize.Text;
-                    //model.Texture = txtTexture.Text;
-                    //model.Amount = decimal.Parse(txtAmount.Text);
-                    //model.Quote = decimal.Parse(txtOnlinePrice.Text);
-                    //model.Fluctuation1 = decimal.Parse(txtFluctuation1.Text);
-                    //model.TransportCost = decimal.Parse(txtTransportCost.Text);
-                    //model.Price = decimal.Parse(txtSalePrice.Text);
-                    //model.TotalMoney = decimal.Parse(txtTotalSale.Text);
-                    //model.FuYuDate = DateTime.Parse(txtSettleTime.Text);
-                    //model.Money1 = decimal.Parse(txtMarginRate.Text);
-                    //model.InvoiceDate = DateTime.Parse(txtInvoiceDate.Text);
-                    //model.Money2 = decimal.Parse(txtMoney2.Text);
-                    //model.EntryTime = DateTime.Now;
+                    model.JianChiLv = DecimalHandler.Parse(txtJianChiLv.Text);
+                    model.ArrivalTime = DateTime.Parse(txtArrivalTime.Text);
+                    model.SettleTime = DateTime.Parse(txtSettleTime.Text);
+                    model.Supplier = txtSupplier.Text;
+                    model.Brand = txtBrand.Text;
+                    model.TransportWay = txtTransportWay.Text;
+                    model.Size = txtSize.Text;
+                    model.Texture = txtTexture.Text;
+                    model.Amount = DecimalHandler.Parse(txtAmount.Text);
+                    model.Margin = DecimalHandler.Parse(txtMargin.Text);
+                    model.OnlinePrice = DecimalHandler.Parse(txtOnlinePrice.Text);
+                    model.Fluctuation1 = DecimalHandler.Parse(txtFluctuation1.Text);
+                    model.Fluctuation2 = DecimalHandler.Parse(txtFluctuation2.Text);
+                    model.SalePrice = DecimalHandler.Parse(txtSalePrice.Text);
+                    model.TotalSale = DecimalHandler.Parse(txtTotalSale.Text);
+                    model.MarginRate = DecimalHandler.Parse(txtMarginRate.Text);
+                    model.EntryTime = DateTime.Now;
                     if (_bllSaleInfo.Add(model) <= 0)
                     {
                         MessageBoxEx.Show("添加失败，请稍后重试!");
@@ -239,9 +299,5 @@ namespace SteelManagement.CSUI.FrmSub
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
-
-
-
-
     }
 }
