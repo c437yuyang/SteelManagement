@@ -103,8 +103,7 @@ namespace SteelManagement.CSUI.FrmSub
             txtBrand.Text = _steelInfomodel.ProducePlace;
             txtSize.Text = _steelInfomodel.Size;
             txtTexture.Text = _steelInfomodel.Texture;
-            txtPrice.Text = _steelInfomodel.Price.ToString();
-            txtQuote.Text = txtPrice.Text;
+            txtQuote.Text = _steelInfomodel.Price.ToString();
         }
 
         private void InitComboBoxs()

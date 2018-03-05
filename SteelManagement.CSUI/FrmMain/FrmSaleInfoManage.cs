@@ -315,6 +315,11 @@ namespace SteelManagement.CSUI.FrmMain
                 row.HeaderCell.Value = (i + 1).ToString();
 
                 //在这里控制单元格的显示
+
+                var jianChiLv = DgvDataSourceToList()[i].JianChiLv;
+                if (jianChiLv != null)
+                    dataGridView1["JianChiLv", i].Value = DecimalHandler.DecimalToPercent(jianChiLv);
+
                 var amount = DgvDataSourceToList()[i].Amount;
                 if (amount != null)
                     dataGridView1["Amount", i].Value = DecimalHandler.DecimalToString(amount, 3);
