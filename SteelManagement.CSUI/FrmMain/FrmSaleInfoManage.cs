@@ -254,6 +254,8 @@ namespace SteelManagement.CSUI.FrmMain
             //    conditions.Add(" DepartureType = '" + cbDepatureType.Text + "' ");
             //}
 
+
+
             string[] arr = conditions.ToArray();
             string where = string.Join(" and ", arr);
             return where;
@@ -313,14 +315,37 @@ namespace SteelManagement.CSUI.FrmMain
                 row.HeaderCell.Value = (i + 1).ToString();
 
                 //在这里控制单元格的显示
-                //var price = DgvDataSourceToList()[i].Price;
-                //if (price != null)
-                //    dataGridView1["Price", i].Value = Math.Round(price.Value, 1);
+                var amount = DgvDataSourceToList()[i].Amount;
+                if (amount != null)
+                    dataGridView1["Amount", i].Value = DecimalHandler.DecimalToString(amount, 3);
 
-                //var fluctuation = DgvDataSourceToList()[i].Fluctuation;
-                //if (fluctuation != null)
-                //    dataGridView1["Fluctuation", i].Value = Math.Round(fluctuation.Value, 1);
+                var margin = DgvDataSourceToList()[i].Margin;
+                if (margin != null)
+                    dataGridView1["dgvCol_Margin", i].Value = DecimalHandler.DecimalToString(margin);
 
+                var onlinePrice = DgvDataSourceToList()[i].OnlinePrice;
+                if (onlinePrice != null)
+                    dataGridView1["OnlinePrice", i].Value = DecimalHandler.DecimalToString(onlinePrice);
+
+                var fluctuation1 = DgvDataSourceToList()[i].Fluctuation1;
+                if (fluctuation1 != null)
+                    dataGridView1["Fluctuation1", i].Value = DecimalHandler.DecimalToString(fluctuation1);
+
+                var fluctuation2 = DgvDataSourceToList()[i].Fluctuation2;
+                if (fluctuation2 != null)
+                    dataGridView1["Fluctuation2", i].Value = DecimalHandler.DecimalToString(fluctuation2);
+
+                var salePrice = DgvDataSourceToList()[i].SalePrice;
+                if (salePrice != null)
+                    dataGridView1["SalePrice", i].Value = DecimalHandler.DecimalToString(salePrice);
+
+                var totalSale = DgvDataSourceToList()[i].TotalSale;
+                if (totalSale != null)
+                    dataGridView1["TotalSale", i].Value = DecimalHandler.DecimalToString(totalSale,2);
+
+                var marginRate = DgvDataSourceToList()[i].MarginRate;
+                if (marginRate != null)
+                    dataGridView1["MarginRate", i].Value = DecimalHandler.DecimalToPercent(marginRate);
             }
         }
 

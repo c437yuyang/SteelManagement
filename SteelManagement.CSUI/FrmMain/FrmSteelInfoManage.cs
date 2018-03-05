@@ -30,6 +30,9 @@ namespace SteelManagement.CSUI.FrmMain
             _recordCount = _bllSteelInfo.GetRecordCount(_where);
             _pageCount = (int)Math.Ceiling(_recordCount / (double)_pageSize);
 
+
+            InitComboboxs();
+
             //初始化一些控件
             //txtPicPath.Text = GlobalInfo.AppPath;
             cbPageSize.Items.Add("30");
@@ -55,6 +58,23 @@ namespace SteelManagement.CSUI.FrmMain
 
             progressLoading.Visible = false;
             LoadDataToDgvAsyn();
+        }
+
+        private void InitComboboxs()
+        {
+            string tablename = "SteelInfo";
+            var list = BLL.CommonBll.GetFieldList(tablename, "Name");
+            foreach (var item in list)
+            {
+                cbName.Items.Add(item);
+            }
+
+            list = BLL.CommonBll.GetFieldList(tablename, "ProducePlace");
+            foreach (var item in list)
+            {
+                cbProducePlace.Items.Add(item);
+
+            }
         }
 
         private void DataGridView1_DoubleClick(object sender, EventArgs e)
@@ -207,29 +227,22 @@ namespace SteelManagement.CSUI.FrmMain
         private string GetWhereCondition()
         {
             List<string> conditions = new List<string>();
-            //if (cbDisplayType.Text == "全部")
-            //{
-            //}
-            //else if (cbDisplayType.Text == "未记录")
-            //{
-            //    conditions.Add(" Types is null or Types='' ");
-            //}
-            //else if (cbDisplayType.Text == "个签")
-            //{
-            //    conditions.Add(" Types = '个签' ");
-            //}
-            //else if (cbDisplayType.Text == "团签")
-            //{
-            //    conditions.Add(" Types = '团签' ");
-            //}
-            //else if (cbDisplayType.Text == "团做个")
-            //{
-            //    conditions.Add(" Types = '团做个' ");
-            //}
-            //else if (cbDisplayType.Text == "个签&&团做个")
-            //{
-            //    conditions.Add(" Types = '团做个' or Types = '个签'");
-            //}
+            if (string.IsNullOrEmpty(cbName.Text))
+            {
+            }
+            else
+            {
+                conditions.Add(" (Name like '%" + cbName.Text + "%') "); 
+            }
+
+            if (string.IsNullOrEmpty(cbProducePlace.Text))
+            {
+            }
+            else
+            {
+                conditions. Add(" (ProducePlace like '%" + cbProducePlace.Text + "%') ");
+            }
+
 
             //if (cbCountry.Text == "全部")
             //{
@@ -254,6 +267,12 @@ namespace SteelManagement.CSUI.FrmMain
             //    conditions.Add(" DepartureType = '" + cbDepatureType.Text + "' ");
             //}
 
+            if (!string.IsNullOrEmpty(txtSchEntryTimeFrom.Text.Trim()) && !string.IsNullOrEmpty(txtSchEntryTimeTo.Text.Trim()))
+            {
+                conditions.Add(" (EntryTime between '" + txtSchEntryTimeFrom.Text + "' and " + " '" + txtSchEntryTimeTo.Text +
+                               "') ");
+            }
+
             string[] arr = conditions.ToArray();
             string where = string.Join(" and ", arr);
             return where;
@@ -263,8 +282,8 @@ namespace SteelManagement.CSUI.FrmMain
         private void btnClearSchConditions_Click(object sender, EventArgs e)
         {
             txtClient.Text = "";
-            cbCountry.Text = "全部";
-            cbDisplayType.Text = "全部";
+            cbProducePlace.Text = "全部";
+            cbName.Text = "全部";
             cbDepatureType.Text = "全部";
 
         }
@@ -315,12 +334,11 @@ namespace SteelManagement.CSUI.FrmMain
                 //在这里控制单元格的显示
                 var price = DgvDataSourceToList()[i].Price;
                 if (price != null)
-                    dataGridView1["Price", i].Value = Math.Round(price.Value, 1);
+                    dataGridView1["Price", i].Value = DecimalHandler.DecimalToString(price.Value, 1);
 
                 var fluctuation = DgvDataSourceToList()[i].Fluctuation;
                 if (fluctuation != null)
-                    dataGridView1["Fluctuation", i].Value = Math.Round(fluctuation.Value, 1);
-
+                    dataGridView1["Fluctuation", i].Value = DecimalHandler.DecimalToString(fluctuation.Value, 1);
             }
         }
 
@@ -446,8 +464,19 @@ namespace SteelManagement.CSUI.FrmMain
             if (DialogResult.Cancel == frm.ShowDialog())
                 return;
         }
+
+        private void btnTimeSpanChoose_Click(object sender, EventArgs e)
+        {
+            FrmTimeSpanChoose frm = new FrmTimeSpanChoose();
+            if (frm.ShowDialog() == DialogResult.Cancel)
+                return;
+            txtSchEntryTimeFrom.Text = DateTimeFormator.DateTimeToString(frm.TimeSpanFrom, DateTimeFormator.TimeFormat.Type14LongTime1);
+            txtSchEntryTimeTo.Text = DateTimeFormator.DateTimeToString(frm.TimeSpanTo, DateTimeFormator.TimeFormat.Type14LongTime1);
+        }
+
         #endregion
 
+        #region Utils
         private List<Model.SteelInfo> DgvDataSourceToList()
         {
             return dataGridView1.DataSource as List<Model.SteelInfo>;
@@ -465,6 +494,7 @@ namespace SteelManagement.CSUI.FrmMain
                 res.Add(DgvDataSourceToList()[dataGridView1.SelectedRows[i].Index]);
             return res.Count > 0 ? res : null;
         }
+        #endregion
         #region 右键菜单响应
         private void 删除ToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -512,5 +542,7 @@ namespace SteelManagement.CSUI.FrmMain
             frm.ShowDialog();
         }
         #endregion
+
+
     }
 }

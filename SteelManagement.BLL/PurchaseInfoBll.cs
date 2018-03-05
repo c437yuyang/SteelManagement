@@ -13,7 +13,7 @@ namespace SteelManagement.BLL
         {
             int start = (pageNo - 1) * pageSize + 1;
             int end = pageNo * pageSize;
-            var ds = GetListByPage(string.Empty, " id desc ", start, end);
+            var ds = GetListByPage(strWhere, " id desc ", start, end);
             return DataTableToList(ds.Tables[0]);
         }
 

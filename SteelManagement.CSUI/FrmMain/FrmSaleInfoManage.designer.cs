@@ -140,7 +140,7 @@
             dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -642,49 +642,41 @@
             // 
             // Amount
             // 
-            this.Amount.DataPropertyName = "Amount";
             this.Amount.HeaderText = "送货重量";
             this.Amount.Name = "Amount";
             // 
             // dgvCol_Margin
             // 
-            this.dgvCol_Margin.DataPropertyName = "Margin";
             this.dgvCol_Margin.HeaderText = "价差";
             this.dgvCol_Margin.Name = "dgvCol_Margin";
             // 
             // OnlinePrice
             // 
-            this.OnlinePrice.DataPropertyName = "OnlinePrice";
             this.OnlinePrice.HeaderText = "网价";
             this.OnlinePrice.Name = "OnlinePrice";
             // 
             // Fluctuation1
             // 
-            this.Fluctuation1.DataPropertyName = "Fluctuation1";
             this.Fluctuation1.HeaderText = "浮动1";
             this.Fluctuation1.Name = "Fluctuation1";
             // 
             // Fluctuation2
             // 
-            this.Fluctuation2.DataPropertyName = "Fluctuation2";
             this.Fluctuation2.HeaderText = "浮动2";
             this.Fluctuation2.Name = "Fluctuation2";
             // 
             // SalePrice
             // 
-            this.SalePrice.DataPropertyName = "SalePrice";
             this.SalePrice.HeaderText = "销项单价";
             this.SalePrice.Name = "SalePrice";
             // 
             // TotalSale
             // 
-            this.TotalSale.DataPropertyName = "TotalSale";
             this.TotalSale.HeaderText = "销总金额 ";
             this.TotalSale.Name = "TotalSale";
             // 
             // MarginRate
             // 
-            this.MarginRate.DataPropertyName = "MarginRate";
             this.MarginRate.HeaderText = "利润率";
             this.MarginRate.Name = "MarginRate";
             // 

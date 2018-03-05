@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>钢材-图标.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevComponents.DotNetBar.Layout, Version=12.5.0.2, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -121,6 +124,12 @@
     <Compile Include="FrmSub\FrmAddSteelInfo.designer.cs">
       <DependentUpon>FrmAddSteelInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmSub\FrmTimeSpanChoose.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSub\FrmTimeSpanChoose.designer.cs">
+      <DependentUpon>FrmTimeSpanChoose.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmLogin.resx">
@@ -147,6 +156,9 @@
     <EmbeddedResource Include="FrmSub\FrmAddSteelInfo.resx">
       <DependentUpon>FrmAddSteelInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmSub\FrmTimeSpanChoose.resx">
+      <DependentUpon>FrmTimeSpanChoose.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -155,6 +167,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -182,6 +195,12 @@
       <Project>{c0fa5521-d0c6-418e-9d82-1c6bf30b8518}</Project>
       <Name>SteelManagement.Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\钢材-图标.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="钢材-图标.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

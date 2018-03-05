@@ -451,18 +451,21 @@
             this.ribbonTabItem1.Name = "ribbonTabItem1";
             this.ribbonTabItem1.Panel = this.ribbonPanel1;
             this.ribbonTabItem1.Text = "数据统计";
+            this.ribbonTabItem1.Visible = false;
             // 
             // ribbonTabItem2
             // 
             this.ribbonTabItem2.Name = "ribbonTabItem2";
             this.ribbonTabItem2.Panel = this.ribbonPanel2;
             this.ribbonTabItem2.Text = "财务管理";
+            this.ribbonTabItem2.Visible = false;
             // 
             // ribbonTabItem5
             // 
             this.ribbonTabItem5.Name = "ribbonTabItem5";
             this.ribbonTabItem5.Panel = this.ribbonPanel5;
             this.ribbonTabItem5.Text = "关于我们";
+            this.ribbonTabItem5.Visible = false;
             // 
             // btnVip
             // 
