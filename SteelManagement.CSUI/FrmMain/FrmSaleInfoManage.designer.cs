@@ -75,6 +75,7 @@
             this.韩国加急申请书ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bgWorkerLoadData = new System.ComponentModel.BackgroundWorker();
             this.EntryTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SerialNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.JianChiLv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ArrivalTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SettleTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -118,6 +119,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.EntryTime,
+            this.SerialNo,
             this.JianChiLv,
             this.ArrivalTime,
             this.SettleTime,
@@ -140,7 +142,7 @@
             dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -592,6 +594,12 @@
             this.EntryTime.HeaderText = "录入时间";
             this.EntryTime.Name = "EntryTime";
             // 
+            // SerialNo
+            // 
+            this.SerialNo.DataPropertyName = "SerialNo";
+            this.SerialNo.HeaderText = "流水号";
+            this.SerialNo.Name = "SerialNo";
+            // 
             // JianChiLv
             // 
             this.JianChiLv.HeaderText = "检尺率";
@@ -751,6 +759,7 @@
         private DevComponents.DotNetBar.LabelX labelX15;
         private DevComponents.DotNetBar.ButtonX btnAddFromExcel;
         private System.Windows.Forms.DataGridViewTextBoxColumn EntryTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SerialNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn JianChiLv;
         private System.Windows.Forms.DataGridViewTextBoxColumn ArrivalTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn SettleTime;
