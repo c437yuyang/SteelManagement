@@ -204,6 +204,10 @@ namespace SteelManagement.CSUI.FrmSub
                     model.EntryTime = DateTime.Now;
                     model.SerialNo = SerialNoGenerator.GetSerialNo(SerialNoGenerator.Type.Type03Receipt);
                     model.OperatorId = GlobalUtils.LoginUser.Id;
+
+                    //上传图像
+                    proPictureBox1.Image?.Save(GlobalUtils.LocalReceiptPicPath + "\\" + model.SerialNo + ".jpg");
+
                     if (_bllReceiptInfo.Add(model) <= 0)
                     {
                         MessageBoxEx.Show("添加失败，请稍后重试!");
@@ -227,6 +231,14 @@ namespace SteelManagement.CSUI.FrmSub
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void btnUploadImage_Click(object sender, EventArgs e)
+        {
+            string filename = GlobalUtils.ShowOpenFileDlg();
+            if(string.IsNullOrEmpty(filename))
+                return;
+            proPictureBox1.Image = GlobalUtils.LoadImageFromFileNoBlock(filename);
         }
     }
 }

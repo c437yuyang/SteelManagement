@@ -84,6 +84,7 @@
     <Compile Include="Excel\ExcelParser.cs" />
     <Compile Include="FrmsManager.cs" />
     <Compile Include="FTP\FtpHandler.cs" />
+    <Compile Include="ReceiptPicHandler.cs" />
     <Compile Include="GlobalUtils.cs" />
     <Compile Include="MD5Computer\MyMd5.cs" />
     <Compile Include="ObjDeepClone.cs" />

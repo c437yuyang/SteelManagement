@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using DevComponents.DotNetBar;
 using SteelManagement.Common;
+using SteelManagement.CSUI.CustomCtrls;
 using SteelManagement.CSUI.FrmSub;
 using SteelManagement.CSUI.Properties;
 using SteelManagement.Model;
@@ -468,6 +469,28 @@ namespace SteelManagement.CSUI.FrmMain
             return res.Count > 0 ? res : null;
         }
         #region 右键菜单响应
+
+        private void 查看收据图像ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var list = GetSelectedModelList();
+            int idx = 0;
+            if (list.Count == 1) //选中一个就查看所有
+            {
+                list = DgvDataSourceToList();
+                idx = dataGridView1.SelectedRows[0].Index;
+            }
+            List<string> name_list = new List<string>();
+            foreach (var model in list)
+            {
+                if(!string.IsNullOrEmpty(model.SerialNo))
+                    name_list.Add(model.SerialNo + ".jpg");
+            }
+
+            FrmShowPicture frm = new FrmShowPicture(name_list,"收据查看",idx);
+            frm.Show();
+
+        }
+
         private void 删除ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //if (GlobalUtils.LoginUserLevel != RigthLevel.Manager)
@@ -514,5 +537,7 @@ namespace SteelManagement.CSUI.FrmMain
         //    //frm.ShowDialog();
         //}
         #endregion
+
+ 
     }
 }

@@ -208,6 +208,7 @@
             this.btnUploadImage.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnUploadImage.TabIndex = 101;
             this.btnUploadImage.Text = "点击上传图像";
+            this.btnUploadImage.Click += new System.EventHandler(this.btnUploadImage_Click);
             // 
             // panelLeft
             // 

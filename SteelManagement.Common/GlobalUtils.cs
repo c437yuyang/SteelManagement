@@ -63,13 +63,13 @@ namespace SteelManagement.Common
             }
         }
         /// <summary>
-        /// 本地高拍仪图像保存路径，暂时写死
+        /// 本地收据保存路径，暂时写死
         /// </summary>
-        public static string LocalGaoPaiPicPath
+        public static string LocalReceiptPicPath
         {
             get
             {
-                string res = Application.StartupPath + "\\" + "高拍仪图像保存路径";
+                string res = Application.StartupPath + "\\" + "ReceiptPics";
                 if (!Directory.Exists(res))
                 {
                     Directory.CreateDirectory(res);

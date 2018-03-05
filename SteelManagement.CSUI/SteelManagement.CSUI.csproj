@@ -136,6 +136,12 @@
     <Compile Include="FrmSub\FrmAddSteelInfo.designer.cs">
       <DependentUpon>FrmAddSteelInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomCtrls\FrmShowPicture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomCtrls\FrmShowPicture.designer.cs">
+      <DependentUpon>FrmShowPicture.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmSub\FrmTimeSpanChoose.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSub\FrmAddSteelInfo.resx">
       <DependentUpon>FrmAddSteelInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomCtrls\FrmShowPicture.resx">
+      <DependentUpon>FrmShowPicture.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSub\FrmTimeSpanChoose.resx">
       <DependentUpon>FrmTimeSpanChoose.cs</DependentUpon>
@@ -218,6 +227,7 @@
     <None Include="Resources\钢材-图标.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\PictureNotFound.jpg" />
     <Content Include="钢材-图标.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
