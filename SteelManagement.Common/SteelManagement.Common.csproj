@@ -94,6 +94,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QRCode\MyQRCode.cs" />
     <Compile Include="RngWord.cs" />
+    <Compile Include="SerialNoGenerator.cs" />
     <Compile Include="TextHandler.cs" />
     <Compile Include="XmlHandler.cs" />
   </ItemGroup>

@@ -17,6 +17,7 @@ namespace SteelManagement.Model
 		private DateTime? _receiptdate;
 		private decimal? _invoicenum;
 		private decimal? _receiptnum;
+		private int? _operatorid;
 		/// <summary>
 		/// 
 		/// </summary>
@@ -72,6 +73,14 @@ namespace SteelManagement.Model
 		{
 			set{ _receiptnum=value;}
 			get{return _receiptnum;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public int? OperatorId
+		{
+			set{ _operatorid=value;}
+			get{return _operatorid;}
 		}
 		#endregion Model
 

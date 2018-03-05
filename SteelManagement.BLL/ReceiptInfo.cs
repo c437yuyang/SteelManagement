@@ -54,9 +54,6 @@ namespace SteelManagement.BLL
 			
 			return dal.Delete(Id);
 		}
-		/// <summary>
-		/// 删除一条数据
-		/// </summary>
 
 
 		/// <summary>
@@ -68,7 +65,7 @@ namespace SteelManagement.BLL
 			return dal.GetModel(Id);
 		}
 
-		
+
 
 		/// <summary>
 		/// 获得数据列表

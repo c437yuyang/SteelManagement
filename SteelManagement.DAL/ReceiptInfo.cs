@@ -46,9 +46,9 @@ namespace SteelManagement.DAL
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("insert into ReceiptInfo(");
-			strSql.Append("EntryTime,SerialNo,InvoiceDate,ReceiptDate,InvoiceNum,ReceiptNum)");
+			strSql.Append("EntryTime,SerialNo,InvoiceDate,ReceiptDate,InvoiceNum,ReceiptNum,OperatorId)");
 			strSql.Append(" values (");
-			strSql.Append("@EntryTime,@SerialNo,@InvoiceDate,@ReceiptDate,@InvoiceNum,@ReceiptNum)");
+			strSql.Append("@EntryTime,@SerialNo,@InvoiceDate,@ReceiptDate,@InvoiceNum,@ReceiptNum,@OperatorId)");
 			strSql.Append(";select @@IDENTITY");
 			SqlParameter[] parameters = {
 					new SqlParameter("@EntryTime", SqlDbType.DateTime),
@@ -56,13 +56,15 @@ namespace SteelManagement.DAL
 					new SqlParameter("@InvoiceDate", SqlDbType.DateTime,3),
 					new SqlParameter("@ReceiptDate", SqlDbType.DateTime,3),
 					new SqlParameter("@InvoiceNum", SqlDbType.Money,8),
-					new SqlParameter("@ReceiptNum", SqlDbType.Money,8)};
+					new SqlParameter("@ReceiptNum", SqlDbType.Money,8),
+					new SqlParameter("@OperatorId", SqlDbType.Int,4)};
 			parameters[0].Value = model.EntryTime;
 			parameters[1].Value = model.SerialNo;
 			parameters[2].Value = model.InvoiceDate;
 			parameters[3].Value = model.ReceiptDate;
 			parameters[4].Value = model.InvoiceNum;
 			parameters[5].Value = model.ReceiptNum;
+			parameters[6].Value = model.OperatorId;
 
 			object obj = DbHelperSQL.GetSingle(strSql.ToString(),parameters);
 			if (obj == null)
@@ -86,7 +88,8 @@ namespace SteelManagement.DAL
 			strSql.Append("InvoiceDate=@InvoiceDate,");
 			strSql.Append("ReceiptDate=@ReceiptDate,");
 			strSql.Append("InvoiceNum=@InvoiceNum,");
-			strSql.Append("ReceiptNum=@ReceiptNum");
+			strSql.Append("ReceiptNum=@ReceiptNum,");
+			strSql.Append("OperatorId=@OperatorId");
 			strSql.Append(" where Id=@Id");
 			SqlParameter[] parameters = {
 					new SqlParameter("@EntryTime", SqlDbType.DateTime),
@@ -95,6 +98,7 @@ namespace SteelManagement.DAL
 					new SqlParameter("@ReceiptDate", SqlDbType.DateTime,3),
 					new SqlParameter("@InvoiceNum", SqlDbType.Money,8),
 					new SqlParameter("@ReceiptNum", SqlDbType.Money,8),
+					new SqlParameter("@OperatorId", SqlDbType.Int,4),
 					new SqlParameter("@Id", SqlDbType.Int,4)};
 			parameters[0].Value = model.EntryTime;
 			parameters[1].Value = model.SerialNo;
@@ -102,7 +106,8 @@ namespace SteelManagement.DAL
 			parameters[3].Value = model.ReceiptDate;
 			parameters[4].Value = model.InvoiceNum;
 			parameters[5].Value = model.ReceiptNum;
-			parameters[6].Value = model.Id;
+			parameters[6].Value = model.OperatorId;
+			parameters[7].Value = model.Id;
 
 			int rows=DbHelperSQL.ExecuteSql(strSql.ToString(),parameters);
 			if (rows > 0)
@@ -166,7 +171,7 @@ namespace SteelManagement.DAL
 		{
 			
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select  top 1 Id,EntryTime,SerialNo,InvoiceDate,ReceiptDate,InvoiceNum,ReceiptNum from ReceiptInfo ");
+			strSql.Append("select  top 1 Id,EntryTime,SerialNo,InvoiceDate,ReceiptDate,InvoiceNum,ReceiptNum,OperatorId from ReceiptInfo ");
 			strSql.Append(" where Id=@Id");
 			SqlParameter[] parameters = {
 					new SqlParameter("@Id", SqlDbType.Int,4)
@@ -222,6 +227,10 @@ namespace SteelManagement.DAL
 				{
 					model.ReceiptNum=decimal.Parse(row["ReceiptNum"].ToString());
 				}
+				if(row["OperatorId"]!=null && row["OperatorId"].ToString()!="")
+				{
+					model.OperatorId=int.Parse(row["OperatorId"].ToString());
+				}
 			}
 			return model;
 		}
@@ -232,7 +241,7 @@ namespace SteelManagement.DAL
 		public DataSet GetList(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select Id,EntryTime,SerialNo,InvoiceDate,ReceiptDate,InvoiceNum,ReceiptNum ");
+			strSql.Append("select Id,EntryTime,SerialNo,InvoiceDate,ReceiptDate,InvoiceNum,ReceiptNum,OperatorId ");
 			strSql.Append(" FROM ReceiptInfo ");
 			if(strWhere.Trim()!="")
 			{
@@ -252,7 +261,7 @@ namespace SteelManagement.DAL
 			{
 				strSql.Append(" top "+Top.ToString());
 			}
-			strSql.Append(" Id,EntryTime,SerialNo,InvoiceDate,ReceiptDate,InvoiceNum,ReceiptNum ");
+			strSql.Append(" Id,EntryTime,SerialNo,InvoiceDate,ReceiptDate,InvoiceNum,ReceiptNum,OperatorId ");
 			strSql.Append(" FROM ReceiptInfo ");
 			if(strWhere.Trim()!="")
 			{
