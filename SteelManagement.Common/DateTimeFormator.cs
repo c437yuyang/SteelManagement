@@ -12,7 +12,7 @@ namespace SteelManagement.Common
         public enum TimeFormat
         {
             Type01Normal,//用的最多的
-            Type02JapanTotal, //日本送签总表
+            Type02SerialNo, //日本送签总表
             Type03Tailand,//泰国团队
             Type04Chinese,//中国
             Type05ReturnTime,//归国时间
@@ -41,8 +41,8 @@ namespace SteelManagement.Common
                         case TimeFormat.Type01Normal:
                             res = dt.ToString("yyyy/MM/dd");
                             break;
-                        case TimeFormat.Type02JapanTotal:
-                            res = dt.ToString("yyyy.MM.dd");
+                        case TimeFormat.Type02SerialNo:
+                            res = dt.ToString("yyyyMMddHHmmss");
                             break;
                         case TimeFormat.Type03Tailand:
                             res = dt.ToString("dd-MMM-yyyy", new CultureInfo("en-US")).ToUpper();

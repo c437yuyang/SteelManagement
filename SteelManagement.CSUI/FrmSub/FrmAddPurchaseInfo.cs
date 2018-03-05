@@ -241,6 +241,8 @@ namespace SteelManagement.CSUI.FrmSub
                     model.InvoiceDate = DateTime.Parse(txtInvoiceDate.Text);
                     model.Money2 = DecimalHandler.Parse(txtMoney2.Text);
                     model.EntryTime = DateTime.Now;
+                    model.SerialNo =
+                        DateTimeFormator.DateTimeToString(DateTime.Now, DateTimeFormator.TimeFormat.Type02SerialNo); //生成流水号
                     if (_bllPurchaseInfo.Add(model) <= 0)
                     {
                         MessageBoxEx.Show("添加失败，请稍后重试!");

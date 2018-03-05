@@ -28,6 +28,8 @@ namespace SteelManagement.Model
 		private decimal? _saleprice;
 		private decimal? _totalsale;
 		private decimal? _marginrate;
+		private string _serialno;
+		private int? _operatorid;
 		/// <summary>
 		/// 
 		/// </summary>
@@ -45,7 +47,7 @@ namespace SteelManagement.Model
 			get{return _entrytime;}
 		}
 		/// <summary>
-		/// 
+		/// 检尺率
 		/// </summary>
 		public decimal? JianChiLv
 		{
@@ -53,7 +55,7 @@ namespace SteelManagement.Model
 			get{return _jianchilv;}
 		}
 		/// <summary>
-		/// 
+		/// 到货时间
 		/// </summary>
 		public DateTime? ArrivalTime
 		{
@@ -61,7 +63,7 @@ namespace SteelManagement.Model
 			get{return _arrivaltime;}
 		}
 		/// <summary>
-		/// 
+		/// 结算时间
 		/// </summary>
 		public DateTime? SettleTime
 		{
@@ -69,7 +71,7 @@ namespace SteelManagement.Model
 			get{return _settletime;}
 		}
 		/// <summary>
-		/// 
+		/// 供应商
 		/// </summary>
 		public string Supplier
 		{
@@ -77,7 +79,7 @@ namespace SteelManagement.Model
 			get{return _supplier;}
 		}
 		/// <summary>
-		/// 
+		/// 品牌
 		/// </summary>
 		public string Brand
 		{
@@ -85,7 +87,7 @@ namespace SteelManagement.Model
 			get{return _brand;}
 		}
 		/// <summary>
-		/// 
+		/// 运输方式
 		/// </summary>
 		public string TransportWay
 		{
@@ -93,7 +95,7 @@ namespace SteelManagement.Model
 			get{return _transportway;}
 		}
 		/// <summary>
-		/// 
+		/// 材质
 		/// </summary>
 		public string Size
 		{
@@ -101,7 +103,7 @@ namespace SteelManagement.Model
 			get{return _size;}
 		}
 		/// <summary>
-		/// 
+		/// 规格
 		/// </summary>
 		public string Texture
 		{
@@ -109,7 +111,7 @@ namespace SteelManagement.Model
 			get{return _texture;}
 		}
 		/// <summary>
-		/// 
+		/// 送货重量
 		/// </summary>
 		public decimal? Amount
 		{
@@ -117,7 +119,7 @@ namespace SteelManagement.Model
 			get{return _amount;}
 		}
 		/// <summary>
-		/// 
+		/// 价差
 		/// </summary>
 		public decimal? Margin
 		{
@@ -125,7 +127,7 @@ namespace SteelManagement.Model
 			get{return _margin;}
 		}
 		/// <summary>
-		/// 
+		/// 网价
 		/// </summary>
 		public decimal? OnlinePrice
 		{
@@ -133,7 +135,7 @@ namespace SteelManagement.Model
 			get{return _onlineprice;}
 		}
 		/// <summary>
-		/// 
+		/// 浮动1
 		/// </summary>
 		public decimal? Fluctuation1
 		{
@@ -141,7 +143,7 @@ namespace SteelManagement.Model
 			get{return _fluctuation1;}
 		}
 		/// <summary>
-		/// 
+		/// 浮动2
 		/// </summary>
 		public decimal? Fluctuation2
 		{
@@ -149,7 +151,7 @@ namespace SteelManagement.Model
 			get{return _fluctuation2;}
 		}
 		/// <summary>
-		/// 
+		/// 销售单价
 		/// </summary>
 		public decimal? SalePrice
 		{
@@ -157,7 +159,7 @@ namespace SteelManagement.Model
 			get{return _saleprice;}
 		}
 		/// <summary>
-		/// 
+		/// 销售总金额
 		/// </summary>
 		public decimal? TotalSale
 		{
@@ -165,12 +167,28 @@ namespace SteelManagement.Model
 			get{return _totalsale;}
 		}
 		/// <summary>
-		/// 
+		/// 利润率
 		/// </summary>
 		public decimal? MarginRate
 		{
 			set{ _marginrate=value;}
 			get{return _marginrate;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public string SerialNo
+		{
+			set{ _serialno=value;}
+			get{return _serialno;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public int? OperatorId
+		{
+			set{ _operatorid=value;}
+			get{return _operatorid;}
 		}
 		#endregion Model
 

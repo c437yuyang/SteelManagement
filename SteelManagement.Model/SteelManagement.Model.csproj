@@ -45,7 +45,8 @@
     <Compile Include="AuthUser.cs" />
     <Compile Include="ProgramVersion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PruchaseInfo.cs" />
+    <Compile Include="PurchaseInfo.cs" />
+    <Compile Include="ReceiptInfo.cs" />
     <Compile Include="SaleInfo.cs" />
     <Compile Include="SteelInfo.cs" />
     <Compile Include="User.cs" />

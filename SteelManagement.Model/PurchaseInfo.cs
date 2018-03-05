@@ -29,6 +29,8 @@ namespace SteelManagement.Model
 		private decimal? _money1;
 		private DateTime? _invoicedate;
 		private decimal? _money2;
+		private string _serialno;
+		private int? _operatorid;
 		/// <summary>
 		/// 
 		/// </summary>
@@ -46,7 +48,7 @@ namespace SteelManagement.Model
 			get{return _entrytime;}
 		}
 		/// <summary>
-		/// 
+		/// 项目
 		/// </summary>
 		public string Project
 		{
@@ -54,7 +56,7 @@ namespace SteelManagement.Model
 			get{return _project;}
 		}
 		/// <summary>
-		/// 
+		/// 日期
 		/// </summary>
 		public DateTime? Dateline
 		{
@@ -62,7 +64,7 @@ namespace SteelManagement.Model
 			get{return _dateline;}
 		}
 		/// <summary>
-		/// 
+		/// 供应商
 		/// </summary>
 		public string Supplier
 		{
@@ -70,7 +72,7 @@ namespace SteelManagement.Model
 			get{return _supplier;}
 		}
 		/// <summary>
-		/// 
+		/// 品牌
 		/// </summary>
 		public string Brand
 		{
@@ -78,7 +80,7 @@ namespace SteelManagement.Model
 			get{return _brand;}
 		}
 		/// <summary>
-		/// 
+		/// 运输方式
 		/// </summary>
 		public string TransportWay
 		{
@@ -86,7 +88,7 @@ namespace SteelManagement.Model
 			get{return _transportway;}
 		}
 		/// <summary>
-		/// 
+		/// 材质
 		/// </summary>
 		public string Size
 		{
@@ -94,7 +96,7 @@ namespace SteelManagement.Model
 			get{return _size;}
 		}
 		/// <summary>
-		/// 
+		/// 规格
 		/// </summary>
 		public string Texture
 		{
@@ -102,7 +104,7 @@ namespace SteelManagement.Model
 			get{return _texture;}
 		}
 		/// <summary>
-		/// 
+		/// 送货量
 		/// </summary>
 		public decimal? Amount
 		{
@@ -110,7 +112,7 @@ namespace SteelManagement.Model
 			get{return _amount;}
 		}
 		/// <summary>
-		/// 
+		/// 报价
 		/// </summary>
 		public decimal? Quote
 		{
@@ -118,7 +120,7 @@ namespace SteelManagement.Model
 			get{return _quote;}
 		}
 		/// <summary>
-		/// 
+		/// 浮动1
 		/// </summary>
 		public decimal? Fluctuation1
 		{
@@ -126,7 +128,7 @@ namespace SteelManagement.Model
 			get{return _fluctuation1;}
 		}
 		/// <summary>
-		/// 
+		/// 运费
 		/// </summary>
 		public decimal? TransportCost
 		{
@@ -134,7 +136,7 @@ namespace SteelManagement.Model
 			get{return _transportcost;}
 		}
 		/// <summary>
-		/// 
+		/// 单价
 		/// </summary>
 		public decimal? Price
 		{
@@ -142,7 +144,7 @@ namespace SteelManagement.Model
 			get{return _price;}
 		}
 		/// <summary>
-		/// 
+		/// 总金额
 		/// </summary>
 		public decimal? TotalMoney
 		{
@@ -150,7 +152,7 @@ namespace SteelManagement.Model
 			get{return _totalmoney;}
 		}
 		/// <summary>
-		/// 
+		/// 付宇通汇日期
 		/// </summary>
 		public DateTime? FuYuDate
 		{
@@ -158,7 +160,7 @@ namespace SteelManagement.Model
 			get{return _fuyudate;}
 		}
 		/// <summary>
-		/// 
+		/// 金额
 		/// </summary>
 		public decimal? Money1
 		{
@@ -166,7 +168,7 @@ namespace SteelManagement.Model
 			get{return _money1;}
 		}
 		/// <summary>
-		/// 
+		/// 开票日期
 		/// </summary>
 		public DateTime? InvoiceDate
 		{
@@ -174,12 +176,28 @@ namespace SteelManagement.Model
 			get{return _invoicedate;}
 		}
 		/// <summary>
-		/// 
+		/// 金额
 		/// </summary>
 		public decimal? Money2
 		{
 			set{ _money2=value;}
 			get{return _money2;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public string SerialNo
+		{
+			set{ _serialno=value;}
+			get{return _serialno;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public int? OperatorId
+		{
+			set{ _operatorid=value;}
+			get{return _operatorid;}
 		}
 		#endregion Model
 
