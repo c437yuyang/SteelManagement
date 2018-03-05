@@ -275,7 +275,7 @@ namespace SteelManagement.CSUI.FrmSub
                     model.TotalSale = DecimalHandler.Parse(txtTotalSale.Text);
                     model.MarginRate = DecimalHandler.Parse(txtMarginRate.Text);
                     model.EntryTime = DateTime.Now;
-                    model.SerialNo = SerialNoGenerator.GetSerialNo();
+                    model.SerialNo = SerialNoGenerator.GetSerialNo(SerialNoGenerator.Type.Type02Sale);
                     model.OperatorId = GlobalUtils.LoginUser.Id;
                     if (_bllSaleInfo.Add(model) <= 0)
                     {

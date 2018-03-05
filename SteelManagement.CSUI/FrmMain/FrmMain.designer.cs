@@ -62,6 +62,7 @@
             this.btnMCloseOther = new System.Windows.Forms.ToolStripMenuItem();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.btnFrmGaoPaiManage = new DevComponents.DotNetBar.ButtonItem();
+            this.btnReceiptInfoManage = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonControl1.SuspendLayout();
             this.ribbonPanel3.SuspendLayout();
             this.ribbonPanel1.SuspendLayout();
@@ -166,10 +167,11 @@
             this.ribbonBar2.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.btnSteelInfoManage,
             this.btnPurchaseInfoManage,
-            this.btnSaleInfoManage});
+            this.btnSaleInfoManage,
+            this.btnReceiptInfoManage});
             this.ribbonBar2.Location = new System.Drawing.Point(3, 0);
             this.ribbonBar2.Name = "ribbonBar2";
-            this.ribbonBar2.Size = new System.Drawing.Size(270, 58);
+            this.ribbonBar2.Size = new System.Drawing.Size(511, 58);
             this.ribbonBar2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.ribbonBar2.TabIndex = 0;
             this.ribbonBar2.Text = "ribbonBar2";
@@ -535,6 +537,16 @@
             this.btnFrmGaoPaiManage.SubItemsExpandWidth = 14;
             this.btnFrmGaoPaiManage.Text = "高排图像管理";
             // 
+            // btnReceiptInfoManage
+            // 
+            this.btnReceiptInfoManage.Icon = ((System.Drawing.Icon)(resources.GetObject("btnReceiptInfoManage.Icon")));
+            this.btnReceiptInfoManage.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
+            this.btnReceiptInfoManage.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnReceiptInfoManage.Name = "btnReceiptInfoManage";
+            this.btnReceiptInfoManage.SubItemsExpandWidth = 14;
+            this.btnReceiptInfoManage.Text = "收据信息管理";
+            this.btnReceiptInfoManage.Click += new System.EventHandler(this.btnReceiptInfoManage_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -592,5 +604,6 @@
         private DevComponents.DotNetBar.ButtonItem btnConsulateManage;
         private DevComponents.DotNetBar.ButtonItem btnCommisionMoneyManage;
         private DevComponents.DotNetBar.ButtonItem btnAppAllManage;
+        private DevComponents.DotNetBar.ButtonItem btnReceiptInfoManage;
     }
 }

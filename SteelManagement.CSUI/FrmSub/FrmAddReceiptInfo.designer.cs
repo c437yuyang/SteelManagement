@@ -29,26 +29,26 @@
         private void InitializeComponent()
         {
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
-            this.txtMargin = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtJianChiLv = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtReceiptNum = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtInvoiceNum = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX20 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.txtSettleTime = new System.Windows.Forms.DateTimePicker();
+            this.txtReceiptDate = new System.Windows.Forms.DateTimePicker();
             this.labelX15 = new DevComponents.DotNetBar.LabelX();
-            this.txtArrivalTime = new System.Windows.Forms.DateTimePicker();
+            this.txtInvoiceDate = new System.Windows.Forms.DateTimePicker();
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.btnCancel = new DevComponents.DotNetBar.ButtonX();
             this.btnOK = new DevComponents.DotNetBar.ButtonX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.btnUploadImage = new DevComponents.DotNetBar.ButtonX();
-            this.proPictureBox1 = new TravelAgency.CSUI.CustomCtrls.ProPictureBox();
             this.panelLeft = new DevComponents.DotNetBar.PanelEx();
             this.btnAddFromExcel = new DevComponents.DotNetBar.ButtonX();
             this.btnAdd = new DevComponents.DotNetBar.ButtonX();
             this.progressLoading = new DevComponents.DotNetBar.Controls.CircularProgress();
+            this.proPictureBox1 = new TravelAgency.CSUI.CustomCtrls.ProPictureBox();
             this.panelEx1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.proPictureBox1)).BeginInit();
             this.panelLeft.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.proPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelEx1
@@ -71,29 +71,29 @@
             this.panelEx1.Style.GradientAngle = 90;
             this.panelEx1.TabIndex = 0;
             // 
-            // txtMargin
+            // txtReceiptNum
             // 
             // 
             // 
             // 
-            this.txtMargin.Border.Class = "TextBoxBorder";
-            this.txtMargin.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtMargin.Location = new System.Drawing.Point(109, 93);
-            this.txtMargin.Name = "txtMargin";
-            this.txtMargin.Size = new System.Drawing.Size(107, 21);
-            this.txtMargin.TabIndex = 99;
+            this.txtReceiptNum.Border.Class = "TextBoxBorder";
+            this.txtReceiptNum.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtReceiptNum.Location = new System.Drawing.Point(109, 93);
+            this.txtReceiptNum.Name = "txtReceiptNum";
+            this.txtReceiptNum.Size = new System.Drawing.Size(107, 21);
+            this.txtReceiptNum.TabIndex = 99;
             // 
-            // txtJianChiLv
-            // 
-            // 
+            // txtInvoiceNum
             // 
             // 
-            this.txtJianChiLv.Border.Class = "TextBoxBorder";
-            this.txtJianChiLv.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtJianChiLv.Location = new System.Drawing.Point(109, 66);
-            this.txtJianChiLv.Name = "txtJianChiLv";
-            this.txtJianChiLv.Size = new System.Drawing.Size(107, 21);
-            this.txtJianChiLv.TabIndex = 99;
+            // 
+            // 
+            this.txtInvoiceNum.Border.Class = "TextBoxBorder";
+            this.txtInvoiceNum.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtInvoiceNum.Location = new System.Drawing.Point(109, 66);
+            this.txtInvoiceNum.Name = "txtInvoiceNum";
+            this.txtInvoiceNum.Size = new System.Drawing.Size(107, 21);
+            this.txtInvoiceNum.TabIndex = 99;
             // 
             // labelX20
             // 
@@ -120,14 +120,14 @@
             this.labelX1.TabIndex = 96;
             this.labelX1.Text = "收款(实收):";
             // 
-            // txtSettleTime
+            // txtReceiptDate
             // 
-            this.txtSettleTime.CustomFormat = "yyyy/MM/dd";
-            this.txtSettleTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtSettleTime.Location = new System.Drawing.Point(109, 39);
-            this.txtSettleTime.Name = "txtSettleTime";
-            this.txtSettleTime.Size = new System.Drawing.Size(107, 21);
-            this.txtSettleTime.TabIndex = 87;
+            this.txtReceiptDate.CustomFormat = "yyyy/MM/dd";
+            this.txtReceiptDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtReceiptDate.Location = new System.Drawing.Point(109, 39);
+            this.txtReceiptDate.Name = "txtReceiptDate";
+            this.txtReceiptDate.Size = new System.Drawing.Size(107, 21);
+            this.txtReceiptDate.TabIndex = 87;
             // 
             // labelX15
             // 
@@ -141,14 +141,14 @@
             this.labelX15.TabIndex = 86;
             this.labelX15.Text = "收款日期:";
             // 
-            // txtArrivalTime
+            // txtInvoiceDate
             // 
-            this.txtArrivalTime.CustomFormat = "yyyy/MM/dd";
-            this.txtArrivalTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtArrivalTime.Location = new System.Drawing.Point(109, 12);
-            this.txtArrivalTime.Name = "txtArrivalTime";
-            this.txtArrivalTime.Size = new System.Drawing.Size(107, 21);
-            this.txtArrivalTime.TabIndex = 81;
+            this.txtInvoiceDate.CustomFormat = "yyyy/MM/dd";
+            this.txtInvoiceDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtInvoiceDate.Location = new System.Drawing.Point(109, 12);
+            this.txtInvoiceDate.Name = "txtInvoiceDate";
+            this.txtInvoiceDate.Size = new System.Drawing.Size(107, 21);
+            this.txtInvoiceDate.TabIndex = 81;
             // 
             // labelX10
             // 
@@ -209,17 +209,6 @@
             this.btnUploadImage.TabIndex = 101;
             this.btnUploadImage.Text = "点击上传图像";
             // 
-            // proPictureBox1
-            // 
-            this.proPictureBox1.DefaultSaveFileName = null;
-            this.proPictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.proPictureBox1.Image = null;
-            this.proPictureBox1.Location = new System.Drawing.Point(248, 0);
-            this.proPictureBox1.Name = "proPictureBox1";
-            this.proPictureBox1.Size = new System.Drawing.Size(371, 188);
-            this.proPictureBox1.TabIndex = 102;
-            this.proPictureBox1.TabStop = false;
-            // 
             // panelLeft
             // 
             this.panelLeft.CanvasColor = System.Drawing.SystemColors.Control;
@@ -229,16 +218,16 @@
             this.panelLeft.Controls.Add(this.btnUploadImage);
             this.panelLeft.Controls.Add(this.progressLoading);
             this.panelLeft.Controls.Add(this.labelX2);
-            this.panelLeft.Controls.Add(this.txtArrivalTime);
-            this.panelLeft.Controls.Add(this.txtMargin);
+            this.panelLeft.Controls.Add(this.txtInvoiceDate);
+            this.panelLeft.Controls.Add(this.txtReceiptNum);
             this.panelLeft.Controls.Add(this.btnOK);
-            this.panelLeft.Controls.Add(this.txtJianChiLv);
+            this.panelLeft.Controls.Add(this.txtInvoiceNum);
             this.panelLeft.Controls.Add(this.btnCancel);
             this.panelLeft.Controls.Add(this.labelX20);
             this.panelLeft.Controls.Add(this.labelX10);
             this.panelLeft.Controls.Add(this.labelX1);
             this.panelLeft.Controls.Add(this.labelX15);
-            this.panelLeft.Controls.Add(this.txtSettleTime);
+            this.panelLeft.Controls.Add(this.txtReceiptDate);
             this.panelLeft.DisabledBackColor = System.Drawing.Color.Empty;
             this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeft.Location = new System.Drawing.Point(0, 0);
@@ -292,6 +281,17 @@
             this.progressLoading.TabIndex = 27;
             this.progressLoading.Value = 100;
             // 
+            // proPictureBox1
+            // 
+            this.proPictureBox1.DefaultSaveFileName = null;
+            this.proPictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.proPictureBox1.Image = null;
+            this.proPictureBox1.Location = new System.Drawing.Point(248, 0);
+            this.proPictureBox1.Name = "proPictureBox1";
+            this.proPictureBox1.Size = new System.Drawing.Size(371, 188);
+            this.proPictureBox1.TabIndex = 102;
+            this.proPictureBox1.TabStop = false;
+            // 
             // FrmAddReceiptInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -302,8 +302,8 @@
             this.Text = "新增收据信息";
             this.Load += new System.EventHandler(this.FrmAddReceiptInfo_Load);
             this.panelEx1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.proPictureBox1)).EndInit();
             this.panelLeft.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.proPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -313,14 +313,14 @@
         private DevComponents.DotNetBar.PanelEx panelEx1;
         private DevComponents.DotNetBar.ButtonX btnCancel;
         private DevComponents.DotNetBar.ButtonX btnOK;
-        private System.Windows.Forms.DateTimePicker txtArrivalTime;
+        private System.Windows.Forms.DateTimePicker txtInvoiceDate;
         private DevComponents.DotNetBar.LabelX labelX10;
-        private System.Windows.Forms.DateTimePicker txtSettleTime;
+        private System.Windows.Forms.DateTimePicker txtReceiptDate;
         private DevComponents.DotNetBar.LabelX labelX15;
         private DevComponents.DotNetBar.LabelX labelX1;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtJianChiLv;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtInvoiceNum;
         private DevComponents.DotNetBar.LabelX labelX20;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtMargin;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtReceiptNum;
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.ButtonX btnUploadImage;
         private TravelAgency.CSUI.CustomCtrls.ProPictureBox proPictureBox1;

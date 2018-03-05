@@ -241,7 +241,7 @@ namespace SteelManagement.CSUI.FrmSub
                     model.InvoiceDate = DateTime.Parse(txtInvoiceDate.Text);
                     model.Money2 = DecimalHandler.Parse(txtMoney2.Text);
                     model.EntryTime = DateTime.Now;
-                    model.SerialNo = SerialNoGenerator.GetSerialNo();//生成流水号
+                    model.SerialNo = SerialNoGenerator.GetSerialNo(SerialNoGenerator.Type.Type01Purchase);//生成流水号
                     model.OperatorId = GlobalUtils.LoginUser.Id;
                     if (_bllPurchaseInfo.Add(model) <= 0)
                     {

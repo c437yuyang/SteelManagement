@@ -197,23 +197,13 @@ namespace SteelManagement.CSUI.FrmSub
                 SteelManagement.Model.ReceiptInfo model = new SteelManagement.Model.ReceiptInfo();
                 try
                 {
-                    //model.JianChiLv = DecimalHandler.Parse(txtJianChiLv.Text);
-                    //model.ArrivalTime = DateTime.Parse(txtArrivalTime.Text);
-                    //model.SettleTime = DateTime.Parse(txtSettleTime.Text);
-                    //model.Supplier = txtSupplier.Text;
-                    //model.Brand = txtBrand.Text;
-                    //model.TransportWay = txtTransportWay.Text;
-                    //model.Size = txtSize.Text;
-                    //model.Texture = txtTexture.Text;
-                    //model.Amount = DecimalHandler.Parse(txtAmount.Text);
-                    //model.Margin = DecimalHandler.Parse(txtMargin.Text);
-                    //model.OnlinePrice = DecimalHandler.Parse(txtOnlinePrice.Text);
-                    //model.Fluctuation1 = DecimalHandler.Parse(txtFluctuation1.Text);
-                    //model.Fluctuation2 = DecimalHandler.Parse(txtFluctuation2.Text);
-                    //model.SalePrice = DecimalHandler.Parse(txtSalePrice.Text);
-                    //model.TotalSale = DecimalHandler.Parse(txtTotalSale.Text);
-                    //model.MarginRate = DecimalHandler.Parse(txtMarginRate.Text);
+                    model.InvoiceDate = DateTime.Parse(txtInvoiceDate.Text);
+                    model.ReceiptDate = DateTime.Parse(txtReceiptDate.Text);
+                    model.InvoiceNum = DecimalHandler.Parse(txtInvoiceNum.Text);
+                    model.ReceiptNum = DecimalHandler.Parse(txtReceiptNum.Text);
                     model.EntryTime = DateTime.Now;
+                    model.SerialNo = SerialNoGenerator.GetSerialNo(SerialNoGenerator.Type.Type03Receipt);
+                    model.OperatorId = GlobalUtils.LoginUser.Id;
                     if (_bllReceiptInfo.Add(model) <= 0)
                     {
                         MessageBoxEx.Show("添加失败，请稍后重试!");
