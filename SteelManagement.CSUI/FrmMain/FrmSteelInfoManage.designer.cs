@@ -53,10 +53,6 @@
             this.labelX14 = new DevComponents.DotNetBar.LabelX();
             this.labelX12 = new DevComponents.DotNetBar.LabelX();
             this.btnAddFromExcel = new DevComponents.DotNetBar.ButtonX();
-            this.txtClient = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.cbDepatureType = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.labelX7 = new DevComponents.DotNetBar.LabelX();
-            this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.cbProducePlace = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.cbName = new DevComponents.DotNetBar.Controls.ComboBoxEx();
@@ -132,7 +128,7 @@
             dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -285,10 +281,6 @@
             this.panelSerachBar.Controls.Add(this.labelX14);
             this.panelSerachBar.Controls.Add(this.labelX12);
             this.panelSerachBar.Controls.Add(this.btnAddFromExcel);
-            this.panelSerachBar.Controls.Add(this.txtClient);
-            this.panelSerachBar.Controls.Add(this.cbDepatureType);
-            this.panelSerachBar.Controls.Add(this.labelX7);
-            this.panelSerachBar.Controls.Add(this.labelX6);
             this.panelSerachBar.Controls.Add(this.cbProducePlace);
             this.panelSerachBar.Controls.Add(this.labelX3);
             this.panelSerachBar.Controls.Add(this.cbName);
@@ -453,54 +445,6 @@
             this.btnAddFromExcel.TabIndex = 56;
             this.btnAddFromExcel.Text = "从excel导入";
             this.btnAddFromExcel.Click += new System.EventHandler(this.btnAddFromExcel_Click);
-            // 
-            // txtClient
-            // 
-            // 
-            // 
-            // 
-            this.txtClient.Border.Class = "TextBoxBorder";
-            this.txtClient.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtClient.Location = new System.Drawing.Point(469, 8);
-            this.txtClient.Name = "txtClient";
-            this.txtClient.Size = new System.Drawing.Size(60, 21);
-            this.txtClient.TabIndex = 52;
-            // 
-            // cbDepatureType
-            // 
-            this.cbDepatureType.DisplayMember = "Text";
-            this.cbDepatureType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbDepatureType.FormattingEnabled = true;
-            this.cbDepatureType.ItemHeight = 15;
-            this.cbDepatureType.Location = new System.Drawing.Point(345, 7);
-            this.cbDepatureType.Name = "cbDepatureType";
-            this.cbDepatureType.Size = new System.Drawing.Size(82, 21);
-            this.cbDepatureType.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cbDepatureType.TabIndex = 55;
-            // 
-            // labelX7
-            // 
-            // 
-            // 
-            // 
-            this.labelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX7.Location = new System.Drawing.Point(286, 9);
-            this.labelX7.Name = "labelX7";
-            this.labelX7.Size = new System.Drawing.Size(66, 21);
-            this.labelX7.TabIndex = 54;
-            this.labelX7.Text = "出境类型:";
-            // 
-            // labelX6
-            // 
-            // 
-            // 
-            // 
-            this.labelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX6.Location = new System.Drawing.Point(435, 8);
-            this.labelX6.Name = "labelX6";
-            this.labelX6.Size = new System.Drawing.Size(37, 21);
-            this.labelX6.TabIndex = 53;
-            this.labelX6.Text = "客户:";
             // 
             // cbProducePlace
             // 
@@ -837,10 +781,6 @@
         private DevComponents.DotNetBar.ButtonX btnAdd;
         private System.Windows.Forms.ToolStripMenuItem 删除ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 修改ToolStripMenuItem;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtClient;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx cbDepatureType;
-        private DevComponents.DotNetBar.LabelX labelX7;
-        private DevComponents.DotNetBar.LabelX labelX6;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cbProducePlace;
         private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cbName;

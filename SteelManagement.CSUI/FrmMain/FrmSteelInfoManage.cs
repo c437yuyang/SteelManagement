@@ -281,11 +281,12 @@ namespace SteelManagement.CSUI.FrmMain
 
         private void btnClearSchConditions_Click(object sender, EventArgs e)
         {
-            txtClient.Text = "";
-            cbProducePlace.Text = "全部";
-            cbName.Text = "全部";
-            cbDepatureType.Text = "全部";
-
+            //txtClient.Text = "";
+            cbProducePlace.Text = "";
+            cbName.Text = "";
+            //cbDepatureType.Text = "";
+            txtSchEntryTimeFrom.Text = "";
+            txtSchEntryTimeTo.Text = "";
         }
 
 

@@ -240,10 +240,10 @@ namespace SteelManagement.CSUI.FrmMain
             //    conditions.Add(" Country = '" + cbCountry.Text + "' ");
             //}
 
-            //if (!string.IsNullOrEmpty(txtClient.Text.Trim()))
-            //{
-            //    conditions.Add(" (Client like '%" + txtClient.Text + "%') ");
-            //}
+            if (!string.IsNullOrEmpty(txtSerialNo.Text.Trim()))
+            {
+                conditions.Add(" (SerialNo like '%" + txtSerialNo.Text + "%') ");
+            }
 
             //if (cbDepatureType.Text == "全部")
             //{
@@ -262,10 +262,10 @@ namespace SteelManagement.CSUI.FrmMain
 
         private void btnClearSchConditions_Click(object sender, EventArgs e)
         {
-            txtClient.Text = "";
-            cbCountry.Text = "全部";
-            cbDisplayType.Text = "全部";
-            cbDepatureType.Text = "全部";
+            txtSerialNo.Text = "";
+            //cbCountry.Text = "全部";
+            //cbDisplayType.Text = "全部";
+            //cbDepatureType.Text = "全部";
 
         }
 
