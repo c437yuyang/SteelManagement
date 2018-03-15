@@ -19,19 +19,29 @@ namespace SteelManagement.Common.Excel
         {
             //1.创建工作簿对象
             IWorkbook wkbook = null;
-            if (Path.GetExtension(filename).Contains(".xls"))
+            try
             {
-                wkbook = new HSSFWorkbook(new FileStream(filename, FileMode.Open));
+                if (Path.GetExtension(filename).Equals(".xls"))
+                {
+
+                    wkbook = new HSSFWorkbook(new FileStream(filename, FileMode.Open));
+                }
+                else if (Path.GetExtension(filename).Equals(".xlsx"))
+                {
+                    wkbook = new XSSFWorkbook(new FileStream(filename, FileMode.Open));
+                }
+                else
+                {
+                    MessageBoxEx.Show("打开文件错误，请重试!");
+                    return null;
+                }
             }
-            else if (Path.GetExtension(filename).Contains(".xlsx"))
+            catch (Exception)
             {
-                wkbook = new XSSFWorkbook(new FileStream(filename, FileMode.Open));
-            }
-            else
-            {
-                MessageBoxEx.Show("打开文件错误，请重试!");
+                MessageBoxEx.Show("文件占用，请关闭Excel后再打开文件!");
                 return null;
             }
+
 
             //2.创建工作表对象
             ISheet sheet = wkbook.GetSheet("sheet1");
