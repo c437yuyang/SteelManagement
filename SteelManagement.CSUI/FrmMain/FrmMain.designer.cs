@@ -63,6 +63,7 @@
             this.btnMCloseOther = new System.Windows.Forms.ToolStripMenuItem();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.btnFrmGaoPaiManage = new DevComponents.DotNetBar.ButtonItem();
+            this.btnProjectBillManage = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonControl1.SuspendLayout();
             this.ribbonPanel3.SuspendLayout();
             this.ribbonPanel1.SuspendLayout();
@@ -168,7 +169,8 @@
             this.btnSteelInfoManage,
             this.btnPurchaseInfoManage,
             this.btnSaleInfoManage,
-            this.btnSaleBillManage});
+            this.btnSaleBillManage,
+            this.btnProjectBillManage});
             this.ribbonBar2.Location = new System.Drawing.Point(3, 0);
             this.ribbonBar2.Name = "ribbonBar2";
             this.ribbonBar2.Size = new System.Drawing.Size(511, 58);
@@ -547,6 +549,15 @@
             this.btnFrmGaoPaiManage.SubItemsExpandWidth = 14;
             this.btnFrmGaoPaiManage.Text = "高排图像管理";
             // 
+            // btnProjectBillManage
+            // 
+            this.btnProjectBillManage.Icon = ((System.Drawing.Icon)(resources.GetObject("btnProjectBillManage.Icon")));
+            this.btnProjectBillManage.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
+            this.btnProjectBillManage.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnProjectBillManage.Name = "btnProjectBillManage";
+            this.btnProjectBillManage.SubItemsExpandWidth = 14;
+            this.btnProjectBillManage.Text = "销售款项管理";
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -605,5 +616,6 @@
         private DevComponents.DotNetBar.ButtonItem btnCommisionMoneyManage;
         private DevComponents.DotNetBar.ButtonItem btnAppAllManage;
         private DevComponents.DotNetBar.ButtonItem btnSaleBillManage;
+        private DevComponents.DotNetBar.ButtonItem btnProjectBillManage;
     }
 }

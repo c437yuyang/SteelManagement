@@ -42,7 +42,11 @@ namespace SteelManagement.CSUI.FrmMain
             FrmSaleBillManage frm = new FrmSaleBillManage();
             OpenTab(frm, frm.Name);
         }
-        
+        private void BtnProjectBillManage_Click(object sender, EventArgs e)
+        {
+            FrmProjectBillManage frm = new FrmProjectBillManage();
+            OpenTab(frm, frm.Name);
+        }
         #endregion
 
         public void OpenTab(Form frm, string Name)
@@ -147,6 +151,7 @@ namespace SteelManagement.CSUI.FrmMain
             this.btnPurchaseInfoManage.Click += BtnPurchaseInfoManage_Click;
             this.btnSaleInfoManage.Click += BtnSaleInfoManage_Click;
             this.btnSaleBillManage.Click += btnReceiptInfoManage_Click;
+            this.btnProjectBillManage.Click += BtnProjectBillManage_Click;
         }
 
 

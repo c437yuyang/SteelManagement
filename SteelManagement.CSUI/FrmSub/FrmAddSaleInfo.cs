@@ -83,6 +83,8 @@ namespace SteelManagement.CSUI.FrmSub
             txtTransportWay.Text = _purchaseInfoModel.TransportWay;
             txtSize.Text = _purchaseInfoModel.Size;
             txtTexture.Text = _purchaseInfoModel.Texture;
+            txtCorporation.Text = _purchaseInfoModel.Corporation;
+            txtProject.Text = _purchaseInfoModel.Project;
         }
 
         private void InitComboBoxs()

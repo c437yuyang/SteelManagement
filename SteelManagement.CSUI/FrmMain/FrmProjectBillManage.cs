@@ -29,7 +29,7 @@ namespace SteelManagement.CSUI.FrmMain
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            _recordCount = _bllProjectBill.GetRecordCount(_where);
+            //_recordCount = _bllProjectBill.GetRecordCount(_where);
             _pageCount = (int)Math.Ceiling(_recordCount / (double)_pageSize);
 
             //初始化一些控件
@@ -71,7 +71,7 @@ namespace SteelManagement.CSUI.FrmMain
             cbProject.SelectedIndex = 0;
 
 
-            string tablename = "ProjectBill";
+            string tablename = "SaleInfo";
             var list = BLL.CommonBll.GetFieldList(tablename, "Project");
             foreach (var item in list)
             {
@@ -89,7 +89,7 @@ namespace SteelManagement.CSUI.FrmMain
 
         private void DataGridView1_DoubleClick(object sender, EventArgs e)
         {
-            修改ToolStripMenuItem_Click(null, null);
+            //修改ToolStripMenuItem_Click(null, null);
         }
 
         private void CbPageSize_TextChanged(object sender, EventArgs e)
@@ -179,7 +179,7 @@ namespace SteelManagement.CSUI.FrmMain
             int curSelectedRow = -1;
             if (dataGridView1.SelectedRows.Count > 0)
                 curSelectedRow = dataGridView1.SelectedRows[0].Index;
-            dataGridView1.DataSource = _bllProjectBill.GetListByPageOrderById(_where, _curPage, _pageSize);
+            dataGridView1.DataSource = _bllProjectBill.GetModelList("");
             if (curSelectedRow != -1 && dataGridView1.Rows.Count > curSelectedRow)
                 dataGridView1.CurrentCell = dataGridView1.Rows[curSelectedRow].Cells[0];
             dataGridView1.Update();
@@ -187,7 +187,7 @@ namespace SteelManagement.CSUI.FrmMain
 
         private void UpdateState()
         {
-            _recordCount = _bllProjectBill.GetRecordCount(_where);
+            //_recordCount = _bllProjectBill.GetRecordCount(_where);
             _pageCount = (int)Math.Ceiling((double)_recordCount / (double)_pageSize);
             if (_curPage == 1)
                 btnPagePre.Enabled = false;
@@ -338,13 +338,13 @@ namespace SteelManagement.CSUI.FrmMain
                 row.HeaderCell.Value = (i + 1).ToString();
 
                 //在这里控制单元格的显示
-                var invoiceNum = DgvDataSourceToList()[i].InvoiceNum;
-                if (invoiceNum != null)
-                    dataGridView1["InvoiceNum", i].Value = DecimalHandler.DecimalToString(invoiceNum);
+                //var invoiceNum = DgvDataSourceToList()[i].InvoiceNum;
+                //if (invoiceNum != null)
+                //    dataGridView1["InvoiceNum", i].Value = DecimalHandler.DecimalToString(invoiceNum);
 
-                var receiptNum = DgvDataSourceToList()[i].ReceiptNum;
-                if (receiptNum != null)
-                    dataGridView1["ReceiptNum", i].Value = DecimalHandler.DecimalToString(receiptNum);
+                //var receiptNum = DgvDataSourceToList()[i].ReceiptNum;
+                //if (receiptNum != null)
+                //    dataGridView1["ReceiptNum", i].Value = DecimalHandler.DecimalToString(receiptNum);
 
             }
         }
@@ -445,30 +445,14 @@ namespace SteelManagement.CSUI.FrmMain
 
 
         #region 按钮事件
-        private void btnCreateReport_Click(object sender, EventArgs e)
-        {
-            //ExcelGenerator.GetStatisticPersonalTable(dataGridView1.DataSource as List<Model.PersonalStat>);
-        }
 
-        private void btnAddFromExcel_Click(object sender, EventArgs e)
-        {
-            //string filename = GlobalUtils.ShowOpenFileDlg("Excel文件|*.xls;*.xlsx");
-            //if (string.IsNullOrEmpty(filename))
-            //    return;
 
-            //var list = Common.Excel.ExcelParser.GetSteelListFromExcel(filename);
-            //if (list == null || list.Count == 0)
-            //    return;
-            //int res = _bllProjectBill.AddList(list);
-            //GlobalUtils.MessageBoxWithRecordNum("导入", res, list.Count);
-
-            //LoadDataToDgvAsyn();
-        }
+       
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            FrmAddProjectBill frm = new FrmAddProjectBill(LoadDataToDataGridView, _curPage);
-            frm.ShowDialog();
+            //FrmAddProjectBill frm = new FrmAddProjectBill(LoadDataToDataGridView, _curPage);
+            //frm.ShowDialog();
         }
         #endregion
 
@@ -490,106 +474,6 @@ namespace SteelManagement.CSUI.FrmMain
             return res.Count > 0 ? res : null;
         }
         #region 右键菜单响应
-
-        private void 查看收据图像ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var list = GetSelectedModelList();
-            int idx = 0;
-            if (list.Count == 1) //选中一个就查看所有
-            {
-                list = DgvDataSourceToList();
-                idx = dataGridView1.SelectedRows[0].Index;
-            }
-            List<string> name_list = new List<string>();
-            foreach (var model in list)
-            {
-                if(!string.IsNullOrEmpty(model.SerialNo))
-                    name_list.Add(model.SerialNo + ".jpg");
-            }
-
-            FrmShowPicture frm = new FrmShowPicture(name_list,"收据查看",idx);
-            frm.Show();
-
-        }
-
-        private void 删除ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //if (GlobalUtils.LoginUserLevel != RigthLevel.Manager)
-            //{
-            //    MessageBoxEx.Show("权限不足!");
-            //    return;
-            //}
-
-            int count = this.dataGridView1.SelectedRows.Count;
-            if (MessageBoxEx.Show("确认删除" + count + "条记录?", "提醒", MessageBoxButtons.OKCancel)
-                == DialogResult.Cancel)
-                return;
-            var modelList = GetSelectedModelList();
-            int res = _bllProjectBill.DeleteList(modelList);
-
-            GlobalUtils.MessageBoxWithRecordNum("删除", res, count);
-            LoadDataToDataGridView(_curPage);
-            UpdateState();
-        }
-
-        private void 修改ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var list = GetSelectedModelList();
-
-            if (list.Count > 1)
-            {
-                MessageBoxEx.Show("请选中一条进行修改!");
-                return;
-            }
-            FrmAddProjectBill frm = new FrmAddProjectBill(LoadDataToDataGridView, _curPage, true, list[0]);
-            frm.ShowDialog();
-        }
-
-        private void 查看选中项目统计ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var selList = GetSelectedModelList();
-
-            if (selList.Count > 1)
-            {
-                MessageBoxEx.Show("请选中一条进行查看!");
-                return;
-            }
-
-            var ProjectBillModellist = _bllProjectBill.GetModelList(" Project = '" + selList[0].Project + "' ");
-
-            ExcelGenerator.GetSailBillCount(ProjectBillModellist);
-
-        }
-
-
-        //private void 采购ToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    var list = GetSelectedModelList();
-
-        //    if (list.Count > 1)
-        //    {
-        //        MessageBoxEx.Show("请选中一条进行采购!");
-        //        return;
-        //    }
-        //    //FrmAddProjectBill frm = new FrmAddProjectBill(LoadDataToDataGridView, _curPage, list[0]);
-        //    //frm.ShowDialog();
-        //}
-
-        private void 导出选中公司收款统计报表ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var selList = GetSelectedModelList();
-
-            if (selList.Count > 1)
-            {
-                MessageBoxEx.Show("请选中一条进行查看!");
-                return;
-            }
-
-            var ProjectBillModellist = _bllProjectBill.GetModelList(" Corporation = '" + selList[0].Corporation + "' ");
-
-
-
-        }
 
         #endregion
 
