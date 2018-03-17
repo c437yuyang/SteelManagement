@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.panelMain = new DevComponents.DotNetBar.PanelEx();
             this.panelDgv = new DevComponents.DotNetBar.PanelEx();
@@ -67,6 +67,7 @@
             this.cmsItemRefreshState = new System.Windows.Forms.ToolStripMenuItem();
             this.删除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.修改ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.查看收据图像ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.人申请表ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.机票报表ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.外领担保函ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,12 +76,16 @@
             this.bgWorkerLoadData = new System.ComponentModel.BackgroundWorker();
             this.EntryTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SerialNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Corporation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Project = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Supplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DuiZhang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.InvoiceDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ReceiptDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.InvoiceNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReceiptDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ReceiptNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.查看收据图像ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelMain.SuspendLayout();
             this.panelDgv.SuspendLayout();
@@ -96,44 +101,49 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.EntryTime,
             this.SerialNo,
+            this.Corporation,
+            this.Project,
+            this.Supplier,
+            this.Amount,
+            this.DuiZhang,
             this.InvoiceDate,
-            this.ReceiptDate,
             this.InvoiceNum,
+            this.ReceiptDate,
             this.ReceiptNum,
             this.Id});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dataGridView1.RowTemplate.Height = 30;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -506,7 +516,7 @@
             this.修改ToolStripMenuItem,
             this.查看收据图像ToolStripMenuItem});
             this.cmsDgvRb.Name = "cmsDgvRb";
-            this.cmsDgvRb.Size = new System.Drawing.Size(161, 114);
+            this.cmsDgvRb.Size = new System.Drawing.Size(161, 92);
             // 
             // cmsItemRefreshState
             // 
@@ -528,6 +538,13 @@
             this.修改ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.修改ToolStripMenuItem.Text = "修改";
             this.修改ToolStripMenuItem.Click += new System.EventHandler(this.修改ToolStripMenuItem_Click);
+            // 
+            // 查看收据图像ToolStripMenuItem
+            // 
+            this.查看收据图像ToolStripMenuItem.Name = "查看收据图像ToolStripMenuItem";
+            this.查看收据图像ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.查看收据图像ToolStripMenuItem.Text = "查看收据图像";
+            this.查看收据图像ToolStripMenuItem.Click += new System.EventHandler(this.查看收据图像ToolStripMenuItem_Click);
             // 
             // 人申请表ToolStripMenuItem
             // 
@@ -572,11 +589,46 @@
             this.SerialNo.HeaderText = "流水号";
             this.SerialNo.Name = "SerialNo";
             // 
+            // Corporation
+            // 
+            this.Corporation.DataPropertyName = "Corporation";
+            this.Corporation.HeaderText = "公司";
+            this.Corporation.Name = "Corporation";
+            // 
+            // Project
+            // 
+            this.Project.DataPropertyName = "Project";
+            this.Project.HeaderText = "项目";
+            this.Project.Name = "Project";
+            // 
+            // Supplier
+            // 
+            this.Supplier.DataPropertyName = "Supplier";
+            this.Supplier.HeaderText = "供应商";
+            this.Supplier.Name = "Supplier";
+            // 
+            // Amount
+            // 
+            this.Amount.DataPropertyName = "Amount";
+            this.Amount.HeaderText = "金额";
+            this.Amount.Name = "Amount";
+            // 
+            // DuiZhang
+            // 
+            this.DuiZhang.DataPropertyName = "DuiZhang";
+            this.DuiZhang.HeaderText = "对账";
+            this.DuiZhang.Name = "DuiZhang";
+            // 
             // InvoiceDate
             // 
             this.InvoiceDate.DataPropertyName = "InvoiceDate";
             this.InvoiceDate.HeaderText = "开票日期";
             this.InvoiceDate.Name = "InvoiceDate";
+            // 
+            // InvoiceNum
+            // 
+            this.InvoiceNum.HeaderText = "开票金额";
+            this.InvoiceNum.Name = "InvoiceNum";
             // 
             // ReceiptDate
             // 
@@ -584,14 +636,9 @@
             this.ReceiptDate.HeaderText = "收款日期";
             this.ReceiptDate.Name = "ReceiptDate";
             // 
-            // InvoiceNum
-            // 
-            this.InvoiceNum.HeaderText = "开票金额(应收)";
-            this.InvoiceNum.Name = "InvoiceNum";
-            // 
             // ReceiptNum
             // 
-            this.ReceiptNum.HeaderText = "收款金额(实收)";
+            this.ReceiptNum.HeaderText = "收款金额";
             this.ReceiptNum.Name = "ReceiptNum";
             // 
             // Id
@@ -601,20 +648,13 @@
             this.Id.Name = "Id";
             this.Id.Visible = false;
             // 
-            // 查看收据图像ToolStripMenuItem
-            // 
-            this.查看收据图像ToolStripMenuItem.Name = "查看收据图像ToolStripMenuItem";
-            this.查看收据图像ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.查看收据图像ToolStripMenuItem.Text = "查看收据图像";
-            this.查看收据图像ToolStripMenuItem.Click += new System.EventHandler(this.查看收据图像ToolStripMenuItem_Click);
-            // 
-            // FrmReceiptInfoManage
+            // FrmSaleBillManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1271, 623);
             this.Controls.Add(this.panelMain);
-            this.Name = "FrmReceiptInfoManage";
+            this.Name = "FrmSaleBillManage";
             this.Text = "发票信息管理";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -671,14 +711,19 @@
         private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cbDisplayType;
         private DevComponents.DotNetBar.LabelX labelX15;
+        private System.Windows.Forms.ToolStripMenuItem 查看收据图像ToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn EntryTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn SerialNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Corporation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Project;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Supplier;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DuiZhang;
         private System.Windows.Forms.DataGridViewTextBoxColumn InvoiceDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ReceiptDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn InvoiceNum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ReceiptDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn ReceiptNum;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.ToolStripMenuItem 查看收据图像ToolStripMenuItem;
     }
 }
 

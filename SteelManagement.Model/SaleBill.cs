@@ -14,7 +14,7 @@ namespace SteelManagement.Model
 		private DateTime? _entrytime;
 		private string _supplier;
 		private decimal? _amount;
-		private decimal? _duizhnag;
+		private decimal? _DuiZhang;
 		private DateTime? _invoicedate;
 		private decimal? _invoicenum;
 		private DateTime? _receiptdate;
@@ -22,6 +22,7 @@ namespace SteelManagement.Model
 		private string _corporation;
 		private string _project;
 		private string _serialno;
+		private int? _operatorid;
 		/// <summary>
 		/// 
 		/// </summary>
@@ -57,10 +58,10 @@ namespace SteelManagement.Model
 		/// <summary>
 		/// 
 		/// </summary>
-		public decimal? DuiZhnag
+		public decimal? DuiZhang
 		{
-			set{ _duizhnag=value;}
-			get{return _duizhnag;}
+			set{ _DuiZhang=value;}
+			get{return _DuiZhang;}
 		}
 		/// <summary>
 		/// 
@@ -117,6 +118,14 @@ namespace SteelManagement.Model
 		{
 			set{ _serialno=value;}
 			get{return _serialno;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public int? OperatorId
+		{
+			set{ _operatorid=value;}
+			get{return _operatorid;}
 		}
 		#endregion Model
 

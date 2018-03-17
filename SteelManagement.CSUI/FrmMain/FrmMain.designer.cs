@@ -37,6 +37,8 @@
             this.btnSteelInfoManage = new DevComponents.DotNetBar.ButtonItem();
             this.btnPurchaseInfoManage = new DevComponents.DotNetBar.ButtonItem();
             this.btnSaleInfoManage = new DevComponents.DotNetBar.ButtonItem();
+            this.btnSaleBillManage = new DevComponents.DotNetBar.ButtonItem();
+            this.ribbonPanel5 = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonPanel1 = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonBar1 = new DevComponents.DotNetBar.RibbonBar();
             this.btntActionRecordsCount = new DevComponents.DotNetBar.ButtonItem();
@@ -49,7 +51,6 @@
             this.ribbonBar3 = new DevComponents.DotNetBar.RibbonBar();
             this.btnVisaRequestPayoutManage = new DevComponents.DotNetBar.ButtonItem();
             this.btnAppAllManage = new DevComponents.DotNetBar.ButtonItem();
-            this.ribbonPanel5 = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonTabItem3 = new DevComponents.DotNetBar.RibbonTabItem();
             this.ribbonTabItem1 = new DevComponents.DotNetBar.RibbonTabItem();
             this.ribbonTabItem2 = new DevComponents.DotNetBar.RibbonTabItem();
@@ -62,7 +63,6 @@
             this.btnMCloseOther = new System.Windows.Forms.ToolStripMenuItem();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.btnFrmGaoPaiManage = new DevComponents.DotNetBar.ButtonItem();
-            this.btnReceiptInfoManage = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonControl1.SuspendLayout();
             this.ribbonPanel3.SuspendLayout();
             this.ribbonPanel1.SuspendLayout();
@@ -168,7 +168,7 @@
             this.btnSteelInfoManage,
             this.btnPurchaseInfoManage,
             this.btnSaleInfoManage,
-            this.btnReceiptInfoManage});
+            this.btnSaleBillManage});
             this.ribbonBar2.Location = new System.Drawing.Point(3, 0);
             this.ribbonBar2.Name = "ribbonBar2";
             this.ribbonBar2.Size = new System.Drawing.Size(511, 58);
@@ -211,6 +211,39 @@
             this.btnSaleInfoManage.Name = "btnSaleInfoManage";
             this.btnSaleInfoManage.SubItemsExpandWidth = 14;
             this.btnSaleInfoManage.Text = "销售信息管理";
+            // 
+            // btnSaleBillManage
+            // 
+            this.btnSaleBillManage.Icon = ((System.Drawing.Icon)(resources.GetObject("btnSaleBillManage.Icon")));
+            this.btnSaleBillManage.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
+            this.btnSaleBillManage.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnSaleBillManage.Name = "btnSaleBillManage";
+            this.btnSaleBillManage.SubItemsExpandWidth = 14;
+            this.btnSaleBillManage.Text = "销售款项管理";
+            this.btnSaleBillManage.Click += new System.EventHandler(this.btnReceiptInfoManage_Click);
+            // 
+            // ribbonPanel5
+            // 
+            this.ribbonPanel5.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ribbonPanel5.Location = new System.Drawing.Point(0, 25);
+            this.ribbonPanel5.Name = "ribbonPanel5";
+            this.ribbonPanel5.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.ribbonPanel5.Size = new System.Drawing.Size(1284, 61);
+            // 
+            // 
+            // 
+            this.ribbonPanel5.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonPanel5.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonPanel5.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonPanel5.TabIndex = 5;
+            this.ribbonPanel5.Visible = false;
             // 
             // ribbonPanel1
             // 
@@ -418,29 +451,6 @@
             this.btnAppAllManage.SubItemsExpandWidth = 14;
             this.btnAppAllManage.Text = "待审批请款";
             // 
-            // ribbonPanel5
-            // 
-            this.ribbonPanel5.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel5.Location = new System.Drawing.Point(0, 25);
-            this.ribbonPanel5.Name = "ribbonPanel5";
-            this.ribbonPanel5.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel5.Size = new System.Drawing.Size(1284, 61);
-            // 
-            // 
-            // 
-            this.ribbonPanel5.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonPanel5.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonPanel5.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonPanel5.TabIndex = 5;
-            this.ribbonPanel5.Visible = false;
-            // 
             // ribbonTabItem3
             // 
             this.ribbonTabItem3.Checked = true;
@@ -537,16 +547,6 @@
             this.btnFrmGaoPaiManage.SubItemsExpandWidth = 14;
             this.btnFrmGaoPaiManage.Text = "高排图像管理";
             // 
-            // btnReceiptInfoManage
-            // 
-            this.btnReceiptInfoManage.Icon = ((System.Drawing.Icon)(resources.GetObject("btnReceiptInfoManage.Icon")));
-            this.btnReceiptInfoManage.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
-            this.btnReceiptInfoManage.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnReceiptInfoManage.Name = "btnReceiptInfoManage";
-            this.btnReceiptInfoManage.SubItemsExpandWidth = 14;
-            this.btnReceiptInfoManage.Text = "收据信息管理";
-            this.btnReceiptInfoManage.Click += new System.EventHandler(this.btnReceiptInfoManage_Click);
-            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -604,6 +604,6 @@
         private DevComponents.DotNetBar.ButtonItem btnConsulateManage;
         private DevComponents.DotNetBar.ButtonItem btnCommisionMoneyManage;
         private DevComponents.DotNetBar.ButtonItem btnAppAllManage;
-        private DevComponents.DotNetBar.ButtonItem btnReceiptInfoManage;
+        private DevComponents.DotNetBar.ButtonItem btnSaleBillManage;
     }
 }

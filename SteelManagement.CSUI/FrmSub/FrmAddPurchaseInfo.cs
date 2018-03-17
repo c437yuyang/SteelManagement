@@ -249,6 +249,13 @@ namespace SteelManagement.CSUI.FrmSub
                     _model.TieXi = DecimalHandler.Parse(txtTieXi.Text);
                     _model.Corporation = txtCorporation.Text;
 
+
+                    if (string.IsNullOrEmpty(txtProject.Text))
+                    {
+                        MessageBoxEx.Show("必须填写项目名称!");
+                        return;
+                    }
+
                     _model.Project = txtProject.Text;
                     _model.Dateline = DateTime.Parse(txtDateline.Text);
                     _model.Supplier = txtSupplier.Text;
