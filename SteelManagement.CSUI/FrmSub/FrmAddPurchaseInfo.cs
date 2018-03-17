@@ -50,7 +50,7 @@ namespace SteelManagement.CSUI.FrmSub
             if (_is4Modify)
             {
                 //把选中的加载到这里面
-                txtCorporation.Text = _model.Coporation;
+                txtCorporation.Text = _model.Corporation;
                 txtProject.Text = _model.Project;
                 txtDateline.Text = _model.Dateline.ToString();
                 txtSupplier.Text = _model.Supplier;
@@ -122,6 +122,12 @@ namespace SteelManagement.CSUI.FrmSub
                 txtProject.Items.Add(item);
             }
 
+             list = BLL.CommonBll.GetFieldList(tablename, "Corporation");
+            foreach (var item in list)
+            {
+                txtCorporation.Items.Add(item);
+            }
+
             list = BLL.CommonBll.GetFieldList(tablename, "Supplier");
             foreach (var item in list)
             {
@@ -184,6 +190,38 @@ namespace SteelManagement.CSUI.FrmSub
             {
                 txtPrice.Items.Add(item);
             }
+
+            list = BLL.CommonBll.GetFieldList(tablename, "DiaoZhuang");
+            foreach (var item in list)
+            {
+                txtDiaoZhuang.Items.Add(item);
+            }
+
+            list = BLL.CommonBll.GetFieldList(tablename, "LiXi");
+            foreach (var item in list)
+            {
+                txtLiXi.Items.Add(item);
+            }
+
+            list = BLL.CommonBll.GetFieldList(tablename, "ChengDui");
+            foreach (var item in list)
+            {
+                txtChengDui.Items.Add(item);
+            }
+
+            list = BLL.CommonBll.GetFieldList(tablename, "OtherCost");
+            foreach (var item in list)
+            {
+                txtOtherCost.Items.Add(item);
+            }
+
+            list = BLL.CommonBll.GetFieldList(tablename, "TieXi");
+            foreach (var item in list)
+            {
+                txtTieXi.Items.Add(item);
+            }
+
+
         }
 
         private void btnOK_Click(object sender, EventArgs e)
@@ -230,7 +268,7 @@ namespace SteelManagement.CSUI.FrmSub
                 SteelManagement.Model.PurchaseInfo model = new SteelManagement.Model.PurchaseInfo();
                 try
                 {
-                    model.Coporation = txtCorporation.Text;
+                    model.Corporation = txtCorporation.Text;
 
                     if (string.IsNullOrEmpty(txtProject.Text))
                     {

@@ -36,7 +36,7 @@ namespace SteelManagement.Model
 		private decimal? _chengdui;
 		private decimal? _othercost;
 		private decimal? _tiexi;
-		private string _coporation;
+		private string _Corporation;
 		/// <summary>
 		/// 
 		/// </summary>
@@ -248,10 +248,10 @@ namespace SteelManagement.Model
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Coporation
+		public string Corporation
 		{
-			set{ _coporation=value;}
-			get{return _coporation;}
+			set{ _Corporation=value;}
+			get{return _Corporation;}
 		}
 		#endregion Model
 
