@@ -50,6 +50,7 @@ namespace SteelManagement.CSUI.FrmSub
             if (_is4Modify)
             {
                 //把选中的加载到这里面
+                txtCorporation.Text = _model.Coporation;
                 txtProject.Text = _model.Project;
                 txtDateline.Text = _model.Dateline.ToString();
                 txtSupplier.Text = _model.Supplier;
@@ -229,7 +230,15 @@ namespace SteelManagement.CSUI.FrmSub
                 SteelManagement.Model.PurchaseInfo model = new SteelManagement.Model.PurchaseInfo();
                 try
                 {
+                    model.Coporation = txtCorporation.Text;
+
+                    if (string.IsNullOrEmpty(txtProject.Text))
+                    {
+                        MessageBoxEx.Show("必须填写项目名称!");
+                        return;
+                    }
                     model.Project = txtProject.Text;
+
                     model.Dateline = DateTime.Parse(txtDateline.Text);
                     model.Supplier = txtSupplier.Text;
                     model.Brand = txtBrand.Text;
