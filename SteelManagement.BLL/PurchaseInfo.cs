@@ -63,8 +63,6 @@ namespace SteelManagement.BLL
 			return dal.GetModel(Id);
 		}
 
-		
-
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>

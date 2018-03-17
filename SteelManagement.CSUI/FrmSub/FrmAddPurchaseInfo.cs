@@ -67,6 +67,12 @@ namespace SteelManagement.CSUI.FrmSub
                 txtMoney1.Text = _model.Money1.ToString();
                 txtInvoiceDate.Text = _model.InvoiceDate.ToString();
                 txtMoney2.Text = _model.Money2.ToString();
+
+                txtDiaoZhuang.Text = _model.DiaoZhuang.ToString();
+                txtLiXi.Text = _model.LiXi.ToString();
+                txtChengDui.Text = _model.ChengDui.ToString();
+                txtOtherCost.Text = _model.OtherCost.ToString();
+                txtTieXi.Text = _model.TieXi.ToString();
                 this.Text = "修改采购信息";
             }
 
@@ -243,6 +249,13 @@ namespace SteelManagement.CSUI.FrmSub
                     model.EntryTime = DateTime.Now;
                     model.SerialNo = SerialNoGenerator.GetSerialNo(SerialNoGenerator.Type.Type01Purchase);//生成流水号
                     model.OperatorId = GlobalUtils.LoginUser.Id;
+
+                    model.DiaoZhuang = DecimalHandler.Parse(txtDiaoZhuang.Text);
+                    model.LiXi = DecimalHandler.Parse(txtLiXi.Text);
+                    model.ChengDui = DecimalHandler.Parse(txtChengDui.Text);
+                    model.OtherCost = DecimalHandler.Parse(txtOtherCost.Text);
+                    model.TieXi = DecimalHandler.Parse(txtTieXi.Text);
+
                     if (_bllPurchaseInfo.Add(model) <= 0)
                     {
                         MessageBoxEx.Show("添加失败，请稍后重试!");

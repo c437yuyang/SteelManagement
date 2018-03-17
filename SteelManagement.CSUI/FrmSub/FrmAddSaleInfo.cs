@@ -279,6 +279,9 @@ namespace SteelManagement.CSUI.FrmSub
                     model.EntryTime = DateTime.Now;
                     model.SerialNo = SerialNoGenerator.GetSerialNo(SerialNoGenerator.Type.Type02Sale);
                     model.OperatorId = GlobalUtils.LoginUser.Id;
+
+                    
+
                     if (_bllSaleInfo.Add(model) <= 0)
                     {
                         MessageBoxEx.Show("添加失败，请稍后重试!");

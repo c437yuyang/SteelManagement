@@ -643,7 +643,7 @@
             this.ClientSize = new System.Drawing.Size(424, 441);
             this.Controls.Add(this.panelEx1);
             this.Name = "FrmAddSaleInfo";
-            this.Text = "新增采购信息";
+            this.Text = "新增销售信息";
             this.Load += new System.EventHandler(this.FrmAddSaleInfo_Load);
             this.panelEx1.ResumeLayout(false);
             this.ResumeLayout(false);
