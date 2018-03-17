@@ -47,23 +47,17 @@ namespace SteelManagement.CSUI.FrmSub
             if (_is4Modify)
             {
                 //把选中的加载到这里面
-                //txtJianChiLv.Text = DecimalHandler.DecimalToPercent(_model.JianChiLv);
-                //txtArrivalTime.Text = DateTimeFormator.DateTimeToString(_model.ArrivalTime);
-                //txtSettleTime.Text = DateTimeFormator.DateTimeToString(_model.SettleTime);
-                //txtSupplier.Text = _model.Supplier;
-                //txtBrand.Text = _model.Brand;
-                //txtTransportWay.Text = _model.TransportWay;
-                //txtSize.Text = _model.Size;
-                //txtTexture.Text = _model.Texture;
-                //txtAmount.Text = DecimalHandler.DecimalToString(_model.Amount);
-                //txtMargin.Text = DecimalHandler.DecimalToString(_model.Margin);
-                //txtOnlinePrice.Text = DecimalHandler.DecimalToString(_model.OnlinePrice);
-                //txtFluctuation1.Text = DecimalHandler.DecimalToString(_model.Fluctuation1);
-                //txtFluctuation2.Text = DecimalHandler.DecimalToString(_model.Fluctuation2);
-                //txtSalePrice.Text = DecimalHandler.DecimalToString(_model.SalePrice);
-                //txtTotalSale.Text = DecimalHandler.DecimalToString(_model.TotalSale);
-                //txtMarginRate.Text = DecimalHandler.DecimalToPercent(_model.MarginRate);
-                this.Text = "修改销售信息";
+                txtCorporation.Text = _model.Corporation;
+                txtProject.Text = _model.Project;
+                txtSupplier.Text = _model.Supplier;
+                txtDuiZhang.Text = DecimalHandler.DecimalToString(_model.DuiZhang);
+                txtAmount.Text = DecimalHandler.DecimalToString(_model.Amount);
+                txtInvoiceNum.Text = DecimalHandler.DecimalToString(_model.InvoiceNum);
+                txtReceiptNum.Text = DecimalHandler.DecimalToString(_model.ReceiptNum);
+                txtInvoiceDate.Text = _model.InvoiceDate.ToString();
+                txtReceiptDate.Text = _model.ReceiptDate.ToString();
+
+                this.Text = "修改销售收款";
             }
 
         }

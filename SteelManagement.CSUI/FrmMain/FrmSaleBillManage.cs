@@ -520,8 +520,8 @@ namespace SteelManagement.CSUI.FrmMain
                 MessageBoxEx.Show("请选中一条进行修改!");
                 return;
             }
-            //FrmAddSaleBill frm = new FrmAddSaleBill(LoadDataToDataGridView, _curPage, true, list[0]);
-            //frm.ShowDialog();
+            FrmAddSaleBill frm = new FrmAddSaleBill(LoadDataToDataGridView, _curPage, true, list[0]);
+            frm.ShowDialog();
         }
 
         //private void 采购ToolStripMenuItem_Click(object sender, EventArgs e)
