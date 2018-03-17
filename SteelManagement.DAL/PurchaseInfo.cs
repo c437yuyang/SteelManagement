@@ -46,9 +46,9 @@ namespace SteelManagement.DAL
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("insert into PurchaseInfo(");
-			strSql.Append("EntryTime,Project,Dateline,Supplier,Brand,TransportWay,Size,Texture,Amount,Quote,Fluctuation1,TransportCost,Price,TotalMoney,FuYuDate,Money1,InvoiceDate,Money2,SerialNo,OperatorId)");
+			strSql.Append("EntryTime,Project,Dateline,Supplier,Brand,TransportWay,Size,Texture,Amount,Quote,Fluctuation1,TransportCost,Price,TotalMoney,FuYuDate,Money1,InvoiceDate,Money2,SerialNo,OperatorId,DiaoZhuang,LiXi,ChengDui,OtherCost,TieXi)");
 			strSql.Append(" values (");
-			strSql.Append("@EntryTime,@Project,@Dateline,@Supplier,@Brand,@TransportWay,@Size,@Texture,@Amount,@Quote,@Fluctuation1,@TransportCost,@Price,@TotalMoney,@FuYuDate,@Money1,@InvoiceDate,@Money2,@SerialNo,@OperatorId)");
+			strSql.Append("@EntryTime,@Project,@Dateline,@Supplier,@Brand,@TransportWay,@Size,@Texture,@Amount,@Quote,@Fluctuation1,@TransportCost,@Price,@TotalMoney,@FuYuDate,@Money1,@InvoiceDate,@Money2,@SerialNo,@OperatorId,@DiaoZhuang,@LiXi,@ChengDui,@OtherCost,@TieXi)");
 			strSql.Append(";select @@IDENTITY");
 			SqlParameter[] parameters = {
 					new SqlParameter("@EntryTime", SqlDbType.DateTime),
@@ -70,7 +70,12 @@ namespace SteelManagement.DAL
 					new SqlParameter("@InvoiceDate", SqlDbType.DateTime,3),
 					new SqlParameter("@Money2", SqlDbType.Money,8),
 					new SqlParameter("@SerialNo", SqlDbType.VarChar,50),
-					new SqlParameter("@OperatorId", SqlDbType.Int,4)};
+					new SqlParameter("@OperatorId", SqlDbType.Int,4),
+					new SqlParameter("@DiaoZhuang", SqlDbType.Money,8),
+					new SqlParameter("@LiXi", SqlDbType.Money,8),
+					new SqlParameter("@ChengDui", SqlDbType.Money,8),
+					new SqlParameter("@OtherCost", SqlDbType.Money,8),
+					new SqlParameter("@TieXi", SqlDbType.Money,8)};
 			parameters[0].Value = model.EntryTime;
 			parameters[1].Value = model.Project;
 			parameters[2].Value = model.Dateline;
@@ -91,6 +96,11 @@ namespace SteelManagement.DAL
 			parameters[17].Value = model.Money2;
 			parameters[18].Value = model.SerialNo;
 			parameters[19].Value = model.OperatorId;
+			parameters[20].Value = model.DiaoZhuang;
+			parameters[21].Value = model.LiXi;
+			parameters[22].Value = model.ChengDui;
+			parameters[23].Value = model.OtherCost;
+			parameters[24].Value = model.TieXi;
 
 			object obj = DbHelperSQL.GetSingle(strSql.ToString(),parameters);
 			if (obj == null)
@@ -128,7 +138,12 @@ namespace SteelManagement.DAL
 			strSql.Append("InvoiceDate=@InvoiceDate,");
 			strSql.Append("Money2=@Money2,");
 			strSql.Append("SerialNo=@SerialNo,");
-			strSql.Append("OperatorId=@OperatorId");
+			strSql.Append("OperatorId=@OperatorId,");
+			strSql.Append("DiaoZhuang=@DiaoZhuang,");
+			strSql.Append("LiXi=@LiXi,");
+			strSql.Append("ChengDui=@ChengDui,");
+			strSql.Append("OtherCost=@OtherCost,");
+			strSql.Append("TieXi=@TieXi");
 			strSql.Append(" where Id=@Id");
 			SqlParameter[] parameters = {
 					new SqlParameter("@EntryTime", SqlDbType.DateTime),
@@ -151,6 +166,11 @@ namespace SteelManagement.DAL
 					new SqlParameter("@Money2", SqlDbType.Money,8),
 					new SqlParameter("@SerialNo", SqlDbType.VarChar,50),
 					new SqlParameter("@OperatorId", SqlDbType.Int,4),
+					new SqlParameter("@DiaoZhuang", SqlDbType.Money,8),
+					new SqlParameter("@LiXi", SqlDbType.Money,8),
+					new SqlParameter("@ChengDui", SqlDbType.Money,8),
+					new SqlParameter("@OtherCost", SqlDbType.Money,8),
+					new SqlParameter("@TieXi", SqlDbType.Money,8),
 					new SqlParameter("@Id", SqlDbType.Int,4)};
 			parameters[0].Value = model.EntryTime;
 			parameters[1].Value = model.Project;
@@ -172,7 +192,12 @@ namespace SteelManagement.DAL
 			parameters[17].Value = model.Money2;
 			parameters[18].Value = model.SerialNo;
 			parameters[19].Value = model.OperatorId;
-			parameters[20].Value = model.Id;
+			parameters[20].Value = model.DiaoZhuang;
+			parameters[21].Value = model.LiXi;
+			parameters[22].Value = model.ChengDui;
+			parameters[23].Value = model.OtherCost;
+			parameters[24].Value = model.TieXi;
+			parameters[25].Value = model.Id;
 
 			int rows=DbHelperSQL.ExecuteSql(strSql.ToString(),parameters);
 			if (rows > 0)
@@ -236,7 +261,7 @@ namespace SteelManagement.DAL
 		{
 			
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select  top 1 Id,EntryTime,Project,Dateline,Supplier,Brand,TransportWay,Size,Texture,Amount,Quote,Fluctuation1,TransportCost,Price,TotalMoney,FuYuDate,Money1,InvoiceDate,Money2,SerialNo,OperatorId from PurchaseInfo ");
+			strSql.Append("select  top 1 Id,EntryTime,Project,Dateline,Supplier,Brand,TransportWay,Size,Texture,Amount,Quote,Fluctuation1,TransportCost,Price,TotalMoney,FuYuDate,Money1,InvoiceDate,Money2,SerialNo,OperatorId,DiaoZhuang,LiXi,ChengDui,OtherCost,TieXi from PurchaseInfo ");
 			strSql.Append(" where Id=@Id");
 			SqlParameter[] parameters = {
 					new SqlParameter("@Id", SqlDbType.Int,4)
@@ -348,6 +373,26 @@ namespace SteelManagement.DAL
 				{
 					model.OperatorId=int.Parse(row["OperatorId"].ToString());
 				}
+				if(row["DiaoZhuang"]!=null && row["DiaoZhuang"].ToString()!="")
+				{
+					model.DiaoZhuang=decimal.Parse(row["DiaoZhuang"].ToString());
+				}
+				if(row["LiXi"]!=null && row["LiXi"].ToString()!="")
+				{
+					model.LiXi=decimal.Parse(row["LiXi"].ToString());
+				}
+				if(row["ChengDui"]!=null && row["ChengDui"].ToString()!="")
+				{
+					model.ChengDui=decimal.Parse(row["ChengDui"].ToString());
+				}
+				if(row["OtherCost"]!=null && row["OtherCost"].ToString()!="")
+				{
+					model.OtherCost=decimal.Parse(row["OtherCost"].ToString());
+				}
+				if(row["TieXi"]!=null && row["TieXi"].ToString()!="")
+				{
+					model.TieXi=decimal.Parse(row["TieXi"].ToString());
+				}
 			}
 			return model;
 		}
@@ -358,7 +403,7 @@ namespace SteelManagement.DAL
 		public DataSet GetList(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select Id,EntryTime,Project,Dateline,Supplier,Brand,TransportWay,Size,Texture,Amount,Quote,Fluctuation1,TransportCost,Price,TotalMoney,FuYuDate,Money1,InvoiceDate,Money2,SerialNo,OperatorId ");
+			strSql.Append("select Id,EntryTime,Project,Dateline,Supplier,Brand,TransportWay,Size,Texture,Amount,Quote,Fluctuation1,TransportCost,Price,TotalMoney,FuYuDate,Money1,InvoiceDate,Money2,SerialNo,OperatorId,DiaoZhuang,LiXi,ChengDui,OtherCost,TieXi ");
 			strSql.Append(" FROM PurchaseInfo ");
 			if(strWhere.Trim()!="")
 			{
@@ -378,7 +423,7 @@ namespace SteelManagement.DAL
 			{
 				strSql.Append(" top "+Top.ToString());
 			}
-			strSql.Append(" Id,EntryTime,Project,Dateline,Supplier,Brand,TransportWay,Size,Texture,Amount,Quote,Fluctuation1,TransportCost,Price,TotalMoney,FuYuDate,Money1,InvoiceDate,Money2,SerialNo,OperatorId ");
+			strSql.Append(" Id,EntryTime,Project,Dateline,Supplier,Brand,TransportWay,Size,Texture,Amount,Quote,Fluctuation1,TransportCost,Price,TotalMoney,FuYuDate,Money1,InvoiceDate,Money2,SerialNo,OperatorId,DiaoZhuang,LiXi,ChengDui,OtherCost,TieXi ");
 			strSql.Append(" FROM PurchaseInfo ");
 			if(strWhere.Trim()!="")
 			{

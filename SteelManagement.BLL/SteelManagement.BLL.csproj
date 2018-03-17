@@ -49,6 +49,7 @@
     <Compile Include="PurchaseInfo.cs" />
     <Compile Include="ReceiptInfoBll.cs" />
     <Compile Include="ReceiptInfo.cs" />
+    <Compile Include="SaleBill.cs" />
     <Compile Include="SaleInfo.cs" />
     <Compile Include="PurchaseInfoBll.cs" />
     <Compile Include="SaleInfoBll.cs" />

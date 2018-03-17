@@ -30,6 +30,10 @@ namespace SteelManagement.Model
 		private decimal? _marginrate;
 		private string _serialno;
 		private int? _operatorid;
+		private string _corporation;
+		private string _project;
+		private decimal? _lixi;
+		private decimal? _tiexi;
 		/// <summary>
 		/// 
 		/// </summary>
@@ -189,6 +193,38 @@ namespace SteelManagement.Model
 		{
 			set{ _operatorid=value;}
 			get{return _operatorid;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public string Corporation
+		{
+			set{ _corporation=value;}
+			get{return _corporation;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public string Project
+		{
+			set{ _project=value;}
+			get{return _project;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public decimal? LiXi
+		{
+			set{ _lixi=value;}
+			get{return _lixi;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public decimal? TieXi
+		{
+			set{ _tiexi=value;}
+			get{return _tiexi;}
 		}
 		#endregion Model
 

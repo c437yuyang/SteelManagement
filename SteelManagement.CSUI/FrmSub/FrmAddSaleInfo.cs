@@ -258,6 +258,8 @@ namespace SteelManagement.CSUI.FrmSub
                 SteelManagement.Model.SaleInfo model = new SteelManagement.Model.SaleInfo();
                 try
                 {
+                    //model.
+
                     model.JianChiLv = DecimalHandler.Parse(txtJianChiLv.Text);
                     model.ArrivalTime = DateTime.Parse(txtArrivalTime.Text);
                     model.SettleTime = DateTime.Parse(txtSettleTime.Text);

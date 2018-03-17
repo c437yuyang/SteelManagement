@@ -46,9 +46,9 @@ namespace SteelManagement.DAL
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("insert into SaleInfo(");
-			strSql.Append("EntryTime,JianChiLv,ArrivalTime,SettleTime,Supplier,Brand,TransportWay,Size,Texture,Amount,Margin,OnlinePrice,Fluctuation1,Fluctuation2,SalePrice,TotalSale,MarginRate,SerialNo,OperatorId)");
+			strSql.Append("EntryTime,JianChiLv,ArrivalTime,SettleTime,Supplier,Brand,TransportWay,Size,Texture,Amount,Margin,OnlinePrice,Fluctuation1,Fluctuation2,SalePrice,TotalSale,MarginRate,SerialNo,OperatorId,Corporation,Project,LiXi,TieXi)");
 			strSql.Append(" values (");
-			strSql.Append("@EntryTime,@JianChiLv,@ArrivalTime,@SettleTime,@Supplier,@Brand,@TransportWay,@Size,@Texture,@Amount,@Margin,@OnlinePrice,@Fluctuation1,@Fluctuation2,@SalePrice,@TotalSale,@MarginRate,@SerialNo,@OperatorId)");
+			strSql.Append("@EntryTime,@JianChiLv,@ArrivalTime,@SettleTime,@Supplier,@Brand,@TransportWay,@Size,@Texture,@Amount,@Margin,@OnlinePrice,@Fluctuation1,@Fluctuation2,@SalePrice,@TotalSale,@MarginRate,@SerialNo,@OperatorId,@Corporation,@Project,@LiXi,@TieXi)");
 			strSql.Append(";select @@IDENTITY");
 			SqlParameter[] parameters = {
 					new SqlParameter("@EntryTime", SqlDbType.DateTime),
@@ -69,7 +69,11 @@ namespace SteelManagement.DAL
 					new SqlParameter("@TotalSale", SqlDbType.Money,8),
 					new SqlParameter("@MarginRate", SqlDbType.Money,8),
 					new SqlParameter("@SerialNo", SqlDbType.VarChar,50),
-					new SqlParameter("@OperatorId", SqlDbType.Int,4)};
+					new SqlParameter("@OperatorId", SqlDbType.Int,4),
+					new SqlParameter("@Corporation", SqlDbType.VarChar,50),
+					new SqlParameter("@Project", SqlDbType.VarChar,50),
+					new SqlParameter("@LiXi", SqlDbType.Money,8),
+					new SqlParameter("@TieXi", SqlDbType.Money,8)};
 			parameters[0].Value = model.EntryTime;
 			parameters[1].Value = model.JianChiLv;
 			parameters[2].Value = model.ArrivalTime;
@@ -89,6 +93,10 @@ namespace SteelManagement.DAL
 			parameters[16].Value = model.MarginRate;
 			parameters[17].Value = model.SerialNo;
 			parameters[18].Value = model.OperatorId;
+			parameters[19].Value = model.Corporation;
+			parameters[20].Value = model.Project;
+			parameters[21].Value = model.LiXi;
+			parameters[22].Value = model.TieXi;
 
 			object obj = DbHelperSQL.GetSingle(strSql.ToString(),parameters);
 			if (obj == null)
@@ -125,7 +133,11 @@ namespace SteelManagement.DAL
 			strSql.Append("TotalSale=@TotalSale,");
 			strSql.Append("MarginRate=@MarginRate,");
 			strSql.Append("SerialNo=@SerialNo,");
-			strSql.Append("OperatorId=@OperatorId");
+			strSql.Append("OperatorId=@OperatorId,");
+			strSql.Append("Corporation=@Corporation,");
+			strSql.Append("Project=@Project,");
+			strSql.Append("LiXi=@LiXi,");
+			strSql.Append("TieXi=@TieXi");
 			strSql.Append(" where Id=@Id");
 			SqlParameter[] parameters = {
 					new SqlParameter("@EntryTime", SqlDbType.DateTime),
@@ -147,6 +159,10 @@ namespace SteelManagement.DAL
 					new SqlParameter("@MarginRate", SqlDbType.Money,8),
 					new SqlParameter("@SerialNo", SqlDbType.VarChar,50),
 					new SqlParameter("@OperatorId", SqlDbType.Int,4),
+					new SqlParameter("@Corporation", SqlDbType.VarChar,50),
+					new SqlParameter("@Project", SqlDbType.VarChar,50),
+					new SqlParameter("@LiXi", SqlDbType.Money,8),
+					new SqlParameter("@TieXi", SqlDbType.Money,8),
 					new SqlParameter("@Id", SqlDbType.Int,4)};
 			parameters[0].Value = model.EntryTime;
 			parameters[1].Value = model.JianChiLv;
@@ -167,7 +183,11 @@ namespace SteelManagement.DAL
 			parameters[16].Value = model.MarginRate;
 			parameters[17].Value = model.SerialNo;
 			parameters[18].Value = model.OperatorId;
-			parameters[19].Value = model.Id;
+			parameters[19].Value = model.Corporation;
+			parameters[20].Value = model.Project;
+			parameters[21].Value = model.LiXi;
+			parameters[22].Value = model.TieXi;
+			parameters[23].Value = model.Id;
 
 			int rows=DbHelperSQL.ExecuteSql(strSql.ToString(),parameters);
 			if (rows > 0)
@@ -231,7 +251,7 @@ namespace SteelManagement.DAL
 		{
 			
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select  top 1 Id,EntryTime,JianChiLv,ArrivalTime,SettleTime,Supplier,Brand,TransportWay,Size,Texture,Amount,Margin,OnlinePrice,Fluctuation1,Fluctuation2,SalePrice,TotalSale,MarginRate,SerialNo,OperatorId from SaleInfo ");
+			strSql.Append("select  top 1 Id,EntryTime,JianChiLv,ArrivalTime,SettleTime,Supplier,Brand,TransportWay,Size,Texture,Amount,Margin,OnlinePrice,Fluctuation1,Fluctuation2,SalePrice,TotalSale,MarginRate,SerialNo,OperatorId,Corporation,Project,LiXi,TieXi from SaleInfo ");
 			strSql.Append(" where Id=@Id");
 			SqlParameter[] parameters = {
 					new SqlParameter("@Id", SqlDbType.Int,4)
@@ -339,6 +359,22 @@ namespace SteelManagement.DAL
 				{
 					model.OperatorId=int.Parse(row["OperatorId"].ToString());
 				}
+				if(row["Corporation"]!=null)
+				{
+					model.Corporation=row["Corporation"].ToString();
+				}
+				if(row["Project"]!=null)
+				{
+					model.Project=row["Project"].ToString();
+				}
+				if(row["LiXi"]!=null && row["LiXi"].ToString()!="")
+				{
+					model.LiXi=decimal.Parse(row["LiXi"].ToString());
+				}
+				if(row["TieXi"]!=null && row["TieXi"].ToString()!="")
+				{
+					model.TieXi=decimal.Parse(row["TieXi"].ToString());
+				}
 			}
 			return model;
 		}
@@ -349,7 +385,7 @@ namespace SteelManagement.DAL
 		public DataSet GetList(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select Id,EntryTime,JianChiLv,ArrivalTime,SettleTime,Supplier,Brand,TransportWay,Size,Texture,Amount,Margin,OnlinePrice,Fluctuation1,Fluctuation2,SalePrice,TotalSale,MarginRate,SerialNo,OperatorId ");
+			strSql.Append("select Id,EntryTime,JianChiLv,ArrivalTime,SettleTime,Supplier,Brand,TransportWay,Size,Texture,Amount,Margin,OnlinePrice,Fluctuation1,Fluctuation2,SalePrice,TotalSale,MarginRate,SerialNo,OperatorId,Corporation,Project,LiXi,TieXi ");
 			strSql.Append(" FROM SaleInfo ");
 			if(strWhere.Trim()!="")
 			{
@@ -369,7 +405,7 @@ namespace SteelManagement.DAL
 			{
 				strSql.Append(" top "+Top.ToString());
 			}
-			strSql.Append(" Id,EntryTime,JianChiLv,ArrivalTime,SettleTime,Supplier,Brand,TransportWay,Size,Texture,Amount,Margin,OnlinePrice,Fluctuation1,Fluctuation2,SalePrice,TotalSale,MarginRate,SerialNo,OperatorId ");
+			strSql.Append(" Id,EntryTime,JianChiLv,ArrivalTime,SettleTime,Supplier,Brand,TransportWay,Size,Texture,Amount,Margin,OnlinePrice,Fluctuation1,Fluctuation2,SalePrice,TotalSale,MarginRate,SerialNo,OperatorId,Corporation,Project,LiXi,TieXi ");
 			strSql.Append(" FROM SaleInfo ");
 			if(strWhere.Trim()!="")
 			{

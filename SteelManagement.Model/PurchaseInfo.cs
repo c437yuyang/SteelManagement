@@ -31,6 +31,11 @@ namespace SteelManagement.Model
 		private decimal? _money2;
 		private string _serialno;
 		private int? _operatorid;
+		private decimal? _diaozhuang;
+		private decimal? _lixi;
+		private decimal? _chengdui;
+		private decimal? _othercost;
+		private decimal? _tiexi;
 		/// <summary>
 		/// 
 		/// </summary>
@@ -198,6 +203,46 @@ namespace SteelManagement.Model
 		{
 			set{ _operatorid=value;}
 			get{return _operatorid;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public decimal? DiaoZhuang
+		{
+			set{ _diaozhuang=value;}
+			get{return _diaozhuang;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public decimal? LiXi
+		{
+			set{ _lixi=value;}
+			get{return _lixi;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public decimal? ChengDui
+		{
+			set{ _chengdui=value;}
+			get{return _chengdui;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public decimal? OtherCost
+		{
+			set{ _othercost=value;}
+			get{return _othercost;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public decimal? TieXi
+		{
+			set{ _tiexi=value;}
+			get{return _tiexi;}
 		}
 		#endregion Model
 

@@ -5,12 +5,12 @@ using SteelManagement.Model;
 namespace SteelManagement.BLL
 {
 	/// <summary>
-	/// SaleInfo
+	/// SaleBill
 	/// </summary>
-	public partial class SaleInfo
+	public partial class SaleBill
 	{
-		private readonly SteelManagement.DAL.SaleInfo dal=new SteelManagement.DAL.SaleInfo();
-		public SaleInfo()
+		private readonly SteelManagement.DAL.SaleBill dal=new SteelManagement.DAL.SaleBill();
+		public SaleBill()
 		{}
 		#region  BasicMethod
 
@@ -33,7 +33,7 @@ namespace SteelManagement.BLL
 		/// <summary>
 		/// 增加一条数据
 		/// </summary>
-		public int  Add(SteelManagement.Model.SaleInfo model)
+		public int  Add(SteelManagement.Model.SaleBill model)
 		{
 			return dal.Add(model);
 		}
@@ -41,7 +41,7 @@ namespace SteelManagement.BLL
 		/// <summary>
 		/// 更新一条数据
 		/// </summary>
-		public bool Update(SteelManagement.Model.SaleInfo model)
+		public bool Update(SteelManagement.Model.SaleBill model)
 		{
 			return dal.Update(model);
 		}
@@ -59,12 +59,15 @@ namespace SteelManagement.BLL
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
-		public SteelManagement.Model.SaleInfo GetModel(int Id)
+		public SteelManagement.Model.SaleBill GetModel(int Id)
 		{
 			
 			return dal.GetModel(Id);
 		}
 
+		/// <summary>
+		/// 得到一个对象实体，从缓存中
+		/// </summary>
 		
 
 		/// <summary>
@@ -84,7 +87,7 @@ namespace SteelManagement.BLL
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>
-		public List<SteelManagement.Model.SaleInfo> GetModelList(string strWhere)
+		public List<SteelManagement.Model.SaleBill> GetModelList(string strWhere)
 		{
 			DataSet ds = dal.GetList(strWhere);
 			return DataTableToList(ds.Tables[0]);
@@ -92,13 +95,13 @@ namespace SteelManagement.BLL
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>
-		public List<SteelManagement.Model.SaleInfo> DataTableToList(DataTable dt)
+		public List<SteelManagement.Model.SaleBill> DataTableToList(DataTable dt)
 		{
-			List<SteelManagement.Model.SaleInfo> modelList = new List<SteelManagement.Model.SaleInfo>();
+			List<SteelManagement.Model.SaleBill> modelList = new List<SteelManagement.Model.SaleBill>();
 			int rowsCount = dt.Rows.Count;
 			if (rowsCount > 0)
 			{
-				SteelManagement.Model.SaleInfo model;
+				SteelManagement.Model.SaleBill model;
 				for (int n = 0; n < rowsCount; n++)
 				{
 					model = dal.DataRowToModel(dt.Rows[n]);

@@ -55,9 +55,6 @@ namespace SteelManagement.BLL
 			return dal.Delete(Id);
 		}
 		/// <summary>
-		/// 删除一条数据
-		/// </summary>
-		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
 		public SteelManagement.Model.PurchaseInfo GetModel(int Id)
