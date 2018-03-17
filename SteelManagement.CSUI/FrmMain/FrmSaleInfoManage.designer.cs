@@ -76,6 +76,8 @@
             this.bgWorkerLoadData = new System.ComponentModel.BackgroundWorker();
             this.EntryTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SerialNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Corporation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Project = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.JianChiLv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ArrivalTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SettleTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -89,6 +91,8 @@
             this.OnlinePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fluctuation1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fluctuation2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tiexi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Lixi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SalePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalSale = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MarginRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -120,6 +124,8 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.EntryTime,
             this.SerialNo,
+            this.Corporation,
+            this.Project,
             this.JianChiLv,
             this.ArrivalTime,
             this.SettleTime,
@@ -133,6 +139,8 @@
             this.OnlinePrice,
             this.Fluctuation1,
             this.Fluctuation2,
+            this.Tiexi,
+            this.Lixi,
             this.SalePrice,
             this.TotalSale,
             this.MarginRate,
@@ -142,7 +150,7 @@
             dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -600,6 +608,18 @@
             this.SerialNo.HeaderText = "流水号";
             this.SerialNo.Name = "SerialNo";
             // 
+            // Corporation
+            // 
+            this.Corporation.DataPropertyName = "Corporation";
+            this.Corporation.HeaderText = "公司";
+            this.Corporation.Name = "Corporation";
+            // 
+            // Project
+            // 
+            this.Project.DataPropertyName = "Project";
+            this.Project.HeaderText = "项目";
+            this.Project.Name = "Project";
+            // 
             // JianChiLv
             // 
             this.JianChiLv.HeaderText = "检尺率";
@@ -671,6 +691,18 @@
             // 
             this.Fluctuation2.HeaderText = "浮动2";
             this.Fluctuation2.Name = "Fluctuation2";
+            // 
+            // Tiexi
+            // 
+            this.Tiexi.DataPropertyName = "Tiexi";
+            this.Tiexi.HeaderText = "贴息";
+            this.Tiexi.Name = "Tiexi";
+            // 
+            // Lixi
+            // 
+            this.Lixi.DataPropertyName = "Lixi";
+            this.Lixi.HeaderText = "利息";
+            this.Lixi.Name = "Lixi";
             // 
             // SalePrice
             // 
@@ -760,6 +792,8 @@
         private DevComponents.DotNetBar.ButtonX btnAddFromExcel;
         private System.Windows.Forms.DataGridViewTextBoxColumn EntryTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn SerialNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Corporation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Project;
         private System.Windows.Forms.DataGridViewTextBoxColumn JianChiLv;
         private System.Windows.Forms.DataGridViewTextBoxColumn ArrivalTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn SettleTime;
@@ -773,6 +807,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn OnlinePrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fluctuation1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fluctuation2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tiexi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Lixi;
         private System.Windows.Forms.DataGridViewTextBoxColumn SalePrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalSale;
         private System.Windows.Forms.DataGridViewTextBoxColumn MarginRate;

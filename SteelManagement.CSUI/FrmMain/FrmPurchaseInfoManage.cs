@@ -439,9 +439,7 @@ namespace SteelManagement.CSUI.FrmMain
         private void btnAdd_Click(object sender, EventArgs e)
         {
             FrmAddPurchaseInfo frm = new FrmAddPurchaseInfo(LoadDataToDataGridView, _curPage);
-            if (DialogResult.Cancel == frm.ShowDialog())
-                return;
-            LoadDataToDgvAsyn();
+            frm.ShowDialog();
         }
         #endregion
 

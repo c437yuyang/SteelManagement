@@ -15,7 +15,13 @@ namespace SteelManagement.CSUI.FrmSub
         private readonly SteelManagement.Model.SteelInfo _steelInfomodel = null;
 
 
-
+        /// <summary>
+        /// 添加和修改
+        /// </summary>
+        /// <param name="updateDel"></param>
+        /// <param name="curPage"></param>
+        /// <param name="is4Modify"></param>
+        /// <param name="model"></param>
         public FrmAddPurchaseInfo(Action<int> updateDel, int curPage, bool is4Modify = false, SteelManagement.Model.PurchaseInfo model = null)
         {
             this.StartPosition = FormStartPosition.CenterParent;
@@ -26,6 +32,12 @@ namespace SteelManagement.CSUI.FrmSub
             _model = model;
         }
 
+        /// <summary>
+        /// 从steelmodel进行添加
+        /// </summary>
+        /// <param name="updateDel"></param>
+        /// <param name="curPage"></param>
+        /// <param name="model"></param>
         public FrmAddPurchaseInfo(Action<int> updateDel, int curPage, SteelManagement.Model.SteelInfo model)
         {
             this.StartPosition = FormStartPosition.CenterParent;
@@ -58,22 +70,22 @@ namespace SteelManagement.CSUI.FrmSub
                 txtTransportWay.Text = _model.TransportWay;
                 txtSize.Text = _model.Size;
                 txtTexture.Text = _model.Texture;
-                txtAmount.Text = _model.Amount.ToString();
-                txtQuote.Text = _model.Quote.ToString();
-                txtFluctuation1.Text = _model.Fluctuation1.ToString();
-                txtTransportCost.Text = _model.TransportWay;
-                txtPrice.Text = _model.Price.ToString();
-                txtTotalMoney.Text = _model.TotalMoney.ToString();
+                txtAmount.Text = DecimalHandler.DecimalToString(_model.Amount);
+                txtQuote.Text = DecimalHandler.DecimalToString(_model.Quote);
+                txtFluctuation1.Text = DecimalHandler.DecimalToString(_model.Fluctuation1);
+                txtTransportCost.Text = DecimalHandler.DecimalToString(_model.TransportCost);
+                txtPrice.Text = DecimalHandler.DecimalToString(_model.Price);
+                txtTotalMoney.Text = DecimalHandler.DecimalToString(_model.TotalMoney);
                 txtFuYuDate.Text = _model.FuYuDate.ToString();
-                txtMoney1.Text = _model.Money1.ToString();
+                txtMoney1.Text = DecimalHandler.DecimalToString(_model.Money1);
                 txtInvoiceDate.Text = _model.InvoiceDate.ToString();
-                txtMoney2.Text = _model.Money2.ToString();
+                txtMoney2.Text = DecimalHandler.DecimalToString(_model.Money2);
 
                 txtDiaoZhuang.Text = _model.DiaoZhuang.ToString();
-                txtLiXi.Text = _model.LiXi.ToString();
-                txtChengDui.Text = _model.ChengDui.ToString();
-                txtOtherCost.Text = _model.OtherCost.ToString();
-                txtTieXi.Text = _model.TieXi.ToString();
+                txtLiXi.Text = DecimalHandler.DecimalToString(_model.LiXi);
+                txtChengDui.Text = DecimalHandler.DecimalToString(_model.ChengDui);
+                txtOtherCost.Text = DecimalHandler.DecimalToString(_model.OtherCost);
+                txtTieXi.Text = DecimalHandler.DecimalToString(_model.TieXi);
                 this.Text = "修改采购信息";
             }
 
@@ -122,7 +134,7 @@ namespace SteelManagement.CSUI.FrmSub
                 txtProject.Items.Add(item);
             }
 
-             list = BLL.CommonBll.GetFieldList(tablename, "Corporation");
+            list = BLL.CommonBll.GetFieldList(tablename, "Corporation");
             foreach (var item in list)
             {
                 txtCorporation.Items.Add(item);
@@ -230,6 +242,13 @@ namespace SteelManagement.CSUI.FrmSub
             {
                 try
                 {
+                    _model.DiaoZhuang = DecimalHandler.Parse(txtDiaoZhuang.Text);
+                    _model.LiXi = DecimalHandler.Parse(txtLiXi.Text);
+                    _model.ChengDui = DecimalHandler.Parse(txtChengDui.Text);
+                    _model.OtherCost = DecimalHandler.Parse(txtOtherCost.Text);
+                    _model.TieXi = DecimalHandler.Parse(txtTieXi.Text);
+                    _model.Corporation = txtCorporation.Text;
+
                     _model.Project = txtProject.Text;
                     _model.Dateline = DateTime.Parse(txtDateline.Text);
                     _model.Supplier = txtSupplier.Text;
@@ -268,6 +287,8 @@ namespace SteelManagement.CSUI.FrmSub
                 SteelManagement.Model.PurchaseInfo model = new SteelManagement.Model.PurchaseInfo();
                 try
                 {
+
+
                     model.Corporation = txtCorporation.Text;
 
                     if (string.IsNullOrEmpty(txtProject.Text))

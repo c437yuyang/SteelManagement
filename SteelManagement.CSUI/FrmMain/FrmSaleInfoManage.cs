@@ -473,9 +473,10 @@ namespace SteelManagement.CSUI.FrmMain
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            //FrmAddSaleInfo frm = new FrmAddSaleInfo(LoadDataToDataGridView, _curPage);
-            //if (DialogResult.Cancel == frm.ShowDialog())
-            //    return;
+            FrmAddSaleInfo frm = new FrmAddSaleInfo(LoadDataToDataGridView, _curPage);
+            frm.ShowDialog();
+
+
         }
         #endregion
 

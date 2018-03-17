@@ -63,6 +63,12 @@ namespace SteelManagement.CSUI.FrmSub
                 txtSalePrice.Text = DecimalHandler.DecimalToString(_model.SalePrice);
                 txtTotalSale.Text = DecimalHandler.DecimalToString(_model.TotalSale);
                 txtMarginRate.Text = DecimalHandler.DecimalToPercent(_model.MarginRate);
+
+                txtCorporation.Text = _model.Corporation;
+                txtProject.Text = _model.Project;
+                txtTieXi.Text = DecimalHandler.DecimalToString(_model.TieXi);
+                txtLiXi.Text = DecimalHandler.DecimalToString(_model.LiXi);
+
                 this.Text = "修改销售信息";
             }
 
@@ -81,83 +87,93 @@ namespace SteelManagement.CSUI.FrmSub
 
         private void InitComboBoxs()
         {
-            //string tablename = "SaleInfo";
-            //var list = BLL.CommonBll.GetFieldList(tablename, "Project");
-            //foreach (var item in list)
-            //{
-            //    //txtProject.Items.Add(item);
-            //}
+            string tablename = "SaleInfo";
+            var list = BLL.CommonBll.GetFieldList(tablename, "Project");
+            foreach (var item in list)
+            {
+                txtProject.Items.Add(item);
+            }
 
-            //list = BLL.CommonBll.GetFieldList(tablename, "Supplier");
-            //foreach (var item in list)
-            //{
-            //    txtSupplier.Items.Add(item);
-            //}
+            list = BLL.CommonBll.GetFieldList(tablename, "Corporation");
+            foreach (var item in list)
+            {
+                txtCorporation.Items.Add(item);
+            }
 
-
-            //list = BLL.CommonBll.GetFieldList(tablename, "Brand");
-            //foreach (var item in list)
-            //{
-            //    txtBrand.Items.Add(item);
-            //}
-
-            //list = BLL.CommonBll.GetFieldList(tablename, "TransportWay");
-            //foreach (var item in list)
-            //{
-            //    txtTransportWay.Items.Add(item);
-            //}
+            list = BLL.CommonBll.GetFieldList(tablename, "Supplier");
+            foreach (var item in list)
+            {
+                txtSupplier.Items.Add(item);
+            }
 
 
-            //list = BLL.CommonBll.GetFieldList(tablename, "Size");
-            //foreach (var item in list)
-            //{
-            //    txtSize.Items.Add(item);
-            //}
+            list = BLL.CommonBll.GetFieldList(tablename, "Brand");
+            foreach (var item in list)
+            {
+                txtBrand.Items.Add(item);
+            }
 
-            //list = BLL.CommonBll.GetFieldList(tablename, "Texture");
-            //foreach (var item in list)
-            //{
-            //    txtTexture.Items.Add(item);
-            //}
-
-            //list = BLL.CommonBll.GetFieldList(tablename, "Amount");
-            //foreach (var item in list)
-            //{
-            //    txtAmount.Items.Add(item);
-            //}
-
-            //list = BLL.CommonBll.GetFieldList(tablename, "Quote");
-            //foreach (var item in list)
-            //{
-            //    txtOnlinePrice.Items.Add(item);
-            //}
+            list = BLL.CommonBll.GetFieldList(tablename, "TransportWay");
+            foreach (var item in list)
+            {
+                txtTransportWay.Items.Add(item);
+            }
 
 
-            //list = BLL.CommonBll.GetFieldList(tablename, "Fluctuation1");
-            //foreach (var item in list)
-            //{
-            //    txtFluctuation1.Items.Add(item);
-            //}
+            list = BLL.CommonBll.GetFieldList(tablename, "Size");
+            foreach (var item in list)
+            {
+                txtSize.Items.Add(item);
+            }
 
-            //list = BLL.CommonBll.GetFieldList(tablename, "TransportCost");
-            //foreach (var item in list)
-            //{
-            //    //txtTransportCost.Items.Add(item);
-            //}
+            list = BLL.CommonBll.GetFieldList(tablename, "Texture");
+            foreach (var item in list)
+            {
+                txtTexture.Items.Add(item);
+            }
 
-            //list = BLL.CommonBll.GetFieldList(tablename, "Price");
-            //foreach (var item in list)
-            //{
-            //    txtSalePrice.Items.Add(item);
-            //}
+            list = BLL.CommonBll.GetFieldList(tablename, "Amount");
+            foreach (var item in list)
+            {
+                txtAmount.Items.Add(item);
+            }
+
+            list = BLL.CommonBll.GetFieldList(tablename, "OnlinePrice");
+            foreach (var item in list)
+            {
+                txtOnlinePrice.Items.Add(item);
+            }
+
+
+            list = BLL.CommonBll.GetFieldList(tablename, "Fluctuation1");
+            foreach (var item in list)
+            {
+                txtFluctuation1.Items.Add(item);
+            }
+
+            list = BLL.CommonBll.GetFieldList(tablename, "Fluctuation2");
+            foreach (var item in list)
+            {
+                txtFluctuation2.Items.Add(item);
+            }
+
+            list = BLL.CommonBll.GetFieldList(tablename, "LiXi");
+            foreach (var item in list)
+            {
+                txtLiXi.Items.Add(item);
+            }
+
+            list = BLL.CommonBll.GetFieldList(tablename, "TieXi");
+            foreach (var item in list)
+            {
+                txtTieXi.Items.Add(item);
+            }
         }
         #endregion
 
         #region 自动计算部分
         private void AddAutoUpdateEvents()
         {
-            txtAmount.TextChanged += UpdateJianChiLv;
-            txtOnlinePrice.TextChanged += UpdateMargin;
             txtOnlinePrice.TextChanged += UpdateSalePrice;
             txtFluctuation1.TextChanged += UpdateSalePrice;
             txtFluctuation2.TextChanged += UpdateSalePrice;
@@ -165,24 +181,16 @@ namespace SteelManagement.CSUI.FrmSub
             txtSalePrice.TextChanged += UpdateTotalSale;
             txtAmount.TextChanged += UpdateTotalSale;
 
+            if (_purchaseInfoModel == null)
+                return; //如果是直接手动新增就不添加这些自动更新函数了
+            txtAmount.TextChanged += UpdateJianChiLv;
+            txtOnlinePrice.TextChanged += UpdateMargin;
             txtTotalSale.TextChanged += UpdateMarginRate;
 
 
         }
 
-        private void UpdateMarginRate(object sender, EventArgs e)
-        {
-            try
-            {
-                txtMarginRate.Text = DecimalHandler.DecimalToPercent(
-                    (DecimalHandler.Parse(txtTotalSale.Text) / _purchaseInfoModel.TotalMoney ?? 0) - 1
-                );
-            }
-            catch (Exception)
-            {
-                txtMarginRate.Text = "供应商总金额有误!";
-            }
-        }
+
 
         private void UpdateTotalSale(object sender, EventArgs e)
         {
@@ -199,6 +207,20 @@ namespace SteelManagement.CSUI.FrmSub
                 DecimalHandler.Parse(txtFluctuation1.Text) +
                 DecimalHandler.Parse(txtFluctuation2.Text)
             );
+        }
+
+        private void UpdateMarginRate(object sender, EventArgs e)
+        {
+            try
+            {
+                txtMarginRate.Text = DecimalHandler.DecimalToPercent(
+                    (DecimalHandler.Parse(txtTotalSale.Text) / _purchaseInfoModel.TotalMoney ?? 0) - 1
+                );
+            }
+            catch (Exception)
+            {
+                txtMarginRate.Text = "供应商总金额有误!";
+            }
         }
 
         private void UpdateMargin(object sender, EventArgs e)
@@ -221,6 +243,16 @@ namespace SteelManagement.CSUI.FrmSub
             {
                 try
                 {
+                    _model.Corporation = txtCorporation.Text;
+                    if (string.IsNullOrEmpty(txtProject.Text))
+                    {
+                        MessageBoxEx.Show("项目名称不能为空!");
+                        return;
+                    }
+                    _model.Project = txtProject.Text;
+                    _model.TieXi = DecimalHandler.Parse(txtTieXi.Text);
+                    _model.LiXi = DecimalHandler.Parse(txtLiXi.Text);
+
                     _model.JianChiLv = DecimalHandler.Parse(txtJianChiLv.Text);
                     _model.ArrivalTime = DateTime.Parse(txtArrivalTime.Text);
                     _model.SettleTime = DateTime.Parse(txtSettleTime.Text);
@@ -258,7 +290,15 @@ namespace SteelManagement.CSUI.FrmSub
                 SteelManagement.Model.SaleInfo model = new SteelManagement.Model.SaleInfo();
                 try
                 {
-                    //model.
+                    model.Corporation = txtCorporation.Text;
+                    if (string.IsNullOrEmpty(txtProject.Text))
+                    {
+                        MessageBoxEx.Show("项目名称不能为空!");
+                        return;
+                    }
+                    model.Project = txtProject.Text;
+                    model.TieXi = DecimalHandler.Parse(txtTieXi.Text);
+                    model.LiXi = DecimalHandler.Parse(txtLiXi.Text);
 
                     model.JianChiLv = DecimalHandler.Parse(txtJianChiLv.Text);
                     model.ArrivalTime = DateTime.Parse(txtArrivalTime.Text);
@@ -279,9 +319,6 @@ namespace SteelManagement.CSUI.FrmSub
                     model.EntryTime = DateTime.Now;
                     model.SerialNo = SerialNoGenerator.GetSerialNo(SerialNoGenerator.Type.Type02Sale);
                     model.OperatorId = GlobalUtils.LoginUser.Id;
-
-                    
-
                     if (_bllSaleInfo.Add(model) <= 0)
                     {
                         MessageBoxEx.Show("添加失败，请稍后重试!");
