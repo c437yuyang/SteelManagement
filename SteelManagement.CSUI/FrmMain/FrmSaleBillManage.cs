@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using DevComponents.DotNetBar;
 using SteelManagement.Common;
+using SteelManagement.Common.Excel;
 using SteelManagement.CSUI.CustomCtrls;
 using SteelManagement.CSUI.FrmSub;
 using SteelManagement.CSUI.Properties;
@@ -544,6 +545,21 @@ namespace SteelManagement.CSUI.FrmMain
             frm.ShowDialog();
         }
 
+        private void 查看选中项目统计ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var selList = GetSelectedModelList();
+
+            if (selList.Count > 1)
+            {
+                MessageBoxEx.Show("请选中一条进行修改!");
+                return;
+            }
+
+            var saleBillModellist = _bllSaleBill.GetModelList(" Project = '" + selList[0].Project + "' ");
+
+            ExcelGenerator.GetSailBillCount(saleBillModellist);
+
+        }
 
         //private void 采购ToolStripMenuItem_Click(object sender, EventArgs e)
         //{
