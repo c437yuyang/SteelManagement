@@ -1,6 +1,6 @@
 ﻿namespace SteelManagement.CSUI.FrmMain
 {
-    partial class FrmSaleBillManage
+    partial class FrmProjectBillManage
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -745,13 +745,13 @@
             this.导出选中公司收款统计报表ToolStripMenuItem.Text = "导出选中公司收款统计报表";
             this.导出选中公司收款统计报表ToolStripMenuItem.Click += new System.EventHandler(this.导出选中公司收款统计报表ToolStripMenuItem_Click);
             // 
-            // FrmSaleBillManage
+            // FrmProjectBillManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1271, 623);
             this.Controls.Add(this.panelMain);
-            this.Name = "FrmSaleBillManage";
+            this.Name = "FrmProjectBillManage";
             this.Text = "销售款项管理";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

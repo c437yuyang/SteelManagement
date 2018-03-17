@@ -12,9 +12,9 @@ using SteelManagement.Model;
 
 namespace SteelManagement.CSUI.FrmMain
 {
-    public partial class FrmSaleBillManage : Form
+    public partial class FrmProjectBillManage : Form
     {
-        private readonly SteelManagement.BLL.SaleBill _bllSaleBill = new SteelManagement.BLL.SaleBill();
+        private readonly SteelManagement.BLL.ProjectBill _bllProjectBill = new SteelManagement.BLL.ProjectBill();
 
         private int _curPage = 1;
         private int _pageCount = 0;
@@ -22,14 +22,14 @@ namespace SteelManagement.CSUI.FrmMain
         private int _recordCount = 0;
         private string _where = string.Empty;
 
-        public FrmSaleBillManage()
+        public FrmProjectBillManage()
         {
             InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            _recordCount = _bllSaleBill.GetRecordCount(_where);
+            _recordCount = _bllProjectBill.GetRecordCount(_where);
             _pageCount = (int)Math.Ceiling(_recordCount / (double)_pageSize);
 
             //初始化一些控件
@@ -71,7 +71,7 @@ namespace SteelManagement.CSUI.FrmMain
             cbProject.SelectedIndex = 0;
 
 
-            string tablename = "SaleBill";
+            string tablename = "ProjectBill";
             var list = BLL.CommonBll.GetFieldList(tablename, "Project");
             foreach (var item in list)
             {
@@ -179,7 +179,7 @@ namespace SteelManagement.CSUI.FrmMain
             int curSelectedRow = -1;
             if (dataGridView1.SelectedRows.Count > 0)
                 curSelectedRow = dataGridView1.SelectedRows[0].Index;
-            dataGridView1.DataSource = _bllSaleBill.GetListByPageOrderById(_where, _curPage, _pageSize);
+            dataGridView1.DataSource = _bllProjectBill.GetListByPageOrderById(_where, _curPage, _pageSize);
             if (curSelectedRow != -1 && dataGridView1.Rows.Count > curSelectedRow)
                 dataGridView1.CurrentCell = dataGridView1.Rows[curSelectedRow].Cells[0];
             dataGridView1.Update();
@@ -187,7 +187,7 @@ namespace SteelManagement.CSUI.FrmMain
 
         private void UpdateState()
         {
-            _recordCount = _bllSaleBill.GetRecordCount(_where);
+            _recordCount = _bllProjectBill.GetRecordCount(_where);
             _pageCount = (int)Math.Ceiling((double)_recordCount / (double)_pageSize);
             if (_curPage == 1)
                 btnPagePre.Enabled = false;
@@ -459,7 +459,7 @@ namespace SteelManagement.CSUI.FrmMain
             //var list = Common.Excel.ExcelParser.GetSteelListFromExcel(filename);
             //if (list == null || list.Count == 0)
             //    return;
-            //int res = _bllSaleBill.AddList(list);
+            //int res = _bllProjectBill.AddList(list);
             //GlobalUtils.MessageBoxWithRecordNum("导入", res, list.Count);
 
             //LoadDataToDgvAsyn();
@@ -467,24 +467,24 @@ namespace SteelManagement.CSUI.FrmMain
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            FrmAddSaleBill frm = new FrmAddSaleBill(LoadDataToDataGridView, _curPage);
+            FrmAddProjectBill frm = new FrmAddProjectBill(LoadDataToDataGridView, _curPage);
             frm.ShowDialog();
         }
         #endregion
 
-        private List<Model.SaleBill> DgvDataSourceToList()
+        private List<Model.ProjectBill> DgvDataSourceToList()
         {
-            return dataGridView1.DataSource as List<Model.SaleBill>;
+            return dataGridView1.DataSource as List<Model.ProjectBill>;
         }
 
         /// <summary>
         /// 返回当前选择的行的visaModel的List
         /// </summary>
         /// <returns></returns>
-        private List<Model.SaleBill> GetSelectedModelList()
+        private List<Model.ProjectBill> GetSelectedModelList()
         {
-            var visaList = dataGridView1.DataSource as List<Model.SaleBill>;
-            List<Model.SaleBill> res = new List<SaleBill>();
+            var visaList = dataGridView1.DataSource as List<Model.ProjectBill>;
+            List<Model.ProjectBill> res = new List<ProjectBill>();
             for (int i = dataGridView1.SelectedRows.Count - 1; i >= 0; i--)
                 res.Add(DgvDataSourceToList()[dataGridView1.SelectedRows[i].Index]);
             return res.Count > 0 ? res : null;
@@ -525,7 +525,7 @@ namespace SteelManagement.CSUI.FrmMain
                 == DialogResult.Cancel)
                 return;
             var modelList = GetSelectedModelList();
-            int res = _bllSaleBill.DeleteList(modelList);
+            int res = _bllProjectBill.DeleteList(modelList);
 
             GlobalUtils.MessageBoxWithRecordNum("删除", res, count);
             LoadDataToDataGridView(_curPage);
@@ -541,7 +541,7 @@ namespace SteelManagement.CSUI.FrmMain
                 MessageBoxEx.Show("请选中一条进行修改!");
                 return;
             }
-            FrmAddSaleBill frm = new FrmAddSaleBill(LoadDataToDataGridView, _curPage, true, list[0]);
+            FrmAddProjectBill frm = new FrmAddProjectBill(LoadDataToDataGridView, _curPage, true, list[0]);
             frm.ShowDialog();
         }
 
@@ -555,9 +555,9 @@ namespace SteelManagement.CSUI.FrmMain
                 return;
             }
 
-            var saleBillModellist = _bllSaleBill.GetModelList(" Project = '" + selList[0].Project + "' ");
+            var ProjectBillModellist = _bllProjectBill.GetModelList(" Project = '" + selList[0].Project + "' ");
 
-            ExcelGenerator.GetSailBillCount(saleBillModellist);
+            ExcelGenerator.GetSailBillCount(ProjectBillModellist);
 
         }
 
@@ -571,7 +571,7 @@ namespace SteelManagement.CSUI.FrmMain
         //        MessageBoxEx.Show("请选中一条进行采购!");
         //        return;
         //    }
-        //    //FrmAddSaleBill frm = new FrmAddSaleBill(LoadDataToDataGridView, _curPage, list[0]);
+        //    //FrmAddProjectBill frm = new FrmAddProjectBill(LoadDataToDataGridView, _curPage, list[0]);
         //    //frm.ShowDialog();
         //}
 
@@ -585,7 +585,7 @@ namespace SteelManagement.CSUI.FrmMain
                 return;
             }
 
-            var saleBillModellist = _bllSaleBill.GetModelList(" Corporation = '" + selList[0].Corporation + "' ");
+            var ProjectBillModellist = _bllProjectBill.GetModelList(" Corporation = '" + selList[0].Corporation + "' ");
 
 
 
