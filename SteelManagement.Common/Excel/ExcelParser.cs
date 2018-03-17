@@ -58,12 +58,30 @@ namespace SteelManagement.Common.Excel
                     model.Texture = row.GetCell(2)?.StringCellValue;
                     model.ProducePlace = row.GetCell(3)?.StringCellValue;
                     model.Price = DecimalHandler.Parse(row.GetCell(4)?.NumericCellValue.ToString());
-                    model.Fluctuation = DecimalHandler.Parse(row.GetCell(5)?.NumericCellValue.ToString());
+
+                    try
+                    {
+                        model.Fluctuation = DecimalHandler.Parse(row.GetCell(5)?.NumericCellValue.ToString());
+                    }
+                    catch (Exception)
+                    {
+                        try
+                        {
+                            if (row.GetCell(5)?.StringCellValue == "-")
+                                model.Fluctuation = null;
+                        }
+                        catch (Exception e)
+                        {
+                            throw e;
+                        }
+                    }
+
+                    
                     model.Remark = row.GetCell(6)?.StringCellValue;
                     model.State = row.GetCell(7)?.StringCellValue;
                     res.Add(model);
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
                     MessageBoxEx.Show("第" + (i + 1) + "行数据有误");
                 }
