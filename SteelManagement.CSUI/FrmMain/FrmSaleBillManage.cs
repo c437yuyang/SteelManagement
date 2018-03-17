@@ -42,6 +42,9 @@ namespace SteelManagement.CSUI.FrmMain
             cbPageSize.DropDownStyle = ComboBoxStyle.DropDownList;
             cbPageSize.SelectedIndex = 2;
 
+            InitComboBoxs();
+
+
             _pageSize = int.Parse(cbPageSize.Text);
             cbPageSize.TextChanged += CbPageSize_TextChanged;
 
@@ -56,6 +59,31 @@ namespace SteelManagement.CSUI.FrmMain
 
             progressLoading.Visible = false;
             LoadDataToDgvAsyn();
+        }
+
+        private void InitComboBoxs()
+        {
+            cbCorporation.Items.Add("全部");
+            cbProject.Items.Add("全部");
+
+            cbCorporation.SelectedIndex = 0;
+            cbProject.SelectedIndex = 0;
+
+
+            string tablename = "SaleBill";
+            var list = BLL.CommonBll.GetFieldList(tablename, "Project");
+            foreach (var item in list)
+            {
+                cbProject.Items.Add(item);
+            }
+
+            list = BLL.CommonBll.GetFieldList(tablename, "Corporation");
+            foreach (var item in list)
+            {
+                cbCorporation.Items.Add(item);
+            }
+
+
         }
 
         private void DataGridView1_DoubleClick(object sender, EventArgs e)
@@ -202,45 +230,40 @@ namespace SteelManagement.CSUI.FrmMain
         private void btnSearch_Click(object sender, EventArgs e)
         {
             _where = GetWhereCondition();
-            _curPage = -1;
+            _curPage = 1;
             LoadDataToDgvAsyn();
+        }
+
+        private void btnTimeSpanChoose_Click(object sender, EventArgs e)
+        {
+            FrmTimeSpanChoose frm = new FrmTimeSpanChoose();
+            if (frm.ShowDialog() == DialogResult.Cancel)
+                return;
+            txtSchEntryTimeFrom.Text = DateTimeFormator.DateTimeToString(frm.TimeSpanFrom, DateTimeFormator.TimeFormat.Type14LongTime1);
+            txtSchEntryTimeTo.Text = DateTimeFormator.DateTimeToString(frm.TimeSpanTo, DateTimeFormator.TimeFormat.Type14LongTime1);
         }
 
         private string GetWhereCondition()
         {
             List<string> conditions = new List<string>();
-            //if (cbDisplayType.Text == "全部")
-            //{
-            //}
-            //else if (cbDisplayType.Text == "未记录")
-            //{
-            //    conditions.Add(" Types is null or Types='' ");
-            //}
-            //else if (cbDisplayType.Text == "个签")
-            //{
-            //    conditions.Add(" Types = '个签' ");
-            //}
-            //else if (cbDisplayType.Text == "团签")
-            //{
-            //    conditions.Add(" Types = '团签' ");
-            //}
-            //else if (cbDisplayType.Text == "团做个")
-            //{
-            //    conditions.Add(" Types = '团做个' ");
-            //}
-            //else if (cbDisplayType.Text == "个签&&团做个")
-            //{
-            //    conditions.Add(" Types = '团做个' or Types = '个签'");
-            //}
 
-            //if (cbCountry.Text == "全部")
-            //{
+            if (cbCorporation.Text == "全部")
+            {
 
-            //}
-            //else
-            //{
-            //    conditions.Add(" Country = '" + cbCountry.Text + "' ");
-            //}
+            }
+            else
+            {
+                conditions.Add(" Corporation = '" + cbCorporation.Text + "' ");
+            }
+
+            if (cbProject.Text == "全部")
+            {
+
+            }
+            else
+            {
+                conditions.Add(" Project = '" + cbProject.Text + "' ");
+            }
 
             //if (!string.IsNullOrEmpty(txtClient.Text.Trim()))
             //{
@@ -266,11 +289,8 @@ namespace SteelManagement.CSUI.FrmMain
 
         private void btnClearSchConditions_Click(object sender, EventArgs e)
         {
-            txtClient.Text = "";
-            cbCountry.Text = "全部";
-            cbDisplayType.Text = "全部";
-            cbDepatureType.Text = "全部";
-
+            cbProject.Text = "全部";
+            cbCorporation.Text = "全部";
         }
 
 
@@ -524,6 +544,7 @@ namespace SteelManagement.CSUI.FrmMain
             frm.ShowDialog();
         }
 
+
         //private void 采购ToolStripMenuItem_Click(object sender, EventArgs e)
         //{
         //    var list = GetSelectedModelList();
@@ -538,6 +559,6 @@ namespace SteelManagement.CSUI.FrmMain
         //}
         #endregion
 
- 
+
     }
 }
