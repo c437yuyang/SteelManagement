@@ -21,6 +21,7 @@ namespace SteelManagement.Model
 		private decimal? _receiptnum;
 		private string _corporation;
 		private string _project;
+		private string _serialno;
 		/// <summary>
 		/// 
 		/// </summary>
@@ -108,6 +109,14 @@ namespace SteelManagement.Model
 		{
 			set{ _project=value;}
 			get{return _project;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public string SerialNo
+		{
+			set{ _serialno=value;}
+			get{return _serialno;}
 		}
 		#endregion Model
 

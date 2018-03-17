@@ -8,7 +8,9 @@ namespace SteelManagement.Common
         {
             Type01Purchase,
             Type02Sale,
-            Type03Receipt
+            Type03Receipt,
+            Type04PurchaseBill,
+            Type05SaleBill
         }
         public static string GetSerialNo(Type type)
         {
@@ -28,6 +30,10 @@ namespace SteelManagement.Common
                     return "02";
                 case Type.Type03Receipt:
                     return "03";
+                case Type.Type04PurchaseBill:
+                    return "04";
+                case Type.Type05SaleBill:
+                    return "05";
                 default:
                     return "";
             }

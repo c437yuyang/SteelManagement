@@ -46,9 +46,9 @@ namespace SteelManagement.DAL
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("insert into SaleBill(");
-			strSql.Append("EntryTime,Supplier,Amount,DuiZhnag,InvoiceDate,InvoiceNum,ReceiptDate,ReceiptNum,Corporation,Project)");
+			strSql.Append("EntryTime,Supplier,Amount,DuiZhnag,InvoiceDate,InvoiceNum,ReceiptDate,ReceiptNum,Corporation,Project,SerialNo)");
 			strSql.Append(" values (");
-			strSql.Append("@EntryTime,@Supplier,@Amount,@DuiZhnag,@InvoiceDate,@InvoiceNum,@ReceiptDate,@ReceiptNum,@Corporation,@Project)");
+			strSql.Append("@EntryTime,@Supplier,@Amount,@DuiZhnag,@InvoiceDate,@InvoiceNum,@ReceiptDate,@ReceiptNum,@Corporation,@Project,@SerialNo)");
 			strSql.Append(";select @@IDENTITY");
 			SqlParameter[] parameters = {
 					new SqlParameter("@EntryTime", SqlDbType.DateTime),
@@ -60,7 +60,8 @@ namespace SteelManagement.DAL
 					new SqlParameter("@ReceiptDate", SqlDbType.DateTime,3),
 					new SqlParameter("@ReceiptNum", SqlDbType.Money,8),
 					new SqlParameter("@Corporation", SqlDbType.VarChar,50),
-					new SqlParameter("@Project", SqlDbType.VarChar,50)};
+					new SqlParameter("@Project", SqlDbType.VarChar,50),
+					new SqlParameter("@SerialNo", SqlDbType.VarChar,50)};
 			parameters[0].Value = model.EntryTime;
 			parameters[1].Value = model.Supplier;
 			parameters[2].Value = model.Amount;
@@ -71,6 +72,7 @@ namespace SteelManagement.DAL
 			parameters[7].Value = model.ReceiptNum;
 			parameters[8].Value = model.Corporation;
 			parameters[9].Value = model.Project;
+			parameters[10].Value = model.SerialNo;
 
 			object obj = DbHelperSQL.GetSingle(strSql.ToString(),parameters);
 			if (obj == null)
@@ -98,7 +100,8 @@ namespace SteelManagement.DAL
 			strSql.Append("ReceiptDate=@ReceiptDate,");
 			strSql.Append("ReceiptNum=@ReceiptNum,");
 			strSql.Append("Corporation=@Corporation,");
-			strSql.Append("Project=@Project");
+			strSql.Append("Project=@Project,");
+			strSql.Append("SerialNo=@SerialNo");
 			strSql.Append(" where Id=@Id");
 			SqlParameter[] parameters = {
 					new SqlParameter("@EntryTime", SqlDbType.DateTime),
@@ -111,6 +114,7 @@ namespace SteelManagement.DAL
 					new SqlParameter("@ReceiptNum", SqlDbType.Money,8),
 					new SqlParameter("@Corporation", SqlDbType.VarChar,50),
 					new SqlParameter("@Project", SqlDbType.VarChar,50),
+					new SqlParameter("@SerialNo", SqlDbType.VarChar,50),
 					new SqlParameter("@Id", SqlDbType.Int,4)};
 			parameters[0].Value = model.EntryTime;
 			parameters[1].Value = model.Supplier;
@@ -122,7 +126,8 @@ namespace SteelManagement.DAL
 			parameters[7].Value = model.ReceiptNum;
 			parameters[8].Value = model.Corporation;
 			parameters[9].Value = model.Project;
-			parameters[10].Value = model.Id;
+			parameters[10].Value = model.SerialNo;
+			parameters[11].Value = model.Id;
 
 			int rows=DbHelperSQL.ExecuteSql(strSql.ToString(),parameters);
 			if (rows > 0)
@@ -186,7 +191,7 @@ namespace SteelManagement.DAL
 		{
 			
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select  top 1 Id,EntryTime,Supplier,Amount,DuiZhnag,InvoiceDate,InvoiceNum,ReceiptDate,ReceiptNum,Corporation,Project from SaleBill ");
+			strSql.Append("select  top 1 Id,EntryTime,Supplier,Amount,DuiZhnag,InvoiceDate,InvoiceNum,ReceiptDate,ReceiptNum,Corporation,Project,SerialNo from SaleBill ");
 			strSql.Append(" where Id=@Id");
 			SqlParameter[] parameters = {
 					new SqlParameter("@Id", SqlDbType.Int,4)
@@ -258,6 +263,10 @@ namespace SteelManagement.DAL
 				{
 					model.Project=row["Project"].ToString();
 				}
+				if(row["SerialNo"]!=null)
+				{
+					model.SerialNo=row["SerialNo"].ToString();
+				}
 			}
 			return model;
 		}
@@ -268,7 +277,7 @@ namespace SteelManagement.DAL
 		public DataSet GetList(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select Id,EntryTime,Supplier,Amount,DuiZhnag,InvoiceDate,InvoiceNum,ReceiptDate,ReceiptNum,Corporation,Project ");
+			strSql.Append("select Id,EntryTime,Supplier,Amount,DuiZhnag,InvoiceDate,InvoiceNum,ReceiptDate,ReceiptNum,Corporation,Project,SerialNo ");
 			strSql.Append(" FROM SaleBill ");
 			if(strWhere.Trim()!="")
 			{
@@ -288,7 +297,7 @@ namespace SteelManagement.DAL
 			{
 				strSql.Append(" top "+Top.ToString());
 			}
-			strSql.Append(" Id,EntryTime,Supplier,Amount,DuiZhnag,InvoiceDate,InvoiceNum,ReceiptDate,ReceiptNum,Corporation,Project ");
+			strSql.Append(" Id,EntryTime,Supplier,Amount,DuiZhnag,InvoiceDate,InvoiceNum,ReceiptDate,ReceiptNum,Corporation,Project,SerialNo ");
 			strSql.Append(" FROM SaleBill ");
 			if(strWhere.Trim()!="")
 			{
