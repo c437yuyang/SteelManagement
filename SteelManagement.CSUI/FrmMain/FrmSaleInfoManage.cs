@@ -544,5 +544,18 @@ namespace SteelManagement.CSUI.FrmMain
         //    //frm.ShowDialog();
         //}
         #endregion
+
+        private void 添加收款信息ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var list = GetSelectedModelList();
+
+            if (list.Count > 1)
+            {
+                MessageBoxEx.Show("请选中一条记录进行录入!");
+                return;
+            }
+            FrmAddSaleBill frm = new FrmAddSaleBill(LoadDataToDataGridView, _curPage, list[0]);
+            frm.ShowDialog();
+        }
     }
 }

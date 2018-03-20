@@ -499,10 +499,23 @@ namespace SteelManagement.CSUI.FrmMain
 
             if (list.Count > 1)
             {
-                MessageBoxEx.Show("请选中一条进行销售!");
+                MessageBoxEx.Show("请选中一条记录进行销售!");
                 return;
             }
             FrmAddSaleInfo frm = new FrmAddSaleInfo(LoadDataToDataGridView, _curPage, list[0]);
+            frm.ShowDialog();
+        }
+
+        private void 添加付款信息ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var list = GetSelectedModelList();
+
+            if (list.Count > 1)
+            {
+                MessageBoxEx.Show("请选中一条记录进行录入!");
+                return;
+            }
+            FrmAddPurchaseBill frm = new FrmAddPurchaseBill(LoadDataToDataGridView, _curPage, list[0]);
             frm.ShowDialog();
         }
     }

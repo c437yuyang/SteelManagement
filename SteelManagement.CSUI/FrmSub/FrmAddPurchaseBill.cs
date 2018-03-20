@@ -62,11 +62,9 @@ namespace SteelManagement.CSUI.FrmSub
         #region 窗体初始化
         private void InitCtrlsByPurchaseInfoModel()
         {
-            //txtSupplier.Text = _purchaseInfoModel.Supplier;
-            //txtBrand.Text = _purchaseInfoModel.Brand;
-            //txtTransportWay.Text = _purchaseInfoModel.TransportWay;
-            //txtSize.Text = _purchaseInfoModel.Size;
-            //txtTexture.Text = _purchaseInfoModel.Texture;
+            txtCorporation.Text = _purchaseInfoModel.Corporation;
+            txtProject.Text = _purchaseInfoModel.Project;
+            txtSupplier.Text = _purchaseInfoModel.Supplier;
         }
 
         private void InitComboBoxs()

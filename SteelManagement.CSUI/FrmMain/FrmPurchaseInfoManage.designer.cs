@@ -33,6 +33,32 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.EntryTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SerialNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Corporation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Project = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Dateline = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Supplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Brand = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TransportWay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvCol_Size = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Texture = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quote = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fluctuation1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TransportCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaoZhuang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LiXi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChengDui = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OtherCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TieXi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalMoney = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FuYuDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Money1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.InvoiceDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Money2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelMain = new DevComponents.DotNetBar.PanelEx();
             this.panelDgv = new DevComponents.DotNetBar.PanelEx();
             this.panelBars = new DevComponents.DotNetBar.PanelEx();
@@ -69,32 +95,7 @@
             this.韩国担保函ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.韩国加急申请书ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bgWorkerLoadData = new System.ComponentModel.BackgroundWorker();
-            this.EntryTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SerialNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Corporation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Project = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dateline = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Supplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Brand = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TransportWay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvCol_Size = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Texture = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quote = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fluctuation1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TransportCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiaoZhuang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LiXi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ChengDui = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OtherCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TieXi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalMoney = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FuYuDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Money1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.InvoiceDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Money2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.添加付款信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelMain.SuspendLayout();
             this.panelDgv.SuspendLayout();
@@ -151,7 +152,7 @@
             dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -174,6 +175,163 @@
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseUp);
             this.dataGridView1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridView1_RowsAdded);
+            // 
+            // EntryTime
+            // 
+            this.EntryTime.DataPropertyName = "EntryTime";
+            this.EntryTime.HeaderText = "记录时间";
+            this.EntryTime.Name = "EntryTime";
+            // 
+            // SerialNo
+            // 
+            this.SerialNo.DataPropertyName = "SerialNo";
+            this.SerialNo.HeaderText = "流水号";
+            this.SerialNo.Name = "SerialNo";
+            // 
+            // Corporation
+            // 
+            this.Corporation.DataPropertyName = "Corporation";
+            this.Corporation.HeaderText = "公司";
+            this.Corporation.Name = "Corporation";
+            // 
+            // Project
+            // 
+            this.Project.DataPropertyName = "Project";
+            this.Project.HeaderText = "项目";
+            this.Project.Name = "Project";
+            // 
+            // Dateline
+            // 
+            this.Dateline.DataPropertyName = "Dateline";
+            this.Dateline.HeaderText = "日期";
+            this.Dateline.Name = "Dateline";
+            // 
+            // Supplier
+            // 
+            this.Supplier.DataPropertyName = "Supplier";
+            this.Supplier.HeaderText = "供应商";
+            this.Supplier.Name = "Supplier";
+            // 
+            // Brand
+            // 
+            this.Brand.DataPropertyName = "Brand";
+            this.Brand.HeaderText = "品牌";
+            this.Brand.Name = "Brand";
+            // 
+            // TransportWay
+            // 
+            this.TransportWay.DataPropertyName = "TransportWay";
+            this.TransportWay.HeaderText = "运输方式";
+            this.TransportWay.Name = "TransportWay";
+            // 
+            // dgvCol_Size
+            // 
+            this.dgvCol_Size.DataPropertyName = "Size";
+            this.dgvCol_Size.HeaderText = "规格";
+            this.dgvCol_Size.Name = "dgvCol_Size";
+            // 
+            // Texture
+            // 
+            this.Texture.DataPropertyName = "Texture";
+            this.Texture.HeaderText = "材质";
+            this.Texture.Name = "Texture";
+            // 
+            // Amount
+            // 
+            this.Amount.DataPropertyName = "Amount";
+            this.Amount.HeaderText = "送货量(t)";
+            this.Amount.Name = "Amount";
+            // 
+            // Quote
+            // 
+            this.Quote.DataPropertyName = "Quote";
+            this.Quote.HeaderText = "报价";
+            this.Quote.Name = "Quote";
+            // 
+            // Fluctuation1
+            // 
+            this.Fluctuation1.DataPropertyName = "Fluctuation1";
+            this.Fluctuation1.HeaderText = "浮动1";
+            this.Fluctuation1.Name = "Fluctuation1";
+            // 
+            // TransportCost
+            // 
+            this.TransportCost.DataPropertyName = "TransportCost";
+            this.TransportCost.HeaderText = "运费";
+            this.TransportCost.Name = "TransportCost";
+            // 
+            // DiaoZhuang
+            // 
+            this.DiaoZhuang.DataPropertyName = "DiaoZhuang";
+            this.DiaoZhuang.HeaderText = "吊装";
+            this.DiaoZhuang.Name = "DiaoZhuang";
+            // 
+            // LiXi
+            // 
+            this.LiXi.DataPropertyName = "LiXi";
+            this.LiXi.HeaderText = "利息";
+            this.LiXi.Name = "LiXi";
+            // 
+            // ChengDui
+            // 
+            this.ChengDui.DataPropertyName = "ChengDui";
+            this.ChengDui.HeaderText = "承兑";
+            this.ChengDui.Name = "ChengDui";
+            // 
+            // OtherCost
+            // 
+            this.OtherCost.DataPropertyName = "OtherCost";
+            this.OtherCost.HeaderText = "其他成本";
+            this.OtherCost.Name = "OtherCost";
+            // 
+            // TieXi
+            // 
+            this.TieXi.DataPropertyName = "TieXi";
+            this.TieXi.HeaderText = "贴息";
+            this.TieXi.Name = "TieXi";
+            // 
+            // Price
+            // 
+            this.Price.DataPropertyName = "Price";
+            this.Price.HeaderText = "单价";
+            this.Price.Name = "Price";
+            // 
+            // TotalMoney
+            // 
+            this.TotalMoney.DataPropertyName = "TotalMoney";
+            this.TotalMoney.HeaderText = "总金额";
+            this.TotalMoney.Name = "TotalMoney";
+            // 
+            // FuYuDate
+            // 
+            this.FuYuDate.DataPropertyName = "FuYuDate";
+            this.FuYuDate.HeaderText = "付宇通汇日期";
+            this.FuYuDate.Name = "FuYuDate";
+            // 
+            // Money1
+            // 
+            this.Money1.DataPropertyName = "Money1";
+            this.Money1.HeaderText = "金额";
+            this.Money1.Name = "Money1";
+            // 
+            // InvoiceDate
+            // 
+            this.InvoiceDate.DataPropertyName = "InvoiceDate";
+            this.InvoiceDate.HeaderText = "开票日期";
+            this.InvoiceDate.Name = "InvoiceDate";
+            // 
+            // Money2
+            // 
+            this.Money2.DataPropertyName = "Money2";
+            this.Money2.HeaderText = "金额";
+            this.Money2.Name = "Money2";
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
             // 
             // panelMain
             // 
@@ -463,9 +621,10 @@
             this.cmsItemRefreshState,
             this.删除ToolStripMenuItem,
             this.修改ToolStripMenuItem,
-            this.售出ToolStripMenuItem});
+            this.售出ToolStripMenuItem,
+            this.添加付款信息ToolStripMenuItem});
             this.cmsDgvRb.Name = "cmsDgvRb";
-            this.cmsDgvRb.Size = new System.Drawing.Size(161, 92);
+            this.cmsDgvRb.Size = new System.Drawing.Size(161, 136);
             // 
             // cmsItemRefreshState
             // 
@@ -526,162 +685,12 @@
             this.bgWorkerLoadData.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.bgWorkerLoadData_ProgressChanged);
             this.bgWorkerLoadData.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgWorkerLoadData_RunWorkerCompleted);
             // 
-            // EntryTime
+            // 添加付款信息ToolStripMenuItem
             // 
-            this.EntryTime.DataPropertyName = "EntryTime";
-            this.EntryTime.HeaderText = "记录时间";
-            this.EntryTime.Name = "EntryTime";
-            // 
-            // SerialNo
-            // 
-            this.SerialNo.DataPropertyName = "SerialNo";
-            this.SerialNo.HeaderText = "流水号";
-            this.SerialNo.Name = "SerialNo";
-            // 
-            // Corporation
-            // 
-            this.Corporation.DataPropertyName = "Corporation";
-            this.Corporation.HeaderText = "公司";
-            this.Corporation.Name = "Corporation";
-            // 
-            // Project
-            // 
-            this.Project.DataPropertyName = "Project";
-            this.Project.HeaderText = "项目";
-            this.Project.Name = "Project";
-            // 
-            // Dateline
-            // 
-            this.Dateline.DataPropertyName = "Dateline";
-            this.Dateline.HeaderText = "日期";
-            this.Dateline.Name = "Dateline";
-            // 
-            // Supplier
-            // 
-            this.Supplier.DataPropertyName = "Supplier";
-            this.Supplier.HeaderText = "供应商";
-            this.Supplier.Name = "Supplier";
-            // 
-            // Brand
-            // 
-            this.Brand.DataPropertyName = "Brand";
-            this.Brand.HeaderText = "品牌";
-            this.Brand.Name = "Brand";
-            // 
-            // TransportWay
-            // 
-            this.TransportWay.DataPropertyName = "TransportWay";
-            this.TransportWay.HeaderText = "运输方式";
-            this.TransportWay.Name = "TransportWay";
-            // 
-            // dgvCol_Size
-            // 
-            this.dgvCol_Size.DataPropertyName = "Size";
-            this.dgvCol_Size.HeaderText = "规格";
-            this.dgvCol_Size.Name = "dgvCol_Size";
-            // 
-            // Texture
-            // 
-            this.Texture.DataPropertyName = "Texture";
-            this.Texture.HeaderText = "材质";
-            this.Texture.Name = "Texture";
-            // 
-            // Amount
-            // 
-            this.Amount.DataPropertyName = "Amount";
-            this.Amount.HeaderText = "送货量(t)";
-            this.Amount.Name = "Amount";
-            // 
-            // Quote
-            // 
-            this.Quote.DataPropertyName = "Quote";
-            this.Quote.HeaderText = "报价";
-            this.Quote.Name = "Quote";
-            // 
-            // Fluctuation1
-            // 
-            this.Fluctuation1.DataPropertyName = "Fluctuation1";
-            this.Fluctuation1.HeaderText = "浮动1";
-            this.Fluctuation1.Name = "Fluctuation1";
-            // 
-            // TransportCost
-            // 
-            this.TransportCost.DataPropertyName = "TransportCost";
-            this.TransportCost.HeaderText = "运费";
-            this.TransportCost.Name = "TransportCost";
-            // 
-            // DiaoZhuang
-            // 
-            this.DiaoZhuang.DataPropertyName = "DiaoZhuang";
-            this.DiaoZhuang.HeaderText = "吊装";
-            this.DiaoZhuang.Name = "DiaoZhuang";
-            // 
-            // LiXi
-            // 
-            this.LiXi.DataPropertyName = "LiXi";
-            this.LiXi.HeaderText = "利息";
-            this.LiXi.Name = "LiXi";
-            // 
-            // ChengDui
-            // 
-            this.ChengDui.DataPropertyName = "ChengDui";
-            this.ChengDui.HeaderText = "承兑";
-            this.ChengDui.Name = "ChengDui";
-            // 
-            // OtherCost
-            // 
-            this.OtherCost.DataPropertyName = "OtherCost";
-            this.OtherCost.HeaderText = "其他成本";
-            this.OtherCost.Name = "OtherCost";
-            // 
-            // TieXi
-            // 
-            this.TieXi.DataPropertyName = "TieXi";
-            this.TieXi.HeaderText = "贴息";
-            this.TieXi.Name = "TieXi";
-            // 
-            // Price
-            // 
-            this.Price.DataPropertyName = "Price";
-            this.Price.HeaderText = "单价";
-            this.Price.Name = "Price";
-            // 
-            // TotalMoney
-            // 
-            this.TotalMoney.DataPropertyName = "TotalMoney";
-            this.TotalMoney.HeaderText = "总金额";
-            this.TotalMoney.Name = "TotalMoney";
-            // 
-            // FuYuDate
-            // 
-            this.FuYuDate.DataPropertyName = "FuYuDate";
-            this.FuYuDate.HeaderText = "付宇通汇日期";
-            this.FuYuDate.Name = "FuYuDate";
-            // 
-            // Money1
-            // 
-            this.Money1.DataPropertyName = "Money1";
-            this.Money1.HeaderText = "金额";
-            this.Money1.Name = "Money1";
-            // 
-            // InvoiceDate
-            // 
-            this.InvoiceDate.DataPropertyName = "InvoiceDate";
-            this.InvoiceDate.HeaderText = "开票日期";
-            this.InvoiceDate.Name = "InvoiceDate";
-            // 
-            // Money2
-            // 
-            this.Money2.DataPropertyName = "Money2";
-            this.Money2.HeaderText = "金额";
-            this.Money2.Name = "Money2";
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.Visible = false;
+            this.添加付款信息ToolStripMenuItem.Name = "添加付款信息ToolStripMenuItem";
+            this.添加付款信息ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.添加付款信息ToolStripMenuItem.Text = "添加付款信息";
+            this.添加付款信息ToolStripMenuItem.Click += new System.EventHandler(this.添加付款信息ToolStripMenuItem_Click);
             // 
             // FrmPurchaseInfoManage
             // 
@@ -768,6 +777,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn InvoiceDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn Money2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.ToolStripMenuItem 添加付款信息ToolStripMenuItem;
     }
 }
 

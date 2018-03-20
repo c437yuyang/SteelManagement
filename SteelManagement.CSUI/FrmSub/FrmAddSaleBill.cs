@@ -12,7 +12,7 @@ namespace SteelManagement.CSUI.FrmSub
         private readonly int _curPage; //主界面更新数据库需要一个当前页
         private readonly bool _is4Modify = false;
         private readonly SteelManagement.Model.SaleBill _model = null;
-        private readonly SteelManagement.Model.PurchaseInfo _purchaseInfoModel = null;
+        private readonly SteelManagement.Model.SaleInfo _saleInfoModel = null;
 
         public FrmAddSaleBill(Action<int> updateDel, int curPage, bool is4Modify = false, SteelManagement.Model.SaleBill model = null)
         {
@@ -24,13 +24,13 @@ namespace SteelManagement.CSUI.FrmSub
             _model = model;
         }
 
-        public FrmAddSaleBill(Action<int> updateDel, int curPage, SteelManagement.Model.PurchaseInfo model)
+        public FrmAddSaleBill(Action<int> updateDel, int curPage, SteelManagement.Model.SaleInfo model)
         {
             this.StartPosition = FormStartPosition.CenterParent;
             InitializeComponent();
             _updateDel = updateDel;
             _curPage = curPage;
-            _purchaseInfoModel = model;
+            _saleInfoModel = model;
         }
 
         private void FrmAddSaleBill_Load(object sender, EventArgs e)
@@ -41,8 +41,8 @@ namespace SteelManagement.CSUI.FrmSub
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
 
             InitComboBoxs();
-            if (_purchaseInfoModel != null)
-                InitCtrlsByPurchaseInfoModel();
+            if ( _saleInfoModel!= null)
+                InitCtrlsBySaleInfoModel();
 
             if (_is4Modify)
             {
@@ -63,13 +63,12 @@ namespace SteelManagement.CSUI.FrmSub
         }
 
         #region 窗体初始化
-        private void InitCtrlsByPurchaseInfoModel()
+        private void InitCtrlsBySaleInfoModel()
         {
-            //txtSupplier.Text = _purchaseInfoModel.Supplier;
-            //txtBrand.Text = _purchaseInfoModel.Brand;
-            //txtTransportWay.Text = _purchaseInfoModel.TransportWay;
-            //txtSize.Text = _purchaseInfoModel.Size;
-            //txtTexture.Text = _purchaseInfoModel.Texture;
+            txtCorporation.Text = _saleInfoModel.Corporation;
+            txtProject.Text = _saleInfoModel.Project;
+            txtSupplier.Text = _saleInfoModel.Supplier;
+
         }
 
         private void InitComboBoxs()
