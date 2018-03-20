@@ -33,18 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.EntryTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SerialNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Corporation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Project = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Supplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DuiZhang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.InvoiceDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.InvoiceNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ReceiptDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ReceiptNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelMain = new DevComponents.DotNetBar.PanelEx();
             this.panelDgv = new DevComponents.DotNetBar.PanelEx();
             this.panelBars = new DevComponents.DotNetBar.PanelEx();
@@ -89,6 +77,14 @@
             this.韩国担保函ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.韩国加急申请书ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bgWorkerLoadData = new System.ComponentModel.BackgroundWorker();
+            this.EntryTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SerialNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Corporation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Project = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Supplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Payer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelMain.SuspendLayout();
             this.panelDgv.SuspendLayout();
@@ -122,18 +118,14 @@
             this.Project,
             this.Supplier,
             this.Amount,
-            this.DuiZhang,
-            this.InvoiceDate,
-            this.InvoiceNum,
-            this.ReceiptDate,
-            this.ReceiptNum,
+            this.Payer,
             this.Id});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -157,77 +149,6 @@
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             this.dataGridView1.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseUp);
             this.dataGridView1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridView1_RowsAdded);
-            // 
-            // EntryTime
-            // 
-            this.EntryTime.DataPropertyName = "EntryTime";
-            this.EntryTime.HeaderText = "录入时间";
-            this.EntryTime.Name = "EntryTime";
-            // 
-            // SerialNo
-            // 
-            this.SerialNo.DataPropertyName = "SerialNo";
-            this.SerialNo.HeaderText = "流水号";
-            this.SerialNo.Name = "SerialNo";
-            // 
-            // Corporation
-            // 
-            this.Corporation.DataPropertyName = "Corporation";
-            this.Corporation.HeaderText = "公司";
-            this.Corporation.Name = "Corporation";
-            // 
-            // Project
-            // 
-            this.Project.DataPropertyName = "Project";
-            this.Project.HeaderText = "项目";
-            this.Project.Name = "Project";
-            // 
-            // Supplier
-            // 
-            this.Supplier.DataPropertyName = "Supplier";
-            this.Supplier.HeaderText = "供应商";
-            this.Supplier.Name = "Supplier";
-            // 
-            // Amount
-            // 
-            this.Amount.DataPropertyName = "Amount";
-            this.Amount.HeaderText = "金额";
-            this.Amount.Name = "Amount";
-            // 
-            // DuiZhang
-            // 
-            this.DuiZhang.DataPropertyName = "DuiZhang";
-            this.DuiZhang.HeaderText = "对账";
-            this.DuiZhang.Name = "DuiZhang";
-            // 
-            // InvoiceDate
-            // 
-            this.InvoiceDate.DataPropertyName = "InvoiceDate";
-            this.InvoiceDate.HeaderText = "开票日期";
-            this.InvoiceDate.Name = "InvoiceDate";
-            // 
-            // InvoiceNum
-            // 
-            this.InvoiceNum.HeaderText = "开票金额";
-            this.InvoiceNum.Name = "InvoiceNum";
-            // 
-            // ReceiptDate
-            // 
-            this.ReceiptDate.DataPropertyName = "ReceiptDate";
-            this.ReceiptDate.HeaderText = "收款日期";
-            this.ReceiptDate.Name = "ReceiptDate";
-            // 
-            // ReceiptNum
-            // 
-            this.ReceiptNum.HeaderText = "收款金额";
-            this.ReceiptNum.Name = "ReceiptNum";
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.Visible = false;
             // 
             // panelMain
             // 
@@ -745,6 +666,55 @@
             this.bgWorkerLoadData.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.bgWorkerLoadData_ProgressChanged);
             this.bgWorkerLoadData.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgWorkerLoadData_RunWorkerCompleted);
             // 
+            // EntryTime
+            // 
+            this.EntryTime.DataPropertyName = "EntryTime";
+            this.EntryTime.HeaderText = "录入时间";
+            this.EntryTime.Name = "EntryTime";
+            // 
+            // SerialNo
+            // 
+            this.SerialNo.DataPropertyName = "SerialNo";
+            this.SerialNo.HeaderText = "流水号";
+            this.SerialNo.Name = "SerialNo";
+            // 
+            // Corporation
+            // 
+            this.Corporation.DataPropertyName = "Corporation";
+            this.Corporation.HeaderText = "公司";
+            this.Corporation.Name = "Corporation";
+            // 
+            // Project
+            // 
+            this.Project.DataPropertyName = "Project";
+            this.Project.HeaderText = "项目";
+            this.Project.Name = "Project";
+            // 
+            // Supplier
+            // 
+            this.Supplier.DataPropertyName = "Supplier";
+            this.Supplier.HeaderText = "供应商";
+            this.Supplier.Name = "Supplier";
+            // 
+            // Amount
+            // 
+            this.Amount.DataPropertyName = "Amount";
+            this.Amount.HeaderText = "金额";
+            this.Amount.Name = "Amount";
+            // 
+            // Payer
+            // 
+            this.Payer.DataPropertyName = "Payer";
+            this.Payer.HeaderText = "收款人";
+            this.Payer.Name = "Payer";
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
+            // 
             // FrmPurchaseBillManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -807,18 +777,6 @@
         private DevComponents.DotNetBar.Controls.ComboBoxEx cbCorporation;
         private DevComponents.DotNetBar.LabelX labelX15;
         private System.Windows.Forms.ToolStripMenuItem 查看收据图像ToolStripMenuItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EntryTime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SerialNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Corporation;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Project;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Supplier;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DuiZhang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn InvoiceDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn InvoiceNum;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ReceiptDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ReceiptNum;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private DevComponents.DotNetBar.ButtonX btnTimeSpanChoose;
         private DevComponents.Editors.DateTimeAdv.DateTimeInput txtSchEntryTimeTo;
         private DevComponents.Editors.DateTimeAdv.DateTimeInput txtSchEntryTimeFrom;
@@ -826,6 +784,14 @@
         private DevComponents.DotNetBar.LabelX labelX12;
         private System.Windows.Forms.ToolStripMenuItem 查看选中项目统计ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 导出选中公司收款统计报表ToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EntryTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SerialNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Corporation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Project;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Supplier;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Payer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
     }
 }
 

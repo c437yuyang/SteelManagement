@@ -1,6 +1,6 @@
 ﻿namespace SteelManagement.CSUI.FrmSub
 {
-    partial class FrmAddSaleBill
+    partial class FrmAddPurchaseBill
     {
         /// <summary>
         /// Required designer variable.
@@ -28,16 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelX20 = new DevComponents.DotNetBar.LabelX();
-            this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.btnCancel = new DevComponents.DotNetBar.ButtonX();
-            this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.txtInvoiceNum = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX15 = new DevComponents.DotNetBar.LabelX();
             this.btnOK = new DevComponents.DotNetBar.ButtonX();
-            this.txtReceiptDate = new System.Windows.Forms.DateTimePicker();
-            this.txtReceiptNum = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtInvoiceDate = new System.Windows.Forms.DateTimePicker();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.panelMain = new DevComponents.DotNetBar.PanelEx();
             this.txtProject = new DevComponents.DotNetBar.Controls.ComboBoxEx();
@@ -46,47 +38,22 @@
             this.labelX9 = new DevComponents.DotNetBar.LabelX();
             this.txtAmount = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
-            this.txtDuiZhang = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.txtSupplier = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.labelX11 = new DevComponents.DotNetBar.LabelX();
             this.btnAddFromExcel = new DevComponents.DotNetBar.ButtonX();
             this.btnAdd = new DevComponents.DotNetBar.ButtonX();
             this.progressLoading = new DevComponents.DotNetBar.Controls.CircularProgress();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.txtPayer = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.panelEx1.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // labelX20
-            // 
-            // 
-            // 
-            // 
-            this.labelX20.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX20.Location = new System.Drawing.Point(242, 95);
-            this.labelX20.Name = "labelX20";
-            this.labelX20.Size = new System.Drawing.Size(87, 19);
-            this.labelX20.TabIndex = 98;
-            this.labelX20.Text = "开票金额:";
-            this.labelX20.WordWrap = true;
-            // 
-            // labelX10
-            // 
-            // 
-            // 
-            // 
-            this.labelX10.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX10.Location = new System.Drawing.Point(242, 66);
-            this.labelX10.Name = "labelX10";
-            this.labelX10.Size = new System.Drawing.Size(80, 23);
-            this.labelX10.TabIndex = 80;
-            this.labelX10.Text = "开票日期:";
             // 
             // btnCancel
             // 
             this.btnCancel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnCancel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnCancel.Location = new System.Drawing.Point(138, 145);
+            this.btnCancel.Location = new System.Drawing.Point(138, 149);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -94,83 +61,17 @@
             this.btnCancel.Text = "取消";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // labelX1
-            // 
-            // 
-            // 
-            // 
-            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.Location = new System.Drawing.Point(242, 147);
-            this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(81, 23);
-            this.labelX1.TabIndex = 96;
-            this.labelX1.Text = "收款金额:";
-            // 
-            // txtInvoiceNum
-            // 
-            // 
-            // 
-            // 
-            this.txtInvoiceNum.Border.Class = "TextBoxBorder";
-            this.txtInvoiceNum.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtInvoiceNum.Location = new System.Drawing.Point(329, 93);
-            this.txtInvoiceNum.Name = "txtInvoiceNum";
-            this.txtInvoiceNum.Size = new System.Drawing.Size(107, 21);
-            this.txtInvoiceNum.TabIndex = 99;
-            // 
-            // labelX15
-            // 
-            // 
-            // 
-            // 
-            this.labelX15.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX15.Location = new System.Drawing.Point(242, 120);
-            this.labelX15.Name = "labelX15";
-            this.labelX15.Size = new System.Drawing.Size(87, 23);
-            this.labelX15.TabIndex = 86;
-            this.labelX15.Text = "收款日期:";
-            // 
             // btnOK
             // 
             this.btnOK.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnOK.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnOK.Location = new System.Drawing.Point(19, 145);
+            this.btnOK.Location = new System.Drawing.Point(19, 149);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnOK.TabIndex = 29;
             this.btnOK.Text = "确认";
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
-            // 
-            // txtReceiptDate
-            // 
-            this.txtReceiptDate.CustomFormat = "yyyy/MM/dd";
-            this.txtReceiptDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtReceiptDate.Location = new System.Drawing.Point(329, 120);
-            this.txtReceiptDate.Name = "txtReceiptDate";
-            this.txtReceiptDate.Size = new System.Drawing.Size(107, 21);
-            this.txtReceiptDate.TabIndex = 87;
-            // 
-            // txtReceiptNum
-            // 
-            // 
-            // 
-            // 
-            this.txtReceiptNum.Border.Class = "TextBoxBorder";
-            this.txtReceiptNum.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtReceiptNum.Location = new System.Drawing.Point(329, 147);
-            this.txtReceiptNum.Name = "txtReceiptNum";
-            this.txtReceiptNum.Size = new System.Drawing.Size(107, 21);
-            this.txtReceiptNum.TabIndex = 99;
-            // 
-            // txtInvoiceDate
-            // 
-            this.txtInvoiceDate.CustomFormat = "yyyy/MM/dd";
-            this.txtInvoiceDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtInvoiceDate.Location = new System.Drawing.Point(329, 66);
-            this.txtInvoiceDate.Name = "txtInvoiceDate";
-            this.txtInvoiceDate.Size = new System.Drawing.Size(107, 21);
-            this.txtInvoiceDate.TabIndex = 81;
             // 
             // panelEx1
             // 
@@ -201,23 +102,15 @@
             this.panelMain.Controls.Add(this.labelX9);
             this.panelMain.Controls.Add(this.txtAmount);
             this.panelMain.Controls.Add(this.labelX3);
-            this.panelMain.Controls.Add(this.txtDuiZhang);
+            this.panelMain.Controls.Add(this.txtPayer);
             this.panelMain.Controls.Add(this.labelX2);
             this.panelMain.Controls.Add(this.txtSupplier);
             this.panelMain.Controls.Add(this.labelX11);
             this.panelMain.Controls.Add(this.btnAddFromExcel);
             this.panelMain.Controls.Add(this.btnAdd);
             this.panelMain.Controls.Add(this.progressLoading);
-            this.panelMain.Controls.Add(this.txtInvoiceDate);
-            this.panelMain.Controls.Add(this.txtReceiptNum);
             this.panelMain.Controls.Add(this.btnOK);
-            this.panelMain.Controls.Add(this.txtInvoiceNum);
             this.panelMain.Controls.Add(this.btnCancel);
-            this.panelMain.Controls.Add(this.labelX20);
-            this.panelMain.Controls.Add(this.labelX10);
-            this.panelMain.Controls.Add(this.labelX1);
-            this.panelMain.Controls.Add(this.labelX15);
-            this.panelMain.Controls.Add(this.txtReceiptDate);
             this.panelMain.DisabledBackColor = System.Drawing.Color.Empty;
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(0, 0);
@@ -286,7 +179,7 @@
             this.txtAmount.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.txtAmount.FormattingEnabled = true;
             this.txtAmount.ItemHeight = 15;
-            this.txtAmount.Location = new System.Drawing.Point(329, 39);
+            this.txtAmount.Location = new System.Drawing.Point(106, 95);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(107, 21);
             this.txtAmount.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -298,35 +191,11 @@
             // 
             // 
             this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX3.Location = new System.Drawing.Point(242, 39);
+            this.labelX3.Location = new System.Drawing.Point(19, 95);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(63, 23);
             this.labelX3.TabIndex = 104;
             this.labelX3.Text = "金额:";
-            // 
-            // txtDuiZhang
-            // 
-            this.txtDuiZhang.DisplayMember = "Text";
-            this.txtDuiZhang.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.txtDuiZhang.FormattingEnabled = true;
-            this.txtDuiZhang.ItemHeight = 15;
-            this.txtDuiZhang.Location = new System.Drawing.Point(329, 12);
-            this.txtDuiZhang.Name = "txtDuiZhang";
-            this.txtDuiZhang.Size = new System.Drawing.Size(107, 21);
-            this.txtDuiZhang.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.txtDuiZhang.TabIndex = 103;
-            // 
-            // labelX2
-            // 
-            // 
-            // 
-            // 
-            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX2.Location = new System.Drawing.Point(242, 12);
-            this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(63, 23);
-            this.labelX2.TabIndex = 102;
-            this.labelX2.Text = "对账:";
             // 
             // txtSupplier
             // 
@@ -391,15 +260,39 @@
             this.progressLoading.TabIndex = 27;
             this.progressLoading.Value = 100;
             // 
-            // FrmAddSaleBill
+            // labelX2
+            // 
+            // 
+            // 
+            // 
+            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX2.Location = new System.Drawing.Point(19, 122);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(63, 23);
+            this.labelX2.TabIndex = 102;
+            this.labelX2.Text = "收款人:";
+            // 
+            // txtPayer
+            // 
+            this.txtPayer.DisplayMember = "Text";
+            this.txtPayer.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.txtPayer.FormattingEnabled = true;
+            this.txtPayer.ItemHeight = 15;
+            this.txtPayer.Location = new System.Drawing.Point(106, 122);
+            this.txtPayer.Name = "txtPayer";
+            this.txtPayer.Size = new System.Drawing.Size(107, 21);
+            this.txtPayer.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.txtPayer.TabIndex = 103;
+            // 
+            // FrmAddPurchaseBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(454, 190);
             this.Controls.Add(this.panelEx1);
-            this.Name = "FrmAddSaleBill";
-            this.Text = "新增销售收款";
-            this.Load += new System.EventHandler(this.FrmAddSaleBill_Load);
+            this.Name = "FrmAddPurchaseBill";
+            this.Text = "新增采购付款";
+            this.Load += new System.EventHandler(this.FrmAddPurchaseBill_Load);
             this.panelEx1.ResumeLayout(false);
             this.panelMain.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -407,16 +300,8 @@
         }
 
         #endregion
-        private DevComponents.DotNetBar.LabelX labelX20;
-        private DevComponents.DotNetBar.LabelX labelX10;
         private DevComponents.DotNetBar.ButtonX btnCancel;
-        private DevComponents.DotNetBar.LabelX labelX1;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtInvoiceNum;
-        private DevComponents.DotNetBar.LabelX labelX15;
         private DevComponents.DotNetBar.ButtonX btnOK;
-        private System.Windows.Forms.DateTimePicker txtReceiptDate;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtReceiptNum;
-        private System.Windows.Forms.DateTimePicker txtInvoiceDate;
         private DevComponents.DotNetBar.PanelEx panelEx1;
         private DevComponents.DotNetBar.PanelEx panelMain;
         private DevComponents.DotNetBar.ButtonX btnAddFromExcel;
@@ -426,11 +311,11 @@
         private DevComponents.DotNetBar.LabelX labelX11;
         private DevComponents.DotNetBar.Controls.ComboBoxEx txtAmount;
         private DevComponents.DotNetBar.LabelX labelX3;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx txtDuiZhang;
-        private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.Controls.ComboBoxEx txtProject;
         private DevComponents.DotNetBar.Controls.ComboBoxEx txtCorporation;
         private DevComponents.DotNetBar.LabelX labelX7;
         private DevComponents.DotNetBar.LabelX labelX9;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx txtPayer;
+        private DevComponents.DotNetBar.LabelX labelX2;
     }
 }

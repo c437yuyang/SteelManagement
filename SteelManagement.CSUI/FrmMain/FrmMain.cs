@@ -50,8 +50,8 @@ namespace SteelManagement.CSUI.FrmMain
 
         private void BtnPurchaseBillManage_Click(object sender, EventArgs e)
         {
-             //frm = new FrmProjectBillManage();
-            //OpenTab(frm, frm.Name);
+            FrmPurchaseBillManage frm = new FrmPurchaseBillManage();
+            OpenTab(frm, frm.Name);
         }
 
         #endregion

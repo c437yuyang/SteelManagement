@@ -100,11 +100,11 @@
     <Compile Include="FrmMain\FrmProjectBillManage.designer.cs">
       <DependentUpon>FrmProjectBillManage.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmMain\FrmPruchaseBillManage.cs">
+    <Compile Include="FrmMain\FrmPurchaseBillManage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmMain\FrmPruchaseBillManage.designer.cs">
-      <DependentUpon>FrmPruchaseBillManage.cs</DependentUpon>
+    <Compile Include="FrmMain\FrmPurchaseBillManage.designer.cs">
+      <DependentUpon>FrmPurchaseBillManage.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMain\FrmSaleBillManage.cs">
       <SubType>Form</SubType>
@@ -129,6 +129,12 @@
     </Compile>
     <Compile Include="FrmMain\FrmSteelInfoManage.designer.cs">
       <DependentUpon>FrmSteelInfoManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSub\FrmAddPurchaseBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSub\FrmAddPurchaseBill.designer.cs">
+      <DependentUpon>FrmAddPurchaseBill.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmSub\FrmAddSaleBill.cs">
       <SubType>Form</SubType>
@@ -186,8 +192,8 @@
     <EmbeddedResource Include="FrmMain\FrmProjectBillManage.resx">
       <DependentUpon>FrmProjectBillManage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmMain\FrmPruchaseBillManage.resx">
-      <DependentUpon>FrmPruchaseBillManage.cs</DependentUpon>
+    <EmbeddedResource Include="FrmMain\FrmPurchaseBillManage.resx">
+      <DependentUpon>FrmPurchaseBillManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain\FrmSaleBillManage.resx">
       <DependentUpon>FrmSaleBillManage.cs</DependentUpon>
@@ -200,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain\FrmSteelInfoManage.resx">
       <DependentUpon>FrmSteelInfoManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSub\FrmAddPurchaseBill.resx">
+      <DependentUpon>FrmAddPurchaseBill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSub\FrmAddSaleBill.resx">
       <DependentUpon>FrmAddSaleBill.cs</DependentUpon>

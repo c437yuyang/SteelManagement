@@ -73,17 +73,14 @@ namespace SteelManagement.CSUI.FrmMain
 
             string tablename = "PurchaseBill";
             var list = BLL.CommonBll.GetFieldList(tablename, "Project");
-            foreach (var item in list)
-            {
-                cbProject.Items.Add(item);
-            }
+            if (list != null)
+                foreach (var item in list)
+                    cbProject.Items.Add(item);
 
             list = BLL.CommonBll.GetFieldList(tablename, "Corporation");
-            foreach (var item in list)
-            {
-                cbCorporation.Items.Add(item);
-            }
-
+            if (list != null)
+                foreach (var item in list)
+                    cbCorporation.Items.Add(item);
 
         }
 
@@ -467,8 +464,8 @@ namespace SteelManagement.CSUI.FrmMain
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            //FrmAddPurchaseBill frm = new FrmAddPurchaseBill(LoadDataToDataGridView, _curPage);
-            //frm.ShowDialog();
+            FrmAddPurchaseBill frm = new FrmAddPurchaseBill(LoadDataToDataGridView, _curPage);
+            frm.ShowDialog();
         }
         #endregion
 
@@ -503,11 +500,11 @@ namespace SteelManagement.CSUI.FrmMain
             List<string> name_list = new List<string>();
             foreach (var model in list)
             {
-                if(!string.IsNullOrEmpty(model.SerialNo))
+                if (!string.IsNullOrEmpty(model.SerialNo))
                     name_list.Add(model.SerialNo + ".jpg");
             }
 
-            FrmShowPicture frm = new FrmShowPicture(name_list,"收据查看",idx);
+            FrmShowPicture frm = new FrmShowPicture(name_list, "收据查看", idx);
             frm.Show();
 
         }
@@ -541,8 +538,8 @@ namespace SteelManagement.CSUI.FrmMain
                 MessageBoxEx.Show("请选中一条进行修改!");
                 return;
             }
-            //FrmAddPurchaseBill frm = new FrmAddPurchaseBill(LoadDataToDataGridView, _curPage, true, list[0]);
-            //frm.ShowDialog();
+            FrmAddPurchaseBill frm = new FrmAddPurchaseBill(LoadDataToDataGridView, _curPage, true, list[0]);
+            frm.ShowDialog();
         }
 
         private void 查看选中项目统计ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -558,7 +555,6 @@ namespace SteelManagement.CSUI.FrmMain
             var PurchaseBillModellist = _bllPurchaseBill.GetModelList(" Project = '" + selList[0].Project + "' ");
 
             //ExcelGenerator.GetSailBillCount(PurchaseBillModellist);
-
         }
 
 
@@ -586,9 +582,6 @@ namespace SteelManagement.CSUI.FrmMain
             }
 
             var PurchaseBillModellist = _bllPurchaseBill.GetModelList(" Corporation = '" + selList[0].Corporation + "' ");
-
-
-
         }
 
         #endregion
