@@ -46,6 +46,7 @@
     <Compile Include="CommonDal.cs" />
     <Compile Include="ProgramVersion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PurchaseBill.cs" />
     <Compile Include="PurchaseInfo.cs" />
     <Compile Include="ReceiptInfo.cs" />
     <Compile Include="SaleBill.cs" />

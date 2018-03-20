@@ -100,6 +100,12 @@
     <Compile Include="FrmMain\FrmProjectBillManage.designer.cs">
       <DependentUpon>FrmProjectBillManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMain\FrmPruchaseBillManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain\FrmPruchaseBillManage.designer.cs">
+      <DependentUpon>FrmPruchaseBillManage.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMain\FrmSaleBillManage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain\FrmProjectBillManage.resx">
       <DependentUpon>FrmProjectBillManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain\FrmPruchaseBillManage.resx">
+      <DependentUpon>FrmPruchaseBillManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain\FrmSaleBillManage.resx">
       <DependentUpon>FrmSaleBillManage.cs</DependentUpon>
