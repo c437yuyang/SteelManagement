@@ -36,6 +36,7 @@
             this.ribbonBar2 = new DevComponents.DotNetBar.RibbonBar();
             this.btnSteelInfoManage = new DevComponents.DotNetBar.ButtonItem();
             this.btnPurchaseInfoManage = new DevComponents.DotNetBar.ButtonItem();
+            this.btnPurchaseBillManage = new DevComponents.DotNetBar.ButtonItem();
             this.btnSaleInfoManage = new DevComponents.DotNetBar.ButtonItem();
             this.btnSaleBillManage = new DevComponents.DotNetBar.ButtonItem();
             this.btnProjectBillManage = new DevComponents.DotNetBar.ButtonItem();
@@ -64,7 +65,6 @@
             this.btnMCloseOther = new System.Windows.Forms.ToolStripMenuItem();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.btnFrmGaoPaiManage = new DevComponents.DotNetBar.ButtonItem();
-            this.btnPurchaseBillManage = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonControl1.SuspendLayout();
             this.ribbonPanel3.SuspendLayout();
             this.ribbonPanel1.SuspendLayout();
@@ -169,13 +169,13 @@
             this.ribbonBar2.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.btnSteelInfoManage,
             this.btnPurchaseInfoManage,
-            this.btnPurchaseBillManage,
             this.btnSaleInfoManage,
+            this.btnPurchaseBillManage,
             this.btnSaleBillManage,
             this.btnProjectBillManage});
             this.ribbonBar2.Location = new System.Drawing.Point(3, 0);
             this.ribbonBar2.Name = "ribbonBar2";
-            this.ribbonBar2.Size = new System.Drawing.Size(568, 58);
+            this.ribbonBar2.Size = new System.Drawing.Size(955, 58);
             this.ribbonBar2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.ribbonBar2.TabIndex = 0;
             this.ribbonBar2.Text = "ribbonBar2";
@@ -206,6 +206,15 @@
             this.btnPurchaseInfoManage.Name = "btnPurchaseInfoManage";
             this.btnPurchaseInfoManage.SubItemsExpandWidth = 14;
             this.btnPurchaseInfoManage.Text = "采购信息管理";
+            // 
+            // btnPurchaseBillManage
+            // 
+            this.btnPurchaseBillManage.Icon = ((System.Drawing.Icon)(resources.GetObject("btnPurchaseBillManage.Icon")));
+            this.btnPurchaseBillManage.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
+            this.btnPurchaseBillManage.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnPurchaseBillManage.Name = "btnPurchaseBillManage";
+            this.btnPurchaseBillManage.SubItemsExpandWidth = 14;
+            this.btnPurchaseBillManage.Text = "采购款项管理";
             // 
             // btnSaleInfoManage
             // 
@@ -469,7 +478,7 @@
             this.ribbonTabItem3.Checked = true;
             this.ribbonTabItem3.Name = "ribbonTabItem3";
             this.ribbonTabItem3.Panel = this.ribbonPanel3;
-            this.ribbonTabItem3.Text = "签证管理";
+            this.ribbonTabItem3.Text = "信息管理";
             // 
             // ribbonTabItem1
             // 
@@ -559,15 +568,6 @@
             this.btnFrmGaoPaiManage.Name = "btnFrmGaoPaiManage";
             this.btnFrmGaoPaiManage.SubItemsExpandWidth = 14;
             this.btnFrmGaoPaiManage.Text = "高排图像管理";
-            // 
-            // btnPurchaseBillManage
-            // 
-            this.btnPurchaseBillManage.Icon = ((System.Drawing.Icon)(resources.GetObject("btnPurchaseBillManage.Icon")));
-            this.btnPurchaseBillManage.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
-            this.btnPurchaseBillManage.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnPurchaseBillManage.Name = "btnPurchaseBillManage";
-            this.btnPurchaseBillManage.SubItemsExpandWidth = 14;
-            this.btnPurchaseBillManage.Text = "采购款项管理";
             // 
             // FrmMain
             // 

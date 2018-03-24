@@ -50,11 +50,38 @@ namespace SteelManagement.CSUI.FrmMain
             dataGridView1.DefaultCellStyle.Font = new Font("微软雅黑", 9.0f, FontStyle.Bold);
             dataGridView1.DoubleClick += DataGridView1_DoubleClick;
             dataGridView1.ReadOnly = true;
+            dataGridView1.SelectionChanged += DataGridView1_SelectionChanged;
 
             bgWorkerLoadData.WorkerReportsProgress = true;
 
             progressLoading.Visible = false;
             LoadDataToDgvAsyn();
+        }
+
+        private void DataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count < 1)
+                return;
+
+            decimal songhuoliang = 0, zongjine = 0, fukuanjine = 0, fapiaojine = 0;
+
+            for (int i = 0; i < dataGridView1.SelectedRows.Count; ++i)
+            {
+                var model = DgvDataSourceToList()[dataGridView1.SelectedRows[i].Index];
+                songhuoliang += DecimalHandler.Parse(model.Amount.ToString());
+                zongjine += DecimalHandler.Parse(model.TotalMoney.ToString());
+                fukuanjine += DecimalHandler.Parse(model.Money1.ToString());
+                fapiaojine += DecimalHandler.Parse(model.Money2.ToString());
+            }
+
+            lbTotalCount.Text = string.Format("合计: 送货量 {0}(t)   总金额 {1}  付款金额 {2}  发票金额 {3}",
+                DecimalHandler.DecimalToString(songhuoliang),
+                DecimalHandler.DecimalToString(zongjine),
+                DecimalHandler.DecimalToString(fukuanjine),
+                DecimalHandler.DecimalToString(fapiaojine));
+            lbCount1.Text = string.Format("欠款 {0}  欠票 {1}",
+                DecimalHandler.DecimalToString(zongjine - fukuanjine),
+                DecimalHandler.DecimalToString(zongjine - fapiaojine));
         }
 
         private void DataGridView1_DoubleClick(object sender, EventArgs e)
