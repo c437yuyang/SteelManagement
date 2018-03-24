@@ -63,18 +63,25 @@ namespace SteelManagement.CSUI.FrmMain
         private void InitComboboxs()
         {
             string tablename = "SteelInfo";
+
+            cbName.Items.Add("全部");
+            cbProducePlace.Items.Add("全部");
+            cbName.SelectedIndex = 0;
+            cbProducePlace.SelectedIndex = 0;
+
             var list = BLL.CommonBll.GetFieldList(tablename, "Name");
-            foreach (var item in list)
-            {
-                cbName.Items.Add(item);
-            }
+            if (list != null)
+                foreach (var item in list)
+                {
+                    cbName.Items.Add(item);
+                }
 
             list = BLL.CommonBll.GetFieldList(tablename, "ProducePlace");
-            foreach (var item in list)
-            {
-                cbProducePlace.Items.Add(item);
-
-            }
+            if (list != null)
+                foreach (var item in list)
+                {
+                    cbProducePlace.Items.Add(item);
+                }
         }
 
         private void DataGridView1_DoubleClick(object sender, EventArgs e)
@@ -228,20 +235,20 @@ namespace SteelManagement.CSUI.FrmMain
         private string GetWhereCondition()
         {
             List<string> conditions = new List<string>();
-            if (string.IsNullOrEmpty(cbName.Text))
+            if (cbName.Text == "全部")
             {
             }
             else
             {
-                conditions.Add(" (Name like '%" + cbName.Text + "%') "); 
+                conditions.Add(" (Name = '" + cbName.Text + "') ");
             }
 
-            if (string.IsNullOrEmpty(cbProducePlace.Text))
+            if (cbProducePlace.Text == "全部")
             {
             }
             else
             {
-                conditions. Add(" (ProducePlace like '%" + cbProducePlace.Text + "%') ");
+                conditions.Add(" (ProducePlace = '" + cbProducePlace.Text + "') ");
             }
 
 
@@ -283,8 +290,8 @@ namespace SteelManagement.CSUI.FrmMain
         private void btnClearSchConditions_Click(object sender, EventArgs e)
         {
             //txtClient.Text = "";
-            cbProducePlace.Text = "";
-            cbName.Text = "";
+            cbProducePlace.Text = "全部";
+            cbName.Text = "全部";
             //cbDepatureType.Text = "";
             txtSchEntryTimeFrom.Text = "";
             txtSchEntryTimeTo.Text = "";

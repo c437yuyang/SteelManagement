@@ -266,10 +266,10 @@ namespace SteelManagement.CSUI.FrmMain
 
         private void btnClearSchConditions_Click(object sender, EventArgs e)
         {
-            txtClient.Text = "";
-            cbCountry.Text = "全部";
-            cbDisplayType.Text = "全部";
-            cbDepatureType.Text = "全部";
+            //txtClient.Text = "";
+            //cbCountry.Text = "全部";
+            //cbDisplayType.Text = "全部";
+            //cbDepatureType.Text = "全部";
 
         }
 

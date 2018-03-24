@@ -82,7 +82,7 @@
             this.panelEx1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEx1.Location = new System.Drawing.Point(0, 0);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(454, 190);
+            this.panelEx1.Size = new System.Drawing.Size(230, 190);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -115,7 +115,7 @@
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(0, 0);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(454, 190);
+            this.panelMain.Size = new System.Drawing.Size(230, 190);
             this.panelMain.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelMain.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelMain.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -288,7 +288,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(454, 190);
+            this.ClientSize = new System.Drawing.Size(230, 190);
             this.Controls.Add(this.panelEx1);
             this.Name = "FrmAddPurchaseBill";
             this.Text = "新增采购付款";

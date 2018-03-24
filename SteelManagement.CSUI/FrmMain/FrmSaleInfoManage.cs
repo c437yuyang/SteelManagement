@@ -30,6 +30,8 @@ namespace SteelManagement.CSUI.FrmMain
             _recordCount = _bllSaleInfo.GetRecordCount(_where);
             _pageCount = (int)Math.Ceiling(_recordCount / (double)_pageSize);
 
+            InitComboboxs();
+
             //初始化一些控件
             //txtPicPath.Text = GlobalInfo.AppPath;
             cbPageSize.Items.Add("30");
@@ -56,6 +58,30 @@ namespace SteelManagement.CSUI.FrmMain
 
             progressLoading.Visible = false;
             LoadDataToDgvAsyn();
+        }
+
+        private void InitComboboxs()
+        {
+            string tablename = "SaleInfo";
+
+            cbCorporation.Items.Add("全部");
+            cbProject.Items.Add("全部");
+            cbCorporation.SelectedIndex = 0;
+            cbProject.SelectedIndex = 0;
+
+            var list = BLL.CommonBll.GetFieldList(tablename, "Corporation");
+            if (list != null)
+                foreach (var item in list)
+                {
+                    cbCorporation.Items.Add(item);
+                }
+
+            list = BLL.CommonBll.GetFieldList(tablename, "Project");
+            if (list != null)
+                foreach (var item in list)
+                {
+                    cbProject.Items.Add(item);
+                }
         }
 
         private void DataGridView1_SelectionChanged(object sender, EventArgs e)
@@ -230,54 +256,36 @@ namespace SteelManagement.CSUI.FrmMain
         private string GetWhereCondition()
         {
             List<string> conditions = new List<string>();
-            //if (cbDisplayType.Text == "全部")
-            //{
-            //}
-            //else if (cbDisplayType.Text == "未记录")
-            //{
-            //    conditions.Add(" Types is null or Types='' ");
-            //}
-            //else if (cbDisplayType.Text == "个签")
-            //{
-            //    conditions.Add(" Types = '个签' ");
-            //}
-            //else if (cbDisplayType.Text == "团签")
-            //{
-            //    conditions.Add(" Types = '团签' ");
-            //}
-            //else if (cbDisplayType.Text == "团做个")
-            //{
-            //    conditions.Add(" Types = '团做个' ");
-            //}
-            //else if (cbDisplayType.Text == "个签&&团做个")
-            //{
-            //    conditions.Add(" Types = '团做个' or Types = '个签'");
-            //}
-
-            //if (cbCountry.Text == "全部")
-            //{
-
-            //}
-            //else
-            //{
-            //    conditions.Add(" Country = '" + cbCountry.Text + "' ");
-            //}
-
-            //if (!string.IsNullOrEmpty(txtClient.Text.Trim()))
-            //{
-            //    conditions.Add(" (Client like '%" + txtClient.Text + "%') ");
-            //}
-
-            //if (cbDepatureType.Text == "全部")
-            //{
-
-            //}
-            //else
-            //{
-            //    conditions.Add(" DepartureType = '" + cbDepatureType.Text + "' ");
-            //}
 
 
+            if (cbProject.Text == "全部")
+            {
+
+            }
+            else
+            {
+                conditions.Add(" Project = '" + cbProject.Text + "' ");
+            }
+
+            if (cbCorporation.Text == "全部")
+            {
+
+            }
+            else
+            {
+                conditions.Add(" Corporation = '" + cbCorporation.Text + "' ");
+            }
+
+            if (!string.IsNullOrEmpty(txtSerialNo.Text.Trim()))
+            {
+                conditions.Add(" (SerialNo like '%" + txtSerialNo.Text + "%') ");
+            }
+
+            if (!string.IsNullOrEmpty(txtSchEntryTimeFrom.Text.Trim()) && !string.IsNullOrEmpty(txtSchEntryTimeTo.Text.Trim()))
+            {
+                conditions.Add(" (EntryTime between '" + txtSchEntryTimeFrom.Text + "' and " + " '" + txtSchEntryTimeTo.Text +
+                               "') ");
+            }
 
             string[] arr = conditions.ToArray();
             string where = string.Join(" and ", arr);
@@ -287,11 +295,11 @@ namespace SteelManagement.CSUI.FrmMain
 
         private void btnClearSchConditions_Click(object sender, EventArgs e)
         {
-            txtClient.Text = "";
-            cbCountry.Text = "全部";
-            cbDisplayType.Text = "全部";
-            cbDepatureType.Text = "全部";
-
+            txtSerialNo.Text = "";
+            cbCorporation.Text = "全部";
+            cbProject.Text = "全部";
+            txtSchEntryTimeFrom.Text = "";
+            txtSchEntryTimeTo.Text = "";
         }
 
 
