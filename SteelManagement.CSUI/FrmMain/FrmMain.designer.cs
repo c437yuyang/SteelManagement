@@ -36,8 +36,8 @@
             this.ribbonBar2 = new DevComponents.DotNetBar.RibbonBar();
             this.btnSteelInfoManage = new DevComponents.DotNetBar.ButtonItem();
             this.btnPurchaseInfoManage = new DevComponents.DotNetBar.ButtonItem();
-            this.btnPurchaseBillManage = new DevComponents.DotNetBar.ButtonItem();
             this.btnSaleInfoManage = new DevComponents.DotNetBar.ButtonItem();
+            this.btnPurchaseBillManage = new DevComponents.DotNetBar.ButtonItem();
             this.btnSaleBillManage = new DevComponents.DotNetBar.ButtonItem();
             this.btnProjectBillManage = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonPanel5 = new DevComponents.DotNetBar.RibbonPanel();
@@ -65,6 +65,7 @@
             this.btnMCloseOther = new System.Windows.Forms.ToolStripMenuItem();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.btnFrmGaoPaiManage = new DevComponents.DotNetBar.ButtonItem();
+            this.btnSupplierBillMange = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonControl1.SuspendLayout();
             this.ribbonPanel3.SuspendLayout();
             this.ribbonPanel1.SuspendLayout();
@@ -172,7 +173,8 @@
             this.btnSaleInfoManage,
             this.btnPurchaseBillManage,
             this.btnSaleBillManage,
-            this.btnProjectBillManage});
+            this.btnProjectBillManage,
+            this.btnSupplierBillMange});
             this.ribbonBar2.Location = new System.Drawing.Point(3, 0);
             this.ribbonBar2.Name = "ribbonBar2";
             this.ribbonBar2.Size = new System.Drawing.Size(955, 58);
@@ -207,15 +209,6 @@
             this.btnPurchaseInfoManage.SubItemsExpandWidth = 14;
             this.btnPurchaseInfoManage.Text = "采购信息管理";
             // 
-            // btnPurchaseBillManage
-            // 
-            this.btnPurchaseBillManage.Icon = ((System.Drawing.Icon)(resources.GetObject("btnPurchaseBillManage.Icon")));
-            this.btnPurchaseBillManage.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
-            this.btnPurchaseBillManage.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnPurchaseBillManage.Name = "btnPurchaseBillManage";
-            this.btnPurchaseBillManage.SubItemsExpandWidth = 14;
-            this.btnPurchaseBillManage.Text = "采购款项管理";
-            // 
             // btnSaleInfoManage
             // 
             this.btnSaleInfoManage.Icon = ((System.Drawing.Icon)(resources.GetObject("btnSaleInfoManage.Icon")));
@@ -224,6 +217,15 @@
             this.btnSaleInfoManage.Name = "btnSaleInfoManage";
             this.btnSaleInfoManage.SubItemsExpandWidth = 14;
             this.btnSaleInfoManage.Text = "销售信息管理";
+            // 
+            // btnPurchaseBillManage
+            // 
+            this.btnPurchaseBillManage.Icon = ((System.Drawing.Icon)(resources.GetObject("btnPurchaseBillManage.Icon")));
+            this.btnPurchaseBillManage.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
+            this.btnPurchaseBillManage.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnPurchaseBillManage.Name = "btnPurchaseBillManage";
+            this.btnPurchaseBillManage.SubItemsExpandWidth = 14;
+            this.btnPurchaseBillManage.Text = "采购款项管理";
             // 
             // btnSaleBillManage
             // 
@@ -569,6 +571,15 @@
             this.btnFrmGaoPaiManage.SubItemsExpandWidth = 14;
             this.btnFrmGaoPaiManage.Text = "高排图像管理";
             // 
+            // btnSupplierBillMange
+            // 
+            this.btnSupplierBillMange.Icon = ((System.Drawing.Icon)(resources.GetObject("btnSupplierBillMange.Icon")));
+            this.btnSupplierBillMange.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
+            this.btnSupplierBillMange.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnSupplierBillMange.Name = "btnSupplierBillMange";
+            this.btnSupplierBillMange.SubItemsExpandWidth = 14;
+            this.btnSupplierBillMange.Text = "供应商款项汇总";
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -629,5 +640,6 @@
         private DevComponents.DotNetBar.ButtonItem btnSaleBillManage;
         private DevComponents.DotNetBar.ButtonItem btnProjectBillManage;
         private DevComponents.DotNetBar.ButtonItem btnPurchaseBillManage;
+        private DevComponents.DotNetBar.ButtonItem btnSupplierBillMange;
     }
 }

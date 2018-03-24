@@ -11,9 +11,9 @@ namespace SteelManagement.BLL
         private BLL.PurchaseInfo _bllPurchaseInfo = new BLL.PurchaseInfo();
 
         //现在只考虑了项目名，没有考虑进不同公司项目名相同的情况
-        public List<Model.SupplierBill> GetModelList(string projectName)
+        public List<Model.SupplierBill> GetModelList(string where)
         {
-            var list = DAL.SupplierDal.GetModelList();
+            var list = DAL.SupplierDal.GetModelList(where);
 
             foreach (var supplier in list)
             {
@@ -26,8 +26,8 @@ namespace SteelManagement.BLL
         private void FillModel(Model.SupplierBill supplier)
         {
             List<Model.PurchaseInfo> purchaseList = _bllPurchaseInfo.GetModelList(
-                string.Format(" Corporation = {0} and Project = {1} and Supplier = {2}",
-                supplier.Corporation, supplier.Project, supplier.Corporation));
+                string.Format(" Corporation = '{0}' and Project = '{1}' and Supplier = '{2}'",
+                supplier.Corporation, supplier.Project, supplier.Supplier));
 
             foreach (var model in purchaseList)
             {
@@ -38,8 +38,8 @@ namespace SteelManagement.BLL
 
 
             List<Model.SaleInfo> saleInfoList = _bllSaleInfo.GetModelList(
-    string.Format(" Corporation = {0} and Project = {1} and Supplier = {2}",
-    supplier.Corporation, supplier.Project, supplier.Corporation));
+    string.Format(" Corporation = '{0}' and Project = '{1}' and Supplier = '{2}'",
+    supplier.Corporation, supplier.Project, supplier.Supplier));
 
             foreach (var model in saleInfoList)
             {

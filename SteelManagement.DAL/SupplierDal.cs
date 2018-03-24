@@ -10,9 +10,14 @@ namespace SteelManagement.DAL
 {
     public class SupplierDal
     {
-        public static List<Model.SupplierBill> GetModelList()
+        public static List<Model.SupplierBill> GetModelList(string where)
         {
-            string sql = "select distinct Corporation,Project,Supplier  from SaleInfo"; //目前先从SaleInfo里面拿
+            
+            string sql = "select distinct Corporation,Project,Supplier from SaleInfo"; //目前先从SaleInfo里面拿
+
+            if (!string.IsNullOrEmpty(where))
+                sql += " where " +  where + " ";
+
             DataSet ds = DbHelperSQL.Query(sql);
             List<Model.SupplierBill> res = new List<Model.SupplierBill>();
             if (ds.Tables[0].Rows.Count > 0)

@@ -26,6 +26,8 @@ namespace SteelManagement.Model
         {
             get
             {
+                if (TotalSale == 0 || TotalPurchase == 0)
+                    return -1;
                 return (TotalSale / TotalPurchase) - 1;
             }
         } 
