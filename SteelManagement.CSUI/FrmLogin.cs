@@ -93,6 +93,14 @@ namespace TravelAgency.CSUI.FrmMain
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
+            ICopyRight copyRightChecker = new RegisterCopyRight();
+            if (!copyRightChecker.CheckAvailable())
+            {
+                MessageBoxEx.Show("试用期限已到，请联系管理人员!");
+                Application.Exit();
+                return;
+            }
+
             //chkRememberPswd.CheckValueChanged+=chkRememberPswd_CheckValueChanged;
             txtUserName.SelectedValueChanged += txtUserName_SelectedValueChanged;
 
@@ -102,9 +110,9 @@ namespace TravelAgency.CSUI.FrmMain
             {
                 BinaryFormatter bf = new BinaryFormatter();
                 _users = bf.Deserialize(fs) as List<User>;
-                if(_users==null)
+                if (_users == null)
                     return;
-                
+
                 foreach (User user in _users)
                 {
                     this.txtUserName.Items.Add(user.Username);

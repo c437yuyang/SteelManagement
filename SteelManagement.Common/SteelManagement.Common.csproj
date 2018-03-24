@@ -68,6 +68,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RegisterCopyRight.cs" />
     <Compile Include="DecimalHandler.cs" />
     <Compile Include="Enums\AirInfos.cs" />
     <Compile Include="AppSettingHandler.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="Excel\ExcelParser.cs" />
     <Compile Include="FrmsManager.cs" />
     <Compile Include="FTP\FtpHandler.cs" />
+    <Compile Include="ICopyRight.cs" />
     <Compile Include="ReceiptPicHandler.cs" />
     <Compile Include="GlobalUtils.cs" />
     <Compile Include="MD5Computer\MyMd5.cs" />

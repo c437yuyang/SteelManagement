@@ -166,6 +166,8 @@ namespace SteelManagement.CSUI.FrmMain
 
         private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
+            ICopyRight copyRight = new RegisterCopyRight();
+            copyRight.UpdateUserInfo();
             Application.Exit();
         }
 

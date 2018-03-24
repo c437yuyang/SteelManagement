@@ -24,11 +24,24 @@ namespace SteelManagement.Common
         public static Model.AuthUser LoginUser;
         //public static readonly DocDocxGenerator DocDocxGenerator;
         public static RigthLevel LoginUserLevel;
+        public static int DecimalDigits
+        {
+            get
+            {
+                string dights = AppSettingHandler.ReadConfig("DecimalDigits");
+                if (string.IsNullOrEmpty(dights)) //如果没读到就返回默认值
+                {
+                    AppSettingHandler.AddConfig("DecimalDigits", 2.ToString());
+                    return 2;
+                }
+                return int.Parse(dights);
+            }
+        }
+
         static GlobalUtils()
         {
             InitFtp();
         }
-
         private static void InitFtp()
         {
             //初始化FTP参数

@@ -41,7 +41,7 @@ namespace SteelManagement.CSUI.FrmSub
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
 
             InitComboBoxs();
-            if ( _saleInfoModel!= null)
+            if (_saleInfoModel != null)
                 InitCtrlsBySaleInfoModel();
 
             if (_is4Modify)
@@ -59,7 +59,6 @@ namespace SteelManagement.CSUI.FrmSub
 
                 this.Text = "修改销售收款";
             }
-
         }
 
         #region 窗体初始化
@@ -73,75 +72,22 @@ namespace SteelManagement.CSUI.FrmSub
 
         private void InitComboBoxs()
         {
-            //string tablename = "SaleBill";
-            //var list = BLL.CommonBll.GetFieldList(tablename, "Project");
-            //foreach (var item in list)
-            //{
-            //    //txtProject.Items.Add(item);
-            //}
+            string tablename = "SaleBill";
 
-            //list = BLL.CommonBll.GetFieldList(tablename, "Supplier");
-            //foreach (var item in list)
-            //{
-            //    txtSupplier.Items.Add(item);
-            //}
+            var list = BLL.CommonBll.GetFieldList(tablename, "Corporation");
+            if (list != null)
+                foreach (var item in list)
+                    txtCorporation.Items.Add(item);
 
+            list = BLL.CommonBll.GetFieldList(tablename, "Project");
+            if (list != null)
+                foreach (var item in list)
+                    txtProject.Items.Add(item);
 
-            //list = BLL.CommonBll.GetFieldList(tablename, "Brand");
-            //foreach (var item in list)
-            //{
-            //    txtBrand.Items.Add(item);
-            //}
-
-            //list = BLL.CommonBll.GetFieldList(tablename, "TransportWay");
-            //foreach (var item in list)
-            //{
-            //    txtTransportWay.Items.Add(item);
-            //}
-
-
-            //list = BLL.CommonBll.GetFieldList(tablename, "Size");
-            //foreach (var item in list)
-            //{
-            //    txtSize.Items.Add(item);
-            //}
-
-            //list = BLL.CommonBll.GetFieldList(tablename, "Texture");
-            //foreach (var item in list)
-            //{
-            //    txtTexture.Items.Add(item);
-            //}
-
-            //list = BLL.CommonBll.GetFieldList(tablename, "Amount");
-            //foreach (var item in list)
-            //{
-            //    txtAmount.Items.Add(item);
-            //}
-
-            //list = BLL.CommonBll.GetFieldList(tablename, "Quote");
-            //foreach (var item in list)
-            //{
-            //    txtOnlinePrice.Items.Add(item);
-            //}
-
-
-            //list = BLL.CommonBll.GetFieldList(tablename, "Fluctuation1");
-            //foreach (var item in list)
-            //{
-            //    txtFluctuation1.Items.Add(item);
-            //}
-
-            //list = BLL.CommonBll.GetFieldList(tablename, "TransportCost");
-            //foreach (var item in list)
-            //{
-            //    //txtTransportCost.Items.Add(item);
-            //}
-
-            //list = BLL.CommonBll.GetFieldList(tablename, "Price");
-            //foreach (var item in list)
-            //{
-            //    txtSalePrice.Items.Add(item);
-            //}
+            list = BLL.CommonBll.GetFieldList(tablename, "Supplier");
+            if (list != null)
+                foreach (var item in list)
+                    txtSupplier.Items.Add(item);
         }
         #endregion
 
