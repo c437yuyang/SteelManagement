@@ -112,12 +112,6 @@
     <Compile Include="FrmMain\FrmSaleBillManage.designer.cs">
       <DependentUpon>FrmSaleBillManage.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmMain\FrmReceiptInfoManage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmMain\FrmReceiptInfoManage.designer.cs">
-      <DependentUpon>FrmReceiptInfoManage.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmMain\FrmSaleInfoManage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,9 +191,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain\FrmSaleBillManage.resx">
       <DependentUpon>FrmSaleBillManage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmMain\FrmReceiptInfoManage.resx">
-      <DependentUpon>FrmReceiptInfoManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain\FrmSaleInfoManage.resx">
       <DependentUpon>FrmSaleInfoManage.cs</DependentUpon>

@@ -53,6 +53,7 @@
     <Compile Include="SaleInfo.cs" />
     <Compile Include="SteelInfoDal.cs" />
     <Compile Include="SteelInfo.cs" />
+    <Compile Include="SupplierDal.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SteelManagement.DBUtility\SteelManagement.DBUtility.csproj">

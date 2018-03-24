@@ -45,6 +45,7 @@
     <Compile Include="AuthUser.cs" />
     <Compile Include="CommonBll.cs" />
     <Compile Include="ProgramVersion.cs" />
+    <Compile Include="SupplierBillBll.cs" />
     <Compile Include="ProjectBillBll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PurchaseBill.cs" />
