@@ -49,12 +49,34 @@ namespace SteelManagement.CSUI.FrmMain
             dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders; //这里也一定不能AllCell自适应!
             dataGridView1.DefaultCellStyle.Font = new Font("微软雅黑", 9.0f, FontStyle.Bold);
             dataGridView1.DoubleClick += DataGridView1_DoubleClick;
+            dataGridView1.SelectionChanged += DataGridView1_SelectionChanged;
             dataGridView1.ReadOnly = true;
 
             bgWorkerLoadData.WorkerReportsProgress = true;
 
             progressLoading.Visible = false;
             LoadDataToDgvAsyn();
+        }
+
+        private void DataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+
+            if (dataGridView1.SelectedRows.Count < 1)
+                return;
+
+            decimal songhuoliang = 0, zongjine = 0;
+
+            for (int i = 0; i < dataGridView1.SelectedRows.Count; ++i)
+            {
+                var model = DgvDataSourceToList()[dataGridView1.SelectedRows[i].Index];
+                songhuoliang += DecimalHandler.Parse(model.Amount.ToString());
+                zongjine += DecimalHandler.Parse(model.TotalSale.ToString());
+            }
+
+            lbTotalCount.Text = string.Format("合计: 送货量 {0}(t)   销总金额 {1}",
+                DecimalHandler.DecimalToString(songhuoliang),
+                DecimalHandler.DecimalToString(zongjine));
+            
         }
 
         private void DataGridView1_DoubleClick(object sender, EventArgs e)

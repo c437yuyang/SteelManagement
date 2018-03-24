@@ -91,13 +91,14 @@
             this.cmsItemRefreshState = new System.Windows.Forms.ToolStripMenuItem();
             this.删除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.修改ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.添加收款信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.人申请表ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.机票报表ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.外领担保函ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.韩国担保函ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.韩国加急申请书ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bgWorkerLoadData = new System.ComponentModel.BackgroundWorker();
-            this.添加收款信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lbTotalCount = new DevComponents.DotNetBar.LabelItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelMain.SuspendLayout();
             this.panelDgv.SuspendLayout();
@@ -151,7 +152,7 @@
             dataGridViewCellStyle5.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -591,7 +592,8 @@
             this.cbPageSize,
             this.labelItem2,
             this.lbCurPage,
-            this.btnGeneratePersonalReport});
+            this.btnGeneratePersonalReport,
+            this.lbTotalCount});
             this.bar1.ItemSpacing = 5;
             this.bar1.Location = new System.Drawing.Point(0, 0);
             this.bar1.Name = "bar1";
@@ -674,7 +676,7 @@
             this.修改ToolStripMenuItem,
             this.添加收款信息ToolStripMenuItem});
             this.cmsDgvRb.Name = "cmsDgvRb";
-            this.cmsDgvRb.Size = new System.Drawing.Size(161, 114);
+            this.cmsDgvRb.Size = new System.Drawing.Size(161, 92);
             // 
             // cmsItemRefreshState
             // 
@@ -696,6 +698,13 @@
             this.修改ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.修改ToolStripMenuItem.Text = "修改";
             this.修改ToolStripMenuItem.Click += new System.EventHandler(this.修改ToolStripMenuItem_Click);
+            // 
+            // 添加收款信息ToolStripMenuItem
+            // 
+            this.添加收款信息ToolStripMenuItem.Name = "添加收款信息ToolStripMenuItem";
+            this.添加收款信息ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.添加收款信息ToolStripMenuItem.Text = "添加收款信息";
+            this.添加收款信息ToolStripMenuItem.Click += new System.EventHandler(this.添加收款信息ToolStripMenuItem_Click);
             // 
             // 人申请表ToolStripMenuItem
             // 
@@ -728,12 +737,12 @@
             this.bgWorkerLoadData.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.bgWorkerLoadData_ProgressChanged);
             this.bgWorkerLoadData.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgWorkerLoadData_RunWorkerCompleted);
             // 
-            // 添加收款信息ToolStripMenuItem
+            // lbTotalCount
             // 
-            this.添加收款信息ToolStripMenuItem.Name = "添加收款信息ToolStripMenuItem";
-            this.添加收款信息ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.添加收款信息ToolStripMenuItem.Text = "添加收款信息";
-            this.添加收款信息ToolStripMenuItem.Click += new System.EventHandler(this.添加收款信息ToolStripMenuItem_Click);
+            this.lbTotalCount.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbTotalCount.ForeColor = System.Drawing.Color.ForestGreen;
+            this.lbTotalCount.Name = "lbTotalCount";
+            this.lbTotalCount.Text = "合计: 送货量 42.370(t)   销总金额 190056.040 ";
             // 
             // FrmSaleInfoManage
             // 
@@ -823,6 +832,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MarginRate;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.ToolStripMenuItem 添加收款信息ToolStripMenuItem;
+        private DevComponents.DotNetBar.LabelItem lbTotalCount;
     }
 }
 
