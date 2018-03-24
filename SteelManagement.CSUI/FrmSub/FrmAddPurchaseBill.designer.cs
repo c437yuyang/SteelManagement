@@ -38,13 +38,13 @@
             this.labelX9 = new DevComponents.DotNetBar.LabelX();
             this.txtAmount = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
+            this.txtPayer = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.txtSupplier = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.labelX11 = new DevComponents.DotNetBar.LabelX();
             this.btnAddFromExcel = new DevComponents.DotNetBar.ButtonX();
             this.btnAdd = new DevComponents.DotNetBar.ButtonX();
             this.progressLoading = new DevComponents.DotNetBar.Controls.CircularProgress();
-            this.labelX2 = new DevComponents.DotNetBar.LabelX();
-            this.txtPayer = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.panelEx1.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.SuspendLayout();
@@ -197,6 +197,30 @@
             this.labelX3.TabIndex = 104;
             this.labelX3.Text = "金额:";
             // 
+            // txtPayer
+            // 
+            this.txtPayer.DisplayMember = "Text";
+            this.txtPayer.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.txtPayer.FormattingEnabled = true;
+            this.txtPayer.ItemHeight = 15;
+            this.txtPayer.Location = new System.Drawing.Point(106, 122);
+            this.txtPayer.Name = "txtPayer";
+            this.txtPayer.Size = new System.Drawing.Size(107, 21);
+            this.txtPayer.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.txtPayer.TabIndex = 103;
+            // 
+            // labelX2
+            // 
+            // 
+            // 
+            // 
+            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX2.Location = new System.Drawing.Point(19, 122);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(63, 23);
+            this.labelX2.TabIndex = 102;
+            this.labelX2.Text = "付款人:";
+            // 
             // txtSupplier
             // 
             this.txtSupplier.DisplayMember = "Text";
@@ -259,30 +283,6 @@
             this.progressLoading.Style = DevComponents.DotNetBar.eDotNetBarStyle.OfficeXP;
             this.progressLoading.TabIndex = 27;
             this.progressLoading.Value = 100;
-            // 
-            // labelX2
-            // 
-            // 
-            // 
-            // 
-            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX2.Location = new System.Drawing.Point(19, 122);
-            this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(63, 23);
-            this.labelX2.TabIndex = 102;
-            this.labelX2.Text = "收款人:";
-            // 
-            // txtPayer
-            // 
-            this.txtPayer.DisplayMember = "Text";
-            this.txtPayer.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.txtPayer.FormattingEnabled = true;
-            this.txtPayer.ItemHeight = 15;
-            this.txtPayer.Location = new System.Drawing.Point(106, 122);
-            this.txtPayer.Name = "txtPayer";
-            this.txtPayer.Size = new System.Drawing.Size(107, 21);
-            this.txtPayer.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.txtPayer.TabIndex = 103;
             // 
             // FrmAddPurchaseBill
             // 

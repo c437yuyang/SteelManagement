@@ -69,12 +69,34 @@ namespace SteelManagement.CSUI.FrmSub
 
         private void InitComboBoxs()
         {
-            //string tablename = "PurchaseBill";
-            //var list = BLL.CommonBll.GetFieldList(tablename, "Project");
-            //foreach (var item in list)
-            //{
-            //    //txtProject.Items.Add(item);
-            //}
+            string tablename = "PurchaseBill";
+            var list = BLL.CommonBll.GetFieldList(tablename, "Project");
+            if (list != null)
+                foreach (var item in list)
+                {
+                    txtProject.Items.Add(item);
+                }
+
+            list = BLL.CommonBll.GetFieldList(tablename, "Corporation");
+            if (list != null)
+                foreach (var item in list)
+                {
+                    txtCorporation.Items.Add(item);
+                }
+            list = BLL.CommonBll.GetFieldList(tablename, "Supplier");
+            if (list != null)
+                foreach (var item in list)
+                {
+                    txtSupplier.Items.Add(item);
+                }
+
+            list = BLL.CommonBll.GetFieldList(tablename, "Payer");
+            if (list != null)
+                foreach (var item in list)
+                {
+                    txtPayer.Items.Add(item);
+                }
+
 
             //list = BLL.CommonBll.GetFieldList(tablename, "Supplier");
             //foreach (var item in list)
