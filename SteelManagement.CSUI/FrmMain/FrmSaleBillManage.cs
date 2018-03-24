@@ -31,6 +31,7 @@ namespace SteelManagement.CSUI.FrmMain
         {
             _recordCount = _bllSaleBill.GetRecordCount(_where);
             _pageCount = (int)Math.Ceiling(_recordCount / (double)_pageSize);
+            InitComboboxs();
 
             //初始化一些控件
             //txtPicPath.Text = GlobalInfo.AppPath;
@@ -43,7 +44,6 @@ namespace SteelManagement.CSUI.FrmMain
             cbPageSize.DropDownStyle = ComboBoxStyle.DropDownList;
             cbPageSize.SelectedIndex = 2;
 
-            InitComboBoxs();
 
 
             _pageSize = int.Parse(cbPageSize.Text);
@@ -56,34 +56,41 @@ namespace SteelManagement.CSUI.FrmMain
             dataGridView1.DoubleClick += DataGridView1_DoubleClick;
             dataGridView1.ReadOnly = true;
 
+            btnSearch.Click += btnSearch_Click;
+            btnClearSchConditions.Click += btnClearSchConditions_Click;
+            btnAdd.Click += btnAdd_Click;
+            btnTimeSpanChoose.Click += btnTimeSpanChoose_Click;
+
             bgWorkerLoadData.WorkerReportsProgress = true;
 
             progressLoading.Visible = false;
             LoadDataToDgvAsyn();
         }
 
-        private void InitComboBoxs()
+        private void InitComboboxs()
         {
+            string tablename = "SaleInfo";
+
             cbCorporation.Items.Add("全部");
             cbProject.Items.Add("全部");
-
             cbCorporation.SelectedIndex = 0;
             cbProject.SelectedIndex = 0;
 
-
-            string tablename = "SaleBill";
-            var list = BLL.CommonBll.GetFieldList(tablename, "Project");
+            var list = BLL.CommonBll.GetFieldList(tablename, "Corporation");
             if (list != null)
                 foreach (var item in list)
-                    cbProject.Items.Add(item);
-
-            list = BLL.CommonBll.GetFieldList(tablename, "Corporation");
-            if (list != null)
-                foreach (var item in list)
+                {
                     cbCorporation.Items.Add(item);
+                }
 
-
+            list = BLL.CommonBll.GetFieldList(tablename, "Project");
+            if (list != null)
+                foreach (var item in list)
+                {
+                    cbProject.Items.Add(item);
+                }
         }
+
 
         private void DataGridView1_DoubleClick(object sender, EventArgs e)
         {
@@ -264,19 +271,16 @@ namespace SteelManagement.CSUI.FrmMain
                 conditions.Add(" Project = '" + cbProject.Text + "' ");
             }
 
-            //if (!string.IsNullOrEmpty(txtClient.Text.Trim()))
-            //{
-            //    conditions.Add(" (Client like '%" + txtClient.Text + "%') ");
-            //}
+            if (!string.IsNullOrEmpty(txtSerialNo.Text.Trim()))
+            {
+                conditions.Add(" (SerialNo like '%" + txtSerialNo.Text + "%') ");
+            }
 
-            //if (cbDepatureType.Text == "全部")
-            //{
-
-            //}
-            //else
-            //{
-            //    conditions.Add(" DepartureType = '" + cbDepatureType.Text + "' ");
-            //}
+            if (!string.IsNullOrEmpty(txtSchEntryTimeFrom.Text.Trim()) && !string.IsNullOrEmpty(txtSchEntryTimeTo.Text.Trim()))
+            {
+                conditions.Add(" (EntryTime between '" + txtSchEntryTimeFrom.Text + "' and " + " '" + txtSchEntryTimeTo.Text +
+                               "') ");
+            }
 
 
 
@@ -288,8 +292,11 @@ namespace SteelManagement.CSUI.FrmMain
 
         private void btnClearSchConditions_Click(object sender, EventArgs e)
         {
-            cbProject.Text = "全部";
+            txtSerialNo.Text = "";
             cbCorporation.Text = "全部";
+            cbProject.Text = "全部";
+            txtSchEntryTimeFrom.Text = "";
+            txtSchEntryTimeTo.Text = "";
         }
 
 

@@ -557,5 +557,14 @@ namespace SteelManagement.CSUI.FrmMain
             FrmAddPurchaseBill frm = new FrmAddPurchaseBill(LoadDataToDataGridView, _curPage, list[0]);
             frm.ShowDialog();
         }
+
+        private void btnTimeSpanChoose_Click(object sender, EventArgs e)
+        {
+            FrmTimeSpanChoose frm = new FrmTimeSpanChoose();
+            if (frm.ShowDialog() == DialogResult.Cancel)
+                return;
+            txtSchEntryTimeFrom.Text = DateTimeFormator.DateTimeToString(frm.TimeSpanFrom, DateTimeFormator.TimeFormat.Type14LongTime1);
+            txtSchEntryTimeTo.Text = DateTimeFormator.DateTimeToString(frm.TimeSpanTo, DateTimeFormator.TimeFormat.Type14LongTime1);
+        }
     }
 }

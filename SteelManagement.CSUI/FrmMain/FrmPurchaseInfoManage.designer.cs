@@ -33,53 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.panelMain = new DevComponents.DotNetBar.PanelEx();
-            this.panelDgv = new DevComponents.DotNetBar.PanelEx();
-            this.panelBars = new DevComponents.DotNetBar.PanelEx();
-            this.panelSerachBar = new DevComponents.DotNetBar.PanelEx();
-            this.txtSerialNo = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX6 = new DevComponents.DotNetBar.LabelX();
-            this.btnAdd = new DevComponents.DotNetBar.ButtonX();
-            this.progressLoading = new DevComponents.DotNetBar.Controls.CircularProgress();
-            this.btnClearSchConditions = new DevComponents.DotNetBar.ButtonX();
-            this.btnCreateReport = new DevComponents.DotNetBar.ButtonX();
-            this.btnSearch = new DevComponents.DotNetBar.ButtonX();
-            this.bar1 = new DevComponents.DotNetBar.Bar();
-            this.btnPageFirst = new DevComponents.DotNetBar.ButtonItem();
-            this.btnPagePre = new DevComponents.DotNetBar.ButtonItem();
-            this.btnPageNext = new DevComponents.DotNetBar.ButtonItem();
-            this.btnPageLast = new DevComponents.DotNetBar.ButtonItem();
-            this.cbCurPage = new DevComponents.DotNetBar.ComboBoxItem();
-            this.btnGoto = new DevComponents.DotNetBar.ButtonItem();
-            this.lbRecordCount = new DevComponents.DotNetBar.LabelItem();
-            this.lbl = new DevComponents.DotNetBar.LabelItem();
-            this.cbPageSize = new DevComponents.DotNetBar.ComboBoxItem();
-            this.labelItem2 = new DevComponents.DotNetBar.LabelItem();
-            this.lbCurPage = new DevComponents.DotNetBar.LabelItem();
-            this.btnGeneratePersonalReport = new DevComponents.DotNetBar.ButtonItem();
-            this.cmsDgvRb = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.cmsItemRefreshState = new System.Windows.Forms.ToolStripMenuItem();
-            this.删除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.修改ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.售出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.添加付款信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.人申请表ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.机票报表ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.外领担保函ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.韩国担保函ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.韩国加急申请书ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bgWorkerLoadData = new System.ComponentModel.BackgroundWorker();
-            this.cbProject = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.labelX3 = new DevComponents.DotNetBar.LabelX();
-            this.cbCorporation = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.labelX15 = new DevComponents.DotNetBar.LabelX();
-            this.btnTimeSpanChoose = new DevComponents.DotNetBar.ButtonX();
-            this.txtSchEntryTimeTo = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.txtSchEntryTimeFrom = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.labelX14 = new DevComponents.DotNetBar.LabelX();
-            this.labelX12 = new DevComponents.DotNetBar.LabelX();
-            this.lbTotalCount = new DevComponents.DotNetBar.LabelItem();
-            this.lbCount1 = new DevComponents.DotNetBar.LabelX();
             this.EntryTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SerialNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Corporation = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -106,15 +59,62 @@
             this.InvoiceDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Money2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panelMain = new DevComponents.DotNetBar.PanelEx();
+            this.panelDgv = new DevComponents.DotNetBar.PanelEx();
+            this.panelBars = new DevComponents.DotNetBar.PanelEx();
+            this.panelSerachBar = new DevComponents.DotNetBar.PanelEx();
+            this.lbCount1 = new DevComponents.DotNetBar.LabelX();
+            this.btnTimeSpanChoose = new DevComponents.DotNetBar.ButtonX();
+            this.txtSchEntryTimeTo = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.txtSchEntryTimeFrom = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.labelX14 = new DevComponents.DotNetBar.LabelX();
+            this.labelX12 = new DevComponents.DotNetBar.LabelX();
+            this.cbProject = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.labelX3 = new DevComponents.DotNetBar.LabelX();
+            this.cbCorporation = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.labelX15 = new DevComponents.DotNetBar.LabelX();
+            this.txtSerialNo = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX6 = new DevComponents.DotNetBar.LabelX();
+            this.btnAdd = new DevComponents.DotNetBar.ButtonX();
+            this.progressLoading = new DevComponents.DotNetBar.Controls.CircularProgress();
+            this.btnClearSchConditions = new DevComponents.DotNetBar.ButtonX();
+            this.btnCreateReport = new DevComponents.DotNetBar.ButtonX();
+            this.btnSearch = new DevComponents.DotNetBar.ButtonX();
+            this.bar1 = new DevComponents.DotNetBar.Bar();
+            this.btnPageFirst = new DevComponents.DotNetBar.ButtonItem();
+            this.btnPagePre = new DevComponents.DotNetBar.ButtonItem();
+            this.btnPageNext = new DevComponents.DotNetBar.ButtonItem();
+            this.btnPageLast = new DevComponents.DotNetBar.ButtonItem();
+            this.cbCurPage = new DevComponents.DotNetBar.ComboBoxItem();
+            this.btnGoto = new DevComponents.DotNetBar.ButtonItem();
+            this.lbRecordCount = new DevComponents.DotNetBar.LabelItem();
+            this.lbl = new DevComponents.DotNetBar.LabelItem();
+            this.cbPageSize = new DevComponents.DotNetBar.ComboBoxItem();
+            this.labelItem2 = new DevComponents.DotNetBar.LabelItem();
+            this.lbCurPage = new DevComponents.DotNetBar.LabelItem();
+            this.btnGeneratePersonalReport = new DevComponents.DotNetBar.ButtonItem();
+            this.lbTotalCount = new DevComponents.DotNetBar.LabelItem();
+            this.cmsDgvRb = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cmsItemRefreshState = new System.Windows.Forms.ToolStripMenuItem();
+            this.删除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.修改ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.售出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.添加付款信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.人申请表ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.机票报表ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.外领担保函ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.韩国担保函ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.韩国加急申请书ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bgWorkerLoadData = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelMain.SuspendLayout();
             this.panelDgv.SuspendLayout();
             this.panelBars.SuspendLayout();
             this.panelSerachBar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bar1)).BeginInit();
-            this.cmsDgvRb.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtSchEntryTimeTo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSchEntryTimeFrom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bar1)).BeginInit();
+            this.cmsDgvRb.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -164,7 +164,7 @@
             dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -187,6 +187,163 @@
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseUp);
             this.dataGridView1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridView1_RowsAdded);
+            // 
+            // EntryTime
+            // 
+            this.EntryTime.DataPropertyName = "EntryTime";
+            this.EntryTime.HeaderText = "记录时间";
+            this.EntryTime.Name = "EntryTime";
+            // 
+            // SerialNo
+            // 
+            this.SerialNo.DataPropertyName = "SerialNo";
+            this.SerialNo.HeaderText = "流水号";
+            this.SerialNo.Name = "SerialNo";
+            // 
+            // Corporation
+            // 
+            this.Corporation.DataPropertyName = "Corporation";
+            this.Corporation.HeaderText = "公司";
+            this.Corporation.Name = "Corporation";
+            // 
+            // Project
+            // 
+            this.Project.DataPropertyName = "Project";
+            this.Project.HeaderText = "项目";
+            this.Project.Name = "Project";
+            // 
+            // Dateline
+            // 
+            this.Dateline.DataPropertyName = "Dateline";
+            this.Dateline.HeaderText = "日期";
+            this.Dateline.Name = "Dateline";
+            // 
+            // Supplier
+            // 
+            this.Supplier.DataPropertyName = "Supplier";
+            this.Supplier.HeaderText = "供应商";
+            this.Supplier.Name = "Supplier";
+            // 
+            // Brand
+            // 
+            this.Brand.DataPropertyName = "Brand";
+            this.Brand.HeaderText = "品牌";
+            this.Brand.Name = "Brand";
+            // 
+            // TransportWay
+            // 
+            this.TransportWay.DataPropertyName = "TransportWay";
+            this.TransportWay.HeaderText = "运输方式";
+            this.TransportWay.Name = "TransportWay";
+            // 
+            // dgvCol_Size
+            // 
+            this.dgvCol_Size.DataPropertyName = "Size";
+            this.dgvCol_Size.HeaderText = "规格";
+            this.dgvCol_Size.Name = "dgvCol_Size";
+            // 
+            // Texture
+            // 
+            this.Texture.DataPropertyName = "Texture";
+            this.Texture.HeaderText = "材质";
+            this.Texture.Name = "Texture";
+            // 
+            // Amount
+            // 
+            this.Amount.DataPropertyName = "Amount";
+            this.Amount.HeaderText = "送货量(t)";
+            this.Amount.Name = "Amount";
+            // 
+            // Quote
+            // 
+            this.Quote.DataPropertyName = "Quote";
+            this.Quote.HeaderText = "报价";
+            this.Quote.Name = "Quote";
+            // 
+            // Fluctuation1
+            // 
+            this.Fluctuation1.DataPropertyName = "Fluctuation1";
+            this.Fluctuation1.HeaderText = "浮动1";
+            this.Fluctuation1.Name = "Fluctuation1";
+            // 
+            // TransportCost
+            // 
+            this.TransportCost.DataPropertyName = "TransportCost";
+            this.TransportCost.HeaderText = "运费";
+            this.TransportCost.Name = "TransportCost";
+            // 
+            // DiaoZhuang
+            // 
+            this.DiaoZhuang.DataPropertyName = "DiaoZhuang";
+            this.DiaoZhuang.HeaderText = "吊装";
+            this.DiaoZhuang.Name = "DiaoZhuang";
+            // 
+            // LiXi
+            // 
+            this.LiXi.DataPropertyName = "LiXi";
+            this.LiXi.HeaderText = "利息";
+            this.LiXi.Name = "LiXi";
+            // 
+            // ChengDui
+            // 
+            this.ChengDui.DataPropertyName = "ChengDui";
+            this.ChengDui.HeaderText = "承兑";
+            this.ChengDui.Name = "ChengDui";
+            // 
+            // OtherCost
+            // 
+            this.OtherCost.DataPropertyName = "OtherCost";
+            this.OtherCost.HeaderText = "其他成本";
+            this.OtherCost.Name = "OtherCost";
+            // 
+            // TieXi
+            // 
+            this.TieXi.DataPropertyName = "TieXi";
+            this.TieXi.HeaderText = "贴息";
+            this.TieXi.Name = "TieXi";
+            // 
+            // Price
+            // 
+            this.Price.DataPropertyName = "Price";
+            this.Price.HeaderText = "单价";
+            this.Price.Name = "Price";
+            // 
+            // TotalMoney
+            // 
+            this.TotalMoney.DataPropertyName = "TotalMoney";
+            this.TotalMoney.HeaderText = "总金额";
+            this.TotalMoney.Name = "TotalMoney";
+            // 
+            // FuYuDate
+            // 
+            this.FuYuDate.DataPropertyName = "FuYuDate";
+            this.FuYuDate.HeaderText = "付宇通汇日期";
+            this.FuYuDate.Name = "FuYuDate";
+            // 
+            // Money1
+            // 
+            this.Money1.DataPropertyName = "Money1";
+            this.Money1.HeaderText = "付款金额";
+            this.Money1.Name = "Money1";
+            // 
+            // InvoiceDate
+            // 
+            this.InvoiceDate.DataPropertyName = "InvoiceDate";
+            this.InvoiceDate.HeaderText = "开票日期";
+            this.InvoiceDate.Name = "InvoiceDate";
+            // 
+            // Money2
+            // 
+            this.Money2.DataPropertyName = "Money2";
+            this.Money2.HeaderText = "发票金额";
+            this.Money2.Name = "Money2";
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
             // 
             // panelMain
             // 
@@ -281,6 +438,198 @@
             this.panelSerachBar.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.panelSerachBar.Style.GradientAngle = 90;
             this.panelSerachBar.TabIndex = 24;
+            // 
+            // lbCount1
+            // 
+            // 
+            // 
+            // 
+            this.lbCount1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbCount1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbCount1.ForeColor = System.Drawing.Color.DarkOrange;
+            this.lbCount1.Location = new System.Drawing.Point(533, 34);
+            this.lbCount1.Name = "lbCount1";
+            this.lbCount1.Size = new System.Drawing.Size(407, 36);
+            this.lbCount1.TabIndex = 72;
+            this.lbCount1.Text = "欠款 66600.04  欠票 1696912.04";
+            // 
+            // btnTimeSpanChoose
+            // 
+            this.btnTimeSpanChoose.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnTimeSpanChoose.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnTimeSpanChoose.Location = new System.Drawing.Point(679, 6);
+            this.btnTimeSpanChoose.Name = "btnTimeSpanChoose";
+            this.btnTimeSpanChoose.Size = new System.Drawing.Size(91, 23);
+            this.btnTimeSpanChoose.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnTimeSpanChoose.TabIndex = 71;
+            this.btnTimeSpanChoose.Text = "时间区间选择";
+            this.btnTimeSpanChoose.Click += new System.EventHandler(this.btnTimeSpanChoose_Click);
+            // 
+            // txtSchEntryTimeTo
+            // 
+            // 
+            // 
+            // 
+            this.txtSchEntryTimeTo.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.txtSchEntryTimeTo.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtSchEntryTimeTo.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
+            this.txtSchEntryTimeTo.ButtonDropDown.Visible = true;
+            this.txtSchEntryTimeTo.CustomFormat = "yyyy/MM/dd HH:mm";
+            this.txtSchEntryTimeTo.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
+            this.txtSchEntryTimeTo.IsPopupCalendarOpen = false;
+            this.txtSchEntryTimeTo.Location = new System.Drawing.Point(501, 8);
+            // 
+            // 
+            // 
+            // 
+            // 
+            // 
+            this.txtSchEntryTimeTo.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtSchEntryTimeTo.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
+            this.txtSchEntryTimeTo.MonthCalendar.ClearButtonVisible = true;
+            // 
+            // 
+            // 
+            this.txtSchEntryTimeTo.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.txtSchEntryTimeTo.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
+            this.txtSchEntryTimeTo.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.txtSchEntryTimeTo.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.txtSchEntryTimeTo.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.txtSchEntryTimeTo.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
+            this.txtSchEntryTimeTo.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtSchEntryTimeTo.MonthCalendar.DisplayMonth = new System.DateTime(2017, 11, 1, 0, 0, 0, 0);
+            this.txtSchEntryTimeTo.MonthCalendar.FirstDayOfWeek = System.DayOfWeek.Monday;
+            // 
+            // 
+            // 
+            this.txtSchEntryTimeTo.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.txtSchEntryTimeTo.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
+            this.txtSchEntryTimeTo.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.txtSchEntryTimeTo.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtSchEntryTimeTo.MonthCalendar.TodayButtonVisible = true;
+            this.txtSchEntryTimeTo.Name = "txtSchEntryTimeTo";
+            this.txtSchEntryTimeTo.Size = new System.Drawing.Size(160, 21);
+            this.txtSchEntryTimeTo.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.txtSchEntryTimeTo.TabIndex = 70;
+            // 
+            // txtSchEntryTimeFrom
+            // 
+            // 
+            // 
+            // 
+            this.txtSchEntryTimeFrom.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.txtSchEntryTimeFrom.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtSchEntryTimeFrom.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
+            this.txtSchEntryTimeFrom.ButtonDropDown.Visible = true;
+            this.txtSchEntryTimeFrom.CustomFormat = "yyyy/MM/dd HH:mm";
+            this.txtSchEntryTimeFrom.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
+            this.txtSchEntryTimeFrom.IsPopupCalendarOpen = false;
+            this.txtSchEntryTimeFrom.Location = new System.Drawing.Point(316, 8);
+            // 
+            // 
+            // 
+            // 
+            // 
+            // 
+            this.txtSchEntryTimeFrom.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtSchEntryTimeFrom.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
+            this.txtSchEntryTimeFrom.MonthCalendar.ClearButtonVisible = true;
+            // 
+            // 
+            // 
+            this.txtSchEntryTimeFrom.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.txtSchEntryTimeFrom.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
+            this.txtSchEntryTimeFrom.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.txtSchEntryTimeFrom.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.txtSchEntryTimeFrom.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.txtSchEntryTimeFrom.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
+            this.txtSchEntryTimeFrom.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtSchEntryTimeFrom.MonthCalendar.DisplayMonth = new System.DateTime(2017, 11, 1, 0, 0, 0, 0);
+            this.txtSchEntryTimeFrom.MonthCalendar.FirstDayOfWeek = System.DayOfWeek.Monday;
+            // 
+            // 
+            // 
+            this.txtSchEntryTimeFrom.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.txtSchEntryTimeFrom.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
+            this.txtSchEntryTimeFrom.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.txtSchEntryTimeFrom.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtSchEntryTimeFrom.MonthCalendar.TodayButtonVisible = true;
+            this.txtSchEntryTimeFrom.Name = "txtSchEntryTimeFrom";
+            this.txtSchEntryTimeFrom.Size = new System.Drawing.Size(160, 21);
+            this.txtSchEntryTimeFrom.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.txtSchEntryTimeFrom.TabIndex = 69;
+            // 
+            // labelX14
+            // 
+            // 
+            // 
+            // 
+            this.labelX14.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX14.Location = new System.Drawing.Point(482, 8);
+            this.labelX14.Name = "labelX14";
+            this.labelX14.Size = new System.Drawing.Size(13, 21);
+            this.labelX14.TabIndex = 68;
+            this.labelX14.Text = "-";
+            // 
+            // labelX12
+            // 
+            // 
+            // 
+            // 
+            this.labelX12.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX12.Location = new System.Drawing.Point(258, 9);
+            this.labelX12.Name = "labelX12";
+            this.labelX12.Size = new System.Drawing.Size(63, 21);
+            this.labelX12.TabIndex = 67;
+            this.labelX12.Text = "录入时间:";
+            // 
+            // cbProject
+            // 
+            this.cbProject.DisplayMember = "Text";
+            this.cbProject.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbProject.FormattingEnabled = true;
+            this.cbProject.ItemHeight = 15;
+            this.cbProject.Location = new System.Drawing.Point(170, 35);
+            this.cbProject.Name = "cbProject";
+            this.cbProject.Size = new System.Drawing.Size(79, 21);
+            this.cbProject.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cbProject.TabIndex = 57;
+            // 
+            // labelX3
+            // 
+            // 
+            // 
+            // 
+            this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX3.Location = new System.Drawing.Point(134, 36);
+            this.labelX3.Name = "labelX3";
+            this.labelX3.Size = new System.Drawing.Size(46, 21);
+            this.labelX3.TabIndex = 56;
+            this.labelX3.Text = "项目:";
+            // 
+            // cbCorporation
+            // 
+            this.cbCorporation.DisplayMember = "Text";
+            this.cbCorporation.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbCorporation.FormattingEnabled = true;
+            this.cbCorporation.ItemHeight = 15;
+            this.cbCorporation.Location = new System.Drawing.Point(48, 36);
+            this.cbCorporation.Name = "cbCorporation";
+            this.cbCorporation.Size = new System.Drawing.Size(79, 21);
+            this.cbCorporation.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cbCorporation.TabIndex = 55;
+            // 
+            // labelX15
+            // 
+            // 
+            // 
+            // 
+            this.labelX15.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX15.Location = new System.Drawing.Point(13, 37);
+            this.labelX15.Name = "labelX15";
+            this.labelX15.Size = new System.Drawing.Size(46, 21);
+            this.labelX15.TabIndex = 54;
+            this.labelX15.Text = "公司:";
             // 
             // txtSerialNo
             // 
@@ -468,6 +817,13 @@
             // 
             this.btnGeneratePersonalReport.Name = "btnGeneratePersonalReport";
             // 
+            // lbTotalCount
+            // 
+            this.lbTotalCount.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbTotalCount.ForeColor = System.Drawing.Color.ForestGreen;
+            this.lbTotalCount.Name = "lbTotalCount";
+            this.lbTotalCount.Text = "合计: 送货量 42.370(t)   总金额 190056.040  付款金额 123456.000 发票金额 23144.000";
+            // 
             // cmsDgvRb
             // 
             this.cmsDgvRb.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -545,361 +901,6 @@
             this.bgWorkerLoadData.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.bgWorkerLoadData_ProgressChanged);
             this.bgWorkerLoadData.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgWorkerLoadData_RunWorkerCompleted);
             // 
-            // cbProject
-            // 
-            this.cbProject.DisplayMember = "Text";
-            this.cbProject.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbProject.FormattingEnabled = true;
-            this.cbProject.ItemHeight = 15;
-            this.cbProject.Location = new System.Drawing.Point(170, 35);
-            this.cbProject.Name = "cbProject";
-            this.cbProject.Size = new System.Drawing.Size(79, 21);
-            this.cbProject.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cbProject.TabIndex = 57;
-            // 
-            // labelX3
-            // 
-            // 
-            // 
-            // 
-            this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX3.Location = new System.Drawing.Point(134, 36);
-            this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(46, 21);
-            this.labelX3.TabIndex = 56;
-            this.labelX3.Text = "项目:";
-            // 
-            // cbCorporation
-            // 
-            this.cbCorporation.DisplayMember = "Text";
-            this.cbCorporation.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbCorporation.FormattingEnabled = true;
-            this.cbCorporation.ItemHeight = 15;
-            this.cbCorporation.Location = new System.Drawing.Point(48, 36);
-            this.cbCorporation.Name = "cbCorporation";
-            this.cbCorporation.Size = new System.Drawing.Size(79, 21);
-            this.cbCorporation.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cbCorporation.TabIndex = 55;
-            // 
-            // labelX15
-            // 
-            // 
-            // 
-            // 
-            this.labelX15.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX15.Location = new System.Drawing.Point(13, 37);
-            this.labelX15.Name = "labelX15";
-            this.labelX15.Size = new System.Drawing.Size(46, 21);
-            this.labelX15.TabIndex = 54;
-            this.labelX15.Text = "公司:";
-            // 
-            // btnTimeSpanChoose
-            // 
-            this.btnTimeSpanChoose.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnTimeSpanChoose.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnTimeSpanChoose.Location = new System.Drawing.Point(679, 6);
-            this.btnTimeSpanChoose.Name = "btnTimeSpanChoose";
-            this.btnTimeSpanChoose.Size = new System.Drawing.Size(91, 23);
-            this.btnTimeSpanChoose.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnTimeSpanChoose.TabIndex = 71;
-            this.btnTimeSpanChoose.Text = "时间区间选择";
-            // 
-            // txtSchEntryTimeTo
-            // 
-            // 
-            // 
-            // 
-            this.txtSchEntryTimeTo.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.txtSchEntryTimeTo.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtSchEntryTimeTo.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
-            this.txtSchEntryTimeTo.ButtonDropDown.Visible = true;
-            this.txtSchEntryTimeTo.CustomFormat = "yyyy/MM/dd HH:mm";
-            this.txtSchEntryTimeTo.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
-            this.txtSchEntryTimeTo.IsPopupCalendarOpen = false;
-            this.txtSchEntryTimeTo.Location = new System.Drawing.Point(501, 8);
-            // 
-            // 
-            // 
-            // 
-            // 
-            // 
-            this.txtSchEntryTimeTo.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtSchEntryTimeTo.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
-            this.txtSchEntryTimeTo.MonthCalendar.ClearButtonVisible = true;
-            // 
-            // 
-            // 
-            this.txtSchEntryTimeTo.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.txtSchEntryTimeTo.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
-            this.txtSchEntryTimeTo.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.txtSchEntryTimeTo.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.txtSchEntryTimeTo.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.txtSchEntryTimeTo.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
-            this.txtSchEntryTimeTo.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtSchEntryTimeTo.MonthCalendar.DisplayMonth = new System.DateTime(2017, 11, 1, 0, 0, 0, 0);
-            this.txtSchEntryTimeTo.MonthCalendar.FirstDayOfWeek = System.DayOfWeek.Monday;
-            // 
-            // 
-            // 
-            this.txtSchEntryTimeTo.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.txtSchEntryTimeTo.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
-            this.txtSchEntryTimeTo.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.txtSchEntryTimeTo.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtSchEntryTimeTo.MonthCalendar.TodayButtonVisible = true;
-            this.txtSchEntryTimeTo.Name = "txtSchEntryTimeTo";
-            this.txtSchEntryTimeTo.Size = new System.Drawing.Size(160, 21);
-            this.txtSchEntryTimeTo.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.txtSchEntryTimeTo.TabIndex = 70;
-            // 
-            // txtSchEntryTimeFrom
-            // 
-            // 
-            // 
-            // 
-            this.txtSchEntryTimeFrom.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.txtSchEntryTimeFrom.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtSchEntryTimeFrom.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
-            this.txtSchEntryTimeFrom.ButtonDropDown.Visible = true;
-            this.txtSchEntryTimeFrom.CustomFormat = "yyyy/MM/dd HH:mm";
-            this.txtSchEntryTimeFrom.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
-            this.txtSchEntryTimeFrom.IsPopupCalendarOpen = false;
-            this.txtSchEntryTimeFrom.Location = new System.Drawing.Point(316, 8);
-            // 
-            // 
-            // 
-            // 
-            // 
-            // 
-            this.txtSchEntryTimeFrom.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtSchEntryTimeFrom.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
-            this.txtSchEntryTimeFrom.MonthCalendar.ClearButtonVisible = true;
-            // 
-            // 
-            // 
-            this.txtSchEntryTimeFrom.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.txtSchEntryTimeFrom.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
-            this.txtSchEntryTimeFrom.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.txtSchEntryTimeFrom.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.txtSchEntryTimeFrom.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.txtSchEntryTimeFrom.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
-            this.txtSchEntryTimeFrom.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtSchEntryTimeFrom.MonthCalendar.DisplayMonth = new System.DateTime(2017, 11, 1, 0, 0, 0, 0);
-            this.txtSchEntryTimeFrom.MonthCalendar.FirstDayOfWeek = System.DayOfWeek.Monday;
-            // 
-            // 
-            // 
-            this.txtSchEntryTimeFrom.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.txtSchEntryTimeFrom.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
-            this.txtSchEntryTimeFrom.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.txtSchEntryTimeFrom.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtSchEntryTimeFrom.MonthCalendar.TodayButtonVisible = true;
-            this.txtSchEntryTimeFrom.Name = "txtSchEntryTimeFrom";
-            this.txtSchEntryTimeFrom.Size = new System.Drawing.Size(160, 21);
-            this.txtSchEntryTimeFrom.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.txtSchEntryTimeFrom.TabIndex = 69;
-            // 
-            // labelX14
-            // 
-            // 
-            // 
-            // 
-            this.labelX14.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX14.Location = new System.Drawing.Point(482, 8);
-            this.labelX14.Name = "labelX14";
-            this.labelX14.Size = new System.Drawing.Size(13, 21);
-            this.labelX14.TabIndex = 68;
-            this.labelX14.Text = "-";
-            // 
-            // labelX12
-            // 
-            // 
-            // 
-            // 
-            this.labelX12.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX12.Location = new System.Drawing.Point(258, 9);
-            this.labelX12.Name = "labelX12";
-            this.labelX12.Size = new System.Drawing.Size(63, 21);
-            this.labelX12.TabIndex = 67;
-            this.labelX12.Text = "录入时间:";
-            // 
-            // lbTotalCount
-            // 
-            this.lbTotalCount.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbTotalCount.ForeColor = System.Drawing.Color.ForestGreen;
-            this.lbTotalCount.Name = "lbTotalCount";
-            this.lbTotalCount.Text = "合计: 送货量 42.370(t)   总金额 190056.040  付款金额 123456.000 发票金额 23144.000";
-            // 
-            // lbCount1
-            // 
-            // 
-            // 
-            // 
-            this.lbCount1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbCount1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbCount1.ForeColor = System.Drawing.Color.DarkOrange;
-            this.lbCount1.Location = new System.Drawing.Point(533, 34);
-            this.lbCount1.Name = "lbCount1";
-            this.lbCount1.Size = new System.Drawing.Size(407, 36);
-            this.lbCount1.TabIndex = 72;
-            this.lbCount1.Text = "欠款 66600.04  欠票 1696912.04";
-            // 
-            // EntryTime
-            // 
-            this.EntryTime.DataPropertyName = "EntryTime";
-            this.EntryTime.HeaderText = "记录时间";
-            this.EntryTime.Name = "EntryTime";
-            // 
-            // SerialNo
-            // 
-            this.SerialNo.DataPropertyName = "SerialNo";
-            this.SerialNo.HeaderText = "流水号";
-            this.SerialNo.Name = "SerialNo";
-            // 
-            // Corporation
-            // 
-            this.Corporation.DataPropertyName = "Corporation";
-            this.Corporation.HeaderText = "公司";
-            this.Corporation.Name = "Corporation";
-            // 
-            // Project
-            // 
-            this.Project.DataPropertyName = "Project";
-            this.Project.HeaderText = "项目";
-            this.Project.Name = "Project";
-            // 
-            // Dateline
-            // 
-            this.Dateline.DataPropertyName = "Dateline";
-            this.Dateline.HeaderText = "日期";
-            this.Dateline.Name = "Dateline";
-            // 
-            // Supplier
-            // 
-            this.Supplier.DataPropertyName = "Supplier";
-            this.Supplier.HeaderText = "供应商";
-            this.Supplier.Name = "Supplier";
-            // 
-            // Brand
-            // 
-            this.Brand.DataPropertyName = "Brand";
-            this.Brand.HeaderText = "品牌";
-            this.Brand.Name = "Brand";
-            // 
-            // TransportWay
-            // 
-            this.TransportWay.DataPropertyName = "TransportWay";
-            this.TransportWay.HeaderText = "运输方式";
-            this.TransportWay.Name = "TransportWay";
-            // 
-            // dgvCol_Size
-            // 
-            this.dgvCol_Size.DataPropertyName = "Size";
-            this.dgvCol_Size.HeaderText = "规格";
-            this.dgvCol_Size.Name = "dgvCol_Size";
-            // 
-            // Texture
-            // 
-            this.Texture.DataPropertyName = "Texture";
-            this.Texture.HeaderText = "材质";
-            this.Texture.Name = "Texture";
-            // 
-            // Amount
-            // 
-            this.Amount.DataPropertyName = "Amount";
-            this.Amount.HeaderText = "送货量(t)";
-            this.Amount.Name = "Amount";
-            // 
-            // Quote
-            // 
-            this.Quote.DataPropertyName = "Quote";
-            this.Quote.HeaderText = "报价";
-            this.Quote.Name = "Quote";
-            // 
-            // Fluctuation1
-            // 
-            this.Fluctuation1.DataPropertyName = "Fluctuation1";
-            this.Fluctuation1.HeaderText = "浮动1";
-            this.Fluctuation1.Name = "Fluctuation1";
-            // 
-            // TransportCost
-            // 
-            this.TransportCost.DataPropertyName = "TransportCost";
-            this.TransportCost.HeaderText = "运费";
-            this.TransportCost.Name = "TransportCost";
-            // 
-            // DiaoZhuang
-            // 
-            this.DiaoZhuang.DataPropertyName = "DiaoZhuang";
-            this.DiaoZhuang.HeaderText = "吊装";
-            this.DiaoZhuang.Name = "DiaoZhuang";
-            // 
-            // LiXi
-            // 
-            this.LiXi.DataPropertyName = "LiXi";
-            this.LiXi.HeaderText = "利息";
-            this.LiXi.Name = "LiXi";
-            // 
-            // ChengDui
-            // 
-            this.ChengDui.DataPropertyName = "ChengDui";
-            this.ChengDui.HeaderText = "承兑";
-            this.ChengDui.Name = "ChengDui";
-            // 
-            // OtherCost
-            // 
-            this.OtherCost.DataPropertyName = "OtherCost";
-            this.OtherCost.HeaderText = "其他成本";
-            this.OtherCost.Name = "OtherCost";
-            // 
-            // TieXi
-            // 
-            this.TieXi.DataPropertyName = "TieXi";
-            this.TieXi.HeaderText = "贴息";
-            this.TieXi.Name = "TieXi";
-            // 
-            // Price
-            // 
-            this.Price.DataPropertyName = "Price";
-            this.Price.HeaderText = "单价";
-            this.Price.Name = "Price";
-            // 
-            // TotalMoney
-            // 
-            this.TotalMoney.DataPropertyName = "TotalMoney";
-            this.TotalMoney.HeaderText = "总金额";
-            this.TotalMoney.Name = "TotalMoney";
-            // 
-            // FuYuDate
-            // 
-            this.FuYuDate.DataPropertyName = "FuYuDate";
-            this.FuYuDate.HeaderText = "付宇通汇日期";
-            this.FuYuDate.Name = "FuYuDate";
-            // 
-            // Money1
-            // 
-            this.Money1.DataPropertyName = "Money1";
-            this.Money1.HeaderText = "付款金额";
-            this.Money1.Name = "Money1";
-            // 
-            // InvoiceDate
-            // 
-            this.InvoiceDate.DataPropertyName = "InvoiceDate";
-            this.InvoiceDate.HeaderText = "开票日期";
-            this.InvoiceDate.Name = "InvoiceDate";
-            // 
-            // Money2
-            // 
-            this.Money2.DataPropertyName = "Money2";
-            this.Money2.HeaderText = "发票金额";
-            this.Money2.Name = "Money2";
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.Visible = false;
-            // 
             // FrmPurchaseInfoManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -914,10 +915,10 @@
             this.panelDgv.ResumeLayout(false);
             this.panelBars.ResumeLayout(false);
             this.panelSerachBar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bar1)).EndInit();
-            this.cmsDgvRb.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtSchEntryTimeTo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSchEntryTimeFrom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bar1)).EndInit();
+            this.cmsDgvRb.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

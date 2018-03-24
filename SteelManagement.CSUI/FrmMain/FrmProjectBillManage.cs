@@ -55,11 +55,28 @@ namespace SteelManagement.CSUI.FrmMain
             dataGridView1.DefaultCellStyle.Font = new Font("微软雅黑", 9.0f, FontStyle.Bold);
             dataGridView1.DoubleClick += DataGridView1_DoubleClick;
             dataGridView1.ReadOnly = true;
+            dataGridView1.SelectionChanged += DataGridView1_SelectionChanged;
 
             bgWorkerLoadData.WorkerReportsProgress = true;
 
             progressLoading.Visible = false;
             LoadDataToDgvAsyn();
+        }
+
+        private void DataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            return;
+            if (dataGridView1.SelectedRows.Count < 1)
+                return;
+
+
+            for(int i = 2; i != dataGridView1.ColumnCount; ++i)
+            {
+                //decimal num = DecimalHandler.
+            }
+
+            //dataGridView1.Rows[dataGridView1.Rows.Count-1]
+
         }
 
         private void InitComboBoxs()
@@ -235,14 +252,7 @@ namespace SteelManagement.CSUI.FrmMain
             LoadDataToDgvAsyn();
         }
 
-        private void btnTimeSpanChoose_Click(object sender, EventArgs e)
-        {
-            FrmTimeSpanChoose frm = new FrmTimeSpanChoose();
-            if (frm.ShowDialog() == DialogResult.Cancel)
-                return;
-            txtSchEntryTimeFrom.Text = DateTimeFormator.DateTimeToString(frm.TimeSpanFrom, DateTimeFormator.TimeFormat.Type14LongTime1);
-            txtSchEntryTimeTo.Text = DateTimeFormator.DateTimeToString(frm.TimeSpanTo, DateTimeFormator.TimeFormat.Type14LongTime1);
-        }
+
 
         private string GetWhereCondition()
         {
@@ -354,6 +364,8 @@ namespace SteelManagement.CSUI.FrmMain
                 var duiZhangNum = DgvDataSourceToList()[i].DuiZhangNum;
                 if (duiZhangNum != null)
                     dataGridView1["DuiZhangNum", i].Value = DecimalHandler.DecimalToString(duiZhangNum, digit);
+
+
 
             }
         }

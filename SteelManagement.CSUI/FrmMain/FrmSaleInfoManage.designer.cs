@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.EntryTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SerialNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,9 +60,22 @@
             this.panelDgv = new DevComponents.DotNetBar.PanelEx();
             this.panelBars = new DevComponents.DotNetBar.PanelEx();
             this.panelSerachBar = new DevComponents.DotNetBar.PanelEx();
+            this.btnTimeSpanChoose = new DevComponents.DotNetBar.ButtonX();
+            this.txtSchEntryTimeTo = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.txtSchEntryTimeFrom = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.labelX14 = new DevComponents.DotNetBar.LabelX();
+            this.labelX12 = new DevComponents.DotNetBar.LabelX();
+            this.cbProject = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.labelX3 = new DevComponents.DotNetBar.LabelX();
+            this.cbCorporation = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.labelX15 = new DevComponents.DotNetBar.LabelX();
+            this.txtSerialNo = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX6 = new DevComponents.DotNetBar.LabelX();
+            this.btnSearch = new DevComponents.DotNetBar.ButtonX();
             this.btnAdd = new DevComponents.DotNetBar.ButtonX();
             this.progressLoading = new DevComponents.DotNetBar.Controls.CircularProgress();
             this.btnClearSchConditions = new DevComponents.DotNetBar.ButtonX();
+            this.btnCreateReport = new DevComponents.DotNetBar.ButtonX();
             this.bar1 = new DevComponents.DotNetBar.Bar();
             this.btnPageFirst = new DevComponents.DotNetBar.ButtonItem();
             this.btnPagePre = new DevComponents.DotNetBar.ButtonItem();
@@ -88,28 +101,15 @@
             this.韩国担保函ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.韩国加急申请书ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bgWorkerLoadData = new System.ComponentModel.BackgroundWorker();
-            this.btnSearch = new DevComponents.DotNetBar.ButtonX();
-            this.btnTimeSpanChoose = new DevComponents.DotNetBar.ButtonX();
-            this.txtSchEntryTimeTo = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.txtSchEntryTimeFrom = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.labelX14 = new DevComponents.DotNetBar.LabelX();
-            this.labelX12 = new DevComponents.DotNetBar.LabelX();
-            this.cbProject = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.labelX3 = new DevComponents.DotNetBar.LabelX();
-            this.cbCorporation = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.labelX15 = new DevComponents.DotNetBar.LabelX();
-            this.txtSerialNo = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX6 = new DevComponents.DotNetBar.LabelX();
-            this.btnCreateReport = new DevComponents.DotNetBar.ButtonX();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelMain.SuspendLayout();
             this.panelDgv.SuspendLayout();
             this.panelBars.SuspendLayout();
             this.panelSerachBar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bar1)).BeginInit();
-            this.cmsDgvRb.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtSchEntryTimeTo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSchEntryTimeFrom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bar1)).BeginInit();
+            this.cmsDgvRb.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -118,14 +118,14 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.EntryTime,
@@ -151,27 +151,27 @@
             this.TotalSale,
             this.MarginRate,
             this.Id});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dataGridView1.RowTemplate.Height = 30;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -404,231 +404,6 @@
             this.panelSerachBar.Style.GradientAngle = 90;
             this.panelSerachBar.TabIndex = 24;
             // 
-            // btnAdd
-            // 
-            this.btnAdd.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnAdd.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnAdd.Location = new System.Drawing.Point(784, 6);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(92, 23);
-            this.btnAdd.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnAdd.TabIndex = 29;
-            this.btnAdd.Text = "新增";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // progressLoading
-            // 
-            // 
-            // 
-            // 
-            this.progressLoading.BackgroundStyle.BackgroundImageAlpha = ((byte)(64));
-            this.progressLoading.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.progressLoading.FocusCuesEnabled = false;
-            this.progressLoading.Location = new System.Drawing.Point(1142, 8);
-            this.progressLoading.Name = "progressLoading";
-            this.progressLoading.ProgressBarType = DevComponents.DotNetBar.eCircularProgressType.Dot;
-            this.progressLoading.ProgressColor = System.Drawing.Color.YellowGreen;
-            this.progressLoading.Size = new System.Drawing.Size(77, 63);
-            this.progressLoading.Style = DevComponents.DotNetBar.eDotNetBarStyle.OfficeXP;
-            this.progressLoading.TabIndex = 27;
-            this.progressLoading.Value = 100;
-            // 
-            // btnClearSchConditions
-            // 
-            this.btnClearSchConditions.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnClearSchConditions.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnClearSchConditions.Location = new System.Drawing.Point(896, 36);
-            this.btnClearSchConditions.Name = "btnClearSchConditions";
-            this.btnClearSchConditions.Size = new System.Drawing.Size(92, 23);
-            this.btnClearSchConditions.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnClearSchConditions.TabIndex = 26;
-            this.btnClearSchConditions.Text = "清空搜索条件";
-            this.btnClearSchConditions.Click += new System.EventHandler(this.btnClearSchConditions_Click);
-            // 
-            // bar1
-            // 
-            this.bar1.AntiAlias = true;
-            this.bar1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bar1.DockSide = DevComponents.DotNetBar.eDockSide.Top;
-            this.bar1.DockTabStripHeight = 30;
-            this.bar1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
-            this.bar1.IsMaximized = false;
-            this.bar1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.btnPageFirst,
-            this.btnPagePre,
-            this.btnPageNext,
-            this.btnPageLast,
-            this.cbCurPage,
-            this.btnGoto,
-            this.lbRecordCount,
-            this.lbl,
-            this.cbPageSize,
-            this.labelItem2,
-            this.lbCurPage,
-            this.btnGeneratePersonalReport,
-            this.lbTotalCount});
-            this.bar1.ItemSpacing = 5;
-            this.bar1.Location = new System.Drawing.Point(0, 0);
-            this.bar1.Name = "bar1";
-            this.bar1.Size = new System.Drawing.Size(1271, 28);
-            this.bar1.Stretch = true;
-            this.bar1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.bar1.TabIndex = 23;
-            this.bar1.TabStop = false;
-            this.bar1.Text = "bar1";
-            // 
-            // btnPageFirst
-            // 
-            this.btnPageFirst.Name = "btnPageFirst";
-            this.btnPageFirst.Text = "首页";
-            this.btnPageFirst.Click += new System.EventHandler(this.btnPageFirst_Click);
-            // 
-            // btnPagePre
-            // 
-            this.btnPagePre.Name = "btnPagePre";
-            this.btnPagePre.Text = "上一页";
-            this.btnPagePre.Click += new System.EventHandler(this.btnPagePre_Click);
-            // 
-            // btnPageNext
-            // 
-            this.btnPageNext.Name = "btnPageNext";
-            this.btnPageNext.Text = "下一页";
-            this.btnPageNext.Click += new System.EventHandler(this.btnPageNext_Click);
-            // 
-            // btnPageLast
-            // 
-            this.btnPageLast.Name = "btnPageLast";
-            this.btnPageLast.Text = "尾页";
-            this.btnPageLast.Click += new System.EventHandler(this.btnPageLast_Click);
-            // 
-            // cbCurPage
-            // 
-            this.cbCurPage.DropDownHeight = 106;
-            this.cbCurPage.ItemHeight = 17;
-            this.cbCurPage.Name = "cbCurPage";
-            // 
-            // btnGoto
-            // 
-            this.btnGoto.Name = "btnGoto";
-            this.btnGoto.Text = "Go";
-            // 
-            // lbRecordCount
-            // 
-            this.lbRecordCount.Name = "lbRecordCount";
-            this.lbRecordCount.Text = "共有记录";
-            // 
-            // lbl
-            // 
-            this.lbl.Name = "lbl";
-            this.lbl.Text = "每页显示";
-            // 
-            // cbPageSize
-            // 
-            this.cbPageSize.DropDownHeight = 106;
-            this.cbPageSize.ItemHeight = 17;
-            this.cbPageSize.Name = "cbPageSize";
-            // 
-            // labelItem2
-            // 
-            this.labelItem2.Name = "labelItem2";
-            this.labelItem2.Text = "条";
-            // 
-            // lbCurPage
-            // 
-            this.lbCurPage.Name = "lbCurPage";
-            // 
-            // btnGeneratePersonalReport
-            // 
-            this.btnGeneratePersonalReport.Name = "btnGeneratePersonalReport";
-            // 
-            // lbTotalCount
-            // 
-            this.lbTotalCount.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbTotalCount.ForeColor = System.Drawing.Color.ForestGreen;
-            this.lbTotalCount.Name = "lbTotalCount";
-            this.lbTotalCount.Text = "合计: 送货量 42.370(t)   销总金额 190056.040 ";
-            // 
-            // cmsDgvRb
-            // 
-            this.cmsDgvRb.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cmsItemRefreshState,
-            this.删除ToolStripMenuItem,
-            this.修改ToolStripMenuItem,
-            this.添加收款信息ToolStripMenuItem});
-            this.cmsDgvRb.Name = "cmsDgvRb";
-            this.cmsDgvRb.Size = new System.Drawing.Size(161, 92);
-            // 
-            // cmsItemRefreshState
-            // 
-            this.cmsItemRefreshState.Name = "cmsItemRefreshState";
-            this.cmsItemRefreshState.Size = new System.Drawing.Size(160, 22);
-            this.cmsItemRefreshState.Text = "刷新数据库状态";
-            this.cmsItemRefreshState.Click += new System.EventHandler(this.cmsItemRefreshState_Click);
-            // 
-            // 删除ToolStripMenuItem
-            // 
-            this.删除ToolStripMenuItem.Name = "删除ToolStripMenuItem";
-            this.删除ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.删除ToolStripMenuItem.Text = "删除";
-            this.删除ToolStripMenuItem.Click += new System.EventHandler(this.删除ToolStripMenuItem_Click);
-            // 
-            // 修改ToolStripMenuItem
-            // 
-            this.修改ToolStripMenuItem.Name = "修改ToolStripMenuItem";
-            this.修改ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.修改ToolStripMenuItem.Text = "修改";
-            this.修改ToolStripMenuItem.Click += new System.EventHandler(this.修改ToolStripMenuItem_Click);
-            // 
-            // 添加收款信息ToolStripMenuItem
-            // 
-            this.添加收款信息ToolStripMenuItem.Name = "添加收款信息ToolStripMenuItem";
-            this.添加收款信息ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.添加收款信息ToolStripMenuItem.Text = "添加收款信息";
-            this.添加收款信息ToolStripMenuItem.Click += new System.EventHandler(this.添加收款信息ToolStripMenuItem_Click);
-            // 
-            // 人申请表ToolStripMenuItem
-            // 
-            this.人申请表ToolStripMenuItem.Name = "人申请表ToolStripMenuItem";
-            this.人申请表ToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            // 
-            // 机票报表ToolStripMenuItem
-            // 
-            this.机票报表ToolStripMenuItem.Name = "机票报表ToolStripMenuItem";
-            this.机票报表ToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            // 
-            // 外领担保函ToolStripMenuItem
-            // 
-            this.外领担保函ToolStripMenuItem.Name = "外领担保函ToolStripMenuItem";
-            this.外领担保函ToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            // 
-            // 韩国担保函ToolStripMenuItem
-            // 
-            this.韩国担保函ToolStripMenuItem.Name = "韩国担保函ToolStripMenuItem";
-            this.韩国担保函ToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            // 
-            // 韩国加急申请书ToolStripMenuItem
-            // 
-            this.韩国加急申请书ToolStripMenuItem.Name = "韩国加急申请书ToolStripMenuItem";
-            this.韩国加急申请书ToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            // 
-            // bgWorkerLoadData
-            // 
-            this.bgWorkerLoadData.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgWorkerLoadData_DoWork);
-            this.bgWorkerLoadData.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.bgWorkerLoadData_ProgressChanged);
-            this.bgWorkerLoadData.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgWorkerLoadData_RunWorkerCompleted);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnSearch.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSearch.Location = new System.Drawing.Point(784, 35);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(92, 23);
-            this.btnSearch.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnSearch.TabIndex = 13;
-            this.btnSearch.Text = "搜索";
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
             // btnTimeSpanChoose
             // 
             this.btnTimeSpanChoose.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -639,6 +414,7 @@
             this.btnTimeSpanChoose.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnTimeSpanChoose.TabIndex = 82;
             this.btnTimeSpanChoose.Text = "时间区间选择";
+            this.btnTimeSpanChoose.Click += new System.EventHandler(this.btnTimeSpanChoose_Click);
             // 
             // txtSchEntryTimeTo
             // 
@@ -830,6 +606,59 @@
             this.labelX6.TabIndex = 73;
             this.labelX6.Text = "流水号:";
             // 
+            // btnSearch
+            // 
+            this.btnSearch.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnSearch.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnSearch.Location = new System.Drawing.Point(784, 35);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(92, 23);
+            this.btnSearch.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnSearch.TabIndex = 13;
+            this.btnSearch.Text = "搜索";
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnAdd.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnAdd.Location = new System.Drawing.Point(784, 6);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(92, 23);
+            this.btnAdd.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnAdd.TabIndex = 29;
+            this.btnAdd.Text = "新增";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // progressLoading
+            // 
+            // 
+            // 
+            // 
+            this.progressLoading.BackgroundStyle.BackgroundImageAlpha = ((byte)(64));
+            this.progressLoading.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.progressLoading.FocusCuesEnabled = false;
+            this.progressLoading.Location = new System.Drawing.Point(1142, 8);
+            this.progressLoading.Name = "progressLoading";
+            this.progressLoading.ProgressBarType = DevComponents.DotNetBar.eCircularProgressType.Dot;
+            this.progressLoading.ProgressColor = System.Drawing.Color.YellowGreen;
+            this.progressLoading.Size = new System.Drawing.Size(77, 63);
+            this.progressLoading.Style = DevComponents.DotNetBar.eDotNetBarStyle.OfficeXP;
+            this.progressLoading.TabIndex = 27;
+            this.progressLoading.Value = 100;
+            // 
+            // btnClearSchConditions
+            // 
+            this.btnClearSchConditions.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnClearSchConditions.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnClearSchConditions.Location = new System.Drawing.Point(896, 36);
+            this.btnClearSchConditions.Name = "btnClearSchConditions";
+            this.btnClearSchConditions.Size = new System.Drawing.Size(92, 23);
+            this.btnClearSchConditions.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnClearSchConditions.TabIndex = 26;
+            this.btnClearSchConditions.Text = "清空搜索条件";
+            this.btnClearSchConditions.Click += new System.EventHandler(this.btnClearSchConditions_Click);
+            // 
             // btnCreateReport
             // 
             this.btnCreateReport.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -842,6 +671,178 @@
             this.btnCreateReport.Text = "生成报表";
             this.btnCreateReport.Visible = false;
             this.btnCreateReport.Click += new System.EventHandler(this.btnCreateReport_Click);
+            // 
+            // bar1
+            // 
+            this.bar1.AntiAlias = true;
+            this.bar1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bar1.DockSide = DevComponents.DotNetBar.eDockSide.Top;
+            this.bar1.DockTabStripHeight = 30;
+            this.bar1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
+            this.bar1.IsMaximized = false;
+            this.bar1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.btnPageFirst,
+            this.btnPagePre,
+            this.btnPageNext,
+            this.btnPageLast,
+            this.cbCurPage,
+            this.btnGoto,
+            this.lbRecordCount,
+            this.lbl,
+            this.cbPageSize,
+            this.labelItem2,
+            this.lbCurPage,
+            this.btnGeneratePersonalReport,
+            this.lbTotalCount});
+            this.bar1.ItemSpacing = 5;
+            this.bar1.Location = new System.Drawing.Point(0, 0);
+            this.bar1.Name = "bar1";
+            this.bar1.Size = new System.Drawing.Size(1271, 28);
+            this.bar1.Stretch = true;
+            this.bar1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.bar1.TabIndex = 23;
+            this.bar1.TabStop = false;
+            this.bar1.Text = "bar1";
+            // 
+            // btnPageFirst
+            // 
+            this.btnPageFirst.Name = "btnPageFirst";
+            this.btnPageFirst.Text = "首页";
+            this.btnPageFirst.Click += new System.EventHandler(this.btnPageFirst_Click);
+            // 
+            // btnPagePre
+            // 
+            this.btnPagePre.Name = "btnPagePre";
+            this.btnPagePre.Text = "上一页";
+            this.btnPagePre.Click += new System.EventHandler(this.btnPagePre_Click);
+            // 
+            // btnPageNext
+            // 
+            this.btnPageNext.Name = "btnPageNext";
+            this.btnPageNext.Text = "下一页";
+            this.btnPageNext.Click += new System.EventHandler(this.btnPageNext_Click);
+            // 
+            // btnPageLast
+            // 
+            this.btnPageLast.Name = "btnPageLast";
+            this.btnPageLast.Text = "尾页";
+            this.btnPageLast.Click += new System.EventHandler(this.btnPageLast_Click);
+            // 
+            // cbCurPage
+            // 
+            this.cbCurPage.DropDownHeight = 106;
+            this.cbCurPage.ItemHeight = 17;
+            this.cbCurPage.Name = "cbCurPage";
+            // 
+            // btnGoto
+            // 
+            this.btnGoto.Name = "btnGoto";
+            this.btnGoto.Text = "Go";
+            // 
+            // lbRecordCount
+            // 
+            this.lbRecordCount.Name = "lbRecordCount";
+            this.lbRecordCount.Text = "共有记录";
+            // 
+            // lbl
+            // 
+            this.lbl.Name = "lbl";
+            this.lbl.Text = "每页显示";
+            // 
+            // cbPageSize
+            // 
+            this.cbPageSize.DropDownHeight = 106;
+            this.cbPageSize.ItemHeight = 17;
+            this.cbPageSize.Name = "cbPageSize";
+            // 
+            // labelItem2
+            // 
+            this.labelItem2.Name = "labelItem2";
+            this.labelItem2.Text = "条";
+            // 
+            // lbCurPage
+            // 
+            this.lbCurPage.Name = "lbCurPage";
+            // 
+            // btnGeneratePersonalReport
+            // 
+            this.btnGeneratePersonalReport.Name = "btnGeneratePersonalReport";
+            // 
+            // lbTotalCount
+            // 
+            this.lbTotalCount.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbTotalCount.ForeColor = System.Drawing.Color.ForestGreen;
+            this.lbTotalCount.Name = "lbTotalCount";
+            this.lbTotalCount.Text = "合计: 送货量 42.370(t)   销总金额 190056.040 ";
+            // 
+            // cmsDgvRb
+            // 
+            this.cmsDgvRb.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cmsItemRefreshState,
+            this.删除ToolStripMenuItem,
+            this.修改ToolStripMenuItem,
+            this.添加收款信息ToolStripMenuItem});
+            this.cmsDgvRb.Name = "cmsDgvRb";
+            this.cmsDgvRb.Size = new System.Drawing.Size(161, 92);
+            // 
+            // cmsItemRefreshState
+            // 
+            this.cmsItemRefreshState.Name = "cmsItemRefreshState";
+            this.cmsItemRefreshState.Size = new System.Drawing.Size(160, 22);
+            this.cmsItemRefreshState.Text = "刷新数据库状态";
+            this.cmsItemRefreshState.Click += new System.EventHandler(this.cmsItemRefreshState_Click);
+            // 
+            // 删除ToolStripMenuItem
+            // 
+            this.删除ToolStripMenuItem.Name = "删除ToolStripMenuItem";
+            this.删除ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.删除ToolStripMenuItem.Text = "删除";
+            this.删除ToolStripMenuItem.Click += new System.EventHandler(this.删除ToolStripMenuItem_Click);
+            // 
+            // 修改ToolStripMenuItem
+            // 
+            this.修改ToolStripMenuItem.Name = "修改ToolStripMenuItem";
+            this.修改ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.修改ToolStripMenuItem.Text = "修改";
+            this.修改ToolStripMenuItem.Click += new System.EventHandler(this.修改ToolStripMenuItem_Click);
+            // 
+            // 添加收款信息ToolStripMenuItem
+            // 
+            this.添加收款信息ToolStripMenuItem.Name = "添加收款信息ToolStripMenuItem";
+            this.添加收款信息ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.添加收款信息ToolStripMenuItem.Text = "添加收款信息";
+            this.添加收款信息ToolStripMenuItem.Click += new System.EventHandler(this.添加收款信息ToolStripMenuItem_Click);
+            // 
+            // 人申请表ToolStripMenuItem
+            // 
+            this.人申请表ToolStripMenuItem.Name = "人申请表ToolStripMenuItem";
+            this.人申请表ToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
+            // 
+            // 机票报表ToolStripMenuItem
+            // 
+            this.机票报表ToolStripMenuItem.Name = "机票报表ToolStripMenuItem";
+            this.机票报表ToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
+            // 
+            // 外领担保函ToolStripMenuItem
+            // 
+            this.外领担保函ToolStripMenuItem.Name = "外领担保函ToolStripMenuItem";
+            this.外领担保函ToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
+            // 
+            // 韩国担保函ToolStripMenuItem
+            // 
+            this.韩国担保函ToolStripMenuItem.Name = "韩国担保函ToolStripMenuItem";
+            this.韩国担保函ToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
+            // 
+            // 韩国加急申请书ToolStripMenuItem
+            // 
+            this.韩国加急申请书ToolStripMenuItem.Name = "韩国加急申请书ToolStripMenuItem";
+            this.韩国加急申请书ToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
+            // 
+            // bgWorkerLoadData
+            // 
+            this.bgWorkerLoadData.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgWorkerLoadData_DoWork);
+            this.bgWorkerLoadData.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.bgWorkerLoadData_ProgressChanged);
+            this.bgWorkerLoadData.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgWorkerLoadData_RunWorkerCompleted);
             // 
             // FrmSaleInfoManage
             // 
@@ -857,10 +858,10 @@
             this.panelDgv.ResumeLayout(false);
             this.panelBars.ResumeLayout(false);
             this.panelSerachBar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bar1)).EndInit();
-            this.cmsDgvRb.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtSchEntryTimeTo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSchEntryTimeFrom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bar1)).EndInit();
+            this.cmsDgvRb.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

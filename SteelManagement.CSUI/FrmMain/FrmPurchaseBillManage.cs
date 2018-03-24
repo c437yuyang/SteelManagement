@@ -43,7 +43,7 @@ namespace SteelManagement.CSUI.FrmMain
             cbPageSize.DropDownStyle = ComboBoxStyle.DropDownList;
             cbPageSize.SelectedIndex = 2;
 
-            InitComboBoxs();
+            InitComboboxs();
 
 
             _pageSize = int.Parse(cbPageSize.Text);
@@ -61,28 +61,31 @@ namespace SteelManagement.CSUI.FrmMain
             progressLoading.Visible = false;
             LoadDataToDgvAsyn();
         }
-
-        private void InitComboBoxs()
+        private void InitComboboxs()
         {
+            string tablename = "SaleInfo";
+
             cbCorporation.Items.Add("全部");
             cbProject.Items.Add("全部");
-
             cbCorporation.SelectedIndex = 0;
             cbProject.SelectedIndex = 0;
 
-
-            string tablename = "PurchaseBill";
-            var list = BLL.CommonBll.GetFieldList(tablename, "Project");
+            var list = BLL.CommonBll.GetFieldList(tablename, "Corporation");
             if (list != null)
                 foreach (var item in list)
-                    cbProject.Items.Add(item);
-
-            list = BLL.CommonBll.GetFieldList(tablename, "Corporation");
-            if (list != null)
-                foreach (var item in list)
+                {
                     cbCorporation.Items.Add(item);
+                }
 
+            list = BLL.CommonBll.GetFieldList(tablename, "Project");
+            if (list != null)
+                foreach (var item in list)
+                {
+                    cbProject.Items.Add(item);
+                }
         }
+
+       
 
         private void DataGridView1_DoubleClick(object sender, EventArgs e)
         {
@@ -245,14 +248,6 @@ namespace SteelManagement.CSUI.FrmMain
         {
             List<string> conditions = new List<string>();
 
-            if (cbCorporation.Text == "全部")
-            {
-
-            }
-            else
-            {
-                conditions.Add(" Corporation = '" + cbCorporation.Text + "' ");
-            }
 
             if (cbProject.Text == "全部")
             {
@@ -263,21 +258,25 @@ namespace SteelManagement.CSUI.FrmMain
                 conditions.Add(" Project = '" + cbProject.Text + "' ");
             }
 
-            //if (!string.IsNullOrEmpty(txtClient.Text.Trim()))
-            //{
-            //    conditions.Add(" (Client like '%" + txtClient.Text + "%') ");
-            //}
+            if (cbCorporation.Text == "全部")
+            {
 
-            //if (cbDepatureType.Text == "全部")
-            //{
+            }
+            else
+            {
+                conditions.Add(" Corporation = '" + cbCorporation.Text + "' ");
+            }
 
-            //}
-            //else
-            //{
-            //    conditions.Add(" DepartureType = '" + cbDepatureType.Text + "' ");
-            //}
+            if (!string.IsNullOrEmpty(txtSerialNo.Text.Trim()))
+            {
+                conditions.Add(" (SerialNo like '%" + txtSerialNo.Text + "%') ");
+            }
 
-
+            if (!string.IsNullOrEmpty(txtSchEntryTimeFrom.Text.Trim()) && !string.IsNullOrEmpty(txtSchEntryTimeTo.Text.Trim()))
+            {
+                conditions.Add(" (EntryTime between '" + txtSchEntryTimeFrom.Text + "' and " + " '" + txtSchEntryTimeTo.Text +
+                               "') ");
+            }
 
             string[] arr = conditions.ToArray();
             string where = string.Join(" and ", arr);
@@ -287,8 +286,11 @@ namespace SteelManagement.CSUI.FrmMain
 
         private void btnClearSchConditions_Click(object sender, EventArgs e)
         {
-            cbProject.Text = "全部";
+            txtSerialNo.Text = "";
             cbCorporation.Text = "全部";
+            cbProject.Text = "全部";
+            txtSchEntryTimeFrom.Text = "";
+            txtSchEntryTimeTo.Text = ""; ;
         }
 
 
