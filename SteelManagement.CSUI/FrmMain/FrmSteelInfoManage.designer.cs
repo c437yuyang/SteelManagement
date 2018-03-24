@@ -60,7 +60,6 @@
             this.btnAdd = new DevComponents.DotNetBar.ButtonX();
             this.progressLoading = new DevComponents.DotNetBar.Controls.CircularProgress();
             this.btnClearSchConditions = new DevComponents.DotNetBar.ButtonX();
-            this.btnCreateReport = new DevComponents.DotNetBar.ButtonX();
             this.btnSearch = new DevComponents.DotNetBar.ButtonX();
             this.bar1 = new DevComponents.DotNetBar.Bar();
             this.btnPageFirst = new DevComponents.DotNetBar.ButtonItem();
@@ -128,7 +127,7 @@
             dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -288,7 +287,6 @@
             this.panelSerachBar.Controls.Add(this.btnAdd);
             this.panelSerachBar.Controls.Add(this.progressLoading);
             this.panelSerachBar.Controls.Add(this.btnClearSchConditions);
-            this.panelSerachBar.Controls.Add(this.btnCreateReport);
             this.panelSerachBar.Controls.Add(this.btnSearch);
             this.panelSerachBar.DisabledBackColor = System.Drawing.Color.Empty;
             this.panelSerachBar.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -438,7 +436,7 @@
             // 
             this.btnAddFromExcel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnAddFromExcel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnAddFromExcel.Location = new System.Drawing.Point(996, 6);
+            this.btnAddFromExcel.Location = new System.Drawing.Point(735, 5);
             this.btnAddFromExcel.Name = "btnAddFromExcel";
             this.btnAddFromExcel.Size = new System.Drawing.Size(92, 23);
             this.btnAddFromExcel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -498,7 +496,7 @@
             // 
             this.btnAdd.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnAdd.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnAdd.Location = new System.Drawing.Point(884, 6);
+            this.btnAdd.Location = new System.Drawing.Point(735, 34);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(92, 23);
             this.btnAdd.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -518,7 +516,7 @@
             this.progressLoading.Name = "progressLoading";
             this.progressLoading.ProgressBarType = DevComponents.DotNetBar.eCircularProgressType.Dot;
             this.progressLoading.ProgressColor = System.Drawing.Color.YellowGreen;
-            this.progressLoading.Size = new System.Drawing.Size(45, 28);
+            this.progressLoading.Size = new System.Drawing.Size(66, 57);
             this.progressLoading.Style = DevComponents.DotNetBar.eDotNetBarStyle.OfficeXP;
             this.progressLoading.TabIndex = 27;
             this.progressLoading.Value = 100;
@@ -527,7 +525,7 @@
             // 
             this.btnClearSchConditions.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnClearSchConditions.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnClearSchConditions.Location = new System.Drawing.Point(539, 6);
+            this.btnClearSchConditions.Location = new System.Drawing.Point(637, 6);
             this.btnClearSchConditions.Name = "btnClearSchConditions";
             this.btnClearSchConditions.Size = new System.Drawing.Size(92, 23);
             this.btnClearSchConditions.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -535,24 +533,11 @@
             this.btnClearSchConditions.Text = "清空搜索条件";
             this.btnClearSchConditions.Click += new System.EventHandler(this.btnClearSchConditions_Click);
             // 
-            // btnCreateReport
-            // 
-            this.btnCreateReport.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnCreateReport.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnCreateReport.Location = new System.Drawing.Point(735, 5);
-            this.btnCreateReport.Name = "btnCreateReport";
-            this.btnCreateReport.Size = new System.Drawing.Size(92, 23);
-            this.btnCreateReport.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnCreateReport.TabIndex = 13;
-            this.btnCreateReport.Text = "生成报表";
-            this.btnCreateReport.Visible = false;
-            this.btnCreateReport.Click += new System.EventHandler(this.btnCreateReport_Click);
-            // 
             // btnSearch
             // 
             this.btnSearch.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSearch.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSearch.Location = new System.Drawing.Point(637, 5);
+            this.btnSearch.Location = new System.Drawing.Point(637, 34);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(92, 23);
             this.btnSearch.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -777,7 +762,6 @@
         private System.Windows.Forms.ToolStripMenuItem 韩国担保函ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 韩国加急申请书ToolStripMenuItem;
         private DevComponents.DotNetBar.ButtonItem btnGeneratePersonalReport;
-        private DevComponents.DotNetBar.ButtonX btnCreateReport;
         private DevComponents.DotNetBar.ButtonX btnAdd;
         private System.Windows.Forms.ToolStripMenuItem 删除ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 修改ToolStripMenuItem;

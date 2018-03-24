@@ -357,7 +357,7 @@
             this.labelX17.Name = "labelX17";
             this.labelX17.Size = new System.Drawing.Size(87, 19);
             this.labelX17.TabIndex = 90;
-            this.labelX17.Text = "金额:";
+            this.labelX17.Text = "发票金额:";
             this.labelX17.WordWrap = true;
             // 
             // labelX16
@@ -370,7 +370,7 @@
             this.labelX16.Name = "labelX16";
             this.labelX16.Size = new System.Drawing.Size(87, 19);
             this.labelX16.TabIndex = 88;
-            this.labelX16.Text = "金额:";
+            this.labelX16.Text = "付款金额:";
             this.labelX16.WordWrap = true;
             // 
             // txtFuYuDate
