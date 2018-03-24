@@ -192,11 +192,11 @@ namespace SteelManagement.CSUI.FrmMain
 
         public void LoadDataToDataGridView(int page) //刷新后保持选中
         {
-            _where = GetWhereCondition();
+            //_where = GetWhereCondition();
             int curSelectedRow = -1;
             if (dataGridView1.SelectedRows.Count > 0)
                 curSelectedRow = dataGridView1.SelectedRows[0].Index;
-            dataGridView1.DataSource = _bllProjectBill.GetModelList("");
+            dataGridView1.DataSource = _bllProjectBill.GetModelList(cbProject.Text);
             if (curSelectedRow != -1 && dataGridView1.Rows.Count > curSelectedRow)
                 dataGridView1.CurrentCell = dataGridView1.Rows[curSelectedRow].Cells[0];
             dataGridView1.Update();
