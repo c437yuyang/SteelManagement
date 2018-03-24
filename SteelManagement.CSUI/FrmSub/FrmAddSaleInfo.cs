@@ -91,85 +91,98 @@ namespace SteelManagement.CSUI.FrmSub
         {
             string tablename = "SaleInfo";
             var list = BLL.CommonBll.GetFieldList(tablename, "Project");
-            foreach (var item in list)
-            {
-                txtProject.Items.Add(item);
-            }
+            if (list != null)
+                foreach (var item in list)
+                {
+                    txtProject.Items.Add(item);
+                }
 
             list = BLL.CommonBll.GetFieldList(tablename, "Corporation");
-            foreach (var item in list)
-            {
-                txtCorporation.Items.Add(item);
-            }
+            if (list != null)
+                foreach (var item in list)
+                {
+                    txtCorporation.Items.Add(item);
+                }
 
             list = BLL.CommonBll.GetFieldList(tablename, "Supplier");
-            foreach (var item in list)
-            {
-                txtSupplier.Items.Add(item);
-            }
+            if (list != null)
+                foreach (var item in list)
+                {
+                    txtSupplier.Items.Add(item);
+                }
 
 
             list = BLL.CommonBll.GetFieldList(tablename, "Brand");
-            foreach (var item in list)
-            {
-                txtBrand.Items.Add(item);
-            }
+            if (list != null)
+                foreach (var item in list)
+                {
+                    txtBrand.Items.Add(item);
+                }
 
             list = BLL.CommonBll.GetFieldList(tablename, "TransportWay");
-            foreach (var item in list)
-            {
-                txtTransportWay.Items.Add(item);
-            }
+            if (list != null)
+                foreach (var item in list)
+                {
+                    txtTransportWay.Items.Add(item);
+                }
 
 
             list = BLL.CommonBll.GetFieldList(tablename, "Size");
-            foreach (var item in list)
-            {
-                txtSize.Items.Add(item);
-            }
+            if (list != null)
+                foreach (var item in list)
+                {
+                    txtSize.Items.Add(item);
+                }
 
             list = BLL.CommonBll.GetFieldList(tablename, "Texture");
-            foreach (var item in list)
-            {
-                txtTexture.Items.Add(item);
-            }
+            if (list != null)
+                foreach (var item in list)
+                {
+                    txtTexture.Items.Add(item);
+                }
 
             list = BLL.CommonBll.GetFieldList(tablename, "Amount");
-            foreach (var item in list)
-            {
-                txtAmount.Items.Add(item);
-            }
+            if (list != null)
+                foreach (var item in list)
+                {
+                    txtAmount.Items.Add(item);
+                }
 
             list = BLL.CommonBll.GetFieldList(tablename, "OnlinePrice");
-            foreach (var item in list)
-            {
-                txtOnlinePrice.Items.Add(item);
-            }
+            if (list != null)
+                foreach (var item in list)
+                {
+                    txtOnlinePrice.Items.Add(item);
+                }
 
 
             list = BLL.CommonBll.GetFieldList(tablename, "Fluctuation1");
-            foreach (var item in list)
-            {
-                txtFluctuation1.Items.Add(item);
-            }
+            if (list != null)
+                foreach (var item in list)
+                {
+                    txtFluctuation1.Items.Add(item);
+                }
 
             list = BLL.CommonBll.GetFieldList(tablename, "Fluctuation2");
-            foreach (var item in list)
-            {
-                txtFluctuation2.Items.Add(item);
-            }
+            if (list != null)
+                foreach (var item in list)
+                {
+                    txtFluctuation2.Items.Add(item);
+                }
 
             list = BLL.CommonBll.GetFieldList(tablename, "LiXi");
-            foreach (var item in list)
-            {
-                txtLiXi.Items.Add(item);
-            }
+            if (list != null)
+                foreach (var item in list)
+                {
+                    txtLiXi.Items.Add(item);
+                }
 
             list = BLL.CommonBll.GetFieldList(tablename, "TieXi");
-            foreach (var item in list)
-            {
-                txtTieXi.Items.Add(item);
-            }
+            if (list != null)
+                foreach (var item in list)
+                {
+                    txtTieXi.Items.Add(item);
+                }
         }
         #endregion
 

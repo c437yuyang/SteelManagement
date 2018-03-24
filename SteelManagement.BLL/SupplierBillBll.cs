@@ -14,7 +14,8 @@ namespace SteelManagement.BLL
         public List<Model.SupplierBill> GetModelList(string where)
         {
             var list = DAL.SupplierDal.GetModelList(where);
-
+            if (list == null)
+                return null;
             foreach (var supplier in list)
             {
                 FillModel(supplier);

@@ -53,49 +53,57 @@ namespace SteelManagement.CSUI.FrmSub
         {
             string tablename = "SteelInfo";
             var list = BLL.CommonBll.GetFieldList(tablename, "Name");
-            foreach (var item in list)
+            if (list != null)
+                foreach (var item in list)
             {
                 txtName.Items.Add(item);
             }
 
             list = BLL.CommonBll.GetFieldList(tablename, "Size");
-            foreach (var item in list)
+            if (list != null)
+                foreach (var item in list)
             {
                 txtSize.Items.Add(item);
             }
 
             list = BLL.CommonBll.GetFieldList(tablename, "Texture");
-            foreach (var item in list)
+            if (list != null)
+                foreach (var item in list)
             {
                 txtTexture.Items.Add(item);
             }
 
             list = BLL.CommonBll.GetFieldList(tablename, "ProducePlace");
-            foreach (var item in list)
+            if (list != null)
+                foreach (var item in list)
             {
                 txtProducePlace.Items.Add(item);
             }
 
             list = BLL.CommonBll.GetFieldList(tablename, "Price");
-            foreach (var item in list)
+            if (list != null)
+                foreach (var item in list)
             {
                 txtPrice.Items.Add(item);
             }
 
             list = BLL.CommonBll.GetFieldList(tablename, "Fluctuation");
-            foreach (var item in list)
+            if (list != null)
+                foreach (var item in list)
             {
                 txtFluctuation.Items.Add(item);
             }
 
             list = BLL.CommonBll.GetFieldList(tablename, "Remark");
-            foreach (var item in list)
+            if (list != null)
+                foreach (var item in list)
             {
                 txtRemark.Items.Add(item);
             }
 
             list = BLL.CommonBll.GetFieldList(tablename, "State");
-            foreach (var item in list)
+            if (list != null)
+                foreach (var item in list)
             {
                 txtState.Items.Add(item);
             }

@@ -142,12 +142,6 @@
     <Compile Include="FrmSub\FrmAddSaleBill.designer.cs">
       <DependentUpon>FrmAddSaleBill.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmSub\FrmAddReceiptInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmSub\FrmAddReceiptInfo.designer.cs">
-      <DependentUpon>FrmAddReceiptInfo.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmSub\FrmAddSaleInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,9 +206,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSub\FrmAddSaleBill.resx">
       <DependentUpon>FrmAddSaleBill.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmSub\FrmAddReceiptInfo.resx">
-      <DependentUpon>FrmAddReceiptInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSub\FrmAddSaleInfo.resx">
       <DependentUpon>FrmAddSaleInfo.cs</DependentUpon>

@@ -18,6 +18,9 @@ namespace SteelManagement.BLL
             else
                 projectList.Add(projectName);
 
+            if (projectList == null)
+                return null;
+
             List<Model.ProjectBill> listRes = new List<Model.ProjectBill>();
             //计算指定项目的销售总额，先不考虑不同公司有相同项目名称的情况
             foreach (var project in projectList)

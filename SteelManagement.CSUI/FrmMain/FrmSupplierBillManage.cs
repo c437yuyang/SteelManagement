@@ -65,18 +65,35 @@ namespace SteelManagement.CSUI.FrmMain
 
         private void DataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            return;
             if (dataGridView1.SelectedRows.Count < 1)
                 return;
 
+            decimal goujinzonge = 0, goujinzhongliang = 0, xiaoshouzonge = 0, xiaoshouzhongliang = 0, yunfei = 0;
 
-            for(int i = 2; i != dataGridView1.ColumnCount; ++i)
+            for (int i = 0; i < dataGridView1.SelectedRows.Count; ++i)
             {
-                //decimal num = DecimalHandler.
+                var model = DgvDataSourceToList()[dataGridView1.SelectedRows[i].Index];
+                goujinzonge += DecimalHandler.Parse(model.TotalPurchase.ToString());
+                goujinzhongliang += DecimalHandler.Parse(model.PurchaseAmount.ToString());
+                xiaoshouzonge += DecimalHandler.Parse(model.TotalSale.ToString());
+                xiaoshouzhongliang += DecimalHandler.Parse(model.SaleAmount.ToString());
+                yunfei += DecimalHandler.Parse(model.TransportCost.ToString());
             }
 
-            //dataGridView1.Rows[dataGridView1.Rows.Count-1]
+            lbTotalCount.Text = string.Format("合计: 购进额 {0}   购进量 {1}  销售总额 {2}  销售量 {3} 运费 {4}",
+                DecimalHandler.DecimalToString(goujinzonge),
+                DecimalHandler.DecimalToString(goujinzhongliang),
+                DecimalHandler.DecimalToString(xiaoshouzonge),
+                DecimalHandler.DecimalToString(xiaoshouzhongliang),
+                DecimalHandler.DecimalToString(yunfei));
 
+            if (goujinzonge == 0)
+            {
+                lbCount1.Text = string.Format("利润 {0}  利润率 {1}",
+                DecimalHandler.DecimalToString(xiaoshouzonge - goujinzonge), -1);
+            }
+
+            
         }
 
         private void InitComboBoxs()
@@ -90,13 +107,15 @@ namespace SteelManagement.CSUI.FrmMain
 
             string tablename = "SaleInfo";
             var list = BLL.CommonBll.GetFieldList(tablename, "Project");
-            foreach (var item in list)
+            if (list != null)
+                foreach (var item in list)
             {
                 cbProject.Items.Add(item);
             }
 
             list = BLL.CommonBll.GetFieldList(tablename, "Corporation");
-            foreach (var item in list)
+            if (list != null)
+                foreach (var item in list)
             {
                 cbCorporation.Items.Add(item);
             }
@@ -468,7 +487,7 @@ namespace SteelManagement.CSUI.FrmMain
         #region 按钮事件
 
 
-       
+
 
         private void btnAdd_Click(object sender, EventArgs e)
         {

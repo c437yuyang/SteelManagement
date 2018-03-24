@@ -522,7 +522,8 @@ namespace SteelManagement.CSUI.FrmMain
         private void 修改ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var list = GetSelectedModelList();
-
+            if (list == null)
+                return;
             if (list.Count > 1)
             {
                 MessageBoxEx.Show("请选中一条进行修改!");

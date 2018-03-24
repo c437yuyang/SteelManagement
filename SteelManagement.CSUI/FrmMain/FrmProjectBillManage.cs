@@ -70,7 +70,7 @@ namespace SteelManagement.CSUI.FrmMain
                 return;
 
 
-            for(int i = 2; i != dataGridView1.ColumnCount; ++i)
+            for (int i = 2; i != dataGridView1.ColumnCount; ++i)
             {
                 //decimal num = DecimalHandler.
             }
@@ -90,16 +90,18 @@ namespace SteelManagement.CSUI.FrmMain
 
             string tablename = "SaleInfo";
             var list = BLL.CommonBll.GetFieldList(tablename, "Project");
-            foreach (var item in list)
-            {
-                cbProject.Items.Add(item);
-            }
+            if (list != null)
+                foreach (var item in list)
+                {
+                    cbProject.Items.Add(item);
+                }
 
             list = BLL.CommonBll.GetFieldList(tablename, "Corporation");
-            foreach (var item in list)
-            {
-                cbCorporation.Items.Add(item);
-            }
+            if (list != null)
+                foreach (var item in list)
+                {
+                    cbCorporation.Items.Add(item);
+                }
 
 
         }
@@ -468,7 +470,7 @@ namespace SteelManagement.CSUI.FrmMain
         #region 按钮事件
 
 
-       
+
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
