@@ -321,9 +321,10 @@
             // 
             this.txtTotalMoney.Border.Class = "TextBoxBorder";
             this.txtTotalMoney.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtTotalMoney.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold);
             this.txtTotalMoney.Location = new System.Drawing.Point(312, 362);
             this.txtTotalMoney.Name = "txtTotalMoney";
-            this.txtTotalMoney.Size = new System.Drawing.Size(107, 21);
+            this.txtTotalMoney.Size = new System.Drawing.Size(107, 23);
             this.txtTotalMoney.TabIndex = 94;
             // 
             // txtInvoiceDate
@@ -398,11 +399,12 @@
             // 
             this.txtPrice.DisplayMember = "Text";
             this.txtPrice.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.txtPrice.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold);
             this.txtPrice.FormattingEnabled = true;
-            this.txtPrice.ItemHeight = 15;
+            this.txtPrice.ItemHeight = 17;
             this.txtPrice.Location = new System.Drawing.Point(312, 335);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(107, 21);
+            this.txtPrice.Size = new System.Drawing.Size(107, 23);
             this.txtPrice.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.txtPrice.TabIndex = 85;
             // 
@@ -412,6 +414,8 @@
             // 
             // 
             this.labelX14.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX14.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelX14.ForeColor = System.Drawing.Color.ForestGreen;
             this.labelX14.Location = new System.Drawing.Point(237, 333);
             this.labelX14.Name = "labelX14";
             this.labelX14.Size = new System.Drawing.Size(81, 23);
@@ -602,6 +606,8 @@
             // 
             // 
             this.labelX8.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX8.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold);
+            this.labelX8.ForeColor = System.Drawing.Color.ForestGreen;
             this.labelX8.Location = new System.Drawing.Point(237, 365);
             this.labelX8.Name = "labelX8";
             this.labelX8.Size = new System.Drawing.Size(87, 19);

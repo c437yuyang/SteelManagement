@@ -29,6 +29,14 @@
         private void InitializeComponent()
         {
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
+            this.txtTieXi = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.labelX22 = new DevComponents.DotNetBar.LabelX();
+            this.txtLiXi = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.labelX17 = new DevComponents.DotNetBar.LabelX();
+            this.txtProject = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.txtCorporation = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.labelX7 = new DevComponents.DotNetBar.LabelX();
+            this.labelX9 = new DevComponents.DotNetBar.LabelX();
             this.txtMargin = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtJianChiLv = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX20 = new DevComponents.DotNetBar.LabelX();
@@ -63,14 +71,6 @@
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
-            this.txtProject = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.txtCorporation = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.labelX7 = new DevComponents.DotNetBar.LabelX();
-            this.labelX9 = new DevComponents.DotNetBar.LabelX();
-            this.txtTieXi = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.labelX22 = new DevComponents.DotNetBar.LabelX();
-            this.txtLiXi = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.labelX17 = new DevComponents.DotNetBar.LabelX();
             this.panelEx1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -134,6 +134,102 @@
             this.panelEx1.Style.GradientAngle = 90;
             this.panelEx1.TabIndex = 0;
             // 
+            // txtTieXi
+            // 
+            this.txtTieXi.DisplayMember = "Text";
+            this.txtTieXi.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.txtTieXi.FormattingEnabled = true;
+            this.txtTieXi.ItemHeight = 15;
+            this.txtTieXi.Location = new System.Drawing.Point(102, 365);
+            this.txtTieXi.Name = "txtTieXi";
+            this.txtTieXi.Size = new System.Drawing.Size(107, 21);
+            this.txtTieXi.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.txtTieXi.TabIndex = 109;
+            // 
+            // labelX22
+            // 
+            // 
+            // 
+            // 
+            this.labelX22.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX22.Location = new System.Drawing.Point(15, 365);
+            this.labelX22.Name = "labelX22";
+            this.labelX22.Size = new System.Drawing.Size(75, 23);
+            this.labelX22.TabIndex = 108;
+            this.labelX22.Text = "贴息费:";
+            // 
+            // txtLiXi
+            // 
+            this.txtLiXi.DisplayMember = "Text";
+            this.txtLiXi.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.txtLiXi.FormattingEnabled = true;
+            this.txtLiXi.ItemHeight = 15;
+            this.txtLiXi.Location = new System.Drawing.Point(102, 336);
+            this.txtLiXi.Name = "txtLiXi";
+            this.txtLiXi.Size = new System.Drawing.Size(107, 21);
+            this.txtLiXi.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.txtLiXi.TabIndex = 107;
+            // 
+            // labelX17
+            // 
+            // 
+            // 
+            // 
+            this.labelX17.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX17.Location = new System.Drawing.Point(15, 336);
+            this.labelX17.Name = "labelX17";
+            this.labelX17.Size = new System.Drawing.Size(75, 23);
+            this.labelX17.TabIndex = 106;
+            this.labelX17.Text = "利息:";
+            // 
+            // txtProject
+            // 
+            this.txtProject.DisplayMember = "Text";
+            this.txtProject.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.txtProject.FormattingEnabled = true;
+            this.txtProject.ItemHeight = 15;
+            this.txtProject.Location = new System.Drawing.Point(307, 36);
+            this.txtProject.Name = "txtProject";
+            this.txtProject.Size = new System.Drawing.Size(107, 21);
+            this.txtProject.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.txtProject.TabIndex = 102;
+            // 
+            // txtCorporation
+            // 
+            this.txtCorporation.DisplayMember = "Text";
+            this.txtCorporation.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.txtCorporation.FormattingEnabled = true;
+            this.txtCorporation.ItemHeight = 15;
+            this.txtCorporation.Location = new System.Drawing.Point(307, 7);
+            this.txtCorporation.Name = "txtCorporation";
+            this.txtCorporation.Size = new System.Drawing.Size(107, 21);
+            this.txtCorporation.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.txtCorporation.TabIndex = 103;
+            // 
+            // labelX7
+            // 
+            // 
+            // 
+            // 
+            this.labelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX7.Location = new System.Drawing.Point(220, 34);
+            this.labelX7.Name = "labelX7";
+            this.labelX7.Size = new System.Drawing.Size(75, 23);
+            this.labelX7.TabIndex = 100;
+            this.labelX7.Text = "项目:";
+            // 
+            // labelX9
+            // 
+            // 
+            // 
+            // 
+            this.labelX9.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX9.Location = new System.Drawing.Point(220, 9);
+            this.labelX9.Name = "labelX9";
+            this.labelX9.Size = new System.Drawing.Size(75, 23);
+            this.labelX9.TabIndex = 101;
+            this.labelX9.Text = "公司:";
+            // 
             // txtMargin
             // 
             // 
@@ -141,9 +237,10 @@
             // 
             this.txtMargin.Border.Class = "TextBoxBorder";
             this.txtMargin.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtMargin.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold);
             this.txtMargin.Location = new System.Drawing.Point(311, 253);
             this.txtMargin.Name = "txtMargin";
-            this.txtMargin.Size = new System.Drawing.Size(107, 21);
+            this.txtMargin.Size = new System.Drawing.Size(107, 23);
             this.txtMargin.TabIndex = 99;
             // 
             // txtJianChiLv
@@ -153,9 +250,10 @@
             // 
             this.txtJianChiLv.Border.Class = "TextBoxBorder";
             this.txtJianChiLv.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtJianChiLv.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold);
             this.txtJianChiLv.Location = new System.Drawing.Point(311, 199);
             this.txtJianChiLv.Name = "txtJianChiLv";
-            this.txtJianChiLv.Size = new System.Drawing.Size(107, 21);
+            this.txtJianChiLv.Size = new System.Drawing.Size(107, 23);
             this.txtJianChiLv.TabIndex = 99;
             // 
             // labelX20
@@ -164,6 +262,8 @@
             // 
             // 
             this.labelX20.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX20.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold);
+            this.labelX20.ForeColor = System.Drawing.Color.ForestGreen;
             this.labelX20.Location = new System.Drawing.Point(224, 201);
             this.labelX20.Name = "labelX20";
             this.labelX20.Size = new System.Drawing.Size(87, 19);
@@ -177,6 +277,8 @@
             // 
             // 
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold);
+            this.labelX1.ForeColor = System.Drawing.Color.ForestGreen;
             this.labelX1.Location = new System.Drawing.Point(224, 253);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(81, 23);
@@ -190,9 +292,10 @@
             // 
             this.txtMarginRate.Border.Class = "TextBoxBorder";
             this.txtMarginRate.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtMarginRate.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold);
             this.txtMarginRate.Location = new System.Drawing.Point(311, 361);
             this.txtMarginRate.Name = "txtMarginRate";
-            this.txtMarginRate.Size = new System.Drawing.Size(107, 21);
+            this.txtMarginRate.Size = new System.Drawing.Size(107, 23);
             this.txtMarginRate.TabIndex = 95;
             // 
             // txtSalePrice
@@ -202,9 +305,10 @@
             // 
             this.txtSalePrice.Border.Class = "TextBoxBorder";
             this.txtSalePrice.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtSalePrice.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold);
             this.txtSalePrice.Location = new System.Drawing.Point(311, 307);
             this.txtSalePrice.Name = "txtSalePrice";
-            this.txtSalePrice.Size = new System.Drawing.Size(107, 21);
+            this.txtSalePrice.Size = new System.Drawing.Size(107, 23);
             this.txtSalePrice.TabIndex = 94;
             // 
             // txtTotalSale
@@ -214,9 +318,10 @@
             // 
             this.txtTotalSale.Border.Class = "TextBoxBorder";
             this.txtTotalSale.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtTotalSale.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold);
             this.txtTotalSale.Location = new System.Drawing.Point(311, 334);
             this.txtTotalSale.Name = "txtTotalSale";
-            this.txtTotalSale.Size = new System.Drawing.Size(107, 21);
+            this.txtTotalSale.Size = new System.Drawing.Size(107, 23);
             this.txtTotalSale.TabIndex = 94;
             // 
             // labelX16
@@ -225,6 +330,8 @@
             // 
             // 
             this.labelX16.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX16.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold);
+            this.labelX16.ForeColor = System.Drawing.Color.ForestGreen;
             this.labelX16.Location = new System.Drawing.Point(224, 363);
             this.labelX16.Name = "labelX16";
             this.labelX16.Size = new System.Drawing.Size(87, 19);
@@ -259,6 +366,8 @@
             // 
             // 
             this.labelX14.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX14.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold);
+            this.labelX14.ForeColor = System.Drawing.Color.ForestGreen;
             this.labelX14.Location = new System.Drawing.Point(224, 307);
             this.labelX14.Name = "labelX14";
             this.labelX14.Size = new System.Drawing.Size(81, 23);
@@ -425,6 +534,8 @@
             // 
             // 
             this.labelX8.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX8.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold);
+            this.labelX8.ForeColor = System.Drawing.Color.ForestGreen;
             this.labelX8.Location = new System.Drawing.Point(224, 336);
             this.labelX8.Name = "labelX8";
             this.labelX8.Size = new System.Drawing.Size(87, 19);
@@ -539,102 +650,6 @@
             this.labelX2.Size = new System.Drawing.Size(63, 23);
             this.labelX2.TabIndex = 16;
             this.labelX2.Text = "规格:";
-            // 
-            // txtProject
-            // 
-            this.txtProject.DisplayMember = "Text";
-            this.txtProject.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.txtProject.FormattingEnabled = true;
-            this.txtProject.ItemHeight = 15;
-            this.txtProject.Location = new System.Drawing.Point(307, 36);
-            this.txtProject.Name = "txtProject";
-            this.txtProject.Size = new System.Drawing.Size(107, 21);
-            this.txtProject.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.txtProject.TabIndex = 102;
-            // 
-            // txtCorporation
-            // 
-            this.txtCorporation.DisplayMember = "Text";
-            this.txtCorporation.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.txtCorporation.FormattingEnabled = true;
-            this.txtCorporation.ItemHeight = 15;
-            this.txtCorporation.Location = new System.Drawing.Point(307, 7);
-            this.txtCorporation.Name = "txtCorporation";
-            this.txtCorporation.Size = new System.Drawing.Size(107, 21);
-            this.txtCorporation.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.txtCorporation.TabIndex = 103;
-            // 
-            // labelX7
-            // 
-            // 
-            // 
-            // 
-            this.labelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX7.Location = new System.Drawing.Point(220, 34);
-            this.labelX7.Name = "labelX7";
-            this.labelX7.Size = new System.Drawing.Size(75, 23);
-            this.labelX7.TabIndex = 100;
-            this.labelX7.Text = "项目:";
-            // 
-            // labelX9
-            // 
-            // 
-            // 
-            // 
-            this.labelX9.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX9.Location = new System.Drawing.Point(220, 9);
-            this.labelX9.Name = "labelX9";
-            this.labelX9.Size = new System.Drawing.Size(75, 23);
-            this.labelX9.TabIndex = 101;
-            this.labelX9.Text = "公司:";
-            // 
-            // txtTieXi
-            // 
-            this.txtTieXi.DisplayMember = "Text";
-            this.txtTieXi.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.txtTieXi.FormattingEnabled = true;
-            this.txtTieXi.ItemHeight = 15;
-            this.txtTieXi.Location = new System.Drawing.Point(102, 365);
-            this.txtTieXi.Name = "txtTieXi";
-            this.txtTieXi.Size = new System.Drawing.Size(107, 21);
-            this.txtTieXi.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.txtTieXi.TabIndex = 109;
-            // 
-            // labelX22
-            // 
-            // 
-            // 
-            // 
-            this.labelX22.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX22.Location = new System.Drawing.Point(15, 365);
-            this.labelX22.Name = "labelX22";
-            this.labelX22.Size = new System.Drawing.Size(75, 23);
-            this.labelX22.TabIndex = 108;
-            this.labelX22.Text = "贴息费:";
-            // 
-            // txtLiXi
-            // 
-            this.txtLiXi.DisplayMember = "Text";
-            this.txtLiXi.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.txtLiXi.FormattingEnabled = true;
-            this.txtLiXi.ItemHeight = 15;
-            this.txtLiXi.Location = new System.Drawing.Point(102, 336);
-            this.txtLiXi.Name = "txtLiXi";
-            this.txtLiXi.Size = new System.Drawing.Size(107, 21);
-            this.txtLiXi.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.txtLiXi.TabIndex = 107;
-            // 
-            // labelX17
-            // 
-            // 
-            // 
-            // 
-            this.labelX17.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX17.Location = new System.Drawing.Point(15, 336);
-            this.labelX17.Name = "labelX17";
-            this.labelX17.Size = new System.Drawing.Size(75, 23);
-            this.labelX17.TabIndex = 106;
-            this.labelX17.Text = "利息:";
             // 
             // FrmAddSaleInfo
             // 
