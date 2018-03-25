@@ -334,19 +334,24 @@ namespace SteelManagement.CSUI.FrmMain
         /// <param name="e"></param>
         private void dataGridView1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
+            int digit = GlobalUtils.DecimalDigits;
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
                 DataGridViewRow row = dataGridView1.Rows[i];
                 row.HeaderCell.Value = (i + 1).ToString();
 
                 //在这里控制单元格的显示
-                var invoiceNum = DgvDataSourceToList()[i].InvoiceNum;
-                if (invoiceNum != null)
-                    dataGridView1["InvoiceNum", i].Value = DecimalHandler.DecimalToString(invoiceNum);
-
-                var receiptNum = DgvDataSourceToList()[i].ReceiptNum;
-                if (receiptNum != null)
-                    dataGridView1["ReceiptNum", i].Value = DecimalHandler.DecimalToString(receiptNum);
+                for (int j = 0; j != dataGridView1.ColumnCount; ++j)
+                {
+                    var value = dataGridView1.Rows[i].Cells[j].Value;
+                    if (dataGridView1.Rows[i].Cells[j].ValueType == typeof(decimal?) && value != null)
+                    {
+                        if (digit == -1)
+                            dataGridView1.Rows[i].Cells[j].Value = DecimalHandler.DecimalToString((decimal?)value);
+                        else
+                            dataGridView1.Rows[i].Cells[j].Value = DecimalHandler.DecimalToString((decimal?)value, digit);
+                    }
+                }
 
             }
         }

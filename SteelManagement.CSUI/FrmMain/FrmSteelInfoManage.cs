@@ -335,6 +335,7 @@ namespace SteelManagement.CSUI.FrmMain
         /// <param name="e"></param>
         private void dataGridView1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
+            int digit = GlobalUtils.DecimalDigits;
 
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
@@ -345,10 +346,13 @@ namespace SteelManagement.CSUI.FrmMain
 
                 for (int j = 0; j != dataGridView1.ColumnCount; ++j)
                 {
-                    var value = (decimal?)dataGridView1.Rows[i].Cells[j].Value;
-                    if (dataGridView1.Rows[i].Cells[j].ValueType == typeof(decimal)&&value!=null)
+                    var value = dataGridView1.Rows[i].Cells[j].Value;
+                    if (dataGridView1.Rows[i].Cells[j].ValueType == typeof(decimal?) && value != null)
                     {
-                        value = DecimalHandler.DecimalToString(value, 1);
+                        if (digit == -1)
+                            dataGridView1.Rows[i].Cells[j].Value = DecimalHandler.DecimalToString((decimal?)value);
+                        else
+                            dataGridView1.Rows[i].Cells[j].Value = DecimalHandler.DecimalToString((decimal?)value,digit);
                     }
                 }
 

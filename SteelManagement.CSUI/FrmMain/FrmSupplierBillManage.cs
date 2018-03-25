@@ -363,24 +363,23 @@ namespace SteelManagement.CSUI.FrmMain
                 DataGridViewRow row = dataGridView1.Rows[i];
                 row.HeaderCell.Value = (i + 1).ToString();
 
-                ////在这里控制单元格的显示
-                //var invoiceNum = DgvDataSourceToList()[i].InvoiceNum;
-                //if (invoiceNum != null)
-                //    dataGridView1["InvoiceNum", i].Value = DecimalHandler.DecimalToString(invoiceNum, digit);
+                for (int j = 0; j != dataGridView1.ColumnCount; ++j)
+                {
+                    var value = dataGridView1.Rows[i].Cells[j].Value;
+                    if (dataGridView1.Rows[i].Cells[j].ValueType == typeof(decimal) && value != null)
+                    {
+                        if (digit == -1)
+                            dataGridView1.Rows[i].Cells[j].Value = DecimalHandler.DecimalToString((decimal)value);
+                        else
+                            dataGridView1.Rows[i].Cells[j].Value = DecimalHandler.DecimalToString((decimal)value, digit);
+                    }
 
-                //var receiptNum = DgvDataSourceToList()[i].ReceiptNum;
-                //if (receiptNum != null)
-                //    dataGridView1["ReceiptNum", i].Value = DecimalHandler.DecimalToString(receiptNum, digit);
+                    if (dataGridView1.Columns[j].Name == "MarginRate")
+                    {
+                        dataGridView1.Rows[i].Cells[j].Value = DecimalHandler.DecimalToPercent(DgvDataSourceToList()[i].MarginRate);
+                    }
 
-                //var totalSale = DgvDataSourceToList()[i].TotalSale;
-                //if (totalSale != null)
-                //    dataGridView1["TotalSale", i].Value = DecimalHandler.DecimalToString(totalSale, digit);
-
-                //var duiZhangNum = DgvDataSourceToList()[i].DuiZhangNum;
-                //if (duiZhangNum != null)
-                //    dataGridView1["DuiZhangNum", i].Value = DecimalHandler.DecimalToString(duiZhangNum, digit);
-
-
+                }
 
             }
         }

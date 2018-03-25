@@ -316,43 +316,24 @@ namespace SteelManagement.CSUI.FrmMain
         /// <param name="e"></param>
         private void dataGridView1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
+            int digit = GlobalUtils.DecimalDigits;
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
                 DataGridViewRow row = dataGridView1.Rows[i];
                 row.HeaderCell.Value = (i + 1).ToString();
 
                 //在这里控制单元格的显示
-                var amount = DgvDataSourceToList()[i].Amount;
-                if (amount != null)
-                    dataGridView1["Amount", i].Value = DecimalHandler.DecimalToString(amount.Value, 3);
-
-                var quote = DgvDataSourceToList()[i].Quote;
-                if (quote != null)
-                    dataGridView1["Quote", i].Value = DecimalHandler.DecimalToString(quote.Value, 1);
-
-                var fluctuation1 = DgvDataSourceToList()[i].Fluctuation1;
-                if (fluctuation1 != null)
-                    dataGridView1["Fluctuation1", i].Value = DecimalHandler.DecimalToString(fluctuation1.Value, 1);
-
-                var transportcost = DgvDataSourceToList()[i].TransportCost;
-                if (transportcost != null)
-                    dataGridView1["TransportCost", i].Value = DecimalHandler.DecimalToString(transportcost.Value, 2);
-
-                var price = DgvDataSourceToList()[i].Price;
-                if (price != null)
-                    dataGridView1["Price", i].Value = DecimalHandler.DecimalToString(price.Value, 1);
-
-                var totalMoney = DgvDataSourceToList()[i].TotalMoney;
-                if (totalMoney != null)
-                    dataGridView1["TotalMoney", i].Value = DecimalHandler.DecimalToString(totalMoney.Value, 2);
-
-                var money1 = DgvDataSourceToList()[i].Money1;
-                if (money1 != null)
-                    dataGridView1["Money1", i].Value = DecimalHandler.DecimalToString(money1.Value, 2);
-
-                var money2 = DgvDataSourceToList()[i].Money2;
-                if (money2 != null)
-                    dataGridView1["Money2", i].Value = DecimalHandler.DecimalToString(money2.Value, 2);
+                for (int j = 0; j != dataGridView1.ColumnCount; ++j)
+                {
+                    var value = dataGridView1.Rows[i].Cells[j].Value;
+                    if (dataGridView1.Rows[i].Cells[j].ValueType == typeof(decimal?) && value != null)
+                    {
+                        if (digit == -1)
+                            dataGridView1.Rows[i].Cells[j].Value = DecimalHandler.DecimalToString((decimal?)value);
+                        else
+                            dataGridView1.Rows[i].Cells[j].Value = DecimalHandler.DecimalToString((decimal?)value, digit);
+                    }
+                }
             }
         }
 

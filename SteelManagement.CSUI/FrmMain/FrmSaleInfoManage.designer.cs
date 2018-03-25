@@ -29,33 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.EntryTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SerialNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Corporation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Project = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.JianChiLv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ArrivalTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SettleTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Supplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Brand = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TransportWay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvCol_Size = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Texture = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvCol_Margin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OnlinePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fluctuation1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fluctuation2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tiexi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Lixi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SalePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalSale = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MarginRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelMain = new DevComponents.DotNetBar.PanelEx();
             this.panelDgv = new DevComponents.DotNetBar.PanelEx();
             this.panelBars = new DevComponents.DotNetBar.PanelEx();
@@ -100,6 +77,29 @@
             this.韩国担保函ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.韩国加急申请书ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bgWorkerLoadData = new System.ComponentModel.BackgroundWorker();
+            this.EntryTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SerialNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Corporation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Project = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.JianChiLv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ArrivalTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SettleTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Supplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Brand = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TransportWay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvCol_Size = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Texture = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvCol_Margin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OnlinePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fluctuation1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fluctuation2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tiexi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Lixi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SalePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalSale = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MarginRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelMain.SuspendLayout();
             this.panelDgv.SuspendLayout();
@@ -117,14 +117,14 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.EntryTime,
@@ -150,27 +150,27 @@
             this.TotalSale,
             this.MarginRate,
             this.Id});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dataGridView1.RowTemplate.Height = 30;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -179,136 +179,6 @@
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             this.dataGridView1.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseUp);
             this.dataGridView1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridView1_RowsAdded);
-            // 
-            // EntryTime
-            // 
-            this.EntryTime.DataPropertyName = "EntryTime";
-            this.EntryTime.HeaderText = "录入时间";
-            this.EntryTime.Name = "EntryTime";
-            // 
-            // SerialNo
-            // 
-            this.SerialNo.DataPropertyName = "SerialNo";
-            this.SerialNo.HeaderText = "流水号";
-            this.SerialNo.Name = "SerialNo";
-            // 
-            // Corporation
-            // 
-            this.Corporation.DataPropertyName = "Corporation";
-            this.Corporation.HeaderText = "公司";
-            this.Corporation.Name = "Corporation";
-            // 
-            // Project
-            // 
-            this.Project.DataPropertyName = "Project";
-            this.Project.HeaderText = "项目";
-            this.Project.Name = "Project";
-            // 
-            // JianChiLv
-            // 
-            this.JianChiLv.HeaderText = "检尺率";
-            this.JianChiLv.Name = "JianChiLv";
-            // 
-            // ArrivalTime
-            // 
-            this.ArrivalTime.DataPropertyName = "ArrivalTime";
-            this.ArrivalTime.HeaderText = "到货时间";
-            this.ArrivalTime.Name = "ArrivalTime";
-            // 
-            // SettleTime
-            // 
-            this.SettleTime.DataPropertyName = "SettleTime";
-            this.SettleTime.HeaderText = "结算时间";
-            this.SettleTime.Name = "SettleTime";
-            // 
-            // Supplier
-            // 
-            this.Supplier.DataPropertyName = "Supplier";
-            this.Supplier.HeaderText = "供应商";
-            this.Supplier.Name = "Supplier";
-            // 
-            // Brand
-            // 
-            this.Brand.DataPropertyName = "Brand";
-            this.Brand.HeaderText = "品牌";
-            this.Brand.Name = "Brand";
-            // 
-            // TransportWay
-            // 
-            this.TransportWay.DataPropertyName = "TransportWay";
-            this.TransportWay.HeaderText = "运输方式";
-            this.TransportWay.Name = "TransportWay";
-            // 
-            // dgvCol_Size
-            // 
-            this.dgvCol_Size.DataPropertyName = "Size";
-            this.dgvCol_Size.HeaderText = "规格";
-            this.dgvCol_Size.Name = "dgvCol_Size";
-            // 
-            // Texture
-            // 
-            this.Texture.DataPropertyName = "Texture";
-            this.Texture.HeaderText = "材质";
-            this.Texture.Name = "Texture";
-            // 
-            // Amount
-            // 
-            this.Amount.HeaderText = "送货重量";
-            this.Amount.Name = "Amount";
-            // 
-            // dgvCol_Margin
-            // 
-            this.dgvCol_Margin.HeaderText = "价差";
-            this.dgvCol_Margin.Name = "dgvCol_Margin";
-            // 
-            // OnlinePrice
-            // 
-            this.OnlinePrice.HeaderText = "网价";
-            this.OnlinePrice.Name = "OnlinePrice";
-            // 
-            // Fluctuation1
-            // 
-            this.Fluctuation1.HeaderText = "浮动1";
-            this.Fluctuation1.Name = "Fluctuation1";
-            // 
-            // Fluctuation2
-            // 
-            this.Fluctuation2.HeaderText = "浮动2";
-            this.Fluctuation2.Name = "Fluctuation2";
-            // 
-            // Tiexi
-            // 
-            this.Tiexi.DataPropertyName = "Tiexi";
-            this.Tiexi.HeaderText = "贴息";
-            this.Tiexi.Name = "Tiexi";
-            // 
-            // Lixi
-            // 
-            this.Lixi.DataPropertyName = "Lixi";
-            this.Lixi.HeaderText = "利息";
-            this.Lixi.Name = "Lixi";
-            // 
-            // SalePrice
-            // 
-            this.SalePrice.HeaderText = "销项单价";
-            this.SalePrice.Name = "SalePrice";
-            // 
-            // TotalSale
-            // 
-            this.TotalSale.HeaderText = "销总金额 ";
-            this.TotalSale.Name = "TotalSale";
-            // 
-            // MarginRate
-            // 
-            this.MarginRate.HeaderText = "利润率";
-            this.MarginRate.Name = "MarginRate";
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.Visible = false;
             // 
             // panelMain
             // 
@@ -828,6 +698,144 @@
             this.bgWorkerLoadData.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.bgWorkerLoadData_ProgressChanged);
             this.bgWorkerLoadData.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgWorkerLoadData_RunWorkerCompleted);
             // 
+            // EntryTime
+            // 
+            this.EntryTime.DataPropertyName = "EntryTime";
+            this.EntryTime.HeaderText = "录入时间";
+            this.EntryTime.Name = "EntryTime";
+            // 
+            // SerialNo
+            // 
+            this.SerialNo.DataPropertyName = "SerialNo";
+            this.SerialNo.HeaderText = "流水号";
+            this.SerialNo.Name = "SerialNo";
+            // 
+            // Corporation
+            // 
+            this.Corporation.DataPropertyName = "Corporation";
+            this.Corporation.HeaderText = "公司";
+            this.Corporation.Name = "Corporation";
+            // 
+            // Project
+            // 
+            this.Project.DataPropertyName = "Project";
+            this.Project.HeaderText = "项目";
+            this.Project.Name = "Project";
+            // 
+            // JianChiLv
+            // 
+            this.JianChiLv.DataPropertyName = "JianChiLv";
+            this.JianChiLv.HeaderText = "检尺率";
+            this.JianChiLv.Name = "JianChiLv";
+            // 
+            // ArrivalTime
+            // 
+            this.ArrivalTime.DataPropertyName = "ArrivalTime";
+            this.ArrivalTime.HeaderText = "到货时间";
+            this.ArrivalTime.Name = "ArrivalTime";
+            // 
+            // SettleTime
+            // 
+            this.SettleTime.DataPropertyName = "SettleTime";
+            this.SettleTime.HeaderText = "结算时间";
+            this.SettleTime.Name = "SettleTime";
+            // 
+            // Supplier
+            // 
+            this.Supplier.DataPropertyName = "Supplier";
+            this.Supplier.HeaderText = "供应商";
+            this.Supplier.Name = "Supplier";
+            // 
+            // Brand
+            // 
+            this.Brand.DataPropertyName = "Brand";
+            this.Brand.HeaderText = "品牌";
+            this.Brand.Name = "Brand";
+            // 
+            // TransportWay
+            // 
+            this.TransportWay.DataPropertyName = "TransportWay";
+            this.TransportWay.HeaderText = "运输方式";
+            this.TransportWay.Name = "TransportWay";
+            // 
+            // dgvCol_Size
+            // 
+            this.dgvCol_Size.DataPropertyName = "Size";
+            this.dgvCol_Size.HeaderText = "规格";
+            this.dgvCol_Size.Name = "dgvCol_Size";
+            // 
+            // Texture
+            // 
+            this.Texture.DataPropertyName = "Texture";
+            this.Texture.HeaderText = "材质";
+            this.Texture.Name = "Texture";
+            // 
+            // Amount
+            // 
+            this.Amount.DataPropertyName = "Amount";
+            this.Amount.HeaderText = "送货重量";
+            this.Amount.Name = "Amount";
+            // 
+            // dgvCol_Margin
+            // 
+            this.dgvCol_Margin.DataPropertyName = "Margin";
+            this.dgvCol_Margin.HeaderText = "价差";
+            this.dgvCol_Margin.Name = "dgvCol_Margin";
+            // 
+            // OnlinePrice
+            // 
+            this.OnlinePrice.DataPropertyName = "OnlinePrice";
+            this.OnlinePrice.HeaderText = "网价";
+            this.OnlinePrice.Name = "OnlinePrice";
+            // 
+            // Fluctuation1
+            // 
+            this.Fluctuation1.DataPropertyName = "Fluctuation1";
+            this.Fluctuation1.HeaderText = "浮动1";
+            this.Fluctuation1.Name = "Fluctuation1";
+            // 
+            // Fluctuation2
+            // 
+            this.Fluctuation2.DataPropertyName = "Fluctuation2";
+            this.Fluctuation2.HeaderText = "浮动2";
+            this.Fluctuation2.Name = "Fluctuation2";
+            // 
+            // Tiexi
+            // 
+            this.Tiexi.DataPropertyName = "Tiexi";
+            this.Tiexi.HeaderText = "贴息";
+            this.Tiexi.Name = "Tiexi";
+            // 
+            // Lixi
+            // 
+            this.Lixi.DataPropertyName = "Lixi";
+            this.Lixi.HeaderText = "利息";
+            this.Lixi.Name = "Lixi";
+            // 
+            // SalePrice
+            // 
+            this.SalePrice.DataPropertyName = "SalePrice";
+            this.SalePrice.HeaderText = "销项单价";
+            this.SalePrice.Name = "SalePrice";
+            // 
+            // TotalSale
+            // 
+            this.TotalSale.DataPropertyName = "TotalSale";
+            this.TotalSale.HeaderText = "销总金额 ";
+            this.TotalSale.Name = "TotalSale";
+            // 
+            // MarginRate
+            // 
+            this.MarginRate.HeaderText = "利润率";
+            this.MarginRate.Name = "MarginRate";
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
+            // 
             // FrmSaleInfoManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -883,6 +891,20 @@
         private DevComponents.DotNetBar.ButtonX btnAdd;
         private System.Windows.Forms.ToolStripMenuItem 删除ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 修改ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 添加收款信息ToolStripMenuItem;
+        private DevComponents.DotNetBar.LabelItem lbTotalCount;
+        private DevComponents.DotNetBar.ButtonX btnSearch;
+        private DevComponents.DotNetBar.ButtonX btnTimeSpanChoose;
+        private DevComponents.Editors.DateTimeAdv.DateTimeInput txtSchEntryTimeTo;
+        private DevComponents.Editors.DateTimeAdv.DateTimeInput txtSchEntryTimeFrom;
+        private DevComponents.DotNetBar.LabelX labelX14;
+        private DevComponents.DotNetBar.LabelX labelX12;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx cbProject;
+        private DevComponents.DotNetBar.LabelX labelX3;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx cbCorporation;
+        private DevComponents.DotNetBar.LabelX labelX15;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtSerialNo;
+        private DevComponents.DotNetBar.LabelX labelX6;
         private System.Windows.Forms.DataGridViewTextBoxColumn EntryTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn SerialNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Corporation;
@@ -906,20 +928,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalSale;
         private System.Windows.Forms.DataGridViewTextBoxColumn MarginRate;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.ToolStripMenuItem 添加收款信息ToolStripMenuItem;
-        private DevComponents.DotNetBar.LabelItem lbTotalCount;
-        private DevComponents.DotNetBar.ButtonX btnSearch;
-        private DevComponents.DotNetBar.ButtonX btnTimeSpanChoose;
-        private DevComponents.Editors.DateTimeAdv.DateTimeInput txtSchEntryTimeTo;
-        private DevComponents.Editors.DateTimeAdv.DateTimeInput txtSchEntryTimeFrom;
-        private DevComponents.DotNetBar.LabelX labelX14;
-        private DevComponents.DotNetBar.LabelX labelX12;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx cbProject;
-        private DevComponents.DotNetBar.LabelX labelX3;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx cbCorporation;
-        private DevComponents.DotNetBar.LabelX labelX15;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtSerialNo;
-        private DevComponents.DotNetBar.LabelX labelX6;
     }
 }
 
