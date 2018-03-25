@@ -374,6 +374,16 @@ namespace SteelManagement.CSUI.FrmSub
         }
 
 
+        #region 公式提示
+        private void labelX14_Click(object sender, EventArgs e)
+        {
+            MessageBoxEx.Show("单价=报价+浮动+运费");
+        }
+        private void labelX8_Click(object sender, EventArgs e)
+        {
+            MessageBoxEx.Show("总金额=单价*送货量");
+        }
+        #endregion
 
 
     }

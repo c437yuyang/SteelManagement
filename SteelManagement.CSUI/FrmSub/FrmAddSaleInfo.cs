@@ -358,5 +358,30 @@ namespace SteelManagement.CSUI.FrmSub
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
+
+        private void labelX20_Click(object sender, EventArgs e)
+        {
+            MessageBoxEx.Show("检尺率=送货量/$(供应商)_送货量");
+        }
+
+        private void labelX1_Click(object sender, EventArgs e)
+        {
+            MessageBoxEx.Show("价差=网价-$(供应商)_报价");
+        }
+
+        private void labelX14_Click(object sender, EventArgs e)
+        {
+            MessageBoxEx.Show("销售单价=网价+浮动1+浮动2");
+        }
+
+        private void labelX8_Click(object sender, EventArgs e)
+        {
+            MessageBoxEx.Show("销总金额=销售单价*送货重量");
+        }
+
+        private void labelX16_Click(object sender, EventArgs e)
+        {
+            MessageBoxEx.Show("利润率=销总金额/$(供应商)_总金额-1");
+        }
     }
 }
