@@ -49,13 +49,10 @@ namespace SteelManagement.CSUI.FrmMain
             _pageSize = int.Parse(cbPageSize.Text);
             cbPageSize.TextChanged += CbPageSize_TextChanged;
 
-            dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells; //列宽自适应,一定不能用AllCells
-            dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders; //这里也一定不能AllCell自适应!
-            dataGridView1.DefaultCellStyle.Font = new Font("微软雅黑", 9.0f, FontStyle.Bold);
             dataGridView1.DoubleClick += DataGridView1_DoubleClick;
-            dataGridView1.ReadOnly = true;
             dataGridView1.SelectionChanged += DataGridView1_SelectionChanged;
+            StyleControler.SetDgvStyle(dataGridView1);
+
 
             bgWorkerLoadData.WorkerReportsProgress = true;
 
@@ -496,10 +493,45 @@ namespace SteelManagement.CSUI.FrmMain
                 res.Add(DgvDataSourceToList()[dataGridView1.SelectedRows[i].Index]);
             return res.Count > 0 ? res : null;
         }
+
         #region 右键菜单响应
 
         #endregion
 
 
+        //双击弹出公式提示
+        private void dataGridView1_ColumnHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if(dataGridView1.Columns[e.ColumnIndex].Name== "FaHuoWeiKaiPiao")
+            {
+                MessageBoxEx.Show("发货未开票=发货金额(销总金额)-验收(发票)");
+            }
+
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "ZhangMianQianKuan")
+            {
+                MessageBoxEx.Show("账面欠款=验收(发票)-已付款");
+            }
+
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "JinChangWeiYanShou")
+            {
+                MessageBoxEx.Show("进场未验收=未对账+对账未开票");
+            }
+
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "ZongQianKuan")
+            {
+                MessageBoxEx.Show("总欠款=发货金额(销总金额)-已付款");
+            }
+
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "WeiDuiZhang")
+            {
+                MessageBoxEx.Show("未对账=发货金额(销总金额)-已对账");
+            }
+
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "DuiZhangWeiKaiPiao")
+            {
+                MessageBoxEx.Show("对账未开票=已对账-验收(发票)");
+            }
+
+        }
     }
 }

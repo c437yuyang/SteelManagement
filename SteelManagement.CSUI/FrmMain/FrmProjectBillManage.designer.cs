@@ -33,12 +33,26 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.Corporation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Project = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalSale = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.InvoiceNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FaHuoWeiKaiPiao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReceiptNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ZhangMianQianKuan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.JinChangWeiYanShou = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ZongQianKuan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WeiDuiZhang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DuiZhangWeiKaiPiao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DuiZhangNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelMain = new DevComponents.DotNetBar.PanelEx();
             this.panelDgv = new DevComponents.DotNetBar.PanelEx();
             this.panelBars = new DevComponents.DotNetBar.PanelEx();
             this.panelSerachBar = new DevComponents.DotNetBar.PanelEx();
             this.cbProject = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
+            this.cbCorporation = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.labelX15 = new DevComponents.DotNetBar.LabelX();
             this.btnAdd = new DevComponents.DotNetBar.ButtonX();
             this.progressLoading = new DevComponents.DotNetBar.Controls.CircularProgress();
             this.btnClearSchConditions = new DevComponents.DotNetBar.ButtonX();
@@ -65,20 +79,6 @@
             this.韩国担保函ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.韩国加急申请书ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bgWorkerLoadData = new System.ComponentModel.BackgroundWorker();
-            this.Corporation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Project = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalSale = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.InvoiceNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FaHuoWeiKaiPiao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ReceiptNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ZhangMianQianKuan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.JinChangWeiYanShou = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ZongQianKuan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.WeiDuiZhang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DuiZhangWeiKaiPiao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DuiZhangNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.labelX15 = new DevComponents.DotNetBar.LabelX();
-            this.cbCorporation = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelMain.SuspendLayout();
             this.panelDgv.SuspendLayout();
@@ -144,7 +144,80 @@
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             this.dataGridView1.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseUp);
+            this.dataGridView1.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_ColumnHeaderMouseDoubleClick);
             this.dataGridView1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridView1_RowsAdded);
+            // 
+            // Corporation
+            // 
+            this.Corporation.DataPropertyName = "Corporation";
+            this.Corporation.HeaderText = "公司";
+            this.Corporation.Name = "Corporation";
+            // 
+            // Project
+            // 
+            this.Project.DataPropertyName = "Project";
+            this.Project.HeaderText = "项目";
+            this.Project.Name = "Project";
+            // 
+            // TotalSale
+            // 
+            this.TotalSale.DataPropertyName = "TotalSale";
+            this.TotalSale.HeaderText = "发货金额(销总金额)";
+            this.TotalSale.Name = "TotalSale";
+            // 
+            // InvoiceNum
+            // 
+            this.InvoiceNum.DataPropertyName = "InvoiceNum";
+            this.InvoiceNum.HeaderText = "验收(发票)";
+            this.InvoiceNum.Name = "InvoiceNum";
+            // 
+            // FaHuoWeiKaiPiao
+            // 
+            this.FaHuoWeiKaiPiao.DataPropertyName = "FaHuoWeiKaiPiao";
+            this.FaHuoWeiKaiPiao.HeaderText = "发货未开票";
+            this.FaHuoWeiKaiPiao.Name = "FaHuoWeiKaiPiao";
+            // 
+            // ReceiptNum
+            // 
+            this.ReceiptNum.DataPropertyName = "ReceiptNum";
+            this.ReceiptNum.HeaderText = "已付款";
+            this.ReceiptNum.Name = "ReceiptNum";
+            // 
+            // ZhangMianQianKuan
+            // 
+            this.ZhangMianQianKuan.DataPropertyName = "ZhangMianQianKuan";
+            this.ZhangMianQianKuan.HeaderText = "账面欠款";
+            this.ZhangMianQianKuan.Name = "ZhangMianQianKuan";
+            // 
+            // JinChangWeiYanShou
+            // 
+            this.JinChangWeiYanShou.DataPropertyName = "JinChangWeiYanShou";
+            this.JinChangWeiYanShou.HeaderText = "进场未验收";
+            this.JinChangWeiYanShou.Name = "JinChangWeiYanShou";
+            // 
+            // ZongQianKuan
+            // 
+            this.ZongQianKuan.DataPropertyName = "ZongQianKuan";
+            this.ZongQianKuan.HeaderText = "总欠款";
+            this.ZongQianKuan.Name = "ZongQianKuan";
+            // 
+            // WeiDuiZhang
+            // 
+            this.WeiDuiZhang.DataPropertyName = "WeiDuiZhang";
+            this.WeiDuiZhang.HeaderText = "未对账";
+            this.WeiDuiZhang.Name = "WeiDuiZhang";
+            // 
+            // DuiZhangWeiKaiPiao
+            // 
+            this.DuiZhangWeiKaiPiao.DataPropertyName = "DuiZhangWeiKaiPiao";
+            this.DuiZhangWeiKaiPiao.HeaderText = "对账未开票";
+            this.DuiZhangWeiKaiPiao.Name = "DuiZhangWeiKaiPiao";
+            // 
+            // DuiZhangNum
+            // 
+            this.DuiZhangNum.DataPropertyName = "DuiZhangNum";
+            this.DuiZhangNum.HeaderText = "已对账";
+            this.DuiZhangNum.Name = "DuiZhangNum";
             // 
             // panelMain
             // 
@@ -255,6 +328,32 @@
             this.labelX3.Size = new System.Drawing.Size(46, 21);
             this.labelX3.TabIndex = 50;
             this.labelX3.Text = "项目:";
+            // 
+            // cbCorporation
+            // 
+            this.cbCorporation.DisplayMember = "Text";
+            this.cbCorporation.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbCorporation.FormattingEnabled = true;
+            this.cbCorporation.ItemHeight = 15;
+            this.cbCorporation.Location = new System.Drawing.Point(1132, 8);
+            this.cbCorporation.Name = "cbCorporation";
+            this.cbCorporation.Size = new System.Drawing.Size(79, 21);
+            this.cbCorporation.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cbCorporation.TabIndex = 49;
+            this.cbCorporation.Visible = false;
+            // 
+            // labelX15
+            // 
+            // 
+            // 
+            // 
+            this.labelX15.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX15.Location = new System.Drawing.Point(1097, 9);
+            this.labelX15.Name = "labelX15";
+            this.labelX15.Size = new System.Drawing.Size(46, 21);
+            this.labelX15.TabIndex = 48;
+            this.labelX15.Text = "公司:";
+            this.labelX15.Visible = false;
             // 
             // btnAdd
             // 
@@ -461,104 +560,6 @@
             this.bgWorkerLoadData.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgWorkerLoadData_DoWork);
             this.bgWorkerLoadData.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.bgWorkerLoadData_ProgressChanged);
             this.bgWorkerLoadData.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgWorkerLoadData_RunWorkerCompleted);
-            // 
-            // Corporation
-            // 
-            this.Corporation.DataPropertyName = "Corporation";
-            this.Corporation.HeaderText = "公司";
-            this.Corporation.Name = "Corporation";
-            // 
-            // Project
-            // 
-            this.Project.DataPropertyName = "Project";
-            this.Project.HeaderText = "项目";
-            this.Project.Name = "Project";
-            // 
-            // TotalSale
-            // 
-            this.TotalSale.DataPropertyName = "TotalSale";
-            this.TotalSale.HeaderText = "发货金额(销总金额)";
-            this.TotalSale.Name = "TotalSale";
-            // 
-            // InvoiceNum
-            // 
-            this.InvoiceNum.DataPropertyName = "InvoiceNum";
-            this.InvoiceNum.HeaderText = "验收(发票)";
-            this.InvoiceNum.Name = "InvoiceNum";
-            // 
-            // FaHuoWeiKaiPiao
-            // 
-            this.FaHuoWeiKaiPiao.DataPropertyName = "FaHuoWeiKaiPiao";
-            this.FaHuoWeiKaiPiao.HeaderText = "发货未开票";
-            this.FaHuoWeiKaiPiao.Name = "FaHuoWeiKaiPiao";
-            // 
-            // ReceiptNum
-            // 
-            this.ReceiptNum.DataPropertyName = "ReceiptNum";
-            this.ReceiptNum.HeaderText = "已付款";
-            this.ReceiptNum.Name = "ReceiptNum";
-            // 
-            // ZhangMianQianKuan
-            // 
-            this.ZhangMianQianKuan.DataPropertyName = "ZhangMianQianKuan";
-            this.ZhangMianQianKuan.HeaderText = "账面欠款";
-            this.ZhangMianQianKuan.Name = "ZhangMianQianKuan";
-            // 
-            // JinChangWeiYanShou
-            // 
-            this.JinChangWeiYanShou.DataPropertyName = "JinChangWeiYanShou";
-            this.JinChangWeiYanShou.HeaderText = "进场未验收";
-            this.JinChangWeiYanShou.Name = "JinChangWeiYanShou";
-            // 
-            // ZongQianKuan
-            // 
-            this.ZongQianKuan.DataPropertyName = "ZongQianKuan";
-            this.ZongQianKuan.HeaderText = "总欠款";
-            this.ZongQianKuan.Name = "ZongQianKuan";
-            // 
-            // WeiDuiZhang
-            // 
-            this.WeiDuiZhang.DataPropertyName = "WeiDuiZhang";
-            this.WeiDuiZhang.HeaderText = "未对账";
-            this.WeiDuiZhang.Name = "WeiDuiZhang";
-            // 
-            // DuiZhangWeiKaiPiao
-            // 
-            this.DuiZhangWeiKaiPiao.DataPropertyName = "DuiZhangWeiKaiPiao";
-            this.DuiZhangWeiKaiPiao.HeaderText = "对账未开票";
-            this.DuiZhangWeiKaiPiao.Name = "DuiZhangWeiKaiPiao";
-            // 
-            // DuiZhangNum
-            // 
-            this.DuiZhangNum.DataPropertyName = "DuiZhangNum";
-            this.DuiZhangNum.HeaderText = "已对账";
-            this.DuiZhangNum.Name = "DuiZhangNum";
-            // 
-            // labelX15
-            // 
-            // 
-            // 
-            // 
-            this.labelX15.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX15.Location = new System.Drawing.Point(1097, 9);
-            this.labelX15.Name = "labelX15";
-            this.labelX15.Size = new System.Drawing.Size(46, 21);
-            this.labelX15.TabIndex = 48;
-            this.labelX15.Text = "公司:";
-            this.labelX15.Visible = false;
-            // 
-            // cbCorporation
-            // 
-            this.cbCorporation.DisplayMember = "Text";
-            this.cbCorporation.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbCorporation.FormattingEnabled = true;
-            this.cbCorporation.ItemHeight = 15;
-            this.cbCorporation.Location = new System.Drawing.Point(1132, 8);
-            this.cbCorporation.Name = "cbCorporation";
-            this.cbCorporation.Size = new System.Drawing.Size(79, 21);
-            this.cbCorporation.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cbCorporation.TabIndex = 49;
-            this.cbCorporation.Visible = false;
             // 
             // FrmProjectBillManage
             // 
