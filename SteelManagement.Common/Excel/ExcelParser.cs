@@ -75,8 +75,6 @@ namespace SteelManagement.Common.Excel
                             throw e;
                         }
                     }
-
-                    
                     model.Remark = row.GetCell(6)?.StringCellValue;
                     model.State = row.GetCell(7)?.StringCellValue;
                     res.Add(model);
@@ -88,8 +86,5 @@ namespace SteelManagement.Common.Excel
             }
             return res.Count == 0 ? null : res;
         }
-
-
-
     }
 }

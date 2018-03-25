@@ -361,11 +361,7 @@ namespace SteelManagement.CSUI.FrmMain
                     {
                         dataGridView1.Rows[i].Cells[j].Value = DecimalHandler.DecimalToPercent(DgvDataSourceToList()[i].MarginRate);
                     }
-
                 }
-
-                
-
             }
         }
 

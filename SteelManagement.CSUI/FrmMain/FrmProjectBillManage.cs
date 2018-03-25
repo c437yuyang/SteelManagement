@@ -52,7 +52,7 @@ namespace SteelManagement.CSUI.FrmMain
             dataGridView1.DoubleClick += DataGridView1_DoubleClick;
             dataGridView1.SelectionChanged += DataGridView1_SelectionChanged;
             StyleControler.SetDgvStyle(dataGridView1);
-
+            //dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
 
             bgWorkerLoadData.WorkerReportsProgress = true;
 
@@ -498,7 +498,7 @@ namespace SteelManagement.CSUI.FrmMain
         //双击弹出公式提示
         private void dataGridView1_ColumnHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if(dataGridView1.Columns[e.ColumnIndex].Name== "FaHuoWeiKaiPiao")
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "FaHuoWeiKaiPiao")
             {
                 MessageBoxEx.Show("发货未开票=发货金额(销总金额)-验收(发票)");
             }
@@ -528,6 +528,11 @@ namespace SteelManagement.CSUI.FrmMain
                 MessageBoxEx.Show("对账未开票=已对账-验收(发票)");
             }
 
+        }
+
+        private void btnCreateReport_Click(object sender, EventArgs e)
+        {
+            ExcelGenerator.GetProjectBillCount(DgvDataSourceToList());
         }
     }
 }
