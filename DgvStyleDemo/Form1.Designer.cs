@@ -41,7 +41,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(410, 277);
+            this.dataGridView1.Size = new System.Drawing.Size(492, 592);
             this.dataGridView1.TabIndex = 1;
             // 
             // dataGridViewX1
@@ -57,10 +57,10 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewX1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.dataGridViewX1.Location = new System.Drawing.Point(512, 43);
+            this.dataGridViewX1.Location = new System.Drawing.Point(510, 12);
             this.dataGridViewX1.Name = "dataGridViewX1";
             this.dataGridViewX1.RowTemplate.Height = 23;
-            this.dataGridViewX1.Size = new System.Drawing.Size(443, 342);
+            this.dataGridViewX1.Size = new System.Drawing.Size(515, 592);
             this.dataGridViewX1.TabIndex = 2;
             // 
             // Form1
