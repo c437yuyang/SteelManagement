@@ -32,7 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dataGridView1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panelMain = new DevComponents.DotNetBar.PanelEx();
             this.panelDgv = new DevComponents.DotNetBar.PanelEx();
             this.panelBars = new DevComponents.DotNetBar.PanelEx();
@@ -565,7 +565,7 @@
 
         #endregion
 
-        private DevComponents.DotNetBar.Controls.DataGridViewX dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private DevComponents.DotNetBar.PanelEx panelMain;
         private System.Windows.Forms.ContextMenuStrip cmsDgvRb;
         private System.Windows.Forms.ToolStripMenuItem cmsItemRefreshState;

@@ -32,7 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dataGridView1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.EntryTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SerialNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Corporation = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -778,7 +778,7 @@
 
         #endregion
 
-        private DevComponents.DotNetBar.Controls.DataGridViewX dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private DevComponents.DotNetBar.PanelEx panelMain;
         private System.Windows.Forms.ContextMenuStrip cmsDgvRb;
         private System.Windows.Forms.ToolStripMenuItem cmsItemRefreshState;
