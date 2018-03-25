@@ -650,7 +650,7 @@
         AB/+AAA//4AA///AAf//8Af///////////8=
 </value>
   </data>
-  <data name="btntActionRecordsCount.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnSystemSettings.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAICAAAAEAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAAAAAABMLAAATCwAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGBAQADgoKABMODgAWEBAAFxAQABcQEAAWDw8AEwwMAA8J

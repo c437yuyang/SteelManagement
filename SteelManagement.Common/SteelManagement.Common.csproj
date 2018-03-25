@@ -68,6 +68,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ObjPropertyReflector.cs" />
     <Compile Include="RegisterCopyRight.cs" />
     <Compile Include="DecimalHandler.cs" />
     <Compile Include="Enums\AirInfos.cs" />

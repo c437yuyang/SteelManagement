@@ -57,7 +57,8 @@ namespace SteelManagement.CSUI.FrmMain
             LoadDataToDgvAsyn();
         }
 
-        
+
+
 
         private void InitComboboxs()
         {
@@ -334,19 +335,31 @@ namespace SteelManagement.CSUI.FrmMain
         /// <param name="e"></param>
         private void dataGridView1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
+
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
                 DataGridViewRow row = dataGridView1.Rows[i];
                 row.HeaderCell.Value = (i + 1).ToString();
 
                 //在这里控制单元格的显示
-                var price = DgvDataSourceToList()[i].Price;
-                if (price != null)
-                    dataGridView1["Price", i].Value = DecimalHandler.DecimalToString(price.Value, 1);
 
-                var fluctuation = DgvDataSourceToList()[i].Fluctuation;
-                if (fluctuation != null)
-                    dataGridView1["Fluctuation", i].Value = DecimalHandler.DecimalToString(fluctuation.Value, 1);
+                for (int j = 0; j != dataGridView1.ColumnCount; ++j)
+                {
+                    var value = (decimal?)dataGridView1.Rows[i].Cells[j].Value;
+                    if (dataGridView1.Rows[i].Cells[j].ValueType == typeof(decimal)&&value!=null)
+                    {
+                        value = DecimalHandler.DecimalToString(value, 1);
+                    }
+                }
+
+
+                //var price = DgvDataSourceToList()[i].Price;
+                //if (price != null)
+                //    dataGridView1["Price", i].Value = DecimalHandler.DecimalToString(price.Value, 1);
+
+                //var fluctuation = DgvDataSourceToList()[i].Fluctuation;
+                //if (fluctuation != null)
+                //    dataGridView1["Fluctuation", i].Value = DecimalHandler.DecimalToString(fluctuation.Value, 1);
             }
         }
 

@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using DevComponents.DotNetBar;
 using SteelManagement.Common;
+using SteelManagement.CSUI.FrmSub;
 
 namespace SteelManagement.CSUI.FrmMain
 {
@@ -59,7 +60,11 @@ namespace SteelManagement.CSUI.FrmMain
             FrmSupplierBillManage frm = new FrmSupplierBillManage();
             OpenTab(frm, frm.Name);
         }
-
+        private void BtnSystemSettings_Click(object sender, EventArgs e)
+        {
+            FrmSystemSettings frm = new FrmSystemSettings();
+            frm.ShowDialog();
+        }
         #endregion
 
         public void OpenTab(Form frm, string Name)
@@ -165,8 +170,9 @@ namespace SteelManagement.CSUI.FrmMain
             this.btnSaleInfoManage.Click += BtnSaleInfoManage_Click;
             this.btnSaleBillManage.Click += btnReceiptInfoManage_Click;
             this.btnProjectBillManage.Click += BtnProjectBillManage_Click;
-            this.btnPurchaseBillManage.Click += BtnPurchaseBillManage_Click; ;
+            this.btnPurchaseBillManage.Click += BtnPurchaseBillManage_Click; 
             this.btnSupplierBillMange.Click += BtnSupplierBillMange_Click;
+            this.btnSystemSettings.Click += BtnSystemSettings_Click;
         }
 
 

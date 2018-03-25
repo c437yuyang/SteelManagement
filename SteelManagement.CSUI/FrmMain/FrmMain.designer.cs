@@ -44,7 +44,7 @@
             this.ribbonPanel5 = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonPanel1 = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonBar1 = new DevComponents.DotNetBar.RibbonBar();
-            this.btntActionRecordsCount = new DevComponents.DotNetBar.ButtonItem();
+            this.btnSystemSettings = new DevComponents.DotNetBar.ButtonItem();
             this.btnPersonalCount = new DevComponents.DotNetBar.ButtonItem();
             this.btnCommisionMoneyManage = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonPanel2 = new DevComponents.DotNetBar.RibbonPanel();
@@ -81,8 +81,8 @@
             // 
             this.ribbonControl1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonControl1.Controls.Add(this.ribbonPanel3);
-            this.ribbonControl1.Controls.Add(this.ribbonPanel5);
             this.ribbonControl1.Controls.Add(this.ribbonPanel1);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel5);
             this.ribbonControl1.Controls.Add(this.ribbonPanel2);
             this.ribbonControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ribbonControl1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -317,7 +317,7 @@
             this.ribbonBar1.Dock = System.Windows.Forms.DockStyle.Left;
             this.ribbonBar1.DragDropSupport = true;
             this.ribbonBar1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.btntActionRecordsCount,
+            this.btnSystemSettings,
             this.btnPersonalCount,
             this.btnCommisionMoneyManage});
             this.ribbonBar1.Location = new System.Drawing.Point(3, 0);
@@ -334,14 +334,14 @@
             // 
             this.ribbonBar1.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
-            // btntActionRecordsCount
+            // btnSystemSettings
             // 
-            this.btntActionRecordsCount.Icon = ((System.Drawing.Icon)(resources.GetObject("btntActionRecordsCount.Icon")));
-            this.btntActionRecordsCount.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
-            this.btntActionRecordsCount.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btntActionRecordsCount.Name = "btntActionRecordsCount";
-            this.btntActionRecordsCount.SubItemsExpandWidth = 14;
-            this.btntActionRecordsCount.Text = "操作记录明细";
+            this.btnSystemSettings.Icon = ((System.Drawing.Icon)(resources.GetObject("btnSystemSettings.Icon")));
+            this.btnSystemSettings.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
+            this.btnSystemSettings.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnSystemSettings.Name = "btnSystemSettings";
+            this.btnSystemSettings.SubItemsExpandWidth = 14;
+            this.btnSystemSettings.Text = "系统设置";
             // 
             // btnPersonalCount
             // 
@@ -495,8 +495,7 @@
             // 
             this.ribbonTabItem1.Name = "ribbonTabItem1";
             this.ribbonTabItem1.Panel = this.ribbonPanel1;
-            this.ribbonTabItem1.Text = "数据统计";
-            this.ribbonTabItem1.Visible = false;
+            this.ribbonTabItem1.Text = "系统设置";
             // 
             // ribbonTabItem2
             // 
@@ -626,7 +625,7 @@
         private DevComponents.DotNetBar.RibbonPanel ribbonPanel1;
         private DevComponents.DotNetBar.RibbonTabItem ribbonTabItem1;
         private DevComponents.DotNetBar.RibbonBar ribbonBar1;
-        private DevComponents.DotNetBar.ButtonItem btntActionRecordsCount;
+        private DevComponents.DotNetBar.ButtonItem btnSystemSettings;
         private DevComponents.DotNetBar.ButtonItem btnPersonalCount;
         private DevComponents.DotNetBar.RibbonPanel ribbonPanel2;
         private DevComponents.DotNetBar.RibbonTabItem ribbonTabItem2;

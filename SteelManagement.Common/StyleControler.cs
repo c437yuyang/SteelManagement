@@ -41,11 +41,13 @@ namespace SteelManagement.Common
             dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("微软雅黑", 10.0f, FontStyle.Bold);
             dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(48, 126, 204);
             dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.White;
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(234, 242, 251); 
             dataGridView1.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(165, 227, 242);
             dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
 
             dataGridView1.RowHeadersDefaultCellStyle.Font = new Font("Consolas", 10.0f, FontStyle.Bold);
             dataGridView1.RowHeadersDefaultCellStyle.BackColor = Color.White;
+            dataGridView1.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(234,242,251);
             dataGridView1.RowHeadersDefaultCellStyle.ForeColor = Color.FromArgb(48, 126, 204);
             dataGridView1.RowHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(165, 227, 242);
             dataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
@@ -53,10 +55,13 @@ namespace SteelManagement.Common
             dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleVertical;
             dataGridView1.GridColor = Color.FromArgb(224, 224, 224);
 
+
             dataGridView1.DefaultCellStyle.SelectionBackColor = Color.FromArgb(165, 227, 242);
             dataGridView1.DefaultCellStyle.Font = new Font("微软雅黑", 9.0f, FontStyle.Bold);
             dataGridView1.DefaultCellStyle.ForeColor = Color.FromArgb(110, 110, 110);
 
         }
+
+ 
     }
 }
