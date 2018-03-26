@@ -18,6 +18,9 @@ namespace SteelManagement.Common.Tests
             for (int i = 0; i < 10; i++)
             {
                 Assert.IsTrue(SerialNoGenerator.GetSerialNo(SerialNoGenerator.Type.Type01Purchase).Length==20);
+                Assert.IsTrue(string.Compare("1.5.1","1.5")>0);
+                Assert.IsTrue(string.Compare("1.5.1", "1.5") > 0);
+                Assert.IsTrue(string.Compare("1.5.1", "1.4.8.7") > 0);
             }
         }
 
