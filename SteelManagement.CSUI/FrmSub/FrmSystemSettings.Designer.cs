@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
+            this.chkAutoDigits = new DevComponents.DotNetBar.Controls.CheckBoxX();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.txtDigits = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.btnCancel = new DevComponents.DotNetBar.ButtonX();
             this.btnOK = new DevComponents.DotNetBar.ButtonX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.chkAutoDigits = new DevComponents.DotNetBar.Controls.CheckBoxX();
-            this.txtDigits = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.panelEx1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,6 +62,45 @@
             this.panelEx1.Style.GradientAngle = 90;
             this.panelEx1.TabIndex = 4;
             // 
+            // chkAutoDigits
+            // 
+            // 
+            // 
+            // 
+            this.chkAutoDigits.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.chkAutoDigits.Location = new System.Drawing.Point(239, 9);
+            this.chkAutoDigits.Name = "chkAutoDigits";
+            this.chkAutoDigits.Size = new System.Drawing.Size(100, 23);
+            this.chkAutoDigits.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.chkAutoDigits.TabIndex = 34;
+            this.chkAutoDigits.Text = "自适应";
+            this.chkAutoDigits.CheckedChanged += new System.EventHandler(this.chkAutoDigits_CheckedChanged);
+            // 
+            // labelX2
+            // 
+            // 
+            // 
+            // 
+            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX2.Location = new System.Drawing.Point(192, 10);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(51, 23);
+            this.labelX2.TabIndex = 37;
+            this.labelX2.Text = "位小数.";
+            // 
+            // txtDigits
+            // 
+            // 
+            // 
+            // 
+            this.txtDigits.Border.Class = "TextBoxBorder";
+            this.txtDigits.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtDigits.Location = new System.Drawing.Point(86, 10);
+            this.txtDigits.Name = "txtDigits";
+            this.txtDigits.PreventEnterBeep = true;
+            this.txtDigits.Size = new System.Drawing.Size(100, 21);
+            this.txtDigits.TabIndex = 36;
+            // 
             // btnCancel
             // 
             this.btnCancel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -72,6 +111,7 @@
             this.btnCancel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnCancel.TabIndex = 30;
             this.btnCancel.Text = "取消";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnOK
             // 
@@ -96,45 +136,6 @@
             this.labelX1.Size = new System.Drawing.Size(75, 23);
             this.labelX1.TabIndex = 17;
             this.labelX1.Text = "显示精度:";
-            // 
-            // chkAutoDigits
-            // 
-            // 
-            // 
-            // 
-            this.chkAutoDigits.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.chkAutoDigits.Location = new System.Drawing.Point(239, 9);
-            this.chkAutoDigits.Name = "chkAutoDigits";
-            this.chkAutoDigits.Size = new System.Drawing.Size(100, 23);
-            this.chkAutoDigits.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.chkAutoDigits.TabIndex = 34;
-            this.chkAutoDigits.Text = "自适应";
-            this.chkAutoDigits.CheckedChanged += new System.EventHandler(this.chkAutoDigits_CheckedChanged);
-            // 
-            // txtDigits
-            // 
-            // 
-            // 
-            // 
-            this.txtDigits.Border.Class = "TextBoxBorder";
-            this.txtDigits.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtDigits.Location = new System.Drawing.Point(86, 10);
-            this.txtDigits.Name = "txtDigits";
-            this.txtDigits.PreventEnterBeep = true;
-            this.txtDigits.Size = new System.Drawing.Size(100, 21);
-            this.txtDigits.TabIndex = 36;
-            // 
-            // labelX2
-            // 
-            // 
-            // 
-            // 
-            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX2.Location = new System.Drawing.Point(192, 10);
-            this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(51, 23);
-            this.labelX2.TabIndex = 37;
-            this.labelX2.Text = "位小数.";
             // 
             // FrmSystemSettings
             // 

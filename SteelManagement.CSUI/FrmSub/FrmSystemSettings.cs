@@ -63,5 +63,10 @@ namespace SteelManagement.CSUI.FrmSub
         {
             txtDigits.Enabled = !chkAutoDigits.Checked;
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

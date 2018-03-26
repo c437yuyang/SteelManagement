@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using DevComponents.DotNetBar;
 using NPOI.HSSF.UserModel;
+using NPOI.HSSF.Util;
 using NPOI.SS.UserModel;
 
 namespace SteelManagement.Common.Excel
@@ -131,7 +132,9 @@ namespace SteelManagement.Common.Excel
 
             //2.1创建表头
             IRow row = sheet.CreateRow(0);
+            row.HeightInPoints = 20;
             row.CreateCell(0).SetCellValue("公司");
+
             row.CreateCell(1).SetCellValue("项目");
             row.CreateCell(2).SetCellValue("发货金额(销总金额)");
             row.CreateCell(3).SetCellValue("验收(发票)");
@@ -215,9 +218,20 @@ namespace SteelManagement.Common.Excel
             style.BorderBottom = BorderStyle.Thin;
             style.BorderLeft = BorderStyle.Thin;
             style.BorderRight = BorderStyle.Thin;
+            short color = style.FillForegroundColor;
             for (int i = 0; i <= sheet.LastRowNum; i++)
             {
                 row = sheet.GetRow(i);
+                if (i == 0)
+                {
+                    style.FillForegroundColor = HSSFColor.BlueGrey.Index;
+                    style.FillPattern = FillPattern.SolidForeground;
+                }
+                else
+                {
+                    style.FillForegroundColor = color;
+                    style.FillPattern = FillPattern.NoFill;
+                }
                 for (int c = 0; c < row.LastCellNum; ++c)
                 {
                     row.GetCell(c).CellStyle = style;
