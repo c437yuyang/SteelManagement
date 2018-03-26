@@ -84,10 +84,9 @@ namespace SteelManagement.CSUI.FrmMain
 
         private void DataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-
             if (dataGridView1.SelectedRows.Count < 1)
                 return;
-
+            int digit = GlobalUtils.DecimalDigits;
             decimal songhuoliang = 0, zongjine = 0;
 
             for (int i = 0; i < dataGridView1.SelectedRows.Count; ++i)
@@ -98,8 +97,8 @@ namespace SteelManagement.CSUI.FrmMain
             }
 
             lbTotalCount.Text = string.Format("合计: 送货量 {0}(t)   销总金额 {1}",
-                DecimalHandler.DecimalToString(songhuoliang),
-                DecimalHandler.DecimalToString(zongjine));
+                DecimalHandler.DecimalToString(songhuoliang,digit),
+                DecimalHandler.DecimalToString(zongjine,digit));
             
         }
 
@@ -361,6 +360,12 @@ namespace SteelManagement.CSUI.FrmMain
                     {
                         dataGridView1.Rows[i].Cells[j].Value = DecimalHandler.DecimalToPercent(DgvDataSourceToList()[i].MarginRate);
                     }
+
+                    if (dataGridView1.Columns[j].Name == "JianChiLv")
+                    {
+                        dataGridView1.Rows[i].Cells[j].Value = DecimalHandler.DecimalToPercent(DgvDataSourceToList()[i].JianChiLv);
+                    }
+
                 }
             }
         }

@@ -63,7 +63,7 @@ namespace SteelManagement.CSUI.FrmMain
         {
             if (dataGridView1.SelectedRows.Count < 1)
                 return;
-
+            int digit = GlobalUtils.DecimalDigits;
             decimal goujinzonge = 0, goujinzhongliang = 0, xiaoshouzonge = 0, xiaoshouzhongliang = 0, yunfei = 0;
 
             for (int i = 0; i < dataGridView1.SelectedRows.Count; ++i)
@@ -77,19 +77,17 @@ namespace SteelManagement.CSUI.FrmMain
             }
 
             lbTotalCount.Text = string.Format("合计: 购进额 {0}   购进量 {1}  销售总额 {2}  销售量 {3} 运费 {4}",
-                DecimalHandler.DecimalToString(goujinzonge),
-                DecimalHandler.DecimalToString(goujinzhongliang),
-                DecimalHandler.DecimalToString(xiaoshouzonge),
-                DecimalHandler.DecimalToString(xiaoshouzhongliang),
-                DecimalHandler.DecimalToString(yunfei));
+                DecimalHandler.DecimalToString(goujinzonge, digit),
+                DecimalHandler.DecimalToString(goujinzhongliang, digit),
+                DecimalHandler.DecimalToString(xiaoshouzonge, digit),
+                DecimalHandler.DecimalToString(xiaoshouzhongliang, digit),
+                DecimalHandler.DecimalToString(yunfei, digit));
 
             if (goujinzonge == 0)
             {
                 lbCount1.Text = string.Format("利润 {0}  利润率 {1}",
                 DecimalHandler.DecimalToString(xiaoshouzonge - goujinzonge), -1);
             }
-
-            
         }
 
         private void InitComboBoxs()
@@ -105,16 +103,16 @@ namespace SteelManagement.CSUI.FrmMain
             var list = BLL.CommonBll.GetFieldList(tablename, "Project");
             if (list != null)
                 foreach (var item in list)
-            {
-                cbProject.Items.Add(item);
-            }
+                {
+                    cbProject.Items.Add(item);
+                }
 
             list = BLL.CommonBll.GetFieldList(tablename, "Corporation");
             if (list != null)
                 foreach (var item in list)
-            {
-                cbCorporation.Items.Add(item);
-            }
+                {
+                    cbCorporation.Items.Add(item);
+                }
 
 
         }

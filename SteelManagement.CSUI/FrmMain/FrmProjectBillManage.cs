@@ -62,18 +62,40 @@ namespace SteelManagement.CSUI.FrmMain
 
         private void DataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            return;
             if (dataGridView1.SelectedRows.Count < 1)
                 return;
 
+            int digit = GlobalUtils.DecimalDigits;
+            decimal[] total = new decimal[10];
 
-            for (int i = 2; i != dataGridView1.ColumnCount; ++i)
+            for (int i = 0; i < dataGridView1.SelectedRows.Count; ++i)
             {
-                //decimal num = DecimalHandler.
+                var model = DgvDataSourceToList()[dataGridView1.SelectedRows[i].Index];
+                total[0] += DecimalHandler.Parse(model.TotalSale.ToString());
+                total[1] += DecimalHandler.Parse(model.InvoiceNum.ToString());
+                total[2] += DecimalHandler.Parse(model.FaHuoWeiKaiPiao.ToString());
+                total[3] += DecimalHandler.Parse(model.ReceiptNum.ToString());
+                total[4] += DecimalHandler.Parse(model.ZhangMianQianKuan.ToString());
+                total[5] += DecimalHandler.Parse(model.JinChangWeiYanShou.ToString());
+                total[6] += DecimalHandler.Parse(model.ZongQianKuan.ToString());
+                total[7] += DecimalHandler.Parse(model.WeiDuiZhang.ToString());
+                total[8] += DecimalHandler.Parse(model.DuiZhangWeiKaiPiao.ToString());
+                total[9] += DecimalHandler.Parse(model.DuiZhangNum.ToString());
             }
 
-            //dataGridView1.Rows[dataGridView1.Rows.Count-1]
-
+            lbTotalCount.Text = string.Format("合计: 发货金额(销总金额) {0}  验收(发票) {1}  发货未开票 {2}  " +
+                "已付款 {3}  账面欠款 {4}  进场未验收 {5}  总欠款 {6}  未对账 {7}  对账未开票 {8} 已对账{9}",
+                DecimalHandler.DecimalToString(total[0], digit),
+                DecimalHandler.DecimalToString(total[1], digit),
+                DecimalHandler.DecimalToString(total[2], digit),
+                DecimalHandler.DecimalToString(total[3], digit),
+                DecimalHandler.DecimalToString(total[4], digit),
+                DecimalHandler.DecimalToString(total[5], digit),
+                DecimalHandler.DecimalToString(total[6], digit),
+                DecimalHandler.DecimalToString(total[7], digit),
+                DecimalHandler.DecimalToString(total[8], digit),
+                DecimalHandler.DecimalToString(total[9], digit)
+                );
         }
 
         private void InitComboBoxs()
@@ -533,6 +555,11 @@ namespace SteelManagement.CSUI.FrmMain
         private void btnCreateReport_Click(object sender, EventArgs e)
         {
             ExcelGenerator.GetProjectBillCount(DgvDataSourceToList());
+        }
+
+        private void labelItem2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

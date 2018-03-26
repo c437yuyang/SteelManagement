@@ -86,6 +86,7 @@ namespace SteelManagement.CSUI.FrmMain
             if (dataGridView1.SelectedRows.Count < 1)
                 return;
 
+            int digit = GlobalUtils.DecimalDigits;
             decimal songhuoliang = 0, zongjine = 0, fukuanjine = 0, fapiaojine = 0;
 
             for (int i = 0; i < dataGridView1.SelectedRows.Count; ++i)
@@ -98,13 +99,13 @@ namespace SteelManagement.CSUI.FrmMain
             }
 
             lbTotalCount.Text = string.Format("合计: 送货量 {0}(t)   总金额 {1}  付款金额 {2}  发票金额 {3}",
-                DecimalHandler.DecimalToString(songhuoliang),
-                DecimalHandler.DecimalToString(zongjine),
-                DecimalHandler.DecimalToString(fukuanjine),
-                DecimalHandler.DecimalToString(fapiaojine));
-            lbCount1.Text = string.Format("欠款 {0}  欠票 {1}",
-                DecimalHandler.DecimalToString(zongjine - fukuanjine),
-                DecimalHandler.DecimalToString(zongjine - fapiaojine));
+                DecimalHandler.DecimalToString(songhuoliang, digit),
+                DecimalHandler.DecimalToString(zongjine, digit),
+                DecimalHandler.DecimalToString(fukuanjine, digit),
+                DecimalHandler.DecimalToString(fapiaojine, digit));
+            lbTotalCount.Text += string.Format("  欠款 {0}  欠票 {1}",
+                DecimalHandler.DecimalToString(zongjine - fukuanjine, digit),
+                DecimalHandler.DecimalToString(zongjine - fapiaojine, digit));
         }
 
         private void DataGridView1_DoubleClick(object sender, EventArgs e)

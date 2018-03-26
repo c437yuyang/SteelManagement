@@ -33,6 +33,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Corporation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Project = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Supplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalPurchase = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PurchaseAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalSale = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SaleAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MarginRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TransportCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelMain = new DevComponents.DotNetBar.PanelEx();
             this.panelDgv = new DevComponents.DotNetBar.PanelEx();
             this.panelBars = new DevComponents.DotNetBar.PanelEx();
@@ -59,7 +68,6 @@
             this.labelItem2 = new DevComponents.DotNetBar.LabelItem();
             this.lbCurPage = new DevComponents.DotNetBar.LabelItem();
             this.btnGeneratePersonalReport = new DevComponents.DotNetBar.ButtonItem();
-            this.lbTotalCount = new DevComponents.DotNetBar.LabelItem();
             this.cmsDgvRb = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cmsItemRefreshState = new System.Windows.Forms.ToolStripMenuItem();
             this.人申请表ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,15 +76,8 @@
             this.韩国担保函ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.韩国加急申请书ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bgWorkerLoadData = new System.ComponentModel.BackgroundWorker();
-            this.Corporation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Project = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Supplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalPurchase = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PurchaseAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalSale = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SaleAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MarginRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TransportCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bar2 = new DevComponents.DotNetBar.Bar();
+            this.lbTotalCount = new DevComponents.DotNetBar.LabelItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelMain.SuspendLayout();
             this.panelDgv.SuspendLayout();
@@ -84,6 +85,7 @@
             this.panelSerachBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bar1)).BeginInit();
             this.cmsDgvRb.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bar2)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -135,11 +137,64 @@
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dataGridView1.RowTemplate.Height = 30;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1271, 523);
+            this.dataGridView1.Size = new System.Drawing.Size(1271, 504);
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             this.dataGridView1.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseUp);
             this.dataGridView1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridView1_RowsAdded);
+            // 
+            // Corporation
+            // 
+            this.Corporation.DataPropertyName = "Corporation";
+            this.Corporation.HeaderText = "公司";
+            this.Corporation.Name = "Corporation";
+            // 
+            // Project
+            // 
+            this.Project.DataPropertyName = "Project";
+            this.Project.HeaderText = "项目";
+            this.Project.Name = "Project";
+            // 
+            // Supplier
+            // 
+            this.Supplier.DataPropertyName = "Supplier";
+            this.Supplier.HeaderText = "供应商";
+            this.Supplier.Name = "Supplier";
+            // 
+            // TotalPurchase
+            // 
+            this.TotalPurchase.DataPropertyName = "TotalPurchase";
+            this.TotalPurchase.HeaderText = "购进总额";
+            this.TotalPurchase.Name = "TotalPurchase";
+            // 
+            // PurchaseAmount
+            // 
+            this.PurchaseAmount.DataPropertyName = "PurchaseAmount";
+            this.PurchaseAmount.HeaderText = "购进重量";
+            this.PurchaseAmount.Name = "PurchaseAmount";
+            // 
+            // TotalSale
+            // 
+            this.TotalSale.DataPropertyName = "TotalSale";
+            this.TotalSale.HeaderText = "销总金额";
+            this.TotalSale.Name = "TotalSale";
+            // 
+            // SaleAmount
+            // 
+            this.SaleAmount.DataPropertyName = "SaleAmount";
+            this.SaleAmount.HeaderText = "销售重量";
+            this.SaleAmount.Name = "SaleAmount";
+            // 
+            // MarginRate
+            // 
+            this.MarginRate.HeaderText = "利润率";
+            this.MarginRate.Name = "MarginRate";
+            // 
+            // TransportCost
+            // 
+            this.TransportCost.DataPropertyName = "TransportCost";
+            this.TransportCost.HeaderText = "运费";
+            this.TransportCost.Name = "TransportCost";
             // 
             // panelMain
             // 
@@ -166,6 +221,7 @@
             this.panelDgv.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelDgv.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.panelDgv.Controls.Add(this.dataGridView1);
+            this.panelDgv.Controls.Add(this.bar2);
             this.panelDgv.DisabledBackColor = System.Drawing.Color.Empty;
             this.panelDgv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDgv.Location = new System.Drawing.Point(0, 100);
@@ -362,8 +418,7 @@
             this.cbPageSize,
             this.labelItem2,
             this.lbCurPage,
-            this.btnGeneratePersonalReport,
-            this.lbTotalCount});
+            this.btnGeneratePersonalReport});
             this.bar1.ItemSpacing = 5;
             this.bar1.Location = new System.Drawing.Point(0, 0);
             this.bar1.Name = "bar1";
@@ -438,12 +493,6 @@
             // 
             this.btnGeneratePersonalReport.Name = "btnGeneratePersonalReport";
             // 
-            // lbTotalCount
-            // 
-            this.lbTotalCount.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbTotalCount.ForeColor = System.Drawing.Color.ForestGreen;
-            this.lbTotalCount.Name = "lbTotalCount";
-            // 
             // cmsDgvRb
             // 
             this.cmsDgvRb.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -489,58 +538,32 @@
             this.bgWorkerLoadData.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.bgWorkerLoadData_ProgressChanged);
             this.bgWorkerLoadData.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgWorkerLoadData_RunWorkerCompleted);
             // 
-            // Corporation
+            // bar2
             // 
-            this.Corporation.DataPropertyName = "Corporation";
-            this.Corporation.HeaderText = "公司";
-            this.Corporation.Name = "Corporation";
+            this.bar2.AntiAlias = true;
+            this.bar2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bar2.DockSide = DevComponents.DotNetBar.eDockSide.Document;
+            this.bar2.DockTabStripHeight = 30;
+            this.bar2.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
+            this.bar2.IsMaximized = false;
+            this.bar2.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.lbTotalCount});
+            this.bar2.ItemSpacing = 5;
+            this.bar2.Location = new System.Drawing.Point(0, 504);
+            this.bar2.Name = "bar2";
+            this.bar2.Size = new System.Drawing.Size(1271, 19);
+            this.bar2.Stretch = true;
+            this.bar2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.bar2.TabIndex = 25;
+            this.bar2.TabStop = false;
+            this.bar2.Text = "bar2";
             // 
-            // Project
+            // lbTotalCount
             // 
-            this.Project.DataPropertyName = "Project";
-            this.Project.HeaderText = "项目";
-            this.Project.Name = "Project";
-            // 
-            // Supplier
-            // 
-            this.Supplier.DataPropertyName = "Supplier";
-            this.Supplier.HeaderText = "供应商";
-            this.Supplier.Name = "Supplier";
-            // 
-            // TotalPurchase
-            // 
-            this.TotalPurchase.DataPropertyName = "TotalPurchase";
-            this.TotalPurchase.HeaderText = "购进总额";
-            this.TotalPurchase.Name = "TotalPurchase";
-            // 
-            // PurchaseAmount
-            // 
-            this.PurchaseAmount.DataPropertyName = "PurchaseAmount";
-            this.PurchaseAmount.HeaderText = "购进重量";
-            this.PurchaseAmount.Name = "PurchaseAmount";
-            // 
-            // TotalSale
-            // 
-            this.TotalSale.DataPropertyName = "TotalSale";
-            this.TotalSale.HeaderText = "销总金额";
-            this.TotalSale.Name = "TotalSale";
-            // 
-            // SaleAmount
-            // 
-            this.SaleAmount.DataPropertyName = "SaleAmount";
-            this.SaleAmount.HeaderText = "销售重量";
-            this.SaleAmount.Name = "SaleAmount";
-            // 
-            // MarginRate
-            // 
-            this.MarginRate.HeaderText = "利润率";
-            this.MarginRate.Name = "MarginRate";
-            // 
-            // TransportCost
-            // 
-            this.TransportCost.DataPropertyName = "TransportCost";
-            this.TransportCost.HeaderText = "运费";
-            this.TransportCost.Name = "TransportCost";
+            this.lbTotalCount.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbTotalCount.ForeColor = System.Drawing.Color.ForestGreen;
+            this.lbTotalCount.Name = "lbTotalCount";
+            this.lbTotalCount.Text = "--";
             // 
             // FrmSupplierBillManage
             // 
@@ -558,6 +581,7 @@
             this.panelSerachBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bar1)).EndInit();
             this.cmsDgvRb.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bar2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -598,7 +622,6 @@
         private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cbCorporation;
         private DevComponents.DotNetBar.LabelX labelX15;
-        private DevComponents.DotNetBar.LabelItem lbTotalCount;
         private DevComponents.DotNetBar.LabelX lbCount1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Corporation;
         private System.Windows.Forms.DataGridViewTextBoxColumn Project;
@@ -609,6 +632,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SaleAmount;
         private System.Windows.Forms.DataGridViewTextBoxColumn MarginRate;
         private System.Windows.Forms.DataGridViewTextBoxColumn TransportCost;
+        private DevComponents.DotNetBar.Bar bar2;
+        private DevComponents.DotNetBar.LabelItem lbTotalCount;
     }
 }
 
