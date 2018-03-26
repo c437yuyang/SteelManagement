@@ -21,7 +21,7 @@ namespace SteelManagement.BLL
         /// <returns></returns>
         public List<Model.ProgramUpdate> GetUpdateModelList(string curVersion)
         {
-            var list = GetModelList(string.Format(" Version > {0}", curVersion));
+            var list = GetModelList(string.Format(" Version > '{0}'", curVersion));
             if (list != null)
             {
                 list.Sort((model1, model2) =>
