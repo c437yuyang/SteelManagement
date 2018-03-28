@@ -507,10 +507,14 @@ namespace SteelManagement.CSUI.FrmMain
                 res.Add(DgvDataSourceToList()[dataGridView1.SelectedRows[i].Index]);
             return res.Count > 0 ? res : null;
         }
+
         #region 右键菜单响应
 
         #endregion
 
-
+        private void btnCreateReport_Click(object sender, EventArgs e)
+        {
+            ExcelGenerator.GetSupplierCount(DgvDataSourceToList());
+        }
     }
 }
