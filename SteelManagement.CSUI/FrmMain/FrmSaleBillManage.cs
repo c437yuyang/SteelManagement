@@ -51,6 +51,7 @@ namespace SteelManagement.CSUI.FrmMain
 
 
             dataGridView1.DoubleClick += DataGridView1_DoubleClick;
+            dataGridView1.SelectionChanged += DataGridView1_SelectionChanged; ;
             StyleControler.SetDgvStyle(dataGridView1);
 
             btnSearch.Click += btnSearch_Click;
@@ -62,6 +63,30 @@ namespace SteelManagement.CSUI.FrmMain
 
             progressLoading.Visible = false;
             LoadDataToDgvAsyn();
+        }
+
+        private void DataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count < 1)
+                return;
+            int digit = GlobalUtils.DecimalDigits;
+            decimal amountTotal = 0,duizhang = 0,invoicenum=0,receiptnum=0;
+
+            for (int i = 0; i < dataGridView1.SelectedRows.Count; ++i)
+            {
+                var model = DgvDataSourceToList()[dataGridView1.SelectedRows[i].Index];
+                amountTotal += DecimalHandler.Parse(model.Amount.ToString());
+                duizhang += DecimalHandler.Parse(model.DuiZhang.ToString());
+                invoicenum += DecimalHandler.Parse(model.InvoiceNum.ToString());
+                receiptnum += DecimalHandler.Parse(model.ReceiptNum.ToString());
+            }
+
+            lbTotalCount.Text = string.Format("合计: 金额 {0} 对账 {1} 开票金额 {2} 收款金额 {3}", 
+                DecimalHandler.DecimalToString(amountTotal, digit),
+                DecimalHandler.DecimalToString(duizhang, digit),
+                DecimalHandler.DecimalToString(invoicenum, digit),
+                DecimalHandler.DecimalToString(receiptnum, digit)
+                );
         }
 
         private void InitComboboxs()

@@ -51,6 +51,7 @@ namespace SteelManagement.CSUI.FrmMain
 
           
             dataGridView1.DoubleClick += DataGridView1_DoubleClick;
+            dataGridView1.SelectionChanged += DataGridView1_SelectionChanged;
             StyleControler.SetDgvStyle(dataGridView1);
 
             bgWorkerLoadData.WorkerReportsProgress = true;
@@ -58,6 +59,24 @@ namespace SteelManagement.CSUI.FrmMain
             progressLoading.Visible = false;
             LoadDataToDgvAsyn();
         }
+
+        private void DataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count < 1)
+                return;
+            int digit = GlobalUtils.DecimalDigits;
+            decimal amountTotal = 0;
+
+            for (int i = 0; i < dataGridView1.SelectedRows.Count; ++i)
+            {
+                var model = DgvDataSourceToList()[dataGridView1.SelectedRows[i].Index];
+                amountTotal += DecimalHandler.Parse(model.Amount.ToString());
+            }
+
+            lbTotalCount.Text = string.Format("合计: 金额 {0}", DecimalHandler.DecimalToString(amountTotal, digit));
+
+        }
+
         private void InitComboboxs()
         {
             string tablename = "SaleInfo";

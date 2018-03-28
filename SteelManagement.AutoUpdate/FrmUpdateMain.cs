@@ -146,7 +146,7 @@ namespace SteelManagement.AutoUpdate
         }
 
         /// <summary>
-        /// 如果有现有的更新的同一个文件，那么就不添加，只更新版本
+        /// 如果有现有的更新的同一个文件，那么就不添加，只更新最新版本的文件
         /// </summary>
         /// <param name="list"></param>
         /// <param name="action"></param>

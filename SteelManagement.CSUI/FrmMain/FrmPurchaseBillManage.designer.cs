@@ -83,6 +83,8 @@
             this.韩国担保函ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.韩国加急申请书ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bgWorkerLoadData = new System.ComponentModel.BackgroundWorker();
+            this.bar2 = new DevComponents.DotNetBar.Bar();
+            this.lbTotalCount = new DevComponents.DotNetBar.LabelItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelMain.SuspendLayout();
             this.panelDgv.SuspendLayout();
@@ -92,6 +94,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSchEntryTimeFrom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bar1)).BeginInit();
             this.cmsDgvRb.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bar2)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -221,6 +224,7 @@
             // 
             this.panelDgv.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelDgv.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelDgv.Controls.Add(this.bar2);
             this.panelDgv.Controls.Add(this.dataGridView1);
             this.panelDgv.DisabledBackColor = System.Drawing.Color.Empty;
             this.panelDgv.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -700,6 +704,33 @@
             this.bgWorkerLoadData.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.bgWorkerLoadData_ProgressChanged);
             this.bgWorkerLoadData.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgWorkerLoadData_RunWorkerCompleted);
             // 
+            // bar2
+            // 
+            this.bar2.AntiAlias = true;
+            this.bar2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bar2.DockSide = DevComponents.DotNetBar.eDockSide.Document;
+            this.bar2.DockTabStripHeight = 30;
+            this.bar2.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
+            this.bar2.IsMaximized = false;
+            this.bar2.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.lbTotalCount});
+            this.bar2.ItemSpacing = 5;
+            this.bar2.Location = new System.Drawing.Point(0, 504);
+            this.bar2.Name = "bar2";
+            this.bar2.Size = new System.Drawing.Size(1271, 19);
+            this.bar2.Stretch = true;
+            this.bar2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.bar2.TabIndex = 27;
+            this.bar2.TabStop = false;
+            this.bar2.Text = "bar2";
+            // 
+            // lbTotalCount
+            // 
+            this.lbTotalCount.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbTotalCount.ForeColor = System.Drawing.Color.ForestGreen;
+            this.lbTotalCount.Name = "lbTotalCount";
+            this.lbTotalCount.Text = "--";
+            // 
             // FrmPurchaseBillManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -718,6 +749,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSchEntryTimeFrom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bar1)).EndInit();
             this.cmsDgvRb.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bar2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -775,6 +807,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private DevComponents.DotNetBar.Controls.TextBoxX txtSerialNo;
         private DevComponents.DotNetBar.LabelX labelX6;
+        private DevComponents.DotNetBar.Bar bar2;
+        private DevComponents.DotNetBar.LabelItem lbTotalCount;
     }
 }
 
