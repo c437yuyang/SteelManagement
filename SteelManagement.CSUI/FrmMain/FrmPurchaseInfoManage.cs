@@ -98,11 +98,12 @@ namespace SteelManagement.CSUI.FrmMain
                 fapiaojine += DecimalHandler.Parse(model.Money2.ToString());
             }
 
-            lbTotalCount.Text = string.Format("合计: 送货量 {0}(t)   总金额 {1}  付款金额 {2}  发票金额 {3}",
+            lbTotalCount.Text = string.Format("选中{4}项 合计: 送货量 {0}(t)   总金额 {1}  付款金额 {2}  发票金额 {3}",
                 DecimalHandler.DecimalToString(songhuoliang, digit),
                 DecimalHandler.DecimalToString(zongjine, digit),
                 DecimalHandler.DecimalToString(fukuanjine, digit),
-                DecimalHandler.DecimalToString(fapiaojine, digit));
+                DecimalHandler.DecimalToString(fapiaojine, digit),
+                dataGridView1.SelectedRows.Count);
             lbTotalCount.Text += string.Format("  欠款 {0}  欠票 {1}",
                 DecimalHandler.DecimalToString(zongjine - fukuanjine, digit),
                 DecimalHandler.DecimalToString(zongjine - fapiaojine, digit));

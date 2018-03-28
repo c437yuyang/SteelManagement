@@ -81,11 +81,12 @@ namespace SteelManagement.CSUI.FrmMain
                 receiptnum += DecimalHandler.Parse(model.ReceiptNum.ToString());
             }
 
-            lbTotalCount.Text = string.Format("合计: 金额 {0} 对账 {1} 开票金额 {2} 收款金额 {3}", 
+            lbTotalCount.Text = string.Format("选中{4}项 合计: 金额 {0} 对账 {1} 开票金额 {2} 收款金额 {3}", 
                 DecimalHandler.DecimalToString(amountTotal, digit),
                 DecimalHandler.DecimalToString(duizhang, digit),
                 DecimalHandler.DecimalToString(invoicenum, digit),
-                DecimalHandler.DecimalToString(receiptnum, digit)
+                DecimalHandler.DecimalToString(receiptnum, digit),
+                dataGridView1.SelectedRows.Count
                 );
         }
 

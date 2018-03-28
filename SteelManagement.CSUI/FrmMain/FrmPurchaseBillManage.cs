@@ -73,7 +73,10 @@ namespace SteelManagement.CSUI.FrmMain
                 amountTotal += DecimalHandler.Parse(model.Amount.ToString());
             }
 
-            lbTotalCount.Text = string.Format("合计: 金额 {0}", DecimalHandler.DecimalToString(amountTotal, digit));
+            lbTotalCount.Text = string.Format("选中{1}项 合计: 金额 {0}", 
+                DecimalHandler.DecimalToString(amountTotal, digit),
+                dataGridView1.SelectedRows.Count
+                );
 
         }
 

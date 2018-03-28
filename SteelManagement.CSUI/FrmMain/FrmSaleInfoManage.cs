@@ -96,9 +96,10 @@ namespace SteelManagement.CSUI.FrmMain
                 zongjine += DecimalHandler.Parse(model.TotalSale.ToString());
             }
 
-            lbTotalCount.Text = string.Format("合计: 送货量 {0}(t)   销总金额 {1}",
+            lbTotalCount.Text = string.Format("选中{2}项 合计: 送货量 {0}(t)   销总金额 {1}",
                 DecimalHandler.DecimalToString(songhuoliang,digit),
-                DecimalHandler.DecimalToString(zongjine,digit));
+                DecimalHandler.DecimalToString(zongjine,digit),
+                dataGridView1.SelectedRows.Count);
             
         }
 

@@ -76,12 +76,13 @@ namespace SteelManagement.CSUI.FrmMain
                 yunfei += DecimalHandler.Parse(model.TransportCost.ToString());
             }
 
-            lbTotalCount.Text = string.Format("合计: 购进额 {0}   购进量 {1}  销售总额 {2}  销售量 {3} 运费 {4}",
+            lbTotalCount.Text = string.Format("选中{5}项 合计: 购进额 {0}   购进量 {1}  销售总额 {2}  销售量 {3} 运费 {4}",
                 DecimalHandler.DecimalToString(goujinzonge, digit),
                 DecimalHandler.DecimalToString(goujinzhongliang, digit),
                 DecimalHandler.DecimalToString(xiaoshouzonge, digit),
                 DecimalHandler.DecimalToString(xiaoshouzhongliang, digit),
-                DecimalHandler.DecimalToString(yunfei, digit));
+                DecimalHandler.DecimalToString(yunfei, digit),
+                 dataGridView1.SelectedRows.Count);
 
             if (goujinzonge == 0)
             {

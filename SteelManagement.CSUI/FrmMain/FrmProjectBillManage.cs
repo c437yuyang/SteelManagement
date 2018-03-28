@@ -83,7 +83,7 @@ namespace SteelManagement.CSUI.FrmMain
                 total[9] += DecimalHandler.Parse(model.DuiZhangNum.ToString());
             }
 
-            lbTotalCount.Text = string.Format("合计: 发货金额(销总金额) {0}  验收(发票) {1}  发货未开票 {2}  " +
+            lbTotalCount.Text = string.Format("选中{10}项 合计: 发货金额(销总金额) {0}  验收(发票) {1}  发货未开票 {2}  " +
                 "已付款 {3}  账面欠款 {4}  进场未验收 {5}  总欠款 {6}  未对账 {7}  对账未开票 {8} 已对账{9}",
                 DecimalHandler.DecimalToString(total[0], digit),
                 DecimalHandler.DecimalToString(total[1], digit),
@@ -94,7 +94,8 @@ namespace SteelManagement.CSUI.FrmMain
                 DecimalHandler.DecimalToString(total[6], digit),
                 DecimalHandler.DecimalToString(total[7], digit),
                 DecimalHandler.DecimalToString(total[8], digit),
-                DecimalHandler.DecimalToString(total[9], digit)
+                DecimalHandler.DecimalToString(total[9], digit),
+               dataGridView1.SelectedRows.Count
                 );
         }
 
