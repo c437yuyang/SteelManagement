@@ -21,6 +21,12 @@ namespace SteelManagement.CSUI.FrmMain
         //    //FrmVisaTypeIn frm = new FrmVisaTypeIn();
         //    //OpenTab(frm, frm.Name);
         //}
+
+        private void BtnUserManage_Click(object sender, EventArgs e)
+        {
+            FrmUserManage frm = new FrmUserManage();
+            OpenTab(frm, frm.Text);
+        }
         private void BtnPurchaseInfoManage_Click(object sender, EventArgs e)
         {
             FrmPurchaseInfoManage frm = new FrmPurchaseInfoManage();
@@ -170,12 +176,13 @@ namespace SteelManagement.CSUI.FrmMain
             this.btnSaleInfoManage.Click += BtnSaleInfoManage_Click;
             this.btnSaleBillManage.Click += btnReceiptInfoManage_Click;
             this.btnProjectBillManage.Click += BtnProjectBillManage_Click;
-            this.btnPurchaseBillManage.Click += BtnPurchaseBillManage_Click; 
+            this.btnPurchaseBillManage.Click += BtnPurchaseBillManage_Click;
             this.btnSupplierBillMange.Click += BtnSupplierBillMange_Click;
             this.btnSystemSettings.Click += BtnSystemSettings_Click;
+            this.btnUserManage.Click += BtnUserManage_Click;
         }
 
-
+ 
 
         private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
         {

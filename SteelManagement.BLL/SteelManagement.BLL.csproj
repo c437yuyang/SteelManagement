@@ -47,6 +47,7 @@
     <Compile Include="ProgramUpdateBll.cs" />
     <Compile Include="ProgramUpdate.cs" />
     <Compile Include="ProgramVersion.cs" />
+    <Compile Include="AuthUserBll.cs" />
     <Compile Include="SupplierBillBll.cs" />
     <Compile Include="ProjectBillBll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
