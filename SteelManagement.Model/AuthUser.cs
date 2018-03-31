@@ -16,6 +16,8 @@ namespace SteelManagement.Model
 		private string _password;
 		private string _usermobile;
 		private int? _departmentid;
+		private int? _userlevel;
+		private int? _privilege;
 		/// <summary>
 		/// 
 		/// </summary>
@@ -63,6 +65,22 @@ namespace SteelManagement.Model
 		{
 			set{ _departmentid=value;}
 			get{return _departmentid;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public int? UserLevel
+		{
+			set{ _userlevel=value;}
+			get{return _userlevel;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public int? Privilege
+		{
+			set{ _privilege=value;}
+			get{return _privilege;}
 		}
 		#endregion Model
 

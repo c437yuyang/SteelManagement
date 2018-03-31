@@ -190,6 +190,52 @@ namespace SteelManagement.CSUI.FrmMain
 
             InitCtrlEvents();
 
+            //根据用户权限初始化窗体控制
+            InitCtrlByUserPrevilige();
+
+        }
+
+        private void InitCtrlByUserPrevilige()
+        {
+            var user = GlobalUtils.LoginUser;
+
+            //目前这样分配，信息管理占用16位，用户管理占用8位，后8位以后使用
+            #region 信息管理
+            if ((user.Privilege.Value & 0x00000001) == 0)
+            {
+                btnSteelInfoManage.Enabled = false;
+            }
+
+            if ((user.Privilege.Value & 0x00000002) == 0)
+            {
+                btnPurchaseInfoManage.Enabled = false;
+            }
+
+            if ((user.Privilege.Value & 0x00000004) == 0)
+            {
+                btnSaleInfoManage.Enabled = false;
+            }
+
+            if ((user.Privilege.Value & 0x00000008) == 0)
+            {
+                btnPurchaseBillManage.Enabled = false;
+            }
+
+            if ((user.Privilege.Value & 0x00000010) == 0)
+            {
+                btnSaleBillManage.Enabled = false;
+            }
+
+            if ((user.Privilege.Value & 0x00000020) == 0)
+            {
+                btnProjectBillManage.Enabled = false;
+            }
+
+            if ((user.Privilege.Value & 0x00000040) == 0)
+            {
+                btnSupplierBillMange.Enabled = false;
+            }
+            #endregion
         }
 
         private void InitCtrlEvents()

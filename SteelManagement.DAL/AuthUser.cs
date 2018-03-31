@@ -46,21 +46,25 @@ namespace SteelManagement.DAL
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("insert into AuthUser(");
-			strSql.Append("UserName,Account,Password,UserMobile,DepartmentId)");
+			strSql.Append("UserName,Account,Password,UserMobile,DepartmentId,UserLevel,Privilege)");
 			strSql.Append(" values (");
-			strSql.Append("@UserName,@Account,@Password,@UserMobile,@DepartmentId)");
+			strSql.Append("@UserName,@Account,@Password,@UserMobile,@DepartmentId,@UserLevel,@Privilege)");
 			strSql.Append(";select @@IDENTITY");
 			SqlParameter[] parameters = {
 					new SqlParameter("@UserName", SqlDbType.VarChar,100),
 					new SqlParameter("@Account", SqlDbType.VarChar,20),
 					new SqlParameter("@Password", SqlDbType.VarChar,100),
 					new SqlParameter("@UserMobile", SqlDbType.VarChar,50),
-					new SqlParameter("@DepartmentId", SqlDbType.Int,4)};
+					new SqlParameter("@DepartmentId", SqlDbType.Int,4),
+					new SqlParameter("@UserLevel", SqlDbType.Int,4),
+					new SqlParameter("@Privilege", SqlDbType.Int,4)};
 			parameters[0].Value = model.UserName;
 			parameters[1].Value = model.Account;
 			parameters[2].Value = model.Password;
 			parameters[3].Value = model.UserMobile;
 			parameters[4].Value = model.DepartmentId;
+			parameters[5].Value = model.UserLevel;
+			parameters[6].Value = model.Privilege;
 
 			object obj = DbHelperSQL.GetSingle(strSql.ToString(),parameters);
 			if (obj == null)
@@ -83,7 +87,9 @@ namespace SteelManagement.DAL
 			strSql.Append("Account=@Account,");
 			strSql.Append("Password=@Password,");
 			strSql.Append("UserMobile=@UserMobile,");
-			strSql.Append("DepartmentId=@DepartmentId");
+			strSql.Append("DepartmentId=@DepartmentId,");
+			strSql.Append("UserLevel=@UserLevel,");
+			strSql.Append("Privilege=@Privilege");
 			strSql.Append(" where Id=@Id");
 			SqlParameter[] parameters = {
 					new SqlParameter("@UserName", SqlDbType.VarChar,100),
@@ -91,13 +97,17 @@ namespace SteelManagement.DAL
 					new SqlParameter("@Password", SqlDbType.VarChar,100),
 					new SqlParameter("@UserMobile", SqlDbType.VarChar,50),
 					new SqlParameter("@DepartmentId", SqlDbType.Int,4),
+					new SqlParameter("@UserLevel", SqlDbType.Int,4),
+					new SqlParameter("@Privilege", SqlDbType.Int,4),
 					new SqlParameter("@Id", SqlDbType.Int,4)};
 			parameters[0].Value = model.UserName;
 			parameters[1].Value = model.Account;
 			parameters[2].Value = model.Password;
 			parameters[3].Value = model.UserMobile;
 			parameters[4].Value = model.DepartmentId;
-			parameters[5].Value = model.Id;
+			parameters[5].Value = model.UserLevel;
+			parameters[6].Value = model.Privilege;
+			parameters[7].Value = model.Id;
 
 			int rows=DbHelperSQL.ExecuteSql(strSql.ToString(),parameters);
 			if (rows > 0)
@@ -161,7 +171,7 @@ namespace SteelManagement.DAL
 		{
 			
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select  top 1 Id,UserName,Account,Password,UserMobile,DepartmentId from AuthUser ");
+			strSql.Append("select  top 1 Id,UserName,Account,Password,UserMobile,DepartmentId,UserLevel,Privilege from AuthUser ");
 			strSql.Append(" where Id=@Id");
 			SqlParameter[] parameters = {
 					new SqlParameter("@Id", SqlDbType.Int,4)
@@ -213,6 +223,14 @@ namespace SteelManagement.DAL
 				{
 					model.DepartmentId=int.Parse(row["DepartmentId"].ToString());
 				}
+				if(row["UserLevel"]!=null && row["UserLevel"].ToString()!="")
+				{
+					model.UserLevel=int.Parse(row["UserLevel"].ToString());
+				}
+				if(row["Privilege"]!=null && row["Privilege"].ToString()!="")
+				{
+					model.Privilege=int.Parse(row["Privilege"].ToString());
+				}
 			}
 			return model;
 		}
@@ -223,7 +241,7 @@ namespace SteelManagement.DAL
 		public DataSet GetList(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select Id,UserName,Account,Password,UserMobile,DepartmentId ");
+			strSql.Append("select Id,UserName,Account,Password,UserMobile,DepartmentId,UserLevel,Privilege ");
 			strSql.Append(" FROM AuthUser ");
 			if(strWhere.Trim()!="")
 			{
@@ -243,7 +261,7 @@ namespace SteelManagement.DAL
 			{
 				strSql.Append(" top "+Top.ToString());
 			}
-			strSql.Append(" Id,UserName,Account,Password,UserMobile,DepartmentId ");
+			strSql.Append(" Id,UserName,Account,Password,UserMobile,DepartmentId,UserLevel,Privilege ");
 			strSql.Append(" FROM AuthUser ");
 			if(strWhere.Trim()!="")
 			{
