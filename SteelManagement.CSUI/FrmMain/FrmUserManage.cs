@@ -429,11 +429,7 @@ namespace SteelManagement.CSUI.FrmMain
             //LoadDataToDgvAsyn();
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            FrmAddAuthUser frm = new FrmAddAuthUser(LoadDataToDataGridView, _curPage);
-            frm.ShowDialog();
-        }
+
         #endregion
 
         private List<Model.AuthUser> DgvDataSourceToList()
@@ -487,5 +483,10 @@ namespace SteelManagement.CSUI.FrmMain
             frm.ShowDialog();
         }
 
+        private void 添加用户ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAddAuthUser frm = new FrmAddAuthUser(LoadDataToDataGridView, _curPage);
+            frm.ShowDialog();
+        }
     }
 }

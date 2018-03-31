@@ -33,10 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Account = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UserMobile = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelMain = new DevComponents.DotNetBar.PanelEx();
             this.panelDgv = new DevComponents.DotNetBar.PanelEx();
             this.bar2 = new DevComponents.DotNetBar.Bar();
@@ -66,16 +62,20 @@
             this.韩国加急申请书ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bgWorkerLoadData = new System.ComponentModel.BackgroundWorker();
             this.progressLoading = new DevComponents.DotNetBar.Controls.CircularProgress();
-            this.btnAdd = new DevComponents.DotNetBar.ButtonX();
-            this.panelSerachBar = new DevComponents.DotNetBar.PanelEx();
+            this.controlContainerItem1 = new DevComponents.DotNetBar.ControlContainerItem();
+            this.添加用户ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Account = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserMobile = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelMain.SuspendLayout();
             this.panelDgv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bar2)).BeginInit();
             this.panelBars.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bar1)).BeginInit();
+            this.bar1.SuspendLayout();
             this.cmsDgvRb.SuspendLayout();
-            this.panelSerachBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -94,10 +94,10 @@
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
             this.UserName,
             this.Account,
-            this.UserMobile});
+            this.UserMobile,
+            this.Id});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -122,35 +122,10 @@
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dataGridView1.RowTemplate.Height = 30;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1271, 503);
+            this.dataGridView1.Size = new System.Drawing.Size(1271, 576);
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseUp);
             this.dataGridView1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridView1_RowsAdded);
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.Visible = false;
-            // 
-            // UserName
-            // 
-            this.UserName.DataPropertyName = "UserName";
-            this.UserName.HeaderText = "用户名";
-            this.UserName.Name = "UserName";
-            // 
-            // Account
-            // 
-            this.Account.DataPropertyName = "Account";
-            this.Account.HeaderText = "登陆账号";
-            this.Account.Name = "Account";
-            // 
-            // UserMobile
-            // 
-            this.UserMobile.DataPropertyName = "UserMobile";
-            this.UserMobile.HeaderText = "手机号";
-            this.UserMobile.Name = "UserMobile";
             // 
             // panelMain
             // 
@@ -180,9 +155,9 @@
             this.panelDgv.Controls.Add(this.bar2);
             this.panelDgv.DisabledBackColor = System.Drawing.Color.Empty;
             this.panelDgv.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDgv.Location = new System.Drawing.Point(0, 101);
+            this.panelDgv.Location = new System.Drawing.Point(0, 28);
             this.panelDgv.Name = "panelDgv";
-            this.panelDgv.Size = new System.Drawing.Size(1271, 522);
+            this.panelDgv.Size = new System.Drawing.Size(1271, 595);
             this.panelDgv.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelDgv.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelDgv.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -203,7 +178,7 @@
             this.bar2.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.lbTotalCount});
             this.bar2.ItemSpacing = 5;
-            this.bar2.Location = new System.Drawing.Point(0, 503);
+            this.bar2.Location = new System.Drawing.Point(0, 576);
             this.bar2.Name = "bar2";
             this.bar2.Size = new System.Drawing.Size(1271, 19);
             this.bar2.Stretch = true;
@@ -223,13 +198,12 @@
             // 
             this.panelBars.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelBars.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.panelBars.Controls.Add(this.panelSerachBar);
             this.panelBars.Controls.Add(this.bar1);
             this.panelBars.DisabledBackColor = System.Drawing.Color.Empty;
             this.panelBars.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBars.Location = new System.Drawing.Point(0, 0);
             this.panelBars.Name = "panelBars";
-            this.panelBars.Size = new System.Drawing.Size(1271, 101);
+            this.panelBars.Size = new System.Drawing.Size(1271, 28);
             this.panelBars.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelBars.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelBars.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -242,6 +216,7 @@
             // bar1
             // 
             this.bar1.AntiAlias = true;
+            this.bar1.Controls.Add(this.progressLoading);
             this.bar1.Dock = System.Windows.Forms.DockStyle.Top;
             this.bar1.DockSide = DevComponents.DotNetBar.eDockSide.Top;
             this.bar1.DockTabStripHeight = 30;
@@ -259,7 +234,8 @@
             this.cbPageSize,
             this.labelItem2,
             this.lbCurPage,
-            this.btnGeneratePersonalReport});
+            this.btnGeneratePersonalReport,
+            this.controlContainerItem1});
             this.bar1.ItemSpacing = 5;
             this.bar1.Location = new System.Drawing.Point(0, 0);
             this.bar1.Name = "bar1";
@@ -339,9 +315,10 @@
             this.cmsDgvRb.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cmsItemRefreshState,
             this.删除ToolStripMenuItem,
-            this.修改ToolStripMenuItem});
+            this.修改ToolStripMenuItem,
+            this.添加用户ToolStripMenuItem});
             this.cmsDgvRb.Name = "cmsDgvRb";
-            this.cmsDgvRb.Size = new System.Drawing.Size(161, 70);
+            this.cmsDgvRb.Size = new System.Drawing.Size(161, 92);
             // 
             // cmsItemRefreshState
             // 
@@ -403,46 +380,53 @@
             this.progressLoading.BackgroundStyle.BackgroundImageAlpha = ((byte)(64));
             this.progressLoading.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.progressLoading.FocusCuesEnabled = false;
-            this.progressLoading.Location = new System.Drawing.Point(1158, 0);
+            this.progressLoading.Location = new System.Drawing.Point(536, 2);
             this.progressLoading.Name = "progressLoading";
             this.progressLoading.ProgressBarType = DevComponents.DotNetBar.eCircularProgressType.Dot;
             this.progressLoading.ProgressColor = System.Drawing.Color.YellowGreen;
-            this.progressLoading.Size = new System.Drawing.Size(75, 67);
+            this.progressLoading.Size = new System.Drawing.Size(29, 23);
             this.progressLoading.Style = DevComponents.DotNetBar.eDotNetBarStyle.OfficeXP;
             this.progressLoading.TabIndex = 27;
             this.progressLoading.Value = 100;
             // 
-            // btnAdd
+            // controlContainerItem1
             // 
-            this.btnAdd.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnAdd.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnAdd.Location = new System.Drawing.Point(566, 19);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(92, 23);
-            this.btnAdd.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnAdd.TabIndex = 29;
-            this.btnAdd.Text = "新增";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.controlContainerItem1.AllowItemResize = false;
+            this.controlContainerItem1.Control = this.progressLoading;
+            this.controlContainerItem1.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways;
+            this.controlContainerItem1.Name = "controlContainerItem1";
             // 
-            // panelSerachBar
+            // 添加用户ToolStripMenuItem
             // 
-            this.panelSerachBar.CanvasColor = System.Drawing.SystemColors.Control;
-            this.panelSerachBar.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.panelSerachBar.Controls.Add(this.btnAdd);
-            this.panelSerachBar.Controls.Add(this.progressLoading);
-            this.panelSerachBar.DisabledBackColor = System.Drawing.Color.Empty;
-            this.panelSerachBar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelSerachBar.Location = new System.Drawing.Point(0, 28);
-            this.panelSerachBar.Name = "panelSerachBar";
-            this.panelSerachBar.Size = new System.Drawing.Size(1271, 73);
-            this.panelSerachBar.Style.Alignment = System.Drawing.StringAlignment.Center;
-            this.panelSerachBar.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.panelSerachBar.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.panelSerachBar.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.panelSerachBar.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.panelSerachBar.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.panelSerachBar.Style.GradientAngle = 90;
-            this.panelSerachBar.TabIndex = 24;
+            this.添加用户ToolStripMenuItem.Name = "添加用户ToolStripMenuItem";
+            this.添加用户ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.添加用户ToolStripMenuItem.Text = "添加用户";
+            this.添加用户ToolStripMenuItem.Click += new System.EventHandler(this.添加用户ToolStripMenuItem_Click);
+            // 
+            // UserName
+            // 
+            this.UserName.DataPropertyName = "UserName";
+            this.UserName.HeaderText = "用户名";
+            this.UserName.Name = "UserName";
+            // 
+            // Account
+            // 
+            this.Account.DataPropertyName = "Account";
+            this.Account.HeaderText = "登陆账号";
+            this.Account.Name = "Account";
+            // 
+            // UserMobile
+            // 
+            this.UserMobile.DataPropertyName = "UserMobile";
+            this.UserMobile.HeaderText = "手机号";
+            this.UserMobile.Name = "UserMobile";
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
             // 
             // FrmUserManage
             // 
@@ -459,8 +443,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.bar2)).EndInit();
             this.panelBars.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bar1)).EndInit();
+            this.bar1.ResumeLayout(false);
             this.cmsDgvRb.ResumeLayout(false);
-            this.panelSerachBar.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -496,13 +480,13 @@
         private System.Windows.Forms.ToolStripMenuItem 修改ToolStripMenuItem;
         private DevComponents.DotNetBar.Bar bar2;
         private DevComponents.DotNetBar.LabelItem lbTotalCount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private DevComponents.DotNetBar.Controls.CircularProgress progressLoading;
+        private DevComponents.DotNetBar.ControlContainerItem controlContainerItem1;
+        private System.Windows.Forms.ToolStripMenuItem 添加用户ToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn UserName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Account;
         private System.Windows.Forms.DataGridViewTextBoxColumn UserMobile;
-        private DevComponents.DotNetBar.PanelEx panelSerachBar;
-        private DevComponents.DotNetBar.ButtonX btnAdd;
-        private DevComponents.DotNetBar.Controls.CircularProgress progressLoading;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
     }
 }
 
