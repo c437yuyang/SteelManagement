@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics;
+using System.IO;
 using System.Windows.Forms;
 using DevComponents.DotNetBar;
 using SteelManagement.Common;
@@ -71,6 +73,27 @@ namespace SteelManagement.CSUI.FrmMain
             FrmSystemSettings frm = new FrmSystemSettings();
             frm.ShowDialog();
         }
+
+        private void BtnChangeLoginUser_Click(object sender, EventArgs e)
+        {
+            if (MessageBoxEx.Show("是否切换用户", "提示", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+            {
+                StartExe(Application.ExecutablePath);
+                Application.ExitThread();
+            }
+        }
+
+        private static void StartExe(string appName)
+        {
+            string path = appName;
+            Process ps = new Process();
+            ps.StartInfo.FileName = path;
+            ps.StartInfo.Arguments = "T";
+            ps.StartInfo.CreateNoWindow = true;
+            ps.StartInfo.WorkingDirectory = Path.GetDirectoryName(path);
+            ps.Start();
+        }
+
         #endregion
 
         public void OpenTab(Form frm, string Name)
@@ -180,9 +203,10 @@ namespace SteelManagement.CSUI.FrmMain
             this.btnSupplierBillMange.Click += BtnSupplierBillMange_Click;
             this.btnSystemSettings.Click += BtnSystemSettings_Click;
             this.btnUserManage.Click += BtnUserManage_Click;
+            this.btnChangeLoginUser.Click += BtnChangeLoginUser_Click;
         }
 
- 
+
 
         private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
