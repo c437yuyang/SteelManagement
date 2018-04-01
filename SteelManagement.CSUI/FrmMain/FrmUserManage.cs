@@ -168,7 +168,7 @@ namespace SteelManagement.CSUI.FrmMain
         /// </summary>
         public void ShowProgress()
         {
-            progressLoading.Visible = true;
+            //progressLoading.Visible = true;
             progressLoading.IsRunning = true;
         }
 

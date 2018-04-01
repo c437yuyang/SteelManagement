@@ -33,12 +33,17 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Account = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserMobile = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelMain = new DevComponents.DotNetBar.PanelEx();
             this.panelDgv = new DevComponents.DotNetBar.PanelEx();
             this.bar2 = new DevComponents.DotNetBar.Bar();
             this.lbTotalCount = new DevComponents.DotNetBar.LabelItem();
             this.panelBars = new DevComponents.DotNetBar.PanelEx();
             this.bar1 = new DevComponents.DotNetBar.Bar();
+            this.progressLoading = new DevComponents.DotNetBar.Controls.CircularProgress();
             this.btnPageFirst = new DevComponents.DotNetBar.ButtonItem();
             this.btnPagePre = new DevComponents.DotNetBar.ButtonItem();
             this.btnPageNext = new DevComponents.DotNetBar.ButtonItem();
@@ -55,26 +60,19 @@
             this.cmsItemRefreshState = new System.Windows.Forms.ToolStripMenuItem();
             this.删除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.修改ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.添加用户ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.人申请表ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.机票报表ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.外领担保函ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.韩国担保函ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.韩国加急申请书ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bgWorkerLoadData = new System.ComponentModel.BackgroundWorker();
-            this.progressLoading = new DevComponents.DotNetBar.Controls.CircularProgress();
-            this.controlContainerItem1 = new DevComponents.DotNetBar.ControlContainerItem();
-            this.添加用户ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Account = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UserMobile = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelMain.SuspendLayout();
             this.panelDgv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bar2)).BeginInit();
             this.panelBars.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bar1)).BeginInit();
-            this.bar1.SuspendLayout();
             this.cmsDgvRb.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -127,6 +125,31 @@
             this.dataGridView1.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseUp);
             this.dataGridView1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridView1_RowsAdded);
             // 
+            // UserName
+            // 
+            this.UserName.DataPropertyName = "UserName";
+            this.UserName.HeaderText = "用户名";
+            this.UserName.Name = "UserName";
+            // 
+            // Account
+            // 
+            this.Account.DataPropertyName = "Account";
+            this.Account.HeaderText = "登陆账号";
+            this.Account.Name = "Account";
+            // 
+            // UserMobile
+            // 
+            this.UserMobile.DataPropertyName = "UserMobile";
+            this.UserMobile.HeaderText = "手机号";
+            this.UserMobile.Name = "UserMobile";
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
+            // 
             // panelMain
             // 
             this.panelMain.CanvasColor = System.Drawing.SystemColors.Control;
@@ -153,6 +176,7 @@
             this.panelDgv.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.panelDgv.Controls.Add(this.dataGridView1);
             this.panelDgv.Controls.Add(this.bar2);
+            this.panelDgv.Controls.Add(this.progressLoading);
             this.panelDgv.DisabledBackColor = System.Drawing.Color.Empty;
             this.panelDgv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDgv.Location = new System.Drawing.Point(0, 28);
@@ -216,7 +240,6 @@
             // bar1
             // 
             this.bar1.AntiAlias = true;
-            this.bar1.Controls.Add(this.progressLoading);
             this.bar1.Dock = System.Windows.Forms.DockStyle.Top;
             this.bar1.DockSide = DevComponents.DotNetBar.eDockSide.Top;
             this.bar1.DockTabStripHeight = 30;
@@ -234,8 +257,7 @@
             this.cbPageSize,
             this.labelItem2,
             this.lbCurPage,
-            this.btnGeneratePersonalReport,
-            this.controlContainerItem1});
+            this.btnGeneratePersonalReport});
             this.bar1.ItemSpacing = 5;
             this.bar1.Location = new System.Drawing.Point(0, 0);
             this.bar1.Name = "bar1";
@@ -245,6 +267,24 @@
             this.bar1.TabIndex = 23;
             this.bar1.TabStop = false;
             this.bar1.Text = "bar1";
+            // 
+            // progressLoading
+            // 
+            // 
+            // 
+            // 
+            this.progressLoading.BackgroundStyle.BackgroundImageAlpha = ((byte)(64));
+            this.progressLoading.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.progressLoading.FocusCuesEnabled = false;
+            this.progressLoading.Location = new System.Drawing.Point(572, 16);
+            this.progressLoading.Name = "progressLoading";
+            this.progressLoading.ProgressBarType = DevComponents.DotNetBar.eCircularProgressType.Dot;
+            this.progressLoading.ProgressColor = System.Drawing.Color.YellowGreen;
+            this.progressLoading.Size = new System.Drawing.Size(105, 97);
+            this.progressLoading.Style = DevComponents.DotNetBar.eDotNetBarStyle.OfficeXP;
+            this.progressLoading.TabIndex = 27;
+            this.progressLoading.Value = 100;
+            this.progressLoading.Visible = false;
             // 
             // btnPageFirst
             // 
@@ -341,6 +381,13 @@
             this.修改ToolStripMenuItem.Text = "修改";
             this.修改ToolStripMenuItem.Click += new System.EventHandler(this.修改ToolStripMenuItem_Click);
             // 
+            // 添加用户ToolStripMenuItem
+            // 
+            this.添加用户ToolStripMenuItem.Name = "添加用户ToolStripMenuItem";
+            this.添加用户ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.添加用户ToolStripMenuItem.Text = "添加用户";
+            this.添加用户ToolStripMenuItem.Click += new System.EventHandler(this.添加用户ToolStripMenuItem_Click);
+            // 
             // 人申请表ToolStripMenuItem
             // 
             this.人申请表ToolStripMenuItem.Name = "人申请表ToolStripMenuItem";
@@ -372,62 +419,6 @@
             this.bgWorkerLoadData.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.bgWorkerLoadData_ProgressChanged);
             this.bgWorkerLoadData.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgWorkerLoadData_RunWorkerCompleted);
             // 
-            // progressLoading
-            // 
-            // 
-            // 
-            // 
-            this.progressLoading.BackgroundStyle.BackgroundImageAlpha = ((byte)(64));
-            this.progressLoading.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.progressLoading.FocusCuesEnabled = false;
-            this.progressLoading.Location = new System.Drawing.Point(536, 2);
-            this.progressLoading.Name = "progressLoading";
-            this.progressLoading.ProgressBarType = DevComponents.DotNetBar.eCircularProgressType.Dot;
-            this.progressLoading.ProgressColor = System.Drawing.Color.YellowGreen;
-            this.progressLoading.Size = new System.Drawing.Size(29, 23);
-            this.progressLoading.Style = DevComponents.DotNetBar.eDotNetBarStyle.OfficeXP;
-            this.progressLoading.TabIndex = 27;
-            this.progressLoading.Value = 100;
-            // 
-            // controlContainerItem1
-            // 
-            this.controlContainerItem1.AllowItemResize = false;
-            this.controlContainerItem1.Control = this.progressLoading;
-            this.controlContainerItem1.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways;
-            this.controlContainerItem1.Name = "controlContainerItem1";
-            // 
-            // 添加用户ToolStripMenuItem
-            // 
-            this.添加用户ToolStripMenuItem.Name = "添加用户ToolStripMenuItem";
-            this.添加用户ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.添加用户ToolStripMenuItem.Text = "添加用户";
-            this.添加用户ToolStripMenuItem.Click += new System.EventHandler(this.添加用户ToolStripMenuItem_Click);
-            // 
-            // UserName
-            // 
-            this.UserName.DataPropertyName = "UserName";
-            this.UserName.HeaderText = "用户名";
-            this.UserName.Name = "UserName";
-            // 
-            // Account
-            // 
-            this.Account.DataPropertyName = "Account";
-            this.Account.HeaderText = "登陆账号";
-            this.Account.Name = "Account";
-            // 
-            // UserMobile
-            // 
-            this.UserMobile.DataPropertyName = "UserMobile";
-            this.UserMobile.HeaderText = "手机号";
-            this.UserMobile.Name = "UserMobile";
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.Visible = false;
-            // 
             // FrmUserManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -443,7 +434,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bar2)).EndInit();
             this.panelBars.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bar1)).EndInit();
-            this.bar1.ResumeLayout(false);
             this.cmsDgvRb.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -481,7 +471,6 @@
         private DevComponents.DotNetBar.Bar bar2;
         private DevComponents.DotNetBar.LabelItem lbTotalCount;
         private DevComponents.DotNetBar.Controls.CircularProgress progressLoading;
-        private DevComponents.DotNetBar.ControlContainerItem controlContainerItem1;
         private System.Windows.Forms.ToolStripMenuItem 添加用户ToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn UserName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Account;
