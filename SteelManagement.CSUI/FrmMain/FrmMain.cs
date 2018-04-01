@@ -78,21 +78,12 @@ namespace SteelManagement.CSUI.FrmMain
         {
             if (MessageBoxEx.Show("是否切换用户", "提示", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
             {
-                StartExe(Application.ExecutablePath);
+                GlobalUtils.StartExe(Application.ExecutablePath);
                 Application.ExitThread();
             }
         }
 
-        private static void StartExe(string appName)
-        {
-            string path = appName;
-            Process ps = new Process();
-            ps.StartInfo.FileName = path;
-            ps.StartInfo.Arguments = "T";
-            ps.StartInfo.CreateNoWindow = true;
-            ps.StartInfo.WorkingDirectory = Path.GetDirectoryName(path);
-            ps.Start();
-        }
+
 
         #endregion
 

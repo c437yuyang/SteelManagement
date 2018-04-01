@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
@@ -228,5 +229,17 @@ namespace SteelManagement.Common
             else
                 MessageBoxEx.Show(string.Format("{0}条记录{1}成功.", succeded, operation));
         }
+
+        public static void StartExe(string appName)
+        {
+            string path = appName;
+            Process ps = new Process();
+            ps.StartInfo.FileName = path;
+            ps.StartInfo.Arguments = "T";
+            ps.StartInfo.CreateNoWindow = true;
+            ps.StartInfo.WorkingDirectory = Path.GetDirectoryName(path);
+            ps.Start();
+        }
+
     }
 }

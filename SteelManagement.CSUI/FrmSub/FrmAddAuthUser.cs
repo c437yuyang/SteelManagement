@@ -131,10 +131,6 @@ namespace SteelManagement.CSUI.FrmSub
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-
-
-
-
             if (string.IsNullOrEmpty(txtUserName.Text) ||
                        string.IsNullOrEmpty(txtAccount.Text) ||
                        string.IsNullOrEmpty(txtPassword.Text)
@@ -144,13 +140,12 @@ namespace SteelManagement.CSUI.FrmSub
                 return;
             }
 
-
-
-
             if (_is4Modify)
             {
 
-                if (GlobalUtils.LoginUser.Account != _model.Account && GlobalUtils.LoginUser.UserLevel == 1)
+
+                if (GlobalUtils.LoginUser.Account != _model.Account && 
+                    GlobalUtils.LoginUser.UserLevel == 1)
                 {
                     MessageBoxEx.Show("只有管理员才有权限修改其他用户的信息!");
                     return;
@@ -161,9 +156,11 @@ namespace SteelManagement.CSUI.FrmSub
                 _model.Password = txtPassword.Text;
                 _model.UserMobile = txtUserMobile.Text;
 
-                if ((ChkBoxsToPrevilege() != _model.Privilege || (chkAdmin.Checked ? 0 : 1) != _model.UserLevel) && GlobalUtils.LoginUser.UserLevel == 1)
+                if ((ChkBoxsToPrevilege() != _model.Privilege 
+                    || (chkAdmin.Checked ? 0 : 1) != _model.UserLevel) 
+                    && GlobalUtils.LoginUser.UserLevel == 1)
                 {
-                    MessageBoxEx.Show("没有权限修改自己的权限信息，请联系管理员!");
+                    MessageBoxEx.Show("不能修改自己的权限信息，请联系管理员!");
                     return;
                 }
 
@@ -180,6 +177,12 @@ namespace SteelManagement.CSUI.FrmSub
                 this.DialogResult = DialogResult.OK;
                 this.Close();
 
+                if (GlobalUtils.LoginUser.Account == _model.Account) //修改的自己的账号重启程序
+                {
+                    MessageBoxEx.Show("修改了自己的信息，即将重启系统!");
+                    GlobalUtils.StartExe(Application.ExecutablePath);
+                    Application.ExitThread();
+                }
             }
             else
             {
