@@ -79,7 +79,7 @@ namespace SteelManagement.Common.Excel
                     model.State = row.GetCell(7)?.StringCellValue;
                     res.Add(model);
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     MessageBoxEx.Show("第" + (i + 1) + "行数据有误");
                 }

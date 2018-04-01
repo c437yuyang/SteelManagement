@@ -15,14 +15,8 @@ using SteelManagement.AutoUpdate.Model;
 
 namespace SteelManagement.AutoUpdate
 {
-
-    
-
-
-    //TODO:增加删除功能,配合数据库字段完成.
     public partial class FrmUpdateMain : Form
     {
-
         class UpdateAction
         {
             public enum ActType
@@ -48,7 +42,6 @@ namespace SteelManagement.AutoUpdate
         private void FrmUpdateMain_Load(object sender, EventArgs e)
         {
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
-
         }
 
         void CheckAndDoUpdate()
@@ -84,11 +77,9 @@ namespace SteelManagement.AutoUpdate
                         else
                         {
                             txtUpdateDetails.Text += "V" + updateVersionList[i - 1].Version + " -> V" + updateVersionList[i].Version + "\r\n";
-
                         }
                         txtUpdateDetails.Text += updateVersionList[i].UpdateDetails + "\r\n\r\n";
                     }
-
                     lbVersion.Text = "V" + _localVersion + " -> V" + _latestModel.Version;
                 }));
 
@@ -219,7 +210,7 @@ namespace SteelManagement.AutoUpdate
                 else //默认操作
                 {
                     subItem = new ListViewItem.ListViewSubItem(listViewItem, "更新失败,未定义操作", Color.DarkRed, Color.White,
-    font);
+                                                                font);
                     updateSuccess = false;
                 }
 

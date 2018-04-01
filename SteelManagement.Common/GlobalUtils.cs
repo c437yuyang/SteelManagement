@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using DevComponents.DotNetBar;
+using log4net;
 using SteelManagement.Common.FTP;
 //using SteelManagement.BLL;
 using SteelManagement.Model;
@@ -13,7 +14,7 @@ using Application = System.Windows.Forms.Application;
 
 namespace SteelManagement.Common
 {
-
+    
     public enum RigthLevel
 
     {
@@ -22,6 +23,7 @@ namespace SteelManagement.Common
     }
     public static class GlobalUtils
     {
+        public static ILog Logger = log4net.LogManager.GetLogger("DemoWriter");
         public static Model.AuthUser LoginUser;
         //public static readonly DocDocxGenerator DocDocxGenerator;
         public static RigthLevel LoginUserLevel;
@@ -42,6 +44,8 @@ namespace SteelManagement.Common
         static GlobalUtils()
         {
             InitFtp();
+            //从配置文件读取log4net的配置，然后进行一个初始化工作。
+            log4net.Config.XmlConfigurator.Configure();
         }
         private static void InitFtp()
         {

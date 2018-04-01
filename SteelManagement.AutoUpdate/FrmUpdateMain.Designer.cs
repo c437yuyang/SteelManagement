@@ -69,6 +69,7 @@
             // 
             this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX1.Font = new System.Drawing.Font("方正舒体", 15F, System.Drawing.FontStyle.Bold);
             this.buttonX1.Location = new System.Drawing.Point(385, 158);
             this.buttonX1.Name = "buttonX1";
             this.buttonX1.Size = new System.Drawing.Size(88, 40);

@@ -43,6 +43,9 @@
     <Reference Include="ICSharpCode.SharpZipLib">
       <HintPath>..\packages\NOPI\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="NPOI">
       <HintPath>..\packages\NOPI\NPOI.dll</HintPath>
     </Reference>
