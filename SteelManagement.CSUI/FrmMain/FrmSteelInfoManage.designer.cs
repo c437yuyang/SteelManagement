@@ -33,6 +33,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.EntryTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvCol_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvCol_Size = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Texture = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProducePlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fluctuation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.State = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelMain = new DevComponents.DotNetBar.PanelEx();
             this.panelDgv = new DevComponents.DotNetBar.PanelEx();
             this.panelBars = new DevComponents.DotNetBar.PanelEx();
@@ -75,16 +85,6 @@
             this.韩国担保函ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.韩国加急申请书ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bgWorkerLoadData = new System.ComponentModel.BackgroundWorker();
-            this.EntryTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvCol_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvCol_Size = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Texture = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProducePlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fluctuation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.State = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelMain.SuspendLayout();
             this.panelDgv.SuspendLayout();
@@ -151,6 +151,67 @@
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             this.dataGridView1.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseUp);
             this.dataGridView1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridView1_RowsAdded);
+            // 
+            // EntryTime
+            // 
+            this.EntryTime.DataPropertyName = "EntryTime";
+            this.EntryTime.HeaderText = "录入时间";
+            this.EntryTime.Name = "EntryTime";
+            // 
+            // dgvCol_Name
+            // 
+            this.dgvCol_Name.DataPropertyName = "Name";
+            this.dgvCol_Name.HeaderText = "品名";
+            this.dgvCol_Name.Name = "dgvCol_Name";
+            // 
+            // dgvCol_Size
+            // 
+            this.dgvCol_Size.DataPropertyName = "Size";
+            this.dgvCol_Size.HeaderText = "规格(mm)";
+            this.dgvCol_Size.Name = "dgvCol_Size";
+            // 
+            // Texture
+            // 
+            this.Texture.DataPropertyName = "Texture";
+            this.Texture.HeaderText = "材质";
+            this.Texture.Name = "Texture";
+            // 
+            // ProducePlace
+            // 
+            this.ProducePlace.DataPropertyName = "ProducePlace";
+            this.ProducePlace.HeaderText = "钢厂/产地";
+            this.ProducePlace.Name = "ProducePlace";
+            // 
+            // Price
+            // 
+            this.Price.DataPropertyName = "Price";
+            this.Price.HeaderText = "价格(元/吨)";
+            this.Price.Name = "Price";
+            // 
+            // Fluctuation
+            // 
+            this.Fluctuation.DataPropertyName = "Fluctuation";
+            this.Fluctuation.HeaderText = "涨跌";
+            this.Fluctuation.Name = "Fluctuation";
+            // 
+            // Remark
+            // 
+            this.Remark.DataPropertyName = "Remark";
+            this.Remark.HeaderText = "备注";
+            this.Remark.Name = "Remark";
+            // 
+            // State
+            // 
+            this.State.DataPropertyName = "State";
+            this.State.HeaderText = "状态";
+            this.State.Name = "State";
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
             // 
             // panelMain
             // 
@@ -247,7 +308,7 @@
             // 
             this.btnTimeSpanChoose.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnTimeSpanChoose.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnTimeSpanChoose.Location = new System.Drawing.Point(435, 34);
+            this.btnTimeSpanChoose.Location = new System.Drawing.Point(433, 5);
             this.btnTimeSpanChoose.Name = "btnTimeSpanChoose";
             this.btnTimeSpanChoose.Size = new System.Drawing.Size(91, 23);
             this.btnTimeSpanChoose.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -267,7 +328,7 @@
             this.txtSchEntryTimeTo.CustomFormat = "yyyy/MM/dd HH:mm";
             this.txtSchEntryTimeTo.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
             this.txtSchEntryTimeTo.IsPopupCalendarOpen = false;
-            this.txtSchEntryTimeTo.Location = new System.Drawing.Point(257, 36);
+            this.txtSchEntryTimeTo.Location = new System.Drawing.Point(255, 7);
             // 
             // 
             // 
@@ -314,7 +375,7 @@
             this.txtSchEntryTimeFrom.CustomFormat = "yyyy/MM/dd HH:mm";
             this.txtSchEntryTimeFrom.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
             this.txtSchEntryTimeFrom.IsPopupCalendarOpen = false;
-            this.txtSchEntryTimeFrom.Location = new System.Drawing.Point(72, 36);
+            this.txtSchEntryTimeFrom.Location = new System.Drawing.Point(70, 7);
             // 
             // 
             // 
@@ -355,7 +416,7 @@
             // 
             // 
             this.labelX14.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX14.Location = new System.Drawing.Point(238, 36);
+            this.labelX14.Location = new System.Drawing.Point(236, 7);
             this.labelX14.Name = "labelX14";
             this.labelX14.Size = new System.Drawing.Size(13, 21);
             this.labelX14.TabIndex = 58;
@@ -367,7 +428,7 @@
             // 
             // 
             this.labelX12.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX12.Location = new System.Drawing.Point(14, 37);
+            this.labelX12.Location = new System.Drawing.Point(12, 8);
             this.labelX12.Name = "labelX12";
             this.labelX12.Size = new System.Drawing.Size(63, 21);
             this.labelX12.TabIndex = 57;
@@ -391,7 +452,7 @@
             this.cbProducePlace.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbProducePlace.FormattingEnabled = true;
             this.cbProducePlace.ItemHeight = 15;
-            this.cbProducePlace.Location = new System.Drawing.Point(198, 9);
+            this.cbProducePlace.Location = new System.Drawing.Point(197, 34);
             this.cbProducePlace.Name = "cbProducePlace";
             this.cbProducePlace.Size = new System.Drawing.Size(79, 21);
             this.cbProducePlace.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -403,7 +464,7 @@
             // 
             // 
             this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX3.Location = new System.Drawing.Point(133, 8);
+            this.labelX3.Location = new System.Drawing.Point(132, 33);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(70, 21);
             this.labelX3.TabIndex = 50;
@@ -415,7 +476,7 @@
             this.cbName.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbName.FormattingEnabled = true;
             this.cbName.ItemHeight = 15;
-            this.cbName.Location = new System.Drawing.Point(47, 8);
+            this.cbName.Location = new System.Drawing.Point(46, 33);
             this.cbName.Name = "cbName";
             this.cbName.Size = new System.Drawing.Size(79, 21);
             this.cbName.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -427,7 +488,7 @@
             // 
             // 
             this.labelX15.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX15.Location = new System.Drawing.Point(12, 9);
+            this.labelX15.Location = new System.Drawing.Point(11, 34);
             this.labelX15.Name = "labelX15";
             this.labelX15.Size = new System.Drawing.Size(46, 21);
             this.labelX15.TabIndex = 48;
@@ -649,67 +710,6 @@
             this.bgWorkerLoadData.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgWorkerLoadData_DoWork);
             this.bgWorkerLoadData.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.bgWorkerLoadData_ProgressChanged);
             this.bgWorkerLoadData.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgWorkerLoadData_RunWorkerCompleted);
-            // 
-            // EntryTime
-            // 
-            this.EntryTime.DataPropertyName = "EntryTime";
-            this.EntryTime.HeaderText = "录入时间";
-            this.EntryTime.Name = "EntryTime";
-            // 
-            // dgvCol_Name
-            // 
-            this.dgvCol_Name.DataPropertyName = "Name";
-            this.dgvCol_Name.HeaderText = "品名";
-            this.dgvCol_Name.Name = "dgvCol_Name";
-            // 
-            // dgvCol_Size
-            // 
-            this.dgvCol_Size.DataPropertyName = "Size";
-            this.dgvCol_Size.HeaderText = "规格(mm)";
-            this.dgvCol_Size.Name = "dgvCol_Size";
-            // 
-            // Texture
-            // 
-            this.Texture.DataPropertyName = "Texture";
-            this.Texture.HeaderText = "材质";
-            this.Texture.Name = "Texture";
-            // 
-            // ProducePlace
-            // 
-            this.ProducePlace.DataPropertyName = "ProducePlace";
-            this.ProducePlace.HeaderText = "钢厂/产地";
-            this.ProducePlace.Name = "ProducePlace";
-            // 
-            // Price
-            // 
-            this.Price.DataPropertyName = "Price";
-            this.Price.HeaderText = "价格(元/吨)";
-            this.Price.Name = "Price";
-            // 
-            // Fluctuation
-            // 
-            this.Fluctuation.DataPropertyName = "Fluctuation";
-            this.Fluctuation.HeaderText = "涨跌";
-            this.Fluctuation.Name = "Fluctuation";
-            // 
-            // Remark
-            // 
-            this.Remark.DataPropertyName = "Remark";
-            this.Remark.HeaderText = "备注";
-            this.Remark.Name = "Remark";
-            // 
-            // State
-            // 
-            this.State.DataPropertyName = "State";
-            this.State.HeaderText = "状态";
-            this.State.Name = "State";
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.Visible = false;
             // 
             // FrmSteelInfoManage
             // 

@@ -86,8 +86,8 @@ namespace SteelManagement.CSUI.FrmMain
 
             if (goujinzonge == 0)
             {
-                lbCount1.Text = string.Format("利润 {0}  利润率 {1}",
-                DecimalHandler.DecimalToString(xiaoshouzonge - goujinzonge), -1);
+                //lbCount1.Text = string.Format("利润 {0}  利润率 {1}",
+                //DecimalHandler.DecimalToString(xiaoshouzonge - goujinzonge), -1);
             }
         }
 

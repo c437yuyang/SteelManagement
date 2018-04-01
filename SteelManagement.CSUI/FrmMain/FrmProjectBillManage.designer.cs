@@ -47,6 +47,8 @@
             this.DuiZhangNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelMain = new DevComponents.DotNetBar.PanelEx();
             this.panelDgv = new DevComponents.DotNetBar.PanelEx();
+            this.bar2 = new DevComponents.DotNetBar.Bar();
+            this.lbTotalCount = new DevComponents.DotNetBar.LabelItem();
             this.panelBars = new DevComponents.DotNetBar.PanelEx();
             this.panelSerachBar = new DevComponents.DotNetBar.PanelEx();
             this.cbProject = new DevComponents.DotNetBar.Controls.ComboBoxEx();
@@ -79,16 +81,14 @@
             this.韩国加急申请书ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bgWorkerLoadData = new System.ComponentModel.BackgroundWorker();
             this.lbCurPage = new DevComponents.DotNetBar.LabelItem();
-            this.bar2 = new DevComponents.DotNetBar.Bar();
-            this.lbTotalCount = new DevComponents.DotNetBar.LabelItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelMain.SuspendLayout();
             this.panelDgv.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bar2)).BeginInit();
             this.panelBars.SuspendLayout();
             this.panelSerachBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bar1)).BeginInit();
             this.cmsDgvRb.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bar2)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -143,7 +143,7 @@
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dataGridView1.RowTemplate.Height = 30;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1271, 504);
+            this.dataGridView1.Size = new System.Drawing.Size(1271, 539);
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             this.dataGridView1.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseUp);
@@ -250,9 +250,9 @@
             this.panelDgv.Controls.Add(this.bar2);
             this.panelDgv.DisabledBackColor = System.Drawing.Color.Empty;
             this.panelDgv.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDgv.Location = new System.Drawing.Point(0, 100);
+            this.panelDgv.Location = new System.Drawing.Point(0, 65);
             this.panelDgv.Name = "panelDgv";
-            this.panelDgv.Size = new System.Drawing.Size(1271, 523);
+            this.panelDgv.Size = new System.Drawing.Size(1271, 558);
             this.panelDgv.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelDgv.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelDgv.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -261,6 +261,33 @@
             this.panelDgv.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.panelDgv.Style.GradientAngle = 90;
             this.panelDgv.TabIndex = 38;
+            // 
+            // bar2
+            // 
+            this.bar2.AntiAlias = true;
+            this.bar2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bar2.DockSide = DevComponents.DotNetBar.eDockSide.Document;
+            this.bar2.DockTabStripHeight = 30;
+            this.bar2.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
+            this.bar2.IsMaximized = false;
+            this.bar2.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.lbTotalCount});
+            this.bar2.ItemSpacing = 5;
+            this.bar2.Location = new System.Drawing.Point(0, 539);
+            this.bar2.Name = "bar2";
+            this.bar2.Size = new System.Drawing.Size(1271, 19);
+            this.bar2.Stretch = true;
+            this.bar2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.bar2.TabIndex = 26;
+            this.bar2.TabStop = false;
+            this.bar2.Text = "bar2";
+            // 
+            // lbTotalCount
+            // 
+            this.lbTotalCount.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbTotalCount.ForeColor = System.Drawing.Color.ForestGreen;
+            this.lbTotalCount.Name = "lbTotalCount";
+            this.lbTotalCount.Text = "--";
             // 
             // panelBars
             // 
@@ -272,7 +299,7 @@
             this.panelBars.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBars.Location = new System.Drawing.Point(0, 0);
             this.panelBars.Name = "panelBars";
-            this.panelBars.Size = new System.Drawing.Size(1271, 100);
+            this.panelBars.Size = new System.Drawing.Size(1271, 65);
             this.panelBars.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelBars.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelBars.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -299,7 +326,7 @@
             this.panelSerachBar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelSerachBar.Location = new System.Drawing.Point(0, 28);
             this.panelSerachBar.Name = "panelSerachBar";
-            this.panelSerachBar.Size = new System.Drawing.Size(1271, 72);
+            this.panelSerachBar.Size = new System.Drawing.Size(1271, 37);
             this.panelSerachBar.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelSerachBar.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelSerachBar.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -315,7 +342,7 @@
             this.cbProject.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbProject.FormattingEnabled = true;
             this.cbProject.ItemHeight = 15;
-            this.cbProject.Location = new System.Drawing.Point(63, 9);
+            this.cbProject.Location = new System.Drawing.Point(47, 9);
             this.cbProject.Name = "cbProject";
             this.cbProject.Size = new System.Drawing.Size(79, 21);
             this.cbProject.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -327,7 +354,7 @@
             // 
             // 
             this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX3.Location = new System.Drawing.Point(27, 10);
+            this.labelX3.Location = new System.Drawing.Point(11, 10);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(46, 21);
             this.labelX3.TabIndex = 50;
@@ -363,7 +390,7 @@
             // 
             this.btnAdd.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnAdd.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnAdd.Location = new System.Drawing.Point(620, 35);
+            this.btnAdd.Location = new System.Drawing.Point(333, 9);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(92, 23);
             this.btnAdd.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -380,11 +407,11 @@
             this.progressLoading.BackgroundStyle.BackgroundImageAlpha = ((byte)(64));
             this.progressLoading.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.progressLoading.FocusCuesEnabled = false;
-            this.progressLoading.Location = new System.Drawing.Point(718, 7);
+            this.progressLoading.Location = new System.Drawing.Point(546, 7);
             this.progressLoading.Name = "progressLoading";
             this.progressLoading.ProgressBarType = DevComponents.DotNetBar.eCircularProgressType.Dot;
             this.progressLoading.ProgressColor = System.Drawing.Color.YellowGreen;
-            this.progressLoading.Size = new System.Drawing.Size(72, 51);
+            this.progressLoading.Size = new System.Drawing.Size(40, 25);
             this.progressLoading.Style = DevComponents.DotNetBar.eDotNetBarStyle.OfficeXP;
             this.progressLoading.TabIndex = 27;
             this.progressLoading.Value = 100;
@@ -393,7 +420,7 @@
             // 
             this.btnClearSchConditions.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnClearSchConditions.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnClearSchConditions.Location = new System.Drawing.Point(522, 6);
+            this.btnClearSchConditions.Location = new System.Drawing.Point(235, 9);
             this.btnClearSchConditions.Name = "btnClearSchConditions";
             this.btnClearSchConditions.Size = new System.Drawing.Size(92, 23);
             this.btnClearSchConditions.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -405,7 +432,7 @@
             // 
             this.btnCreateReport.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnCreateReport.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnCreateReport.Location = new System.Drawing.Point(620, 6);
+            this.btnCreateReport.Location = new System.Drawing.Point(431, 9);
             this.btnCreateReport.Name = "btnCreateReport";
             this.btnCreateReport.Size = new System.Drawing.Size(92, 23);
             this.btnCreateReport.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -417,7 +444,7 @@
             // 
             this.btnSearch.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSearch.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSearch.Location = new System.Drawing.Point(522, 35);
+            this.btnSearch.Location = new System.Drawing.Point(137, 9);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(92, 23);
             this.btnSearch.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -565,33 +592,6 @@
             // 
             this.lbCurPage.Name = "lbCurPage";
             // 
-            // bar2
-            // 
-            this.bar2.AntiAlias = true;
-            this.bar2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bar2.DockSide = DevComponents.DotNetBar.eDockSide.Document;
-            this.bar2.DockTabStripHeight = 30;
-            this.bar2.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
-            this.bar2.IsMaximized = false;
-            this.bar2.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.lbTotalCount});
-            this.bar2.ItemSpacing = 5;
-            this.bar2.Location = new System.Drawing.Point(0, 504);
-            this.bar2.Name = "bar2";
-            this.bar2.Size = new System.Drawing.Size(1271, 19);
-            this.bar2.Stretch = true;
-            this.bar2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.bar2.TabIndex = 26;
-            this.bar2.TabStop = false;
-            this.bar2.Text = "bar2";
-            // 
-            // lbTotalCount
-            // 
-            this.lbTotalCount.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbTotalCount.ForeColor = System.Drawing.Color.ForestGreen;
-            this.lbTotalCount.Name = "lbTotalCount";
-            this.lbTotalCount.Text = "--";
-            // 
             // FrmProjectBillManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -604,11 +604,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panelMain.ResumeLayout(false);
             this.panelDgv.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bar2)).EndInit();
             this.panelBars.ResumeLayout(false);
             this.panelSerachBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bar1)).EndInit();
             this.cmsDgvRb.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bar2)).EndInit();
             this.ResumeLayout(false);
 
         }

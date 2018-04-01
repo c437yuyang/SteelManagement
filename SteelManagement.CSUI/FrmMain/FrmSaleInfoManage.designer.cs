@@ -188,7 +188,7 @@
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dataGridView1.RowTemplate.Height = 30;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1271, 499);
+            this.dataGridView1.Size = new System.Drawing.Size(1271, 505);
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             this.dataGridView1.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseUp);
@@ -359,9 +359,9 @@
             this.panelDgv.Controls.Add(this.bar2);
             this.panelDgv.DisabledBackColor = System.Drawing.Color.Empty;
             this.panelDgv.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDgv.Location = new System.Drawing.Point(0, 105);
+            this.panelDgv.Location = new System.Drawing.Point(0, 99);
             this.panelDgv.Name = "panelDgv";
-            this.panelDgv.Size = new System.Drawing.Size(1271, 518);
+            this.panelDgv.Size = new System.Drawing.Size(1271, 524);
             this.panelDgv.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelDgv.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelDgv.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -382,7 +382,7 @@
             this.bar2.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.lbTotalCount});
             this.bar2.ItemSpacing = 5;
-            this.bar2.Location = new System.Drawing.Point(0, 499);
+            this.bar2.Location = new System.Drawing.Point(0, 505);
             this.bar2.Name = "bar2";
             this.bar2.Size = new System.Drawing.Size(1271, 19);
             this.bar2.Stretch = true;
@@ -408,7 +408,7 @@
             this.panelBars.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBars.Location = new System.Drawing.Point(0, 0);
             this.panelBars.Name = "panelBars";
-            this.panelBars.Size = new System.Drawing.Size(1271, 105);
+            this.panelBars.Size = new System.Drawing.Size(1271, 99);
             this.panelBars.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelBars.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelBars.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -443,7 +443,7 @@
             this.panelSerachBar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelSerachBar.Location = new System.Drawing.Point(0, 28);
             this.panelSerachBar.Name = "panelSerachBar";
-            this.panelSerachBar.Size = new System.Drawing.Size(1271, 77);
+            this.panelSerachBar.Size = new System.Drawing.Size(1271, 71);
             this.panelSerachBar.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelSerachBar.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelSerachBar.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -687,7 +687,7 @@
             this.progressLoading.BackgroundStyle.BackgroundImageAlpha = ((byte)(64));
             this.progressLoading.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.progressLoading.FocusCuesEnabled = false;
-            this.progressLoading.Location = new System.Drawing.Point(1142, 8);
+            this.progressLoading.Location = new System.Drawing.Point(1142, 3);
             this.progressLoading.Name = "progressLoading";
             this.progressLoading.ProgressBarType = DevComponents.DotNetBar.eCircularProgressType.Dot;
             this.progressLoading.ProgressColor = System.Drawing.Color.YellowGreen;
