@@ -112,6 +112,16 @@ namespace SteelManagement.CSUI.FrmMain
                 {
                     cbProject.Items.Add(item);
                 }
+
+            cbSupplier.Items.Add("全部");
+            cbSupplier.SelectedIndex = 0;
+            list = BLL.CommonBll.GetFieldList(tablename, "Supplier");
+            if (list != null)
+                foreach (var item in list)
+                {
+                    cbSupplier.Items.Add(item);
+                }
+
         }
 
 
@@ -303,6 +313,15 @@ namespace SteelManagement.CSUI.FrmMain
             {
                 conditions.Add(" (EntryTime between '" + txtSchEntryTimeFrom.Text + "' and " + " '" + txtSchEntryTimeTo.Text +
                                "') ");
+            }
+
+            if (cbSupplier.Text == "全部")
+            {
+
+            }
+            else
+            {
+                conditions.Add(" Supplier = '" + cbSupplier.Text + "' ");
             }
 
 

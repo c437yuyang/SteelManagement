@@ -63,8 +63,10 @@ namespace SteelManagement.CSUI.FrmMain
 
             cbCorporation.Items.Add("全部");
             cbProject.Items.Add("全部");
+            
             cbCorporation.SelectedIndex = 0;
             cbProject.SelectedIndex = 0;
+
 
             var list = BLL.CommonBll.GetFieldList(tablename, "Corporation");
             if (list != null)
@@ -79,6 +81,16 @@ namespace SteelManagement.CSUI.FrmMain
                 {
                     cbProject.Items.Add(item);
                 }
+
+            cbSupplier.Items.Add("全部");
+            cbSupplier.SelectedIndex = 0;
+            list = BLL.CommonBll.GetFieldList(tablename, "Supplier");
+            if (list != null)
+                foreach (var item in list)
+                {
+                    cbSupplier.Items.Add(item);
+                }
+
         }
 
         private void DataGridView1_SelectionChanged(object sender, EventArgs e)
@@ -279,6 +291,16 @@ namespace SteelManagement.CSUI.FrmMain
             {
                 conditions.Add(" Corporation = '" + cbCorporation.Text + "' ");
             }
+
+            if (cbSupplier.Text == "全部")
+            {
+
+            }
+            else
+            {
+                conditions.Add(" Supplier = '" + cbSupplier.Text + "' ");
+            }
+
 
             if (!string.IsNullOrEmpty(txtSerialNo.Text.Trim()))
             {

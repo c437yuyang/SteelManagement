@@ -61,6 +61,8 @@
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelMain = new DevComponents.DotNetBar.PanelEx();
             this.panelDgv = new DevComponents.DotNetBar.PanelEx();
+            this.bar2 = new DevComponents.DotNetBar.Bar();
+            this.lbTotalCount = new DevComponents.DotNetBar.LabelItem();
             this.panelBars = new DevComponents.DotNetBar.PanelEx();
             this.panelSerachBar = new DevComponents.DotNetBar.PanelEx();
             this.btnTimeSpanChoose = new DevComponents.DotNetBar.ButtonX();
@@ -103,18 +105,18 @@
             this.韩国担保函ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.韩国加急申请书ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bgWorkerLoadData = new System.ComponentModel.BackgroundWorker();
-            this.bar2 = new DevComponents.DotNetBar.Bar();
-            this.lbTotalCount = new DevComponents.DotNetBar.LabelItem();
+            this.cbSupplier = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelMain.SuspendLayout();
             this.panelDgv.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bar2)).BeginInit();
             this.panelBars.SuspendLayout();
             this.panelSerachBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtSchEntryTimeTo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSchEntryTimeFrom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bar1)).BeginInit();
             this.cmsDgvRb.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bar2)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -385,6 +387,33 @@
             this.panelDgv.Style.GradientAngle = 90;
             this.panelDgv.TabIndex = 38;
             // 
+            // bar2
+            // 
+            this.bar2.AntiAlias = true;
+            this.bar2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bar2.DockSide = DevComponents.DotNetBar.eDockSide.Document;
+            this.bar2.DockTabStripHeight = 30;
+            this.bar2.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
+            this.bar2.IsMaximized = false;
+            this.bar2.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.lbTotalCount});
+            this.bar2.ItemSpacing = 5;
+            this.bar2.Location = new System.Drawing.Point(0, 503);
+            this.bar2.Name = "bar2";
+            this.bar2.Size = new System.Drawing.Size(1271, 19);
+            this.bar2.Stretch = true;
+            this.bar2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.bar2.TabIndex = 25;
+            this.bar2.TabStop = false;
+            this.bar2.Text = "bar2";
+            // 
+            // lbTotalCount
+            // 
+            this.lbTotalCount.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbTotalCount.ForeColor = System.Drawing.Color.ForestGreen;
+            this.lbTotalCount.Name = "lbTotalCount";
+            this.lbTotalCount.Text = "--";
+            // 
             // panelBars
             // 
             this.panelBars.CanvasColor = System.Drawing.SystemColors.Control;
@@ -409,6 +438,8 @@
             // 
             this.panelSerachBar.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelSerachBar.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelSerachBar.Controls.Add(this.cbSupplier);
+            this.panelSerachBar.Controls.Add(this.labelX1);
             this.panelSerachBar.Controls.Add(this.btnTimeSpanChoose);
             this.panelSerachBar.Controls.Add(this.txtSchEntryTimeTo);
             this.panelSerachBar.Controls.Add(this.txtSchEntryTimeFrom);
@@ -865,32 +896,29 @@
             this.bgWorkerLoadData.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.bgWorkerLoadData_ProgressChanged);
             this.bgWorkerLoadData.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgWorkerLoadData_RunWorkerCompleted);
             // 
-            // bar2
+            // cbSupplier
             // 
-            this.bar2.AntiAlias = true;
-            this.bar2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bar2.DockSide = DevComponents.DotNetBar.eDockSide.Document;
-            this.bar2.DockTabStripHeight = 30;
-            this.bar2.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
-            this.bar2.IsMaximized = false;
-            this.bar2.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.lbTotalCount});
-            this.bar2.ItemSpacing = 5;
-            this.bar2.Location = new System.Drawing.Point(0, 503);
-            this.bar2.Name = "bar2";
-            this.bar2.Size = new System.Drawing.Size(1271, 19);
-            this.bar2.Stretch = true;
-            this.bar2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.bar2.TabIndex = 25;
-            this.bar2.TabStop = false;
-            this.bar2.Text = "bar2";
+            this.cbSupplier.DisplayMember = "Text";
+            this.cbSupplier.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbSupplier.FormattingEnabled = true;
+            this.cbSupplier.ItemHeight = 15;
+            this.cbSupplier.Location = new System.Drawing.Point(316, 36);
+            this.cbSupplier.Name = "cbSupplier";
+            this.cbSupplier.Size = new System.Drawing.Size(87, 21);
+            this.cbSupplier.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cbSupplier.TabIndex = 73;
             // 
-            // lbTotalCount
+            // labelX1
             // 
-            this.lbTotalCount.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbTotalCount.ForeColor = System.Drawing.Color.ForestGreen;
-            this.lbTotalCount.Name = "lbTotalCount";
-            this.lbTotalCount.Text = "--";
+            // 
+            // 
+            // 
+            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX1.Location = new System.Drawing.Point(260, 36);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.Size = new System.Drawing.Size(61, 21);
+            this.labelX1.TabIndex = 72;
+            this.labelX1.Text = "供应商:";
             // 
             // FrmPurchaseInfoManage
             // 
@@ -904,13 +932,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panelMain.ResumeLayout(false);
             this.panelDgv.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bar2)).EndInit();
             this.panelBars.ResumeLayout(false);
             this.panelSerachBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtSchEntryTimeTo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSchEntryTimeFrom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bar1)).EndInit();
             this.cmsDgvRb.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bar2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -990,6 +1018,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private DevComponents.DotNetBar.Bar bar2;
         private DevComponents.DotNetBar.LabelItem lbTotalCount;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx cbSupplier;
+        private DevComponents.DotNetBar.LabelX labelX1;
     }
 }
 

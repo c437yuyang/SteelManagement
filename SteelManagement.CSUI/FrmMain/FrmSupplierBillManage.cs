@@ -116,6 +116,8 @@ namespace SteelManagement.CSUI.FrmMain
                 }
 
 
+
+
         }
 
         private void DataGridView1_DoubleClick(object sender, EventArgs e)
