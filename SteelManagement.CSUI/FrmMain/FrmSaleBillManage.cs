@@ -648,7 +648,7 @@ namespace SteelManagement.CSUI.FrmMain
 
         private void btnCreateReport_Click_1(object sender, EventArgs e)
         {
-
+            ExcelGenerator.GetSaleBillReport(DgvDataSourceToList());
         }
     }
 }

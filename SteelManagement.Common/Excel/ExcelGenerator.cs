@@ -744,6 +744,114 @@ namespace SteelManagement.Common.Excel
 
 
 
+        // <summary>
+        /// 
+        /// 
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static bool GetSaleBillReport(List<Model.SaleBill> list)
+        {
+            //1.创建工作簿对象
+            IWorkbook wkbook = new HSSFWorkbook();
+            //2.创建工作表对象
+            ISheet sheet = wkbook.CreateSheet("销售款项");
+
+            //2.1创建表头
+            IRow row = sheet.CreateRow(0);
+            //row.HeightInPoints = 20;
+            row.CreateCell(0).SetCellValue("公司");
+            row.CreateCell(1).SetCellValue("项目");
+            row.CreateCell(2).SetCellValue("供应商");
+            row.CreateCell(3).SetCellValue("金额");
+            row.CreateCell(4).SetCellValue("对账");
+            row.CreateCell(5).SetCellValue("开票日期");
+            row.CreateCell(6).SetCellValue("开票金额");
+            row.CreateCell(7).SetCellValue("收款日期");
+            row.CreateCell(8).SetCellValue("收款金额");
+            //2.2设置列宽度
+            sheet.SetColumnWidth(0, 10 * 256);//时间
+            sheet.SetColumnWidth(1, 10 * 256);//对账
+            sheet.SetColumnWidth(2, 10 * 256);//开票日期
+            sheet.SetColumnWidth(3, 10 * 256);//发票
+            sheet.SetColumnWidth(4, 10 * 256);//收款日期
+            sheet.SetColumnWidth(5, 10 * 256);//时间
+            sheet.SetColumnWidth(6, 10 * 256);//对账
+            sheet.SetColumnWidth(7, 10 * 256);//开票日期
+            sheet.SetColumnWidth(8, 10 * 256);//发票
+
+
+            int digit = GlobalUtils.DecimalDigits;
+            //3.插入行和单元格
+            for (int i = 0; i != list.Count; ++i)
+            {
+                //创建单元格
+                row = sheet.CreateRow(i + 1);
+                ////设置行高
+                //row.HeightInPoints = 50;
+                //设置值
+
+                row.CreateCell(0).SetCellValue(list[i].Corporation);
+                row.CreateCell(1).SetCellValue(list[i].Project);
+                row.CreateCell(2).SetCellValue(list[i].Supplier);
+                row.CreateCell(3).SetCellValue(DecimalHandler.DecimalToString(list[i].Amount, digit));
+                row.CreateCell(4).SetCellValue(DecimalHandler.DecimalToString(list[i].DuiZhang, digit));
+                row.CreateCell(5).SetCellValue(DateTimeFormator.DateTimeToString(list[i].InvoiceDate));
+                row.CreateCell(6).SetCellValue(DecimalHandler.DecimalToString(list[i].InvoiceNum, digit));
+                row.CreateCell(7).SetCellValue(DateTimeFormator.DateTimeToString(list[i].ReceiptDate));
+                row.CreateCell(8).SetCellValue(DecimalHandler.DecimalToString(list[i].ReceiptNum, digit));
+            }
+            ////统计的一行
+            //row = sheet.CreateRow(list.Count + 1);
+            //row.CreateCell(0);
+            //row.CreateCell(1).SetCellValue("合计");
+            //row.CreateCell(2).SetCellValue(DecimalHandler.DecimalToString(total[0], 2));
+            //row.CreateCell(3).SetCellValue(DecimalHandler.DecimalToString(total[1], 2));
+            //row.CreateCell(4).SetCellValue(DecimalHandler.DecimalToString(total[2], 2));
+            //row.CreateCell(5).SetCellValue(DecimalHandler.DecimalToString(total[3], 2));
+            //row.CreateCell(6).SetCellValue(DecimalHandler.DecimalToString(total[4], 2));
+            //row.CreateCell(7).SetCellValue(DecimalHandler.DecimalToString(total[5], 2));
+            //row.CreateCell(8).SetCellValue(DecimalHandler.DecimalToString(total[6], 2));
+            //row.CreateCell(9).SetCellValue(DecimalHandler.DecimalToString(total[7], 2));
+            //row.CreateCell(10).SetCellValue(DecimalHandler.DecimalToString(total[8], 2));
+            //row.CreateCell(11).SetCellValue(DecimalHandler.DecimalToString(total[9], 2));
+
+            //4.1设置对齐风格和边框
+            ICellStyle style = wkbook.CreateCellStyle();
+            style.VerticalAlignment = VerticalAlignment.Center;
+            style.Alignment = HorizontalAlignment.Right;
+            style.BorderTop = BorderStyle.Thin;
+            style.BorderBottom = BorderStyle.Thin;
+            style.BorderLeft = BorderStyle.Thin;
+            style.BorderRight = BorderStyle.Thin;
+            short color = style.FillForegroundColor;
+            for (int i = 0; i <= sheet.LastRowNum; i++)
+            {
+                row = sheet.GetRow(i);
+                if (i == 0)
+                {
+                    style.FillForegroundColor = HSSFColor.BlueGrey.Index;
+                    style.FillPattern = FillPattern.SolidForeground;
+                }
+                else
+                {
+                    style.FillForegroundColor = color;
+                    style.FillPattern = FillPattern.NoFill;
+                }
+                for (int c = 0; c < row.LastCellNum; ++c)
+                {
+                    row.GetCell(c).CellStyle = style;
+                }
+            }
+            ////4.2合并单元格
+            //sheet.AddMergedRegion(new CellRangeAddress(1, sheet.LastRowNum, 12, 12));
+            //sheet.AddMergedRegion(new CellRangeAddress(1, sheet.LastRowNum, 13, 13));
+            //5.执行写入磁盘
+            string dstName = GlobalUtils.ShowSaveFileDlg("销售款项.xls", "office 2003 excel|*.xls");
+            return SaveFile(dstName, wkbook);
+        }
+
+
+
 
     }
 }
