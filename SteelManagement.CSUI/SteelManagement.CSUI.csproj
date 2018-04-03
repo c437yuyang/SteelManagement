@@ -139,6 +139,7 @@
     <Compile Include="FrmMain\FrmSteelInfoManage.designer.cs">
       <DependentUpon>FrmSteelInfoManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmManager.cs" />
     <Compile Include="FrmSub\FrmAddPurchaseBill.cs">
       <SubType>Form</SubType>
     </Compile>

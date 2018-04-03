@@ -186,7 +186,7 @@
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dataGridView1.RowTemplate.Height = 30;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1271, 503);
+            this.dataGridView1.Size = new System.Drawing.Size(1271, 541);
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseUp);
             this.dataGridView1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridView1_RowsAdded);
@@ -219,9 +219,9 @@
             this.panelDgv.Controls.Add(this.bar2);
             this.panelDgv.DisabledBackColor = System.Drawing.Color.Empty;
             this.panelDgv.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDgv.Location = new System.Drawing.Point(0, 101);
+            this.panelDgv.Location = new System.Drawing.Point(0, 63);
             this.panelDgv.Name = "panelDgv";
-            this.panelDgv.Size = new System.Drawing.Size(1271, 522);
+            this.panelDgv.Size = new System.Drawing.Size(1271, 560);
             this.panelDgv.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelDgv.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelDgv.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -242,7 +242,7 @@
             this.bar2.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.lbTotalCount});
             this.bar2.ItemSpacing = 5;
-            this.bar2.Location = new System.Drawing.Point(0, 503);
+            this.bar2.Location = new System.Drawing.Point(0, 541);
             this.bar2.Name = "bar2";
             this.bar2.Size = new System.Drawing.Size(1271, 19);
             this.bar2.Stretch = true;
@@ -268,7 +268,7 @@
             this.panelBars.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBars.Location = new System.Drawing.Point(0, 0);
             this.panelBars.Name = "panelBars";
-            this.panelBars.Size = new System.Drawing.Size(1271, 101);
+            this.panelBars.Size = new System.Drawing.Size(1271, 63);
             this.panelBars.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelBars.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelBars.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -304,7 +304,7 @@
             this.panelSerachBar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelSerachBar.Location = new System.Drawing.Point(0, 28);
             this.panelSerachBar.Name = "panelSerachBar";
-            this.panelSerachBar.Size = new System.Drawing.Size(1271, 73);
+            this.panelSerachBar.Size = new System.Drawing.Size(1271, 35);
             this.panelSerachBar.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelSerachBar.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelSerachBar.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -320,11 +320,12 @@
             this.cbSupplier.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbSupplier.FormattingEnabled = true;
             this.cbSupplier.ItemHeight = 15;
-            this.cbSupplier.Location = new System.Drawing.Point(316, 36);
+            this.cbSupplier.Location = new System.Drawing.Point(362, 37);
             this.cbSupplier.Name = "cbSupplier";
             this.cbSupplier.Size = new System.Drawing.Size(87, 21);
             this.cbSupplier.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cbSupplier.TabIndex = 73;
+            this.cbSupplier.Visible = false;
             // 
             // labelX1
             // 
@@ -332,11 +333,12 @@
             // 
             // 
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.Location = new System.Drawing.Point(260, 36);
+            this.labelX1.Location = new System.Drawing.Point(306, 37);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(61, 21);
             this.labelX1.TabIndex = 72;
             this.labelX1.Text = "供应商:";
+            this.labelX1.Visible = false;
             // 
             // btnTimeSpanChoose
             // 
@@ -474,11 +476,12 @@
             this.cbProject.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbProject.FormattingEnabled = true;
             this.cbProject.ItemHeight = 15;
-            this.cbProject.Location = new System.Drawing.Point(170, 35);
+            this.cbProject.Location = new System.Drawing.Point(216, 36);
             this.cbProject.Name = "cbProject";
             this.cbProject.Size = new System.Drawing.Size(79, 21);
             this.cbProject.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cbProject.TabIndex = 57;
+            this.cbProject.Visible = false;
             // 
             // labelX3
             // 
@@ -486,11 +489,12 @@
             // 
             // 
             this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX3.Location = new System.Drawing.Point(134, 36);
+            this.labelX3.Location = new System.Drawing.Point(180, 37);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(46, 21);
             this.labelX3.TabIndex = 56;
             this.labelX3.Text = "项目:";
+            this.labelX3.Visible = false;
             // 
             // cbCorporation
             // 
@@ -498,11 +502,12 @@
             this.cbCorporation.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbCorporation.FormattingEnabled = true;
             this.cbCorporation.ItemHeight = 15;
-            this.cbCorporation.Location = new System.Drawing.Point(48, 36);
+            this.cbCorporation.Location = new System.Drawing.Point(94, 37);
             this.cbCorporation.Name = "cbCorporation";
             this.cbCorporation.Size = new System.Drawing.Size(79, 21);
             this.cbCorporation.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cbCorporation.TabIndex = 55;
+            this.cbCorporation.Visible = false;
             // 
             // labelX15
             // 
@@ -510,11 +515,12 @@
             // 
             // 
             this.labelX15.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX15.Location = new System.Drawing.Point(13, 37);
+            this.labelX15.Location = new System.Drawing.Point(59, 38);
             this.labelX15.Name = "labelX15";
             this.labelX15.Size = new System.Drawing.Size(46, 21);
             this.labelX15.TabIndex = 54;
             this.labelX15.Text = "公司:";
+            this.labelX15.Visible = false;
             // 
             // txtSerialNo
             // 
@@ -544,7 +550,7 @@
             // 
             this.btnAdd.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnAdd.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnAdd.Location = new System.Drawing.Point(1057, 35);
+            this.btnAdd.Location = new System.Drawing.Point(972, 6);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(92, 23);
             this.btnAdd.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -560,11 +566,11 @@
             this.progressLoading.BackgroundStyle.BackgroundImageAlpha = ((byte)(64));
             this.progressLoading.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.progressLoading.FocusCuesEnabled = false;
-            this.progressLoading.Location = new System.Drawing.Point(1158, 0);
+            this.progressLoading.Location = new System.Drawing.Point(1214, 5);
             this.progressLoading.Name = "progressLoading";
             this.progressLoading.ProgressBarType = DevComponents.DotNetBar.eCircularProgressType.Dot;
             this.progressLoading.ProgressColor = System.Drawing.Color.YellowGreen;
-            this.progressLoading.Size = new System.Drawing.Size(75, 67);
+            this.progressLoading.Size = new System.Drawing.Size(31, 24);
             this.progressLoading.Style = DevComponents.DotNetBar.eDotNetBarStyle.OfficeXP;
             this.progressLoading.TabIndex = 27;
             this.progressLoading.Value = 100;
@@ -573,7 +579,7 @@
             // 
             this.btnClearSchConditions.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnClearSchConditions.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnClearSchConditions.Location = new System.Drawing.Point(959, 6);
+            this.btnClearSchConditions.Location = new System.Drawing.Point(874, 6);
             this.btnClearSchConditions.Name = "btnClearSchConditions";
             this.btnClearSchConditions.Size = new System.Drawing.Size(92, 23);
             this.btnClearSchConditions.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -585,7 +591,7 @@
             // 
             this.btnSearch.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSearch.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSearch.Location = new System.Drawing.Point(959, 35);
+            this.btnSearch.Location = new System.Drawing.Point(776, 6);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(92, 23);
             this.btnSearch.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -769,7 +775,7 @@
             // 
             this.btnCreateReport.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnCreateReport.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnCreateReport.Location = new System.Drawing.Point(1057, 6);
+            this.btnCreateReport.Location = new System.Drawing.Point(1070, 6);
             this.btnCreateReport.Name = "btnCreateReport";
             this.btnCreateReport.Size = new System.Drawing.Size(92, 23);
             this.btnCreateReport.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;

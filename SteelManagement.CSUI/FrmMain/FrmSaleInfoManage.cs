@@ -266,22 +266,22 @@ namespace SteelManagement.CSUI.FrmMain
             List<string> conditions = new List<string>();
 
 
-            if (cbProject.Text == "全部")
+            if (FrmManager.OpenedMainFrm.cbProject.Text == "全部")
             {
 
             }
             else
             {
-                conditions.Add(" Project = '" + cbProject.Text + "' ");
+                conditions.Add(" Project = '" + FrmManager.OpenedMainFrm.cbProject.Text + "' ");
             }
 
-            if (cbCorporation.Text == "全部")
+            if (FrmManager.OpenedMainFrm.cbCorporation.Text == "全部")
             {
 
             }
             else
             {
-                conditions.Add(" Corporation = '" + cbCorporation.Text + "' ");
+                conditions.Add(" Corporation = '" + FrmManager.OpenedMainFrm.cbCorporation.Text + "' ");
             }
 
             if (!string.IsNullOrEmpty(txtSerialNo.Text.Trim()))
@@ -295,13 +295,13 @@ namespace SteelManagement.CSUI.FrmMain
                                "') ");
             }
 
-            if (cbSupplier.Text == "全部")
+            if (FrmManager.OpenedMainFrm.cbSupplier.Text == "全部")
             {
 
             }
             else
             {
-                conditions.Add(" Supplier = '" + cbSupplier.Text + "' ");
+                conditions.Add(" Supplier = '" + FrmManager.OpenedMainFrm.cbSupplier.Text + "' ");
             }
 
 

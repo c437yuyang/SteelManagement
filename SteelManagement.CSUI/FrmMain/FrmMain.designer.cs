@@ -31,9 +31,20 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.ribbonControl1 = new DevComponents.DotNetBar.RibbonControl();
+            this.ribbonPanel3 = new DevComponents.DotNetBar.RibbonPanel();
+            this.lbVisaInfoCount = new System.Windows.Forms.Label();
+            this.ribbonBar2 = new DevComponents.DotNetBar.RibbonBar();
+            this.btnSteelInfoManage = new DevComponents.DotNetBar.ButtonItem();
+            this.btnPurchaseInfoManage = new DevComponents.DotNetBar.ButtonItem();
+            this.btnSaleInfoManage = new DevComponents.DotNetBar.ButtonItem();
+            this.btnPurchaseBillManage = new DevComponents.DotNetBar.ButtonItem();
+            this.btnSaleBillManage = new DevComponents.DotNetBar.ButtonItem();
+            this.btnProjectBillManage = new DevComponents.DotNetBar.ButtonItem();
+            this.btnSupplierBillMange = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonPanel4 = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonBar5 = new DevComponents.DotNetBar.RibbonBar();
             this.btnUserManage = new DevComponents.DotNetBar.ButtonItem();
+            this.btnChangeLoginUser = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonPanel2 = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonBar4 = new DevComponents.DotNetBar.RibbonBar();
             this.btnClientManage = new DevComponents.DotNetBar.ButtonItem();
@@ -46,16 +57,6 @@
             this.btnSystemSettings = new DevComponents.DotNetBar.ButtonItem();
             this.btnPersonalCount = new DevComponents.DotNetBar.ButtonItem();
             this.btnCommisionMoneyManage = new DevComponents.DotNetBar.ButtonItem();
-            this.ribbonPanel3 = new DevComponents.DotNetBar.RibbonPanel();
-            this.lbVisaInfoCount = new System.Windows.Forms.Label();
-            this.ribbonBar2 = new DevComponents.DotNetBar.RibbonBar();
-            this.btnSteelInfoManage = new DevComponents.DotNetBar.ButtonItem();
-            this.btnPurchaseInfoManage = new DevComponents.DotNetBar.ButtonItem();
-            this.btnSaleInfoManage = new DevComponents.DotNetBar.ButtonItem();
-            this.btnPurchaseBillManage = new DevComponents.DotNetBar.ButtonItem();
-            this.btnSaleBillManage = new DevComponents.DotNetBar.ButtonItem();
-            this.btnProjectBillManage = new DevComponents.DotNetBar.ButtonItem();
-            this.btnSupplierBillMange = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonPanel5 = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonTabItem3 = new DevComponents.DotNetBar.RibbonTabItem();
             this.ribbonTabItem4 = new DevComponents.DotNetBar.RibbonTabItem();
@@ -70,12 +71,17 @@
             this.btnMCloseOther = new System.Windows.Forms.ToolStripMenuItem();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.btnFrmGaoPaiManage = new DevComponents.DotNetBar.ButtonItem();
-            this.btnChangeLoginUser = new DevComponents.DotNetBar.ButtonItem();
+            this.cbSupplier = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.cbProject = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.labelX3 = new DevComponents.DotNetBar.LabelX();
+            this.cbCorporation = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.labelX15 = new DevComponents.DotNetBar.LabelX();
             this.ribbonControl1.SuspendLayout();
+            this.ribbonPanel3.SuspendLayout();
             this.ribbonPanel4.SuspendLayout();
             this.ribbonPanel2.SuspendLayout();
             this.ribbonPanel1.SuspendLayout();
-            this.ribbonPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabMain)).BeginInit();
             this.cms.SuspendLayout();
             this.SuspendLayout();
@@ -88,8 +94,8 @@
             this.ribbonControl1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonControl1.Controls.Add(this.ribbonPanel3);
             this.ribbonControl1.Controls.Add(this.ribbonPanel4);
-            this.ribbonControl1.Controls.Add(this.ribbonPanel2);
             this.ribbonControl1.Controls.Add(this.ribbonPanel1);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel2);
             this.ribbonControl1.Controls.Add(this.ribbonPanel5);
             this.ribbonControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ribbonControl1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -122,6 +128,152 @@
             this.ribbonControl1.TabGroupHeight = 14;
             this.ribbonControl1.TabIndex = 1;
             this.ribbonControl1.Text = "ribbonControl1";
+            // 
+            // ribbonPanel3
+            // 
+            this.ribbonPanel3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonPanel3.Controls.Add(this.cbCorporation);
+            this.ribbonPanel3.Controls.Add(this.cbSupplier);
+            this.ribbonPanel3.Controls.Add(this.labelX1);
+            this.ribbonPanel3.Controls.Add(this.cbProject);
+            this.ribbonPanel3.Controls.Add(this.labelX3);
+            this.ribbonPanel3.Controls.Add(this.labelX15);
+            this.ribbonPanel3.Controls.Add(this.lbVisaInfoCount);
+            this.ribbonPanel3.Controls.Add(this.ribbonBar2);
+            this.ribbonPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ribbonPanel3.Location = new System.Drawing.Point(0, 25);
+            this.ribbonPanel3.Name = "ribbonPanel3";
+            this.ribbonPanel3.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.ribbonPanel3.Size = new System.Drawing.Size(1284, 61);
+            // 
+            // 
+            // 
+            this.ribbonPanel3.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonPanel3.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonPanel3.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonPanel3.TabIndex = 3;
+            // 
+            // lbVisaInfoCount
+            // 
+            this.lbVisaInfoCount.BackColor = System.Drawing.Color.Transparent;
+            this.lbVisaInfoCount.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lbVisaInfoCount.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbVisaInfoCount.ForeColor = System.Drawing.Color.ForestGreen;
+            this.lbVisaInfoCount.Location = new System.Drawing.Point(1147, 0);
+            this.lbVisaInfoCount.Name = "lbVisaInfoCount";
+            this.lbVisaInfoCount.Size = new System.Drawing.Size(134, 58);
+            this.lbVisaInfoCount.TabIndex = 2;
+            this.lbVisaInfoCount.Text = "test string";
+            this.lbVisaInfoCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbVisaInfoCount.Visible = false;
+            // 
+            // ribbonBar2
+            // 
+            this.ribbonBar2.AutoOverflowEnabled = true;
+            // 
+            // 
+            // 
+            this.ribbonBar2.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonBar2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonBar2.ContainerControlProcessDialogKey = true;
+            this.ribbonBar2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ribbonBar2.DragDropSupport = true;
+            this.ribbonBar2.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.btnSteelInfoManage,
+            this.btnPurchaseInfoManage,
+            this.btnSaleInfoManage,
+            this.btnPurchaseBillManage,
+            this.btnSaleBillManage,
+            this.btnProjectBillManage,
+            this.btnSupplierBillMange});
+            this.ribbonBar2.Location = new System.Drawing.Point(3, 0);
+            this.ribbonBar2.Name = "ribbonBar2";
+            this.ribbonBar2.Size = new System.Drawing.Size(1053, 58);
+            this.ribbonBar2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonBar2.TabIndex = 0;
+            this.ribbonBar2.Text = "ribbonBar2";
+            // 
+            // 
+            // 
+            this.ribbonBar2.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonBar2.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonBar2.TitleVisible = false;
+            // 
+            // btnSteelInfoManage
+            // 
+            this.btnSteelInfoManage.Icon = ((System.Drawing.Icon)(resources.GetObject("btnSteelInfoManage.Icon")));
+            this.btnSteelInfoManage.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
+            this.btnSteelInfoManage.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnSteelInfoManage.Name = "btnSteelInfoManage";
+            this.btnSteelInfoManage.SubItemsExpandWidth = 14;
+            this.btnSteelInfoManage.Text = "钢材信息管理";
+            // 
+            // btnPurchaseInfoManage
+            // 
+            this.btnPurchaseInfoManage.Icon = ((System.Drawing.Icon)(resources.GetObject("btnPurchaseInfoManage.Icon")));
+            this.btnPurchaseInfoManage.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
+            this.btnPurchaseInfoManage.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnPurchaseInfoManage.Name = "btnPurchaseInfoManage";
+            this.btnPurchaseInfoManage.SubItemsExpandWidth = 14;
+            this.btnPurchaseInfoManage.Text = "采购信息管理";
+            // 
+            // btnSaleInfoManage
+            // 
+            this.btnSaleInfoManage.Icon = ((System.Drawing.Icon)(resources.GetObject("btnSaleInfoManage.Icon")));
+            this.btnSaleInfoManage.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
+            this.btnSaleInfoManage.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnSaleInfoManage.Name = "btnSaleInfoManage";
+            this.btnSaleInfoManage.SubItemsExpandWidth = 14;
+            this.btnSaleInfoManage.Text = "销售信息管理";
+            // 
+            // btnPurchaseBillManage
+            // 
+            this.btnPurchaseBillManage.Icon = ((System.Drawing.Icon)(resources.GetObject("btnPurchaseBillManage.Icon")));
+            this.btnPurchaseBillManage.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
+            this.btnPurchaseBillManage.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnPurchaseBillManage.Name = "btnPurchaseBillManage";
+            this.btnPurchaseBillManage.SubItemsExpandWidth = 14;
+            this.btnPurchaseBillManage.Text = "采购款项管理";
+            // 
+            // btnSaleBillManage
+            // 
+            this.btnSaleBillManage.Icon = ((System.Drawing.Icon)(resources.GetObject("btnSaleBillManage.Icon")));
+            this.btnSaleBillManage.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
+            this.btnSaleBillManage.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnSaleBillManage.Name = "btnSaleBillManage";
+            this.btnSaleBillManage.SubItemsExpandWidth = 14;
+            this.btnSaleBillManage.Text = "销售款项管理";
+            this.btnSaleBillManage.Click += new System.EventHandler(this.btnReceiptInfoManage_Click);
+            // 
+            // btnProjectBillManage
+            // 
+            this.btnProjectBillManage.Icon = ((System.Drawing.Icon)(resources.GetObject("btnProjectBillManage.Icon")));
+            this.btnProjectBillManage.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
+            this.btnProjectBillManage.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnProjectBillManage.Name = "btnProjectBillManage";
+            this.btnProjectBillManage.SubItemsExpandWidth = 14;
+            this.btnProjectBillManage.Text = "销售款项汇总";
+            // 
+            // btnSupplierBillMange
+            // 
+            this.btnSupplierBillMange.Icon = ((System.Drawing.Icon)(resources.GetObject("btnSupplierBillMange.Icon")));
+            this.btnSupplierBillMange.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
+            this.btnSupplierBillMange.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnSupplierBillMange.Name = "btnSupplierBillMange";
+            this.btnSupplierBillMange.SubItemsExpandWidth = 14;
+            this.btnSupplierBillMange.Text = "供应商款项汇总";
             // 
             // ribbonPanel4
             // 
@@ -186,6 +338,15 @@
             this.btnUserManage.Name = "btnUserManage";
             this.btnUserManage.SubItemsExpandWidth = 14;
             this.btnUserManage.Text = "用户管理";
+            // 
+            // btnChangeLoginUser
+            // 
+            this.btnChangeLoginUser.Icon = ((System.Drawing.Icon)(resources.GetObject("btnChangeLoginUser.Icon")));
+            this.btnChangeLoginUser.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
+            this.btnChangeLoginUser.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnChangeLoginUser.Name = "btnChangeLoginUser";
+            this.btnChangeLoginUser.SubItemsExpandWidth = 14;
+            this.btnChangeLoginUser.Text = "切换用户";
             // 
             // ribbonPanel2
             // 
@@ -395,146 +556,6 @@
             this.btnCommisionMoneyManage.Text = "工作提成管理";
             this.btnCommisionMoneyManage.Visible = false;
             // 
-            // ribbonPanel3
-            // 
-            this.ribbonPanel3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonPanel3.Controls.Add(this.lbVisaInfoCount);
-            this.ribbonPanel3.Controls.Add(this.ribbonBar2);
-            this.ribbonPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel3.Location = new System.Drawing.Point(0, 25);
-            this.ribbonPanel3.Name = "ribbonPanel3";
-            this.ribbonPanel3.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel3.Size = new System.Drawing.Size(1284, 61);
-            // 
-            // 
-            // 
-            this.ribbonPanel3.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonPanel3.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonPanel3.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonPanel3.TabIndex = 3;
-            // 
-            // lbVisaInfoCount
-            // 
-            this.lbVisaInfoCount.BackColor = System.Drawing.Color.Transparent;
-            this.lbVisaInfoCount.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lbVisaInfoCount.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbVisaInfoCount.ForeColor = System.Drawing.Color.ForestGreen;
-            this.lbVisaInfoCount.Location = new System.Drawing.Point(791, 0);
-            this.lbVisaInfoCount.Name = "lbVisaInfoCount";
-            this.lbVisaInfoCount.Size = new System.Drawing.Size(490, 58);
-            this.lbVisaInfoCount.TabIndex = 2;
-            this.lbVisaInfoCount.Text = "test string";
-            this.lbVisaInfoCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbVisaInfoCount.Visible = false;
-            // 
-            // ribbonBar2
-            // 
-            this.ribbonBar2.AutoOverflowEnabled = true;
-            // 
-            // 
-            // 
-            this.ribbonBar2.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonBar2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonBar2.ContainerControlProcessDialogKey = true;
-            this.ribbonBar2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ribbonBar2.DragDropSupport = true;
-            this.ribbonBar2.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.btnSteelInfoManage,
-            this.btnPurchaseInfoManage,
-            this.btnSaleInfoManage,
-            this.btnPurchaseBillManage,
-            this.btnSaleBillManage,
-            this.btnProjectBillManage,
-            this.btnSupplierBillMange});
-            this.ribbonBar2.Location = new System.Drawing.Point(3, 0);
-            this.ribbonBar2.Name = "ribbonBar2";
-            this.ribbonBar2.Size = new System.Drawing.Size(955, 58);
-            this.ribbonBar2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonBar2.TabIndex = 0;
-            this.ribbonBar2.Text = "ribbonBar2";
-            // 
-            // 
-            // 
-            this.ribbonBar2.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonBar2.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonBar2.TitleVisible = false;
-            // 
-            // btnSteelInfoManage
-            // 
-            this.btnSteelInfoManage.Icon = ((System.Drawing.Icon)(resources.GetObject("btnSteelInfoManage.Icon")));
-            this.btnSteelInfoManage.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
-            this.btnSteelInfoManage.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnSteelInfoManage.Name = "btnSteelInfoManage";
-            this.btnSteelInfoManage.SubItemsExpandWidth = 14;
-            this.btnSteelInfoManage.Text = "钢材信息管理";
-            // 
-            // btnPurchaseInfoManage
-            // 
-            this.btnPurchaseInfoManage.Icon = ((System.Drawing.Icon)(resources.GetObject("btnPurchaseInfoManage.Icon")));
-            this.btnPurchaseInfoManage.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
-            this.btnPurchaseInfoManage.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnPurchaseInfoManage.Name = "btnPurchaseInfoManage";
-            this.btnPurchaseInfoManage.SubItemsExpandWidth = 14;
-            this.btnPurchaseInfoManage.Text = "采购信息管理";
-            // 
-            // btnSaleInfoManage
-            // 
-            this.btnSaleInfoManage.Icon = ((System.Drawing.Icon)(resources.GetObject("btnSaleInfoManage.Icon")));
-            this.btnSaleInfoManage.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
-            this.btnSaleInfoManage.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnSaleInfoManage.Name = "btnSaleInfoManage";
-            this.btnSaleInfoManage.SubItemsExpandWidth = 14;
-            this.btnSaleInfoManage.Text = "销售信息管理";
-            // 
-            // btnPurchaseBillManage
-            // 
-            this.btnPurchaseBillManage.Icon = ((System.Drawing.Icon)(resources.GetObject("btnPurchaseBillManage.Icon")));
-            this.btnPurchaseBillManage.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
-            this.btnPurchaseBillManage.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnPurchaseBillManage.Name = "btnPurchaseBillManage";
-            this.btnPurchaseBillManage.SubItemsExpandWidth = 14;
-            this.btnPurchaseBillManage.Text = "采购款项管理";
-            // 
-            // btnSaleBillManage
-            // 
-            this.btnSaleBillManage.Icon = ((System.Drawing.Icon)(resources.GetObject("btnSaleBillManage.Icon")));
-            this.btnSaleBillManage.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
-            this.btnSaleBillManage.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnSaleBillManage.Name = "btnSaleBillManage";
-            this.btnSaleBillManage.SubItemsExpandWidth = 14;
-            this.btnSaleBillManage.Text = "销售款项管理";
-            this.btnSaleBillManage.Click += new System.EventHandler(this.btnReceiptInfoManage_Click);
-            // 
-            // btnProjectBillManage
-            // 
-            this.btnProjectBillManage.Icon = ((System.Drawing.Icon)(resources.GetObject("btnProjectBillManage.Icon")));
-            this.btnProjectBillManage.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
-            this.btnProjectBillManage.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnProjectBillManage.Name = "btnProjectBillManage";
-            this.btnProjectBillManage.SubItemsExpandWidth = 14;
-            this.btnProjectBillManage.Text = "销售款项汇总";
-            // 
-            // btnSupplierBillMange
-            // 
-            this.btnSupplierBillMange.Icon = ((System.Drawing.Icon)(resources.GetObject("btnSupplierBillMange.Icon")));
-            this.btnSupplierBillMange.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
-            this.btnSupplierBillMange.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnSupplierBillMange.Name = "btnSupplierBillMange";
-            this.btnSupplierBillMange.SubItemsExpandWidth = 14;
-            this.btnSupplierBillMange.Text = "供应商款项汇总";
-            // 
             // ribbonPanel5
             // 
             this.ribbonPanel5.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -659,14 +680,77 @@
             this.btnFrmGaoPaiManage.SubItemsExpandWidth = 14;
             this.btnFrmGaoPaiManage.Text = "高排图像管理";
             // 
-            // btnChangeLoginUser
+            // cbSupplier
             // 
-            this.btnChangeLoginUser.Icon = ((System.Drawing.Icon)(resources.GetObject("btnChangeLoginUser.Icon")));
-            this.btnChangeLoginUser.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
-            this.btnChangeLoginUser.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnChangeLoginUser.Name = "btnChangeLoginUser";
-            this.btnChangeLoginUser.SubItemsExpandWidth = 14;
-            this.btnChangeLoginUser.Text = "切换用户";
+            this.cbSupplier.DisplayMember = "Text";
+            this.cbSupplier.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbSupplier.FormattingEnabled = true;
+            this.cbSupplier.ItemHeight = 15;
+            this.cbSupplier.Location = new System.Drawing.Point(945, 18);
+            this.cbSupplier.Name = "cbSupplier";
+            this.cbSupplier.Size = new System.Drawing.Size(87, 21);
+            this.cbSupplier.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cbSupplier.TabIndex = 92;
+            // 
+            // labelX1
+            // 
+            // 
+            // 
+            // 
+            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX1.Location = new System.Drawing.Point(889, 18);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.Size = new System.Drawing.Size(61, 21);
+            this.labelX1.TabIndex = 91;
+            this.labelX1.Text = "供应商:";
+            // 
+            // cbProject
+            // 
+            this.cbProject.DisplayMember = "Text";
+            this.cbProject.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbProject.FormattingEnabled = true;
+            this.cbProject.ItemHeight = 15;
+            this.cbProject.Location = new System.Drawing.Point(802, 18);
+            this.cbProject.Name = "cbProject";
+            this.cbProject.Size = new System.Drawing.Size(79, 21);
+            this.cbProject.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cbProject.TabIndex = 90;
+            // 
+            // labelX3
+            // 
+            // 
+            // 
+            // 
+            this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX3.Location = new System.Drawing.Point(766, 18);
+            this.labelX3.Name = "labelX3";
+            this.labelX3.Size = new System.Drawing.Size(46, 21);
+            this.labelX3.TabIndex = 89;
+            this.labelX3.Text = "项目:";
+            // 
+            // cbCorporation
+            // 
+            this.cbCorporation.DisplayMember = "Text";
+            this.cbCorporation.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbCorporation.FormattingEnabled = true;
+            this.cbCorporation.ItemHeight = 15;
+            this.cbCorporation.Location = new System.Drawing.Point(680, 18);
+            this.cbCorporation.Name = "cbCorporation";
+            this.cbCorporation.Size = new System.Drawing.Size(79, 21);
+            this.cbCorporation.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cbCorporation.TabIndex = 88;
+            // 
+            // labelX15
+            // 
+            // 
+            // 
+            // 
+            this.labelX15.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX15.Location = new System.Drawing.Point(645, 18);
+            this.labelX15.Name = "labelX15";
+            this.labelX15.Size = new System.Drawing.Size(46, 21);
+            this.labelX15.TabIndex = 87;
+            this.labelX15.Text = "公司:";
             // 
             // FrmMain
             // 
@@ -682,10 +766,10 @@
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.ribbonControl1.ResumeLayout(false);
             this.ribbonControl1.PerformLayout();
+            this.ribbonPanel3.ResumeLayout(false);
             this.ribbonPanel4.ResumeLayout(false);
             this.ribbonPanel2.ResumeLayout(false);
             this.ribbonPanel1.ResumeLayout(false);
-            this.ribbonPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabMain)).EndInit();
             this.cms.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -735,5 +819,11 @@
         private DevComponents.DotNetBar.RibbonBar ribbonBar5;
         private DevComponents.DotNetBar.ButtonItem btnUserManage;
         private DevComponents.DotNetBar.ButtonItem btnChangeLoginUser;
+        private DevComponents.DotNetBar.LabelX labelX1;
+        private DevComponents.DotNetBar.LabelX labelX3;
+        private DevComponents.DotNetBar.LabelX labelX15;
+        public DevComponents.DotNetBar.Controls.ComboBoxEx cbSupplier;
+        public DevComponents.DotNetBar.Controls.ComboBoxEx cbProject;
+        public DevComponents.DotNetBar.Controls.ComboBoxEx cbCorporation;
     }
 }

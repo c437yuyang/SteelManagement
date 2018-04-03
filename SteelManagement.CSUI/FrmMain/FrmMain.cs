@@ -177,13 +177,50 @@ namespace SteelManagement.CSUI.FrmMain
             this.Text = "钢材信息管理系统V" + XmlHandler.GetPropramVersion();
             this.Text = this.Text + "     当前登录用户:" + SteelManagement.Common.GlobalUtils.LoginUser.UserName;
             MinimumSize = Size;
-            FrmsManager.OpenedForms.Add(this);
-
+            FrmManager.OpenedMainFrm = this;
             InitCtrlEvents();
+
+            InitComboBoxs();
+
 
             //根据用户权限初始化窗体控制
             InitCtrlByUserPrevilige();
 
+        }
+
+        private void InitComboBoxs()
+        {
+            string tablename = "PurChaseInfo";
+
+            cbCorporation.Items.Add("全部");
+            cbProject.Items.Add("全部");
+
+            cbCorporation.SelectedIndex = 0;
+            cbProject.SelectedIndex = 0;
+
+
+            var list = BLL.CommonBll.GetFieldList(tablename, "Corporation");
+            if (list != null)
+                foreach (var item in list)
+                {
+                    cbCorporation.Items.Add(item);
+                }
+
+            list = BLL.CommonBll.GetFieldList(tablename, "Project");
+            if (list != null)
+                foreach (var item in list)
+                {
+                    cbProject.Items.Add(item);
+                }
+
+            cbSupplier.Items.Add("全部");
+            cbSupplier.SelectedIndex = 0;
+            list = BLL.CommonBll.GetFieldList(tablename, "Supplier");
+            if (list != null)
+                foreach (var item in list)
+                {
+                    cbSupplier.Items.Add(item);
+                }
         }
 
         private void InitCtrlByUserPrevilige()
