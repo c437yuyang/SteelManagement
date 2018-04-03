@@ -628,8 +628,12 @@ namespace SteelManagement.CSUI.FrmMain
             var PurchaseBillModellist = _bllPurchaseBill.GetModelList(" Corporation = '" + selList[0].Corporation + "' ");
         }
 
+
         #endregion
 
-
+        private void btnCreateReport_Click_1(object sender, EventArgs e)
+        {
+            Common.Excel.ExcelGenerator.GetPurchaseBillReport(DgvDataSourceToList());
+        }
     }
 }

@@ -94,6 +94,7 @@
             this.韩国担保函ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.韩国加急申请书ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bgWorkerLoadData = new System.ComponentModel.BackgroundWorker();
+            this.btnCreateReport = new DevComponents.DotNetBar.ButtonX();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelMain.SuspendLayout();
             this.panelDgv.SuspendLayout();
@@ -328,6 +329,7 @@
             // 
             this.panelSerachBar.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelSerachBar.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelSerachBar.Controls.Add(this.btnCreateReport);
             this.panelSerachBar.Controls.Add(this.cbSupplier);
             this.panelSerachBar.Controls.Add(this.labelX1);
             this.panelSerachBar.Controls.Add(this.btnTimeSpanChoose);
@@ -816,6 +818,18 @@
             this.bgWorkerLoadData.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.bgWorkerLoadData_ProgressChanged);
             this.bgWorkerLoadData.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgWorkerLoadData_RunWorkerCompleted);
             // 
+            // btnCreateReport
+            // 
+            this.btnCreateReport.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnCreateReport.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnCreateReport.Location = new System.Drawing.Point(882, 8);
+            this.btnCreateReport.Name = "btnCreateReport";
+            this.btnCreateReport.Size = new System.Drawing.Size(92, 23);
+            this.btnCreateReport.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnCreateReport.TabIndex = 88;
+            this.btnCreateReport.Text = "生成报表";
+            this.btnCreateReport.Click += new System.EventHandler(this.btnCreateReport_Click_1);
+            // 
             // FrmSaleBillManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -903,6 +917,7 @@
         private DevComponents.DotNetBar.LabelItem lbTotalCount;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cbSupplier;
         private DevComponents.DotNetBar.LabelX labelX1;
+        private DevComponents.DotNetBar.ButtonX btnCreateReport;
     }
 }
 

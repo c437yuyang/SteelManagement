@@ -643,8 +643,12 @@ namespace SteelManagement.CSUI.FrmMain
 
         }
 
+
         #endregion
 
+        private void btnCreateReport_Click_1(object sender, EventArgs e)
+        {
 
+        }
     }
 }
