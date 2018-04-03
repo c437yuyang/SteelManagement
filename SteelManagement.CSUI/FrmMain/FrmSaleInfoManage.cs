@@ -602,5 +602,10 @@ namespace SteelManagement.CSUI.FrmMain
             txtSchEntryTimeFrom.Text = DateTimeFormator.DateTimeToString(frm.TimeSpanFrom, DateTimeFormator.TimeFormat.Type14LongTime1);
             txtSchEntryTimeTo.Text = DateTimeFormator.DateTimeToString(frm.TimeSpanTo, DateTimeFormator.TimeFormat.Type14LongTime1);
         }
+
+        private void btnCreateReport_Click_1(object sender, EventArgs e)
+        {
+            Common.Excel.ExcelGenerator.GetSaleInfoReport(DgvDataSourceToList());
+        }
     }
 }
