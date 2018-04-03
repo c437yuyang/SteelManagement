@@ -15,7 +15,7 @@ namespace SteelManagement.Common.Excel
 {
     public class ExcelParser
     {
-        public static List<Model.SteelInfo> GetSteelListFromExcel(string filename)
+        public static List<Model.SteelInfo> GetSteelListFromExcel(string filename,DateTime time)
         {
             //1.创建工作簿对象
             IWorkbook wkbook = null;
@@ -58,7 +58,7 @@ namespace SteelManagement.Common.Excel
                     model.Texture = row.GetCell(2)?.StringCellValue;
                     model.ProducePlace = row.GetCell(3)?.StringCellValue;
                     model.Price = DecimalHandler.Parse(row.GetCell(4)?.NumericCellValue.ToString());
-
+                    model.InfoTime = time;
                     try
                     {
                         model.Fluctuation = DecimalHandler.Parse(row.GetCell(5)?.NumericCellValue.ToString());

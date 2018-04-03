@@ -493,7 +493,13 @@ namespace SteelManagement.CSUI.FrmMain
             if (string.IsNullOrEmpty(filename))
                 return;
 
-            var list = Common.Excel.ExcelParser.GetSteelListFromExcel(filename);
+            FrmTimeChoose frm = new FrmTimeChoose();
+
+            if (DialogResult.Cancel == frm.ShowDialog())
+                return;
+
+
+            var list = Common.Excel.ExcelParser.GetSteelListFromExcel(filename,frm.RetValue);
             if (list == null || list.Count == 0)
                 return;
             int res = _bllSteelInfo.AddList(list);
