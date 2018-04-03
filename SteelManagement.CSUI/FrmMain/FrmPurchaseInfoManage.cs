@@ -110,15 +110,24 @@ namespace SteelManagement.CSUI.FrmMain
                 fapiaojine += DecimalHandler.Parse(model.Money2.ToString());
             }
 
-            lbTotalCount.Text = string.Format("选中{4}项 合计: 送货量 {0}(t)   总金额 {1}  付款金额 {2}  发票金额 {3}",
-                DecimalHandler.DecimalToString(songhuoliang, digit),
-                DecimalHandler.DecimalToString(zongjine, digit),
-                DecimalHandler.DecimalToString(fukuanjine, digit),
-                DecimalHandler.DecimalToString(fapiaojine, digit),
-                dataGridView1.SelectedRows.Count);
-            lbTotalCount.Text += string.Format("  欠款 {0}  欠票 {1}",
-                DecimalHandler.DecimalToString(zongjine - fukuanjine, digit),
-                DecimalHandler.DecimalToString(zongjine - fapiaojine, digit));
+            //lbTotalCount.Text = string.Format("选中{4}项 合计: 送货量 {0}(t)   总金额 {1}  付款金额 {2}  发票金额 {3}",
+            //    DecimalHandler.DecimalToString(songhuoliang, digit),
+            //    DecimalHandler.DecimalToString(zongjine, digit),
+            //    DecimalHandler.DecimalToString(fukuanjine, digit),
+            //    DecimalHandler.DecimalToString(fapiaojine, digit),
+            //    dataGridView1.SelectedRows.Count);
+            //lbTotalCount.Text += string.Format("  欠款 {0}  欠票 {1}",
+            //    DecimalHandler.DecimalToString(zongjine - fukuanjine, digit),
+            //    DecimalHandler.DecimalToString(zongjine - fapiaojine, digit));
+
+            lbTotalCount.Text = string.Format("选中{3}项 合计: 送货量 {0}(t)   总金额 {1}   发票金额 {2}",
+    DecimalHandler.DecimalToString(songhuoliang, digit),
+    DecimalHandler.DecimalToString(zongjine, digit),
+    DecimalHandler.DecimalToString(fapiaojine, digit),
+    dataGridView1.SelectedRows.Count);
+            lbTotalCount.Text += string.Format(" 欠票 {0}",
+                DecimalHandler.DecimalToString(zongjine - fukuanjine, digit));
+
         }
 
         private void DataGridView1_DoubleClick(object sender, EventArgs e)
@@ -568,6 +577,11 @@ namespace SteelManagement.CSUI.FrmMain
                 return;
             txtSchEntryTimeFrom.Text = DateTimeFormator.DateTimeToString(frm.TimeSpanFrom, DateTimeFormator.TimeFormat.Type14LongTime1);
             txtSchEntryTimeTo.Text = DateTimeFormator.DateTimeToString(frm.TimeSpanTo, DateTimeFormator.TimeFormat.Type14LongTime1);
+        }
+
+        private void btnCreateReport_Click_1(object sender, EventArgs e)
+        {
+            Common.Excel.ExcelGenerator.GetPurchaseInfoReport(DgvDataSourceToList());
         }
     }
 }

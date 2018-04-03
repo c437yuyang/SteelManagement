@@ -297,7 +297,7 @@
             // 
             this.txtMoney2.Border.Class = "TextBoxBorder";
             this.txtMoney2.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtMoney2.Location = new System.Drawing.Point(266, 143);
+            this.txtMoney2.Location = new System.Drawing.Point(266, 87);
             this.txtMoney2.Name = "txtMoney2";
             this.txtMoney2.Size = new System.Drawing.Size(107, 21);
             this.txtMoney2.TabIndex = 95;
@@ -309,10 +309,11 @@
             // 
             this.txtMoney1.Border.Class = "TextBoxBorder";
             this.txtMoney1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtMoney1.Location = new System.Drawing.Point(266, 89);
+            this.txtMoney1.Location = new System.Drawing.Point(266, 362);
             this.txtMoney1.Name = "txtMoney1";
             this.txtMoney1.Size = new System.Drawing.Size(107, 21);
             this.txtMoney1.TabIndex = 95;
+            this.txtMoney1.Visible = false;
             // 
             // txtTotalMoney
             // 
@@ -331,7 +332,7 @@
             // 
             this.txtInvoiceDate.CustomFormat = "yyyy/MM/dd";
             this.txtInvoiceDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtInvoiceDate.Location = new System.Drawing.Point(266, 116);
+            this.txtInvoiceDate.Location = new System.Drawing.Point(266, 60);
             this.txtInvoiceDate.Name = "txtInvoiceDate";
             this.txtInvoiceDate.Size = new System.Drawing.Size(107, 21);
             this.txtInvoiceDate.TabIndex = 93;
@@ -342,7 +343,7 @@
             // 
             // 
             this.labelX18.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX18.Location = new System.Drawing.Point(199, 117);
+            this.labelX18.Location = new System.Drawing.Point(199, 61);
             this.labelX18.Name = "labelX18";
             this.labelX18.Size = new System.Drawing.Size(80, 23);
             this.labelX18.TabIndex = 92;
@@ -354,7 +355,7 @@
             // 
             // 
             this.labelX17.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX17.Location = new System.Drawing.Point(199, 146);
+            this.labelX17.Location = new System.Drawing.Point(199, 90);
             this.labelX17.Name = "labelX17";
             this.labelX17.Size = new System.Drawing.Size(87, 19);
             this.labelX17.TabIndex = 90;
@@ -367,21 +368,23 @@
             // 
             // 
             this.labelX16.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX16.Location = new System.Drawing.Point(199, 90);
+            this.labelX16.Location = new System.Drawing.Point(199, 363);
             this.labelX16.Name = "labelX16";
             this.labelX16.Size = new System.Drawing.Size(87, 19);
             this.labelX16.TabIndex = 88;
             this.labelX16.Text = "付款金额:";
+            this.labelX16.Visible = false;
             this.labelX16.WordWrap = true;
             // 
             // txtFuYuDate
             // 
             this.txtFuYuDate.CustomFormat = "yyyy/MM/dd";
             this.txtFuYuDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtFuYuDate.Location = new System.Drawing.Point(266, 62);
+            this.txtFuYuDate.Location = new System.Drawing.Point(266, 335);
             this.txtFuYuDate.Name = "txtFuYuDate";
             this.txtFuYuDate.Size = new System.Drawing.Size(107, 21);
             this.txtFuYuDate.TabIndex = 87;
+            this.txtFuYuDate.Visible = false;
             // 
             // labelX15
             // 
@@ -389,11 +392,12 @@
             // 
             // 
             this.labelX15.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX15.Location = new System.Drawing.Point(199, 61);
+            this.labelX15.Location = new System.Drawing.Point(199, 334);
             this.labelX15.Name = "labelX15";
             this.labelX15.Size = new System.Drawing.Size(69, 23);
             this.labelX15.TabIndex = 86;
             this.labelX15.Text = "付款日期:";
+            this.labelX15.Visible = false;
             // 
             // txtPrice
             // 
