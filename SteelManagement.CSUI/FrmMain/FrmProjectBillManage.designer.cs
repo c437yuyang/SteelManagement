@@ -342,11 +342,12 @@
             this.cbProject.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbProject.FormattingEnabled = true;
             this.cbProject.ItemHeight = 15;
-            this.cbProject.Location = new System.Drawing.Point(47, 9);
+            this.cbProject.Location = new System.Drawing.Point(1000, 8);
             this.cbProject.Name = "cbProject";
             this.cbProject.Size = new System.Drawing.Size(79, 21);
             this.cbProject.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cbProject.TabIndex = 51;
+            this.cbProject.Visible = false;
             // 
             // labelX3
             // 
@@ -354,11 +355,12 @@
             // 
             // 
             this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX3.Location = new System.Drawing.Point(11, 10);
+            this.labelX3.Location = new System.Drawing.Point(964, 9);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(46, 21);
             this.labelX3.TabIndex = 50;
             this.labelX3.Text = "项目:";
+            this.labelX3.Visible = false;
             // 
             // cbCorporation
             // 
@@ -390,7 +392,7 @@
             // 
             this.btnAdd.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnAdd.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnAdd.Location = new System.Drawing.Point(333, 9);
+            this.btnAdd.Location = new System.Drawing.Point(750, 7);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(92, 23);
             this.btnAdd.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -407,7 +409,7 @@
             this.progressLoading.BackgroundStyle.BackgroundImageAlpha = ((byte)(64));
             this.progressLoading.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.progressLoading.FocusCuesEnabled = false;
-            this.progressLoading.Location = new System.Drawing.Point(546, 7);
+            this.progressLoading.Location = new System.Drawing.Point(200, 7);
             this.progressLoading.Name = "progressLoading";
             this.progressLoading.ProgressBarType = DevComponents.DotNetBar.eCircularProgressType.Dot;
             this.progressLoading.ProgressColor = System.Drawing.Color.YellowGreen;
@@ -420,19 +422,20 @@
             // 
             this.btnClearSchConditions.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnClearSchConditions.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnClearSchConditions.Location = new System.Drawing.Point(235, 9);
+            this.btnClearSchConditions.Location = new System.Drawing.Point(848, 6);
             this.btnClearSchConditions.Name = "btnClearSchConditions";
             this.btnClearSchConditions.Size = new System.Drawing.Size(92, 23);
             this.btnClearSchConditions.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnClearSchConditions.TabIndex = 26;
             this.btnClearSchConditions.Text = "清空搜索条件";
+            this.btnClearSchConditions.Visible = false;
             this.btnClearSchConditions.Click += new System.EventHandler(this.btnClearSchConditions_Click);
             // 
             // btnCreateReport
             // 
             this.btnCreateReport.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnCreateReport.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnCreateReport.Location = new System.Drawing.Point(431, 9);
+            this.btnCreateReport.Location = new System.Drawing.Point(102, 7);
             this.btnCreateReport.Name = "btnCreateReport";
             this.btnCreateReport.Size = new System.Drawing.Size(92, 23);
             this.btnCreateReport.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -444,7 +447,7 @@
             // 
             this.btnSearch.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSearch.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSearch.Location = new System.Drawing.Point(137, 9);
+            this.btnSearch.Location = new System.Drawing.Point(4, 7);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(92, 23);
             this.btnSearch.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;

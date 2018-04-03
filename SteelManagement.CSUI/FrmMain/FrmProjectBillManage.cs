@@ -62,7 +62,7 @@ namespace SteelManagement.CSUI.FrmMain
 
         private void DataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count < 1)
+            if (dataGridView1.SelectedRows.Count < 1 || dataGridView1.Rows.Count < 1)
                 return;
 
             int digit = GlobalUtils.DecimalDigits;
@@ -71,6 +71,8 @@ namespace SteelManagement.CSUI.FrmMain
             for (int i = 0; i < dataGridView1.SelectedRows.Count; ++i)
             {
                 var model = DgvDataSourceToList()[dataGridView1.SelectedRows[i].Index];
+                if (model == null)
+                    return;
                 total[0] += DecimalHandler.Parse(model.TotalSale.ToString());
                 total[1] += DecimalHandler.Parse(model.InvoiceNum.ToString());
                 total[2] += DecimalHandler.Parse(model.FaHuoWeiKaiPiao.ToString());
@@ -218,7 +220,7 @@ namespace SteelManagement.CSUI.FrmMain
             int curSelectedRow = -1;
             if (dataGridView1.SelectedRows.Count > 0)
                 curSelectedRow = dataGridView1.SelectedRows[0].Index;
-            dataGridView1.DataSource = _bllProjectBill.GetModelList(cbProject.Text);
+            dataGridView1.DataSource = _bllProjectBill.GetModelList(FrmManager.OpenedMainFrm.cbProject.Text);
             if (curSelectedRow != -1 && dataGridView1.Rows.Count > curSelectedRow)
                 dataGridView1.CurrentCell = dataGridView1.Rows[curSelectedRow].Cells[0];
             dataGridView1.Update();
@@ -280,22 +282,32 @@ namespace SteelManagement.CSUI.FrmMain
         {
             List<string> conditions = new List<string>();
 
-            if (cbCorporation.Text == "全部")
+
+            if (FrmManager.OpenedMainFrm.cbCorporation.Text == "全部")
             {
 
             }
             else
             {
-                conditions.Add(" Corporation = '" + cbCorporation.Text + "' ");
+                conditions.Add(" Corporation = '" + FrmManager.OpenedMainFrm.cbCorporation.Text + "' ");
             }
 
-            if (cbProject.Text == "全部")
+            if (FrmManager.OpenedMainFrm.cbProject.Text == "全部")
             {
 
             }
             else
             {
-                conditions.Add(" Project = '" + cbProject.Text + "' ");
+                conditions.Add(" Project = '" + FrmManager.OpenedMainFrm.cbProject.Text + "' ");
+            }
+
+            if (FrmManager.OpenedMainFrm.cbSupplier.Text == "全部")
+            {
+
+            }
+            else
+            {
+                conditions.Add(" Supplier = '" + FrmManager.OpenedMainFrm.cbSupplier.Text + "' ");
             }
 
             //if (!string.IsNullOrEmpty(txtClient.Text.Trim()))

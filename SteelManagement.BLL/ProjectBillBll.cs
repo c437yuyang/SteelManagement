@@ -26,7 +26,8 @@ namespace SteelManagement.BLL
             foreach (var project in projectList)
             {
                 var projectBillModel = GetModelByProjectName(project);
-                listRes.Add(projectBillModel);
+                if (projectBillModel != null)
+                    listRes.Add(projectBillModel);
             }
             return listRes;
         }
@@ -37,6 +38,8 @@ namespace SteelManagement.BLL
 
             //查销售信息表拿到销售总金额
             var saleInfoList = _bllSaleInfo.GetModelList(" Project ='" + project + "' ");
+            if (saleInfoList == null || saleInfoList.Count == 0)
+                return null;
             projectBillModel.Corporation = saleInfoList[0].Corporation;
             projectBillModel.Project = project;
             decimal totalSale = 0;
