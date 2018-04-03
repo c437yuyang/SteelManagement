@@ -20,6 +20,7 @@ namespace SteelManagement.Model
 		private decimal? _fluctuation;
 		private string _remark;
 		private string _state;
+		private DateTime? _infotime;
 		/// <summary>
 		/// 
 		/// </summary>
@@ -37,7 +38,7 @@ namespace SteelManagement.Model
 			get{return _entrytime;}
 		}
 		/// <summary>
-		/// 
+		/// 品名
 		/// </summary>
 		public string Name
 		{
@@ -45,7 +46,7 @@ namespace SteelManagement.Model
 			get{return _name;}
 		}
 		/// <summary>
-		/// 
+		/// 规格
 		/// </summary>
 		public string Size
 		{
@@ -53,7 +54,7 @@ namespace SteelManagement.Model
 			get{return _size;}
 		}
 		/// <summary>
-		/// 
+		/// 材质
 		/// </summary>
 		public string Texture
 		{
@@ -61,7 +62,7 @@ namespace SteelManagement.Model
 			get{return _texture;}
 		}
 		/// <summary>
-		/// 
+		/// 钢厂/产地
 		/// </summary>
 		public string ProducePlace
 		{
@@ -69,7 +70,7 @@ namespace SteelManagement.Model
 			get{return _produceplace;}
 		}
 		/// <summary>
-		/// 
+		/// 价格
 		/// </summary>
 		public decimal? Price
 		{
@@ -77,7 +78,7 @@ namespace SteelManagement.Model
 			get{return _price;}
 		}
 		/// <summary>
-		/// 
+		/// 涨跌
 		/// </summary>
 		public decimal? Fluctuation
 		{
@@ -85,7 +86,7 @@ namespace SteelManagement.Model
 			get{return _fluctuation;}
 		}
 		/// <summary>
-		/// 
+		/// 备注
 		/// </summary>
 		public string Remark
 		{
@@ -93,12 +94,20 @@ namespace SteelManagement.Model
 			get{return _remark;}
 		}
 		/// <summary>
-		/// 
+		/// 状态(代理，现货)
 		/// </summary>
 		public string State
 		{
 			set{ _state=value;}
 			get{return _state;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public DateTime? InfoTime
+		{
+			set{ _infotime=value;}
+			get{return _infotime;}
 		}
 		#endregion Model
 

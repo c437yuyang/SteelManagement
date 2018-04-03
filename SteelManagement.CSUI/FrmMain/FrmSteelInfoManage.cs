@@ -66,8 +66,10 @@ namespace SteelManagement.CSUI.FrmMain
 
             cbName.Items.Add("全部");
             cbProducePlace.Items.Add("全部");
+            cbTexture.Items.Add("全部");
             cbName.SelectedIndex = 0;
             cbProducePlace.SelectedIndex = 0;
+            cbTexture.SelectedIndex = 0;
 
             var list = BLL.CommonBll.GetFieldList(tablename, "Name");
             if (list != null)
@@ -82,6 +84,14 @@ namespace SteelManagement.CSUI.FrmMain
                 {
                     cbProducePlace.Items.Add(item);
                 }
+
+            list = BLL.CommonBll.GetFieldList(tablename, "Texture");
+            if (list != null)
+                foreach (var item in list)
+                {
+                    cbTexture.Items.Add(item);
+                }
+
         }
 
         private void DataGridView1_DoubleClick(object sender, EventArgs e)
@@ -251,6 +261,14 @@ namespace SteelManagement.CSUI.FrmMain
                 conditions.Add(" (ProducePlace = '" + cbProducePlace.Text + "') ");
             }
 
+            if (cbTexture.Text == "全部")
+            {
+            }
+            else
+            {
+                conditions.Add(" (Texture = '" + cbTexture.Text + "') ");
+            }
+
 
             //if (cbCountry.Text == "全部")
             //{
@@ -292,6 +310,7 @@ namespace SteelManagement.CSUI.FrmMain
             //txtClient.Text = "";
             cbProducePlace.Text = "全部";
             cbName.Text = "全部";
+            cbTexture.Text = "全部";
             //cbDepatureType.Text = "";
             txtSchEntryTimeFrom.Text = "";
             txtSchEntryTimeTo.Text = "";

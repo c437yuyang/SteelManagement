@@ -46,9 +46,9 @@ namespace SteelManagement.DAL
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("insert into SteelInfo(");
-			strSql.Append("EntryTime,Name,Size,Texture,ProducePlace,Price,Fluctuation,Remark,State)");
+			strSql.Append("EntryTime,Name,Size,Texture,ProducePlace,Price,Fluctuation,Remark,State,InfoTime)");
 			strSql.Append(" values (");
-			strSql.Append("@EntryTime,@Name,@Size,@Texture,@ProducePlace,@Price,@Fluctuation,@Remark,@State)");
+			strSql.Append("@EntryTime,@Name,@Size,@Texture,@ProducePlace,@Price,@Fluctuation,@Remark,@State,@InfoTime)");
 			strSql.Append(";select @@IDENTITY");
 			SqlParameter[] parameters = {
 					new SqlParameter("@EntryTime", SqlDbType.DateTime),
@@ -59,7 +59,8 @@ namespace SteelManagement.DAL
 					new SqlParameter("@Price", SqlDbType.Money,8),
 					new SqlParameter("@Fluctuation", SqlDbType.Money,8),
 					new SqlParameter("@Remark", SqlDbType.VarChar,50),
-					new SqlParameter("@State", SqlDbType.VarChar,50)};
+					new SqlParameter("@State", SqlDbType.VarChar,50),
+					new SqlParameter("@InfoTime", SqlDbType.DateTime)};
 			parameters[0].Value = model.EntryTime;
 			parameters[1].Value = model.Name;
 			parameters[2].Value = model.Size;
@@ -69,6 +70,7 @@ namespace SteelManagement.DAL
 			parameters[6].Value = model.Fluctuation;
 			parameters[7].Value = model.Remark;
 			parameters[8].Value = model.State;
+			parameters[9].Value = model.InfoTime;
 
 			object obj = DbHelperSQL.GetSingle(strSql.ToString(),parameters);
 			if (obj == null)
@@ -95,7 +97,8 @@ namespace SteelManagement.DAL
 			strSql.Append("Price=@Price,");
 			strSql.Append("Fluctuation=@Fluctuation,");
 			strSql.Append("Remark=@Remark,");
-			strSql.Append("State=@State");
+			strSql.Append("State=@State,");
+			strSql.Append("InfoTime=@InfoTime");
 			strSql.Append(" where Id=@Id");
 			SqlParameter[] parameters = {
 					new SqlParameter("@EntryTime", SqlDbType.DateTime),
@@ -107,6 +110,7 @@ namespace SteelManagement.DAL
 					new SqlParameter("@Fluctuation", SqlDbType.Money,8),
 					new SqlParameter("@Remark", SqlDbType.VarChar,50),
 					new SqlParameter("@State", SqlDbType.VarChar,50),
+					new SqlParameter("@InfoTime", SqlDbType.DateTime),
 					new SqlParameter("@Id", SqlDbType.Int,4)};
 			parameters[0].Value = model.EntryTime;
 			parameters[1].Value = model.Name;
@@ -117,7 +121,8 @@ namespace SteelManagement.DAL
 			parameters[6].Value = model.Fluctuation;
 			parameters[7].Value = model.Remark;
 			parameters[8].Value = model.State;
-			parameters[9].Value = model.Id;
+			parameters[9].Value = model.InfoTime;
+			parameters[10].Value = model.Id;
 
 			int rows=DbHelperSQL.ExecuteSql(strSql.ToString(),parameters);
 			if (rows > 0)
@@ -181,7 +186,7 @@ namespace SteelManagement.DAL
 		{
 			
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select  top 1 Id,EntryTime,Name,Size,Texture,ProducePlace,Price,Fluctuation,Remark,State from SteelInfo ");
+			strSql.Append("select  top 1 Id,EntryTime,Name,Size,Texture,ProducePlace,Price,Fluctuation,Remark,State,InfoTime from SteelInfo ");
 			strSql.Append(" where Id=@Id");
 			SqlParameter[] parameters = {
 					new SqlParameter("@Id", SqlDbType.Int,4)
@@ -249,6 +254,10 @@ namespace SteelManagement.DAL
 				{
 					model.State=row["State"].ToString();
 				}
+				if(row["InfoTime"]!=null && row["InfoTime"].ToString()!="")
+				{
+					model.InfoTime=DateTime.Parse(row["InfoTime"].ToString());
+				}
 			}
 			return model;
 		}
@@ -259,7 +268,7 @@ namespace SteelManagement.DAL
 		public DataSet GetList(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select Id,EntryTime,Name,Size,Texture,ProducePlace,Price,Fluctuation,Remark,State ");
+			strSql.Append("select Id,EntryTime,Name,Size,Texture,ProducePlace,Price,Fluctuation,Remark,State,InfoTime ");
 			strSql.Append(" FROM SteelInfo ");
 			if(strWhere.Trim()!="")
 			{
@@ -279,7 +288,7 @@ namespace SteelManagement.DAL
 			{
 				strSql.Append(" top "+Top.ToString());
 			}
-			strSql.Append(" Id,EntryTime,Name,Size,Texture,ProducePlace,Price,Fluctuation,Remark,State ");
+			strSql.Append(" Id,EntryTime,Name,Size,Texture,ProducePlace,Price,Fluctuation,Remark,State,InfoTime ");
 			strSql.Append(" FROM SteelInfo ");
 			if(strWhere.Trim()!="")
 			{

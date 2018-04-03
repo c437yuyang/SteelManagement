@@ -47,6 +47,8 @@ namespace SteelManagement.Common
         /// <returns></returns>
         public static string DecimalToString(Decimal? d, int digit)
         {
+            if (digit == -1)
+                return DecimalToString(d);
             return Math.Round(d ?? 0, digit).ToString();
         }
 

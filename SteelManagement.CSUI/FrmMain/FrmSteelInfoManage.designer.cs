@@ -85,6 +85,8 @@
             this.韩国担保函ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.韩国加急申请书ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bgWorkerLoadData = new System.ComponentModel.BackgroundWorker();
+            this.cbTexture = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelMain.SuspendLayout();
             this.panelDgv.SuspendLayout();
@@ -276,6 +278,8 @@
             // 
             this.panelSerachBar.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelSerachBar.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelSerachBar.Controls.Add(this.cbTexture);
+            this.panelSerachBar.Controls.Add(this.labelX1);
             this.panelSerachBar.Controls.Add(this.btnTimeSpanChoose);
             this.panelSerachBar.Controls.Add(this.txtSchEntryTimeTo);
             this.panelSerachBar.Controls.Add(this.txtSchEntryTimeFrom);
@@ -711,6 +715,30 @@
             this.bgWorkerLoadData.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.bgWorkerLoadData_ProgressChanged);
             this.bgWorkerLoadData.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgWorkerLoadData_RunWorkerCompleted);
             // 
+            // cbTexture
+            // 
+            this.cbTexture.DisplayMember = "Text";
+            this.cbTexture.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbTexture.FormattingEnabled = true;
+            this.cbTexture.ItemHeight = 15;
+            this.cbTexture.Location = new System.Drawing.Point(323, 34);
+            this.cbTexture.Name = "cbTexture";
+            this.cbTexture.Size = new System.Drawing.Size(79, 21);
+            this.cbTexture.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cbTexture.TabIndex = 63;
+            // 
+            // labelX1
+            // 
+            // 
+            // 
+            // 
+            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX1.Location = new System.Drawing.Point(286, 34);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.Size = new System.Drawing.Size(43, 21);
+            this.labelX1.TabIndex = 62;
+            this.labelX1.Text = "材质:";
+            // 
             // FrmSteelInfoManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -788,6 +816,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Remark;
         private System.Windows.Forms.DataGridViewTextBoxColumn State;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx cbTexture;
+        private DevComponents.DotNetBar.LabelX labelX1;
     }
 }
 
