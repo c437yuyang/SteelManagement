@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using DevComponents.DotNetBar;
+using SteelManagement.Common;
 
 namespace SteelManagement.CSUI.FrmSub
 {
@@ -45,6 +46,7 @@ namespace SteelManagement.CSUI.FrmSub
                 txtFluctuation.Text = _model.Fluctuation.ToString();
                 txtRemark.Text = _model.Remark;
                 txtState.Text = _model.State;
+                txtInfoTime.Text = DateTimeFormator.DateTimeToString(_model.InfoTime,DateTimeFormator.TimeFormat.Type14LongTime1);
                 this.Text = "修改钢材";
             }
         }
@@ -55,58 +57,58 @@ namespace SteelManagement.CSUI.FrmSub
             var list = BLL.CommonBll.GetFieldList(tablename, "Name");
             if (list != null)
                 foreach (var item in list)
-            {
-                txtName.Items.Add(item);
-            }
+                {
+                    txtName.Items.Add(item);
+                }
 
             list = BLL.CommonBll.GetFieldList(tablename, "Size");
             if (list != null)
                 foreach (var item in list)
-            {
-                txtSize.Items.Add(item);
-            }
+                {
+                    txtSize.Items.Add(item);
+                }
 
             list = BLL.CommonBll.GetFieldList(tablename, "Texture");
             if (list != null)
                 foreach (var item in list)
-            {
-                txtTexture.Items.Add(item);
-            }
+                {
+                    txtTexture.Items.Add(item);
+                }
 
             list = BLL.CommonBll.GetFieldList(tablename, "ProducePlace");
             if (list != null)
                 foreach (var item in list)
-            {
-                txtProducePlace.Items.Add(item);
-            }
+                {
+                    txtProducePlace.Items.Add(item);
+                }
 
             list = BLL.CommonBll.GetFieldList(tablename, "Price");
             if (list != null)
                 foreach (var item in list)
-            {
-                txtPrice.Items.Add(item);
-            }
+                {
+                    txtPrice.Items.Add(item);
+                }
 
             list = BLL.CommonBll.GetFieldList(tablename, "Fluctuation");
             if (list != null)
                 foreach (var item in list)
-            {
-                txtFluctuation.Items.Add(item);
-            }
+                {
+                    txtFluctuation.Items.Add(item);
+                }
 
             list = BLL.CommonBll.GetFieldList(tablename, "Remark");
             if (list != null)
                 foreach (var item in list)
-            {
-                txtRemark.Items.Add(item);
-            }
+                {
+                    txtRemark.Items.Add(item);
+                }
 
             list = BLL.CommonBll.GetFieldList(tablename, "State");
             if (list != null)
                 foreach (var item in list)
-            {
-                txtState.Items.Add(item);
-            }
+                {
+                    txtState.Items.Add(item);
+                }
 
 
 
@@ -126,6 +128,7 @@ namespace SteelManagement.CSUI.FrmSub
                     _model.Fluctuation = decimal.Parse(txtFluctuation.Text);
                     _model.Remark = txtRemark.Text;
                     _model.State = txtState.Text;
+                    _model.InfoTime = DateTime.Parse(txtInfoTime.Text);
                     if (!_bllSteelInfo.Update(_model))
                     {
                         MessageBoxEx.Show("更新失败，请稍后重试!");
@@ -147,14 +150,14 @@ namespace SteelManagement.CSUI.FrmSub
                 SteelManagement.Model.SteelInfo model = new SteelManagement.Model.SteelInfo();
                 try
                 {
-                    model.Name = txtName.Text;
-                    model.Size = txtSize.Text;
+                    model.Name = txtName.Text;                    model.Size = txtSize.Text;
                     model.Texture = txtTexture.Text;
                     model.ProducePlace = txtProducePlace.Text;
                     model.Price = decimal.Parse(txtPrice.Text);
                     model.Fluctuation = decimal.Parse(txtFluctuation.Text);
                     model.Remark = txtRemark.Text;
                     model.State = txtState.Text;
+                    model.InfoTime = DateTime.Parse(txtInfoTime.Text);
                     model.EntryTime = DateTime.Now;
                     if (_bllSteelInfo.Add(model) <= 0)
                     {
