@@ -48,6 +48,7 @@ namespace SteelManagement.CSUI.FrmMain
 
             dataGridView1.DoubleClick += DataGridView1_DoubleClick;
             dataGridView1.SelectionChanged += DataGridView1_SelectionChanged;
+            dataGridView1.RowsAdded += DataGridView1_RowsAdded;
             StyleControler.SetDgvStyle(dataGridView1);
 
             bgWorkerLoadData.WorkerReportsProgress = true;
@@ -56,7 +57,25 @@ namespace SteelManagement.CSUI.FrmMain
             LoadDataToDgvAsyn();
         }
 
-     
+        private string UserLevelToString(int level)
+        {
+            if (level == 0)
+                return "管理员";
+            if (level == 1)
+                return "录入员";
+            if (level == 2)
+                return "审核员";
+            return "";
+        }
+
+        private void DataGridView1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            var list = DgvDataSourceToList();
+            for (int i = 0; i < dataGridView1.Rows.Count; ++i)
+            {
+                dataGridView1.Rows[i].Cells["UserLevel"].Value = UserLevelToString(list[i].UserLevel.Value);
+            }
+        }
 
         private void DataGridView1_SelectionChanged(object sender, EventArgs e)
         {

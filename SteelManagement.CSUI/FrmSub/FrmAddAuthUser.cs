@@ -30,21 +30,44 @@ namespace SteelManagement.CSUI.FrmSub
             _curPage = curPage;
             _is4Modify = is4Modify;
             _model = model;
-
-
         }
 
         private void FrmAddAuthUser_Load(object sender, EventArgs e)
         {
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            bool myself = GlobalUtils.LoginUser.Account == _model.Account;
 
-
-
-            if (_is4Modify)
+            if (_is4Modify)//修改的时候:(1)管理员all(2)审核员只能修改自己的基础信息(3)录入员可以修改所有人的项目信息
             {
+                //审核员没有权限直接关闭
+                if (!myself &&
+                           (GlobalUtils.LoginUser.UserLevel != 1 && GlobalUtils.LoginUser.UserLevel != 0))
+                {
+                    MessageBoxEx.Show("审核员不能修改其他用户信息!");
+                    Close();
+                }
+
+                panelPrivilege.Enabled = false;
+                panelProjectInfo.Enabled = false;
+                panelBasicInfo.Enabled = false;
+
+                if (myself)
+                    panelBasicInfo.Enabled = true;
+
+                if (GlobalUtils.LoginUser.UserLevel == 1)
+                    panelProjectInfo.Enabled = true;
+
+                if (GlobalUtils.LoginUser.UserLevel == 0)
+                {
+                    panelPrivilege.Enabled = true;
+                    panelBasicInfo.Enabled = true;
+                    panelProjectInfo.Enabled = true;
+                }
+
+
+
                 //把选中的加载到这里面
                 txtAccount.Text = _model.Account;
                 txtPassword.Text = _model.Password;
@@ -52,13 +75,33 @@ namespace SteelManagement.CSUI.FrmSub
                 txtUserName.Text = _model.UserName;
 
                 PrevilegeToChkBoxs();
-                if (_model.UserLevel == 0)
-                    chkAdmin.Checked = true;
-                else
-                    chkAdmin.Checked = false;
+                UserLevelToRbtns(_model.UserLevel.Value);
 
+                this.Text = "修改用户信息";
 
-                this.Text = "修改采购信息";
+                //只有修改的时候，并且是管理员和录入员才能够指定审核项目
+                if (GlobalUtils.LoginUser.UserLevel == 0)
+                {
+                    chkProjects.Enabled = true;
+                    //添加所有的项目
+                    var list = BLL.CommonBll.GetFieldList("PurchaseInfo", "Project");
+                    if (list != null)
+                    {
+                        foreach (var item in list)
+                        {
+                            chkProjects.Items.Add(item);
+                        }
+                    }
+                }
+            }
+            else
+            {//新增的时候两条逻辑:(1)非管理员直接不能添加(2)新增的时候不管项目
+                panelProjectInfo.Enabled = false;
+                if (GlobalUtils.LoginUser.UserLevel != 0)
+                {
+                    MessageBoxEx.Show("非管理员无权添加用户!");
+                    Close();
+                }
             }
         }
 
@@ -142,10 +185,8 @@ namespace SteelManagement.CSUI.FrmSub
 
             if (_is4Modify)
             {
-
-
-                if (GlobalUtils.LoginUser.Account != _model.Account && 
-                    GlobalUtils.LoginUser.UserLevel == 1)
+                if (GlobalUtils.LoginUser.Account != _model.Account &&
+                    GlobalUtils.LoginUser.UserLevel != 0)
                 {
                     MessageBoxEx.Show("只有管理员才有权限修改其他用户的信息!");
                     return;
@@ -156,16 +197,20 @@ namespace SteelManagement.CSUI.FrmSub
                 _model.Password = txtPassword.Text;
                 _model.UserMobile = txtUserMobile.Text;
 
-                if ((ChkBoxsToPrevilege() != _model.Privilege 
-                    || (chkAdmin.Checked ? 0 : 1) != _model.UserLevel) 
-                    && GlobalUtils.LoginUser.UserLevel == 1)
+                if ((ChkBoxsToPrevilege() != _model.Privilege
+                    || (GetUserLevelByRbtns()) != _model.UserLevel)
+                    && GlobalUtils.LoginUser.UserLevel != 0)
                 {
                     MessageBoxEx.Show("不能修改自己的权限信息，请联系管理员!");
                     return;
                 }
 
                 _model.Privilege = ChkBoxsToPrevilege();
-                _model.UserLevel = chkAdmin.Checked ? 0 : 1;
+                _model.UserLevel = GetUserLevelByRbtns();
+
+                //执行负责项目更改
+                //if()
+
 
                 if (!_bllAuthUser.Update(_model))
                 {
@@ -184,10 +229,10 @@ namespace SteelManagement.CSUI.FrmSub
                     Application.ExitThread();
                 }
             }
-            else
+            else //新增
             {
 
-                if (GlobalUtils.LoginUser.UserLevel == 1)
+                if (GlobalUtils.LoginUser.UserLevel != 0)
                 {
                     MessageBoxEx.Show("只有管理员才有权限添加用户!");
                     return;
@@ -209,7 +254,9 @@ namespace SteelManagement.CSUI.FrmSub
                     model.Password = txtPassword.Text;
                     model.UserMobile = txtUserMobile.Text;
                     model.Privilege = ChkBoxsToPrevilege();
-                    model.UserLevel = chkAdmin.Checked ? 0 : 1;
+                    model.UserLevel = GetUserLevelByRbtns();
+
+                    //新增的时候不让修改审核项目
 
                     if (_bllAuthUser.Add(model) <= 0)
                     {
@@ -230,10 +277,46 @@ namespace SteelManagement.CSUI.FrmSub
 
         }
 
+        private int GetUserLevelByRbtns()
+        {
+            if (rbtnAdmin.Checked)
+                return 0;
+            if (rbtnTyper.Checked)
+                return 1;
+            if (rbtnChecker.Checked)
+                return 2;
+            throw new Exception("Undefined Operation!");
+        }
+
+        private void UserLevelToRbtns(int level)
+        {
+            if (level == 0)
+                rbtnAdmin.Checked = true;
+            if (level == 1)
+                rbtnTyper.Checked = true;
+            if (level == 2)
+                rbtnChecker.Checked = true;
+        }
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void rbtnAdmin_CheckedChanged(object sender, EventArgs e)
+        {
+            //chkProjects.Enabled = true;
+        }
+
+        private void rbtnTyper_CheckedChanged(object sender, EventArgs e)
+        {
+            //chkProjects.Enabled = false;
+        }
+
+        private void rbtnChecker_CheckedChanged(object sender, EventArgs e)
+        {
+            //chkProjects.Enabled = false;
         }
     }
 }
