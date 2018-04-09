@@ -10,6 +10,7 @@ namespace SteelManagement.CSUI.FrmMain
 {
     public partial class FrmMain : Form
     {
+        private BLL.ProjectChecker _bllProjectChecker = new BLL.ProjectChecker();
         public FrmMain()
         {
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -192,11 +193,19 @@ namespace SteelManagement.CSUI.FrmMain
         {
             string tablename = "PurChaseInfo";
 
+            cbProject.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbSupplier.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbCorporation.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbSupplier.Items.Add("全部");
             cbCorporation.Items.Add("全部");
-            cbProject.Items.Add("全部");
+            if (GlobalUtils.LoginUser.UserLevel == 0 || GlobalUtils.LoginUser.UserLevel == 1)
+            {
+                cbProject.Items.Add("全部");
+            }
 
-            cbCorporation.SelectedIndex = 0;
-            cbProject.SelectedIndex = 0;
+
+
+
 
 
             var list = BLL.CommonBll.GetFieldList(tablename, "Corporation");
@@ -206,21 +215,34 @@ namespace SteelManagement.CSUI.FrmMain
                     cbCorporation.Items.Add(item);
                 }
 
-            list = BLL.CommonBll.GetFieldList(tablename, "Project");
+
+            if (GlobalUtils.LoginUser.UserLevel == 0 || GlobalUtils.LoginUser.UserLevel == 1)
+            {
+                list = BLL.CommonBll.GetFieldList(tablename, "Project");
+            }
+            else
+            {
+                list = _bllProjectChecker.GetUserCheckProjects(GlobalUtils.LoginUser.UserName);
+            }
+
             if (list != null)
                 foreach (var item in list)
                 {
                     cbProject.Items.Add(item);
                 }
 
-            cbSupplier.Items.Add("全部");
-            cbSupplier.SelectedIndex = 0;
+
             list = BLL.CommonBll.GetFieldList(tablename, "Supplier");
             if (list != null)
                 foreach (var item in list)
                 {
                     cbSupplier.Items.Add(item);
                 }
+
+
+            cbSupplier.SelectedIndex = 0;
+            cbCorporation.SelectedIndex = 0;
+            cbProject.SelectedIndex = 0;
         }
 
         private void InitCtrlByUserPrevilige()
