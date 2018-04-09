@@ -8,6 +8,7 @@ namespace SteelManagement.CSUI.FrmSub
     public partial class FrmAddAuthUser : Form
     {
         private readonly BLL.AuthUser _bllAuthUser = new BLL.AuthUser();
+        private readonly BLL.ProjectChecker _bllProjectChecker = new BLL.ProjectChecker();
         private readonly Action<int> _updateDel; //副界面传来更新数据库的委托
         private readonly int _curPage; //主界面更新数据库需要一个当前页
         private readonly bool _is4Modify = false;
@@ -80,19 +81,23 @@ namespace SteelManagement.CSUI.FrmSub
                 this.Text = "修改用户信息";
 
                 //只有修改的时候，并且是管理员和录入员才能够指定审核项目
-                if (GlobalUtils.LoginUser.UserLevel == 0)
+
+                chkProjects.Enabled = true;
+                //添加所有的项目
+                var list = BLL.CommonBll.GetFieldList("PurchaseInfo", "Project");
+                var userChecked = _bllProjectChecker.GetUserCheckProjects(_model.UserName);
+                if (list != null)
                 {
-                    chkProjects.Enabled = true;
-                    //添加所有的项目
-                    var list = BLL.CommonBll.GetFieldList("PurchaseInfo", "Project");
-                    if (list != null)
+                    foreach (var item in list)
                     {
-                        foreach (var item in list)
+                        chkProjects.Items.Add(item);
+                        if (userChecked != null && userChecked.Count > 0 && userChecked.Contains(item))
                         {
-                            chkProjects.Items.Add(item);
+                            chkProjects.CheckBoxItems[item].Checked = true;
                         }
                     }
                 }
+
             }
             else
             {//新增的时候两条逻辑:(1)非管理员直接不能添加(2)新增的时候不管项目
@@ -185,13 +190,6 @@ namespace SteelManagement.CSUI.FrmSub
 
             if (_is4Modify)
             {
-                if (GlobalUtils.LoginUser.Account != _model.Account &&
-                    GlobalUtils.LoginUser.UserLevel != 0)
-                {
-                    MessageBoxEx.Show("只有管理员才有权限修改其他用户的信息!");
-                    return;
-                }
-
                 _model.UserName = txtUserName.Text;
                 _model.Account = txtAccount.Text;
                 _model.Password = txtPassword.Text;
@@ -209,7 +207,37 @@ namespace SteelManagement.CSUI.FrmSub
                 _model.UserLevel = GetUserLevelByRbtns();
 
                 //执行负责项目更改
-                //if()
+                var userChecked = _bllProjectChecker.GetUserCheckProjects(_model.UserName);
+
+                foreach (var item in chkProjects.CheckBoxItems)
+                {
+                    if (
+                        (item.Checked && (userChecked == null || userChecked.Count <= 0)) ||
+                        (item.Checked && !userChecked.Contains(item.Text))) //原来没有现在有
+                    {
+                        Model.ProjectChecker model = new Model.ProjectChecker();
+                        model.EntryTime = DateTime.Now;
+                        model.Project = item.Text;
+                        model.UserName = _model.UserName;
+                        model.UserId = _model.Id;
+
+                        if (_bllProjectChecker.Add(model) < 1)
+                        {
+                            MessageBoxEx.Show(text: "修改失败!");
+                            return;
+                        }
+                    }
+                    if (userChecked == null || userChecked.Count <= 0)
+                        continue;
+                    if (!item.Checked && userChecked.Contains(item.Text)) //原来有现在没有
+                    {
+                        if (!_bllProjectChecker.Delete(_model.UserName, item.Text))
+                        {
+                            MessageBoxEx.Show(text: "修改失败!");
+                            return;
+                        }
+                    }
+                }
 
 
                 if (!_bllAuthUser.Update(_model))
