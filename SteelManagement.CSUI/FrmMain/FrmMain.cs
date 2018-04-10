@@ -203,11 +203,6 @@ namespace SteelManagement.CSUI.FrmMain
                 cbProject.Items.Add("全部");
             }
 
-
-
-
-
-
             var list = BLL.CommonBll.GetFieldList(tablename, "Corporation");
             if (list != null)
                 foreach (var item in list)

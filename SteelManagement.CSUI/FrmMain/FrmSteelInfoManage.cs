@@ -510,6 +510,11 @@ namespace SteelManagement.CSUI.FrmMain
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (GlobalUtils.LoginUser.UserLevel == Common.Enums.UserLevel.Checker)
+            {
+                MessageBoxEx.Show("权限不足!");
+                return;
+            }
             FrmAddSteelInfo frm = new FrmAddSteelInfo(LoadDataToDataGridView, _curPage);
             if (DialogResult.Cancel == frm.ShowDialog())
                 return;
@@ -548,11 +553,11 @@ namespace SteelManagement.CSUI.FrmMain
         #region 右键菜单响应
         private void 删除ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //if (GlobalUtils.LoginUserLevel != RigthLevel.Manager)
-            //{
-            //    MessageBoxEx.Show("权限不足!");
-            //    return;
-            //}
+            if (GlobalUtils.LoginUser.UserLevel == Common.Enums.UserLevel.Checker)
+            {
+                MessageBoxEx.Show("权限不足!");
+                return;
+            }
 
             int count = this.dataGridView1.SelectedRows.Count;
             if (MessageBoxEx.Show("确认删除" + count + "条记录?", "提醒", MessageBoxButtons.OKCancel)
@@ -568,6 +573,12 @@ namespace SteelManagement.CSUI.FrmMain
 
         private void 修改ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+            if (GlobalUtils.LoginUser.UserLevel == Common.Enums.UserLevel.Checker)
+            {
+                MessageBoxEx.Show("权限不足!");
+                return;
+            }
             var list = GetSelectedModelList();
 
             if (list.Count > 1)
@@ -581,6 +592,11 @@ namespace SteelManagement.CSUI.FrmMain
 
         private void 采购ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (GlobalUtils.LoginUser.UserLevel == Common.Enums.UserLevel.Checker)
+            {
+                MessageBoxEx.Show("权限不足!");
+                return;
+            }
             var list = GetSelectedModelList();
 
             if (list.Count > 1)
